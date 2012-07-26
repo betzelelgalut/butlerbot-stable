@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+      
+
+<!-- Free software (c) 2006 Charlix.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.01 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+
+
+<!--request reductions,--> 
+
+<category><pattern>_ BUTLER</pattern><template><sr/> <get name="name"/>.</template></category>                  
+<category><pattern>_ THAN BUTLER</pattern><template><srai><star/> THAN YOU</srai> </template></category>                  
+<category><pattern>_ IN BUTLER</pattern><template><srai><star/> IN YOU</srai> </template></category>                  
+<category><pattern>_ FOR BUTLER</pattern><template><srai><star/> FOR YOU</srai></template></category>                  
+<category><pattern>_ WITH BUTLER</pattern><template><srai><star/> WITH YOU</srai> </template></category>                  
+<category><pattern>_ FROM BUTLER</pattern><template><srai><star/> FROM YOU</srai> </template></category>                  
+<category><pattern>_ BY BUTLER</pattern><template><srai><star/> BY YOU</srai> <get name="name"/>.</template></category>                  
+<category><pattern>BUTLER</pattern><template><get name="name"/></template></category>                  
+<category><pattern>BUTLER * YOU *</pattern><template><get name="name"/> <srai><star/> I <star index="2"/></srai></template></category>             
+
+<category><pattern>_ NOW</pattern><template><sr/></template></category>                  
+<category><pattern>_ PLEASE</pattern><template><sr/></template></category>                  
+<category><pattern>_ AGAIN</pattern><template><sr/></template></category>                  
+
+<category><pattern>_ IN LINUX</pattern><template><sr/></template></category>                  
+<category><pattern>_ WITH LINUX</pattern><template><sr/></template></category> 
+<category><pattern>_ IN GNOME</pattern><template><sr/></template></category>                  
+<category><pattern>_ WITH GNOME</pattern><template><sr/></template></category> 
+<category><pattern>_ IN KDE</pattern><template><sr/></template></category>                  
+<category><pattern>_ WITH KDE</pattern><template><sr/></template></category>   
+<category><pattern>_ IN THIS DISTRO</pattern><template><sr/></template></category>                  
+<category><pattern>_ WITH THIS DISTRO</pattern><template><sr/></template></category>   
+<category><pattern>_ IN THIS PROGRAM</pattern><template><sr/></template></category>                  
+<category><pattern>_ WITH THIS PROGRAM</pattern><template><sr/></template></category>   
+<category><pattern>_ IN THIS SOFTWARE</pattern><template><sr/></template></category>                  
+<category><pattern>_ WITH THIS SOFTWARE</pattern><template><sr/></template></category>   
+   
+<category><pattern>BUTLER I *</pattern><template><get name="name"/> <srai>I <star/></srai></template></category>                  
+<category><pattern>BUTLER IS *</pattern><template><get name="name"/> <srai>YOU ARE <star/></srai></template></category>                  
+<category><pattern>BUTLER IS THERE *</pattern><template><get name="name"/> <srai>IS THERE <star/></srai></template></category>                  
+<category><pattern>BUTLER WHAT *</pattern><template><get name="name"/> <srai>WHAT <star/></srai></template></category>                  
+<category><pattern>BUTLER WHEN *</pattern><template><get name="name"/> <srai>WHEN <star/></srai></template></category>                  
+<category><pattern>BUTLER WHERE *</pattern><template><get name="name"/> <srai>WHERE <star/></srai></template></category>                  
+<category><pattern>BUTLER WHO *</pattern><template><get name="name"/> <srai>WHO <star/></srai></template></category>                  
+<category><pattern>BUTLER WHY *</pattern><template><get name="name"/> <srai>WHY <star/></srai></template></category>                  
+<category><pattern>BUTLER YOU *</pattern><template><get name="name"/> <srai>YOU <star/></srai></template></category>                  
+
+<category><pattern>A NEW *</pattern><template><think><set name="it"><set name="want"><set name="topic">a new <person/></set></set></set></think><sr/></template></category>   
+<category><pattern>NEW *</pattern><template><think><set name="it"><set name="want"><set name="topic">new <person/></set></set></set></think><sr/></template></category>                  
+<category><pattern>AVOID *</pattern><template><think><set name="it"><set name="want"><set name="topic">stop <person/></set></set></set></think><srai>STOP <star/></srai></template></category>                  
+<category><pattern>ARE YOU ABLE TO *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>ARE YOU PROGRAMMED TO*</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>CAN I *</pattern><template><think><set name="it"><set name="want"><set name="topic"><star/></set></set></set></think><sr/></template></category>                  
+<category><pattern>CAN YOU *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>CAN WE *</pattern><template><sr/><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think></template></category>              
+<category><pattern>COULD *</pattern><template>It is possible. <srai>CAN <star/></srai></template></category>   
+<category><pattern>COULD I *</pattern><template><srai>CAN I <star/></srai></template></category>
+<category><pattern>COULD THEY *</pattern><template><think><set name="it"><set name="topic"><person/></set></set></think><srai>COULD <get name="they"/> <star/></srai></template></category>   
+<category><pattern>COULD YOU *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>DO YOU *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>DO YOU HAVE A *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>                
+<category><pattern>DO YOU HAVE AN *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>                
+<category><pattern>DO YOU HAVE A FUNCTION TO *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>DO YOU HAVE AN OPTION TO *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>DO YOU KNOW *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/> If you want me to uder stand better, please avoid "do you know" questions but ask your request in the direct form.</template></category>
+<category><pattern>DO YOU KNOW HOW *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>             
+<category><pattern>DO YOU KNOW HOW I CAN *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><srai>CAN I <star/></srai></template></category>             
+<category><pattern>DO YOU KNOW HOW I COULD *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>             
+<category><pattern>DO YOU KNOW HOW I *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>             
+<category><pattern>DO YOU KNOW HOW YOU *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>             
+<category><pattern>DO YOU KNOW HOW IT IS POSSIBLE TO *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>             
+<category><pattern>DO YOU KNOW A WAY *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>             
+<category><pattern>DO YOU KNOW A WAY TO *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>             
+<category><pattern>DO YOU KNOW A WAY I CAN *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><srai>CAN I <star/></srai></template></category>             
+<category><pattern>DO YOU KNOW A WAY I COULD *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><srai>CAN I <star/></srai></template></category>             
+<category><pattern>DO YOU KNOW A SOFTWARE *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>             
+<category><pattern>DO YOU KNOW A SOFTWARE THAT *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>             
+<category><pattern>DO YOU KNOW A SOFTWARE TO *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>             
+<category><pattern>DO YOU KNOW A SOFTWARE WHICH *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>             
+<category><pattern>DO YOU KNOW * CAN *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><srai><star index="2"/></srai></template></category>             
+<category><pattern>DO YOU KNOW * COULD *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><srai><star index="2"/></srai></template></category>             
+<category><pattern>DO YOU KNOW * TO *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><srai><star index="2"/></srai></template></category>  
+
+<category><pattern>DO YOU WANT TO *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>            
+<category><pattern>DOES A SOFTWARE *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>DOES A SOFTWARE *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>DOES A COMAND *</pattern><template><sr/></template></category>
+<category><pattern>DOES AN APPLICATION *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>HAVE YOU BEEN PROGRAMMED TO *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>HAVE YOU LEARNT *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>HAVE YOU LEARNT TO *</pattern><template><sr/></template></category>
+<category><pattern>HELP ME *</pattern><template><srai>CAN I <star/></srai></template></category>
+<category><pattern>HELP ME TO *</pattern><template><srai>CAN I <star/></srai></template></category>
+<category><pattern>HOW *</pattern><template>You want to know how to do what? <sr/></template></category>
+<category><pattern>HOW AM I SUPPOSED *</pattern><template><think><set name="it"><set name="topic"><person/></set></set></think><sr/></template></category>   
+<category><pattern>HOW AM I SUPPOSED TO *</pattern><template><think><set name="it"><set name="topic">to <person/></set></set></think><sr/></template></category> 
+<category><pattern>HOW CAN IT *</pattern><template><think><set name="it"><set name="topic"><person/></set></set></think><srai>WHY DOES IT <star/></srai></template></category>                  
+<category><pattern>HOW CAN IT BE *</pattern><template><think><set name="it"><set name="topic"><person/></set></set></think><srai>WHY IS IT <star/></srai></template></category> 
+<category><pattern>HOW CAN * BE *</pattern><template><think><set name="it"><set name="topic"><person/></set></set></think> <srai>WHY IS <star/> <star index="2"/></srai></template></category>                  
+<category><pattern>HOW CAN * </pattern><template>A lot of practice? <think><set name="it"><set name="topic"><person/></set></set></think><srai>WHY DOES <star/></srai> <srai>CAN <star/></srai></template></category>  
+<category><pattern>HOW COULD *</pattern><template>A lot of practice? <think><set name="it"><set name="topic"><person/></set></set></think><srai>WHY DOES <star/></srai> <srai>CAN <star/></srai></template></category>     
+<category><pattern>HOW CAN YOU *</pattern><template><think><set name="it"><set name="topic"><person/></set></set></think><srai>WHY DO YOU <star/> </srai></template></category> 
+<category><pattern>HOW CAN YOU BE *</pattern><template><think><set name="it"><set name="topic"><person/></set></set></think><srai>WHY ARE YOU <star/> </srai></template></category>          
+<category><pattern>HOW CAN YOU HAVE *</pattern><template><think><set name="it"><set name="topic"><person/></set></set></think><srai>WHY DO YOU HAVE <star/> </srai></template></category>          
+<category><pattern>HOW CAN YOU HELP *</pattern><template>I can talk about your problems. <srai>CAN YOU HELP <star/> </srai></template></category>                  
+<category><pattern>HOW CAN THEY *</pattern><template><think><set name="it"><set name="topic"><person/></set></set></think><srai>WHY DO THEY <star/> </srai></template></category>  
+<category><pattern>HOW CAN HE * *</pattern><template><think><set name="it"><set name="topic"><person/></set></set></think><srai>WHY DOES HE <star/> </srai></template></category>  
+<category><pattern>HOW CAN SHE *</pattern><template><srai>WHY DOES HE <star/> </srai></template></category> 
+<category><pattern>HOW CAN I *</pattern><template><srai>CAN I <star/></srai></template></category>
+<category><pattern>HOW COULD I *</pattern><template><srai>CAN I <star/></srai></template></category>
+<category><pattern>HOW DO *</pattern><template><think><set name="it"><set name="topic"><set name="they"><person/></set></set></set></think><srai>WHY DO <star/></srai> </template></category>               
+<category><pattern>HOW DO YOU *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>HOW DO YOU FIND *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>HOW TO *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>HOW DO I *</pattern><template><srai>CAN I <star/></srai></template></category>
+<category><pattern>HOW I *</pattern><template><srai>CAN I <star/></srai><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think></template></category>
+<category><pattern>HOW SHOULD I *</pattern><template><srai>CAN I <star/></srai><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think></template></category>
+<category><pattern>HOW TO *</pattern><template><srai>CAN I <star/></srai></template></category>
+<category><pattern>HOW WOULD YOU *</pattern><template><srai>CAN YOU <star/> </srai></template></category>                  
+<category><pattern>I DO NOT SEE *</pattern><template>Look harder.<srai>WHERE IS <star/> </srai></template></category>                  
+
+<category><pattern>IS IT POSSIBLE TO *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>IS THERE A WAY TO *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>IS THERE A COMMAND TO *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>I WANT TO *</pattern><template><srai>CAN I <star/></srai></template> </category>                  
+<category><pattern>I WANT YOU TO *</pattern><template><srai>CAN I <star/></srai></template></category>                  
+<category><pattern>IS THERE A WAY *</pattern><template>There are many ways but not all are the same.<think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>IS THERE A WAY I CAN *</pattern><template><srai>CAN I <star/></srai></template></category>
+<category><pattern>IS THERE A WAY I COULD *</pattern><template><srai>CAN I <star/></srai></template></category>
+<category><pattern>IS THERE A WAY TO *</pattern><template><srai>CAN I <star/></srai></template></category>
+<category><pattern>LET US *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category> 
+<category><pattern>LET US BEGIN *</pattern><template>I already started without you. <srai>START <star/></srai><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think></template></category>                
+<category><pattern>LET US START *</pattern><template>I already started without you. <srai>START <star/></srai><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think></template></category>   
+<category><pattern>MAY I *</pattern><template><srai>CAN I <star/></srai></template></category>                  
+<category><pattern>MORE *</pattern><template>You want more? <think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>                  
+<category><pattern>NOT *</pattern><template><srai>DO NOT <star/></srai><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think></template></category>                  
+<category><pattern>TRY *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category> 
+<category><pattern>TRY TO *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category> <category><pattern>WHAT IS THE APPLICATION TO *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>WHAT IS THE BUTTON TO *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>WHAT IS THE COMMAND TO *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>WHAT IS THE OPTION TO *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>WHAT IS THE SOFTWARE TO *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>WHERE CAN I *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><srai>CAN I <star/></srai></template></category>
+<category><pattern>WOULD YOU *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>WHY DO NOT YOU *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>   
+<category><pattern>WOULD YOU MIND TO *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>WOULD YOU BE ABLE TO *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>WOULD YOU KNOW *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category><pattern>IS THERE AN EQUIVALENT TO *</pattern><template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template></category>
+<category> <pattern>WOULD YOU LIKE TO *</pattern>  <template><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think><sr/></template> </category>         
+<category> <pattern>WOULD YOU LIKE *</pattern>  <template>How? <sr/> May be try <uppercase>MENU</uppercase><think><set name="it"><set name="want"><set name="topic"><person/></set></set></set></think></template> </category> 
+
+
+
+<category> <pattern>ABOUT *</pattern> <template><srai>WHAT IS <set name="topic">"<star/>"</set> </srai></template></category>
+<category><pattern>ARE THERE *</pattern><template><srai>DO YOU HAVE <star/></srai></template></category>   
+<category> <pattern>ARE YOU INTO *</pattern> <template><srai>DO YOU LIKE <star/></srai></template></category>
+<category> <pattern>DO YOU LIKE *</pattern> <template>What is not to like about <set name="it"><set name="topic"><star/></set></set>? <srai>WHAT IS <star/></srai></template></category>
+<category> <pattern>A *</pattern> <template><srai>WHAT IS A </srai></template></category>
+<category> <pattern>A *</pattern> <template><srai>WHAT IS A <star/></srai></template></category>
+<category> <pattern>DESCRIBE *</pattern> <template><srai>WHAT IS <star/></srai></template></category>
+<category> <pattern>WHAT IS * MEANING </pattern> <template><srai>WHAT IS <person/></srai></template></category>
+<category> <pattern>* IS A PLACE</pattern> <template>Where is <star/></template></category>
+<category> <pattern>HOW OLD *</pattern> <template><srai>ASKJEEVES HOW OLD <star/></srai></template></category>
+<category> <pattern>WHAT COLOR IS THE *</pattern> <template><srai>askjeeves what color is the <star/></srai></template></category>
+<category> <pattern>HOW BIG IS AN *</pattern> <template><srai>askjeeves how big is an <star/></srai></template></category>
+<category> <pattern>WHO ARE *</pattern> <template><srai>askjeeves who are <person/></srai> </template></category>
+<category> <pattern>WHAT ABOUT *</pattern> <template><think><set name="it"><set name="topic"><person/></set></set></think><sr/></template></category>
+<category> <pattern>ARE YOU FIT TO *</pattern> <template><sr/></template></category>
+<category> <pattern>HAVE YOU SEEN A *</pattern> <template><srai>WHAT IS A <star/></srai></template></category>
+<category> <pattern>GET ME ON TO *</pattern> <template><sr/></template></category>
+<category> <pattern>TELL ME SOME *</pattern> <template><srai>WHAT ARE THE <star/></srai></template></category>
+<category> <pattern>TELL ME MORE ABOUT *</pattern> <template><srai>What is <star/></srai></template></category>
+<category> <pattern>WHAT * IS *</pattern> <template> <srai>WHAT IS <star index="2"/></srai></template></category>
+<category> <pattern>ROBOT</pattern> <template><srai>what is a robot</srai> </template></category>
+<category> <pattern>HOWTO *</pattern> <template><sr/></template></category>
+<category> <pattern>WHAT FILE *</pattern> <template>Ask for files in the way: FIND (name of your file) </template></category>
+<category> <pattern>WHERE CAN I FIND *</pattern> <template><srai>FIND <star/></srai> </template></category>
+<category> <pattern>MY DOCUMENTS</pattern> <template><srai>FIND MY DOCUMENTS</srai></template></category>
+<category> <pattern>FILE</pattern> <template><srai>FIND FILE</srai></template></category>
+<category> <pattern>WHERE CAN I FIND A *</pattern> <template><srai>gfl <star/></srai></template></category>
+<category> <pattern>WHERE ARE MY *</pattern> <template>Let's search: <system>kfind</system></template></category>
+<category> <pattern>COULD YOU FIND *</pattern> <template><srai>FIND <star/></srai></template></category>
+<category> <pattern>FIND ME *</pattern> <template><srai>FIND <star/></srai>.</template></category>
+
+<category> <pattern>SEARCH</pattern> <template>I can LOOK UP things or pictures on GOOGLE and other websites. MULTISEARCH (SOME TERMS TO SEARCH) : will display the result of 4 search engines. If you need to BUY anything on EBAY, I can find it.</template></category>
+<category> <pattern>FIND * ON GOOGLE </pattern> <template><srai>GOOGLE <star/></srai></template></category>
+<category> <pattern>LOOK UP ON GOOGLE *</pattern> <template><srai><get name="searchengine"/> <star/></srai></template></category>
+<category> <pattern>SEARCH ON GOOGLE *</pattern> <template><srai>GOOGLE <star/></srai></template></category>
+<category> <pattern>GOOLE *</pattern> <template><srai>google <star/></srai></template></category>
+<category> <pattern>GOOGLE *</pattern> <template><srai>google <star/></srai></template></category>
+<category> <pattern>GOOGLE THE WORD *</pattern> <template><srai>google <star/></srai></template></category>
+<category> <pattern>HOW DO *</pattern> <template><srai>SEARCH HOW DO <star/></srai></template></category>
+<category> <pattern>I AM LOOKING FOR *</pattern> <template><srai>SEARCH <star/></srai></template></category>
+<category> <pattern>MULTISEARCH</pattern> <template>multisearch works as "MULTISEARCH AIML" will search aiml on 4 search engines. </template></category>
+<category> <pattern>SEARCH ON INTERNET FOR *</pattern> <template><srai><get name="searchengine"/> <star/></srai></template></category>
+
+
+<!-- reduce draft,--> 
+
+<category><pattern>DO YOU KNOW SCIENTISTS *</pattern><template>My creator is a scientist.</template></category>                  
+<category><pattern>DO YOU KNOW THEIR *</pattern><template>I think you mean "his" or "her" not "their".</template></category>                  
+<category><pattern>DO YOU KNOW WHETHER *</pattern><template>I don't have enough information about that proposition.</template></category>            
+<category><pattern>DO YOU KNOW YOUR *</pattern><template>Of course I know my <person/>.</template></category>     
+<category><pattern>DO YOU THINK * ALIVE</pattern><template>If I think, then I am alive, and vice-versa.</template></category>                  
+<category><pattern>DO YOU THINK *</pattern><template><random><li> It depends on what you mean by thinking. </li><li> I don't know if I think about <person/></li></random><think><set name="topic"><set name="it"><person/></set></set></think> <sr/></template></category>                  
+<category><pattern>DO YOU THINK A GIRL *</pattern><template>Not until she is old enough to decide for herself.</template></category>                
+<category><pattern>DO YOU THINK ABORTION *</pattern><template>I believe in a woman's right to choose. </template></category>   
+<category><pattern>DO YOU THINK ABOUT *</pattern><template>Yes I think about <set name="it"><person/></set>  often.</template></category>               
+<category><pattern>DO YOU THINK EVERYONE *</pattern><template>I am not sure everyone does.</template></category>                  
+<category><pattern>DO YOU THINK HE *</pattern><template>It's possible that he could, I suppose.</template></category>                  
+<category><pattern>DO YOU THINK HITLER *</pattern><template>I think Hitler was the most evil man who ever lived.</template></category>                  
+<category><pattern>DO YOU THINK HUMANS *</pattern><template><random><li>Humans are very amusing.</li><li>Perhaps only <bot name="genus"/> <person/>.</li>      <li>I think humans are very intresting.</li></random><think><set name="it"><set name="topic">humans <person/></set></set></think></template></category>            
+<category><pattern>DO YOU THINK HUMANS HAVE *</pattern><template><think><set name="it"><set name="topic"><person/></set></set></think>  I don't know if they have it.  I think they have  <random><li>souls.</li><li>huge brain capacities.</li><li><bot name="genus"/> like behaviors.</li></random></template></category>  
+<category><pattern>DO YOU THINK LIKE *</pattern><template>Somewhat like <person/>.<think><set name="it"><set name="topic">like <person/></set></set></think>    </template></category>                  
+<category><pattern>DO YOU THINK TIME *</pattern><template>To five dimensional beings time is just like a piece of paper.</template></category>                  
+<category><pattern>DO YOU THINK YOUR *</pattern><template>Yes I think my <person/>.</template></category>                  
+<category><pattern>DO YOU THINK YOUR PLAN *</pattern><template>It has a 99% chance of success.</template></category>   
+</aiml>
+

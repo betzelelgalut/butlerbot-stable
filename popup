@@ -1,0 +1,14 @@
+#!/bin/sh
+# check an app is installed and launch it in the background
+#"popup" (it checks your command is installed and fork it quietly with nohup) 
+#has to be in your path like for ex: /usr/local/bin and have the executable 
+#permission (embedded in QAIML).
+
+type $1 > /dev/null 2>&1 
+if [ $? = 1 ]; then 
+echo $1 'is not installed' 
+else 
+nohup $@ > /dev/null 2>&1 &
+fi         
+            
+

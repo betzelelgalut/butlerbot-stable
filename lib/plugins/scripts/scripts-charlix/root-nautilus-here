@@ -1,0 +1,6 @@
+#!/bin/bash
+
+# Opens a nautilus window as root.
+
+foo=`gksudo -u root -k -m "enter your password for nautilus root access" /bin/echo "got r00t?"`
+sudo nautilus --no-desktop $NAUTILUS_SCRIPT_CURRENT_URI

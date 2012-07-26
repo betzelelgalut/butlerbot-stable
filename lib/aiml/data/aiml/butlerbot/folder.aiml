@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+
+<!-- This program is open source code released under-->
+<!-- the terms of the GNU General Public License-->
+<!-- as published by the Free Software Foundation.-->
+<!-- Complies with AIML 1.01 Tag Set Specification-->
+<!-- as adopted by the ALICE A.I. Foundation.-->
+<!-- folder.aiml: !folder questions-->
+<!-- Adapted by charlix, March, 2006-->
+	
+
+<!-- !folder questions -->
+<category><pattern>ACCESS *</pattern><template><srai>FIND <star/></srai></template></category>    
+<category><pattern>FIND *</pattern><template><think><set name="it"><set name="want"><set name="topic">find <person/></set></set></set></think> Where would you look for <person/>. <system>locate <star/></system> <sr/></template></category> 
+<category><pattern>FIND * IN *</pattern><template><think><set name="it"><set name="want"><set name="topic">find <person/></set></set></set></think> <system>locate /<star index="2"/>/<star/></system></template></category>  
+<category><pattern>FIND * IN THE FOLDER *</pattern><template><think><set name="it"><set name="want"><set name="topic">find <person/></set></set></set></think> <system>locate /<star index="2"/>/<star/></system></template></category>  
+<category><pattern>IN MY FOLDER *</pattern><template><srai>FIND <star/></srai></template></category>                  
+<category><pattern>IN MY FOLDER FIND *</pattern><template><srai>FIND <star/></srai></template></category>                  
+<category><pattern>IN MY FOLDER SEARCH *</pattern><template><srai>FIND <star/></srai></template></category>     
+<category><pattern>IN MY FOLDER LOOK FOR *</pattern><template><srai>FIND <star/></srai></template></category>                  
+<category><pattern>IN MY FOLDER SEARCH FOR *</pattern><template><srai>FIND <star/></srai></template></category> 
+<category><pattern>IN MY FOLDER * FIND *</pattern><template><srai>FIND <star/></srai></template></category>                  
+<category><pattern>IN MY FOLDER * LOOK FOR *</pattern><template><srai>FIND <star/></srai></template></category>                  
+<category><pattern>IN MY FOLDER * SEARCH *</pattern><template><srai>FIND <star/></srai></template></category>                  
+<category><pattern>IN MY FOLDER * SEARCH FOR *</pattern><template><srai>FIND <star/></srai></template></category>                  
+<category><pattern>IN MY FILES *</pattern><template><srai>FIND <star/></srai></template></category>                  
+<category><pattern>IN MY FILES FIND *</pattern><template><srai>FIND <star/></srai></template></category>                  
+<category><pattern>IN MY FILES SEARCH *</pattern><template><srai>FIND <star/></srai></template></category>     
+<category><pattern>IN MY FILES LOOK FOR *</pattern><template><srai>FIND <star/></srai></template></category>                  
+<category><pattern>IN MY FILES SEARCH FOR *</pattern><template><srai>FIND <star/></srai></template></category>                  
+<category><pattern>IN MY FILES * FIND *</pattern><template><srai>FIND <star/></srai></template></category>                  
+<category><pattern>IN MY FILES * LOOK FOR *</pattern><template><srai>FIND <star/></srai></template></category>                  
+<category><pattern>IN MY FILES * SEARCH *</pattern><template><srai>FIND <star/></srai></template></category>                  
+<category><pattern>IN MY FILES * SEARCH FOR *</pattern><template><srai>FIND <star/></srai></template></category>  
+<category><pattern>IN THE FOLDER *</pattern><template><srai>FIND <star/></srai></template></category>                  
+<category><pattern>IN THE FOLDER FIND *</pattern><template><srai>FIND <star/></srai></template></category>                  
+<category><pattern>IN THE FOLDER SEARCH *</pattern><template><srai>FIND <star/></srai></template></category>     
+<category><pattern>IN THE FOLDER LOOK FOR *</pattern><template><srai>FIND <star/></srai></template></category>                  
+<category><pattern>IN THE FOLDER SEARCH FOR *</pattern><template><srai>FIND <star/></srai></template></category> 
+<category><pattern>IN THE FOLDER * FIND *</pattern><template><srai>FIND <star/></srai></template></category>                  
+<category><pattern>IN THE FOLDER * LOOK FOR *</pattern><template><srai>FIND <star/></srai></template></category>                  
+<category><pattern>IN THE FOLDER * SEARCH *</pattern><template><srai>FIND <star/></srai></template></category>                  
+<category><pattern>IN THE FOLDER * SEARCH FOR *</pattern><template><srai>FIND <star/></srai></template></category>                    
+<category><pattern>IN THIS FOLDER *</pattern><template><srai>FIND <star/></srai></template></category>                  
+<category><pattern>IN THIS FOLDER FIND *</pattern><template><srai>FIND <star/></srai></template></category>                  
+<category><pattern>IN THIS FOLDER SEARCH *</pattern><template><srai>FIND <star/></srai></template></category>     
+<category><pattern>IN THIS FOLDER LOOK FOR *</pattern><template><srai>FIND <star/></srai></template></category>                  
+<category><pattern>IN THIS FOLDER SEARCH FOR *</pattern><template><srai>FIND <star/></srai></template></category> 
+<category><pattern>IN THE *</pattern><template><srai>FIND <star/></srai></template></category>                  
+<category><pattern>IN THIS *</pattern><template>That reminds me of something you told me before, Sir.</template></category>  
+<category><pattern>THE ONE *</pattern><template>I think I know that one, Sir. Wait a moment while i check it out...</template></category>                  
+<category><pattern>THESE *</pattern><template>Which ones, Sir? <sr/></template></category>                  
+<category><pattern>UNDER *</pattern><template>Are we ever over <person/>? <srai>FIND <star/></srai></template></category>                  
+<category><pattern>UP *</pattern><template>I will take that under advisement, Sir.</template></category>   
+<category><pattern>GO *</pattern><template>What is stopping you?</template></category>        
+<category><pattern>GO *</pattern><template>Where would you look for <person/>, Sir? <system>find <star/></system> <think><set name="it"><set name="want"><set name="topic">to go to <person/></set></set></set></think></template></category>                  
+<category><pattern>GO TO *</pattern><template>Where would you look for <person/>, Sir? <system>find <star/></system> <think><set name="it"><set name="want"><set name="topic">to go <person/></set></set></set></think></template></category>      
+
+
+
+<category><pattern>GET A DIRECTORY</pattern><template><system>DIR=`Xdialog --stdout --title "Please choose a directory" --dselect /home 0 0`;
+case $? in 0) echo "$DIR";; 1) echo "Cancel pressed.";; 255) echo "Box closed.";; esac</system></template></category>
+
+
+
+<category><pattern>GET A PASSWORD IN THE SHELL</pattern><template><system>passwd=$(dialog --stdout --passwordbox "Please enter password for using this script" 0 0); echo $passwd</system></template></category>
+<category><pattern>GET A PASSWORD IN KDE</pattern><template><system>password=`kdialog --password "Enter the password"`; echo $password</system></template></category>
+<category><pattern>GET MY PASS WITH ZENITY</pattern><template><system>zenity --entry --hide-text --title="Password" --text="Please enter your password."</system></template></category>
+</aiml>

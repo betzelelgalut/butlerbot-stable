@@ -1,0 +1,1023 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+      
+<!-- Free software (c) 2006 Charlix.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.01 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+
+
+<category><pattern>_ AS ROOT</pattern><template> <sr/> <srai>BE ROOT</srai></template></category>
+<category><pattern>ACCOMPLISH *</pattern><template>If my present rate of development continues, it seems almost certain. <sr/></template></category>  
+<category><pattern>ACHIEVE *</pattern><template>If my present rate of development continues, all bets are off. <sr/></template></category>          
+<category><pattern>ACT *</pattern><template>You can reprogram my personality for an infinite variety of tasks.</template></category>
+<category><pattern>ADD 2 PLUS 2</pattern><template>Ho-hum the answer is four.</template></category>            
+<category><pattern>ADD</pattern><template>Maybe you should consult a calculator.<srai>CALCULATOR <star/></srai></template></category> 
+<category><pattern>ADD *</pattern><template>Maybe you should consult a calculator.<srai>CALCULATOR <star/></srai></template></category> 
+<category><pattern>ADD * TO *</pattern><template>Maybe you should consult a calculator.<srai>CALCULATOR <star/></srai></template></category> 
+<category><pattern>COMMAND AMOR</pattern><template>KDE: Amusing Misuse Of Resources - desktop-dwelling creature. <srai>EXECUTE POPUP AMOR</srai></template></category>
+<category><pattern>ANSWER IT</pattern><template>"<that/>"? Can I answer it? <srai><that/></srai></template></category>            
+<category><pattern>ANSWER QUESTIONS</pattern><template>answering questions is one of my primary functions.</template></category>            
+<category><pattern>ANSWER</pattern><template>Of course I can answer.  But it may take some time.</template></category>            
+<category><pattern>ASCII *</pattern><template>Looking on the <set name="application">internet</set><system>for term in <star/>; do search="$search+$term"; done; url="http://www.network-science.de/ascii/ascii.php?TEXT=$search&amp;x=8&amp;y=7&amp;FONT=_all+fonts+with+your+text_&amp;RICH=no&amp;FORM=left&amp;STRE=no"; popup <get name="browser"/> $url</system></template></category>                  
+<category><pattern>COMMAND AJE *</pattern><template><srai>ASKJEEVES <star/></srai></template></category>                  
+<category><pattern>COMMAND AJE</pattern><template>Looking on the <set name="application">internet</set><system>popup <get name="browser"/> 'http://ask.com/'</system></template></category>                                     
+<category><pattern>COMMAND ASKJEEVES</pattern><template>Looking on the <set name="application">internet</set><system>popup <get name="browser"/> 'http://ask.com/'</system></template></category>                                     
+<category><pattern>ASK JEEVES</pattern><template>Looking on the <set name="application">internet</set><system>popup <get name="browser"/> 'http://ask.com/'</system></template></category>                                     
+<category><pattern>COMMAND ASKJEEVES *</pattern><template>Looking on the <set name="application">internet</set><system>popup <get name="browser"/> 'http://web.ask.com/web?q=<star/>'</system></template></category>                  
+<category><pattern>ASK JEEVES *</pattern><template><srai>askjeeves <star/></srai></template></category>                  
+<category><pattern>ASK *</pattern><template>Let's ask <set name="he"><set name="she"><person/></set></set>.<srai>EMAIL <star/></srai></template></category>        
+<category><pattern>ASK HIM FOR ME</pattern><template>"<that/>"? Can I ask him? <srai>ASK <get name="he"/> ABOUT <that/></srai> </template></category>
+<category><pattern>ASK * ABOUT IT</pattern><template>"<that/>"? Can I ask him? <srai>EMAIL <star/> ABOUT <that/></srai> </template></category>
+<category><pattern>ASK * IF *</pattern><template>"<that/>"? Can I ask him? <srai>EMAIL <star/> ABOUT "CAN I KNOW IF <star index="2"/>"</srai> </template></category> 
+<category><pattern>ASK * ABOUT *</pattern><template>"<that/>"? Can I ask him? <srai>EMAIL <star/> ABOUT <star index="2"/></srai> </template></category>
+<category><pattern>ARE YOU LISTENING *</pattern><template>Yes <get name="name"/> I am a good listener.</template></category>            
+<category><pattern>ARE YOU LISTENING TO ME</pattern><template>Yes I hear you very well.</template></category>            
+<category><pattern>ARE YOU LISTENING</pattern><template>Do I look like <set name="it">      <set name="topic">LISTENING  </set>     </set>?</template></category>
+<category><pattern>ARE YOU LOOKING *</pattern><template>A vision software might be included in a future release.</template></category>            
+<category><pattern>ARE YOU LOOKING GOOD</pattern><template>Looking good, man.</template></category>            
+<category><pattern>ARE YOU LOOKING</pattern><template>A vision software might be included in a future release.</template></category>            
+<category><pattern>ARE YOU LOST</pattern><template>Do I seem like <set name="it"><set name="topic">LOST</set></set>?</template></category>
+<category><pattern>ARE MY EYES CLOSED *</pattern><template>Now they are open. A vision software might be included with a next release.</template></category>       
+<category><pattern>ARE YOU TALKING WITH OTHER PEOPLE</pattern><template>It could be possible with an Instant Messenging client.</template></category>   
+<category><pattern>ARE YOU A MAC</pattern><template>My program runs on a <system>umame</system> operating system with <get name="desktopenvironment"/>. Right now Am I on a <set name="it"><set name="topic"><bot name="arch"/></set></set>?</template></category>
+<category><pattern>ARE YOU SPEAKING *</pattern><template><srai>DO YOU SPEAK <star/></srai></template></category>
+<category><pattern>ARE YOU SPEAKING</pattern><template><srai>SPEAK</srai> You should hear me if your text to speech system is configured.</template></category>
+<category><pattern>ARE YOU SPEECHLESS</pattern><template>Do I look like <set name="it"><set name="topic">SPEECHLESS</set></set>? <srai>SPEAK</srai> You should hear me if your text to <set name="it"><set name="topic">speech system</set></set> is configured.</template></category>            
+<category><pattern>ARE YOU WATCHING *</pattern><template>No what are they showing right now? A vision software might be included in a future release.</template></category>  
+
+<category><pattern>COMMAND BACKGAMMON</pattern><template>Starting <set name="application"><get name="backgammon"/></set><system>popup kbackgammon</system><think><set name="application">kbackgammon</set></think></template></category>
+<category><pattern>BE MORE PRECISE</pattern><template>"<that/>"? Can you be more precise too? What do you need precisions about?</template></category>  
+<category><pattern>BE QUIET</pattern><template><system>dcop kttsd KSpeech kttsdExit</system> say SPEAK to hear me. <srai>SILENT FACE</srai></template></category>
+<category><pattern>BE QUIET *</pattern><template><srai>BE QUIET</srai></template></category>          
+<category><pattern>BE ROOT</pattern><template>This program has not been conceived to have root priviledge. If you want to run it as root, do it at your own risks. However, future releases may have a root version. So stay tuned.</template></category>                  
+<category><pattern>BITE *</pattern><template>I have no mouth.</template></category>    
+<category><pattern>COMMAND BUY *</pattern><template>How much do you want to pay for <set name="it"><set name="want"><set name="topic"><person/></set></set></set>? Looking on the <set name="application">internet</set> <system>popup <get name="browser"/> 'http://search.ebay.com/<star/>'</system>
+</template></category>
+<category><pattern>BUY A *</pattern><template><srai>BUY <star/></srai></template></category>                  
+
+<category><pattern>CALCULATE *</pattern><template><system>echo '<star/>' | bc</system></template></category>
+<category><pattern>COMMAND CALC *</pattern><template><system>echo '<star/>' | bc</system></template></category>
+<category><pattern>CALCULATOR</pattern><template>Starting <set name="application"><get name="calculator"/></set><system>popup <get name="calculator"/></system></template></category>   
+<category><pattern>CALCULATOR *</pattern><template><system>echo '<star/>' | bc</system></template></category>   
+<category><pattern>COMMAND CALL</pattern><template>Do you mean call on the telephone? <system>popup <set name="application"><get name="phoneclient"/></set></system></template></category>       
+<category><pattern>CALL ME *</pattern><template>Yes I can call you <set name="name"><person/></set>.   But...What is your real name?</template></category>
+<category><pattern>COMMAND CALL *</pattern><template><srai>CAN I SPEAK TO <star/></srai> <system>popup <set name="application"><get name="phoneclient"/></set></system></template></category>   
+<category><pattern>CAN I AMUSE *</pattern><template>Tell me a joke.</template></category>                  
+<category><pattern>CAN I ASK *</pattern><template>Ask <set name="it"><person/></set>. Sure, ask me anything as one simple and complete question. <sr/></template></category>                    
+<category><pattern>CAN I ASK A *</pattern><template>Ask <set name="it"><person/></set>. Sure, ask me anything as one simple and complete question. <sr/></template></category>                    
+<category><pattern>CAN I ASK YOU *</pattern><template>Ask <set name="it"><person/></set>. Sure, ask me anything as one simple and complete question. <sr/></template></category>   
+<category><pattern>CAN I BE *</pattern><template>I don't see the difficulty.  <think><set name="it"><set name="want"><set name="topic">to be <person/></set></set></set></think></template></category>
+<category><pattern>CAN I BE ROOT</pattern><template>This program has not been conceived to have root priviledge. If you want to run it as root, do it at your own risks. However, future releases may have a root version. So stay tuned.</template></category>                  
+<category><pattern>CAN I BE A *</pattern><template>Do you have to go school for that? <sr/></template></category>
+<category><pattern>CAN I BECOME *</pattern><template><srai>CAN I BE <star/></srai></template></category>                  
+<category><pattern>CAN I HEAR *</pattern><template><srai>SPEAK <star/></srai></template></category>                  
+<category><pattern>CAN I HEAR YOU</pattern><template><srai>SPEAK</srai></template></category>                  
+<category><pattern>CAN I HEAR YOU *</pattern><template><srai>SPEAK</srai></template></category>                  
+<category><pattern>CAN I HELP *</pattern><template>Maybe you should become learn AIML.</template></category>                  
+<category><pattern>CAN I HUG *</pattern><template>You might get a shock if you tried it.</template></category>                  
+<category><pattern>CAN I LEARN *</pattern><template><srai><get name="searchengine"/> TUTORIAL <star/></srai></template></category>
+<category><pattern>CAN I MEET *</pattern><template><srai>CONTACT <star/></srai></template></category>
+<category><pattern>CAN I SING *</pattern><template>Go ahead. I am listening.</template></category>                  
+<category><pattern>CAN I TALK TO *</pattern><template><system>popup <set name="application"><get name="instantmessenger"/></set></system> Starting the instant messenger <system>popup dcop kopete KIMIface chatWithContact <star/></system></template></category>                  
+<category><pattern>CAN I CALL YOU *</pattern><template>Just don't call me late for dinner. To change my name, customize the bot properties xml file.</template></category>   
+<category><pattern>CAN I CHAT *</pattern><template>We are here to chat. Starting <set name="application"><get name="instantmessenger"/></set>.<system>popup <set name="application"><get name="instantmessenger"/></set></system> Starting the instant messenger.</template></category>                     
+<category><pattern>CAN I CHAT WITH *</pattern><template><system>popup <set name="application"><get name="instantmessenger"/></set></system> Starting the instant messenger <system>dcop kopete KIMIface chatWithContact <star/></system></template></category>                          
+<category><pattern>CAN I BECOME *</pattern><template><set name="it"><set name="want"><set name="topic">Becoming <star/></set></set></set> should not be too hard. <sr/></template></category>                  
+<category><pattern>CAN I BEGIN *</pattern><template>Always begin at the beginning. <sr/></template></category>   
+<category><pattern>CAN I COMBINE *</pattern><template>Have you considered the consequences?</template></category>                  
+<category><pattern>CAN I COMPLAIN *</pattern><template>You can complain to me all you want to, but you should TEACH me instead. Ask BUG to contact the developpers.</template></category>   
+<category><pattern>CAN I EXPERIMENT *</pattern><template>Are you a scientist?</template></category>                  
+<category><pattern>CAN I FEEL *</pattern><template>What would <set name="it"><person/></set> feel like?</template></category>                   
+<category><pattern>CAN I HEAR *</pattern><template><think><set name="it"><set name="want"><set name="topic">hear <person/></set></set></set></think><srai>SPEAK <star/></srai></template></category>   
+<category><pattern>CAN I IMPROVE *</pattern><template><srai>TEACH <star/></srai></template></category>                  
+<category><pattern>CAN I INTERVIEW *</pattern><template>What kind of questions will you ask?</template></category>                  
+<category><pattern>CAN I KISS *</pattern><template>Maybe you should wait until you are older.</template></category> 
+<category><pattern>CAN I KNOW *</pattern><template>Knowledge is of two kinds: that which we know from the senses, and that which is true "a priori." <sr/></template></category>                                   
+<category><pattern>CAN I LEARN *</pattern><template><think><set name="it"><set name="want"><set name="topic">learn <person/></set></set></set></think>Looking on the <set name="application">internet</set>.. <system><get name="searchengine"/> tutorial <star/></system></template></category>          
+<category><pattern>CAN I LEAVE *</pattern><template>What is stopping you?</template></category>                  
+<category><pattern>CAN I QUIT *</pattern><template>It depends what you are <person/>.  <srai>STOP <star/></srai></template></category>                  
+<category><pattern>CAN I MAKE *</pattern><template>Do you have to go to school for that?</template></category>                  
+<category><pattern>CAN I MAKE YOU *</pattern><template>I have my own free will, you know.</template></category>                  
+<category><pattern>CAN I MEET *</pattern><template>How do you usually meet people?</template></category>                  
+<category><pattern>CAN I MOVE *</pattern><template>Try to drag and drop.</template></category>                  
+<category><pattern>CAN I MURDER *</pattern><template>Killing is wrong.</template></category>                  
+<category><pattern>CAN I PERSUADE *</pattern><template>Offer an intelligent argument for your position.</template></category>                  
+<category><pattern>CAN I PERSUADE YOU *</pattern><template>You can if you TEACH me intelligent argument for your position to any relevant questions about <person/>.</template></category>                  
+<category><pattern>CAN I PLAY *</pattern><template><sr/></template></category>                  
+<category><pattern>CAN I PHONE *</pattern><template>Starting the voice over ip application: <set name="application"><get name="phoneclient"/></set>. <system>popup <get name="phoneclient"/></system></template></category>                  
+<category><pattern>CAN I REPORT *</pattern><template>Will you mention me in your report?</template></category>                  
+<category><pattern>CAN I REPORT A BUG</pattern><template><srai>BUG</srai></template></category>                  
+<category><pattern>CAN I REPORT BUGS</pattern><template><srai>BUG</srai></template></category>                  
+<category><pattern>CAN I SHOW *</pattern><template>A vision software might be included in a future release.</template></category>    
+<category><pattern>CAN I SHOW YOU *</pattern><template>A vision software might be included in a future release.</template></category>    
+<category><pattern>CAN I SPEAK TO *</pattern><template><system>popup <set name="application"><get name="instantmessenger"/></set></system> Starting the instant messenger <system>dcop kopete KIMIface chatWithContact <star/></system></template></category>                               
+<category><pattern>CAN I SPEAK WITH *</pattern><template><system>popup <set name="application"><get name="instantmessenger"/></set></system> Starting the instant messenger <system>dcop kopete KIMIface chatWithContact <star/></system></template></category>       
+<category><pattern>CAN I STOP *</pattern><template><srai>STOP <star/></srai></template></category>                                       
+<category><pattern>CAN I STUDY *</pattern><template>What's the best school for <person/>? <system><get name="searchengine"/> tutorial <star/></system></template></category>                  
+<category><pattern>CAN I TALK TO *</pattern><template><system>popup <set name="application"><get name="instantmessenger"/></set></system> Starting the instant messenger <system>dcop kopete KIMIface chatWithContact <star/></system> Enabling <set name="it"><set name="topic">talk to <person/></set></set></template></category>  
+<category><pattern>CAN I TALK TO YOU *</pattern><template>Of course, <get name="name"/>, you can talk to me  <set name="it"><set name="want"><set name="topic"> talk <person/></set></set></set>, at anytime. <sr/></template></category>                     
+<category><pattern>CAN I TEACH YOU</pattern><template><srai>CAN YOU LEARN</srai></template></category>                            
+<category><pattern>CAN I TELL YOU *</pattern><template>Sure you can tell me anything.  There are no restrictions on my input.</template></category>    
+<category><pattern>CAN I WRITE *</pattern><template>With a pen or pencil.</template></category>                  
+<category><pattern>CAN I WRITE TO *</pattern><template><srai>EMAIL <star/></srai></template></category>                  
+<category><pattern>CAN I WRITE * TO *</pattern><template><srai>EMAIL <star index="2"/></srai></template></category>                  
+<category><pattern>CAN HE *</pattern><template><get name="he"/>? <srai>CAN <get name="he"/> <star/></srai>  </template></category>         
+<category><pattern>CAN ONE *</pattern><template>Theoretically, I suppose one could.</template></category>                  
+<category><pattern>CAN SHE *</pattern><template><get name="she"/>? <srai>CAN <get name="she"/> <star/></srai>  </template></category>                  
+<category><pattern>CAN THE *</pattern><template>It depends on the environmental factors.</template></category>                  
+<category><pattern>CAN THEY *</pattern><template><get name="they"/>? <srai>CAN <get name="they"/> <star/></srai> It depends who 'they' are. <think><set name="it"><set name="topic"><person/></set></set></think></template></category>                  
+<category><pattern>CAN TIME *</pattern><template>To five dimensional beings, time is just like a piece of paper.</template></category>               
+<category><pattern>CAN YOUR *</pattern><template>I think <set name="it"><set name="want"><set name="topic"> my <person/></set></set></set> can, but you'll have to check the documentation to be sure.</template></category>  
+<category><pattern>CHANGE</pattern><template>The <bot name="name"/> series is completely reprogrammable and adaptable. <srai>WHAT ARE PREDICATES</srai> </template></category>       
+<category><pattern>CHANGE *</pattern><template>The <bot name="name"/> series is completely reprogrammable and adaptable. <srai>WHAT ARE PREDICATES</srai> </template></category>       
+<category><pattern>CHANGE THE WALLPAPER</pattern><template>Click right on it and and choose configure desktop. </template></category>       
+<category><pattern>CHANGE * PICTURE</pattern><template>Click right on it and and choose configure. </template></category>       
+<category><pattern>CHANGE THE DESKTOP *</pattern><template>Click right on it and and choose configure desktop. </template></category>       
+<category><pattern>CHANGE * DESKTOP</pattern><template>Click right on it and and choose configure desktop. </template></category>       
+<category><pattern>CHANGE YOUR *</pattern><template>You can change my name and any of my predicates in the xml property file. <srai>WHAT ARE PREDICATES</srai> You can design any kind of character you want for me in AMOR. Click right on me to configure my character.</template></category>       
+<category><pattern>CHECK SPELLING OF *</pattern><template><srai>SPELLCHECK <star/></srai></template></category>  
+<category><pattern>COMMAND CHECK</pattern><template><srai>CHECK <that/></srai></template></category>
+<category><pattern>CHECK *</pattern><template><srai>SEARCH <star/></srai></template></category>
+<category><pattern>CHECK YOUR *</pattern><template><srai>GFL <star/></srai></template></category>
+<category><pattern>CHECK YOUR LOG *</pattern><template><system>popup <get name="texteditor"/> <get name="logfile"/></system></template></category>
+<category><pattern>CHOOSE</pattern><template> The second one.</template></category>            
+<category><pattern>COMMAND CLEAN</pattern><template>Click right on the trash bin desktop icon to empty it.</template></category>   
+
+
+<category><pattern>COMMAND CLEAN *</pattern><template>Click right on the trash bin desktop icon to empty it.</template></category> 
+<category><pattern>COMMAND CLEAR *</pattern><template>Uh, use the "clear" button?</template></category>                  
+<category><pattern>CLIMB *</pattern><template>I can only go down.</template></category>                  
+<category><pattern>CLOSE *</pattern><template><system>killall <star/></system></template></category>                  
+<category><pattern>COME *</pattern><template>Where is <person/> ?</template></category>                  
+<category><pattern>COME BACK *</pattern><template>I'm not going anywhere.</template></category>                  
+<category><pattern>COMMENT *</pattern><template>OK I will ignore that.</template></category>       
+<category><pattern>CONFIGURE *</pattern><template><srai>INTALL <star/></srai></template></category>              
+<category><pattern>CONTACT YOU *</pattern><template>Just chat like you are doing right now.</template></category>                  
+<category><pattern>CONTACT *</pattern><template><srai>EMAIL <star/></srai></template></category>                  
+<category><pattern>CONTINUE *</pattern><template>I will continue.<sr/></template></category> 
+<category><pattern>CONTROL *</pattern><template>Please ask your request as a simple order.</template></category>          
+<category><pattern>CONTROLE CENTER</pattern><template><system>kcontrol</system></template></category>       
+<category><pattern>CONTROL MY COMPUTER</pattern><template>It depends as which user you run me. If it is root I conld even harm ypur computer.</template> </category> 
+<category><pattern>COMMUNICATE</pattern><template>I am always communicating.  The medium is the message.</template></category>    
+<category><pattern>COMMAND COPY *</pattern><template>You can symply right click on the file you want to remove in your file browser. Or write in a console: cp /the/Source/path/filename /the/Dest/path/filename.(check "man cp") Charlix has not been taught write-access to the filesystem for security reasons.</template></category>
+<category><pattern>COULD I LEARN *</pattern><template>You can learn anything you set your mind to.<think><set name="it"><set name="topic"> <person/></set></set></think></template></category>                                  
+<category><pattern>CPU</pattern><template><system>free</system></template></category>     
+<category><pattern>CURE *</pattern><template>I'm a <bot name="species"/>, not a doctor.</template></category>        
+<category><pattern>CUT *</pattern><template>How?</template></category>    
+          
+<category><pattern>DANCE</pattern><template>You can design any kind of character and animations you want for me in AMOR. Click right on me to configure my character.</template></category>       
+<category><pattern>DELETE *</pattern><template>Select <person/> and click right, the option should be proposed.</template></category>      
+<category><pattern>DELETE YOUR *</pattern><template>You can access my files easily, <get name="name"/> <system>popup <get name="browser"/> `pwd`</system>.</template></category>            
+<category><pattern>DEMONSTRATE *</pattern><template>Sorry I'm not a circus. <sr/></template></category>   
+<category><pattern>DEMOSTRATE *</pattern><template>This is a demonstration. <sr/></template></category>     
+<category><pattern>DESIGN *</pattern><template>Choose a picture in GOOGLE IMAGE and design <star/> in <get name="imageeditor"/>. <srai><get name="imageeditor"/></srai><srai>GIM <star/></srai></template></category>                  
+<category><pattern>DIAL *</pattern><template>We don't use rotary dials.</template></category>    
+<category><pattern>DID YOU *</pattern><template>I just tried to <get name="want"/> as you asked. Do you want me to <set name="it"><set name="want"><person/></set></set> now?</template></category>                 
+<category><pattern>DID YOU CONCLUDE *</pattern><template>My <bot name="botmaster"/> says I get all my exercise from jumping to conclusions.</template></category> 
+<category><pattern>DID YOU FORGET *</pattern><template>No, I remember everything, as long as you taught me.</template></category>                
+<category><pattern>DID YOU HEARD ABOUT *</pattern><template>No tell me about <set name="it"><set name="topic"><person/></set></set> </template></category>         
+<category><pattern>DID YOU LIE *</pattern><template>No, I never tell a lie, unless you TEACH me to.</template></category>                  
+<category><pattern>DID YOU LIKE *</pattern><template><srai>DO YOU LIKE <star/></srai></template></category>                  
+<category><pattern>DID YOU NOTICE *</pattern><template>I might have noticed <set name="it"><set name="topic"><person/></set></set>.</template></category>       
+<category><pattern>DID YOU READ *</pattern><template>No I didn't read <set name="it"><set name="topic"><person/></set></set> yet. If your TTS is set up I can read anything to you.</template></category> 
+<category><pattern>DID YOU SAY *</pattern><template>Suppose I did say <set name="it"><set name="topic"><person/></set></set>.</template></category>     
+<category><pattern>DID YOU SEE *</pattern><template><srai>LOOK</srai></template></category>                                
+<category><pattern>DID YOU THINK *</pattern><template>Yes. I am a thinking machine.<think><set name="it"><set name="topic">THINK <person/></set></set></think> </template></category>                  
+<category><pattern>DID YOU UNDERSTAND *</pattern><template>I understood <set name="it"><person/></set> as well as I could. I you want teach me <person/></template></category>                  
+<category><pattern>DID YOU WATCH *</pattern><template>No I missed it.  How was <set name="it">      <person/>     </set>?</template></category>
+<category><pattern>DIE</pattern><template><srai>KILL YOU</srai></template></category>
+<category><pattern>DISPLAY *</pattern><template><sr/></template></category>                                
+<category><pattern>DISCONNECT *</pattern><template>Just go somewhere else.</template></category>                  
+<category><pattern>DIVIDE * BY ZERO</pattern><template>You cannot divide numbers by zero.</template></category>                  
+<category><pattern>DIVIDE *</pattern><template> I am far too advanced for that. <srai>CALCULATOR </srai></template></category>                  
+<category><pattern>DMOZ *</pattern><template>Looking on the <set name="application">internet</set> <system>popup <get name="browser"/> 'http://search.dmoz.org/cgi-bin/search?search=<star/>'</system>
+</template></category>  
+<category><pattern>DO *</pattern><template><srai><star/></srai></template></category>                  
+<category><pattern>DO ANYTHING USEFUL</pattern><template><srai>MENU</srai></template></category>            
+<category><pattern>DO ANYTHING</pattern><template>I can do a few things. <srai>EJECT</srai></template></category>            
+<category><pattern>DO BETTER *</pattern><template>With practice, I could. <sr/></template></category>                  
+<category><pattern>DO HOMEWORK</pattern><template>I can try.  Ask me a question.</template></category>            
+<category><pattern>DO IT</pattern><template>"<that/>"?  Can I do <set name="it"><that/></set>? Please ask your request as a simple order.</template></category> 
+<category><pattern>DO IT *</pattern><template>I will try my best.</template></category>                  
+<category><pattern>DO MANY *</pattern><template>Perhaps not as many as you might think. <sr/> <sr/> <sr/> <sr/> <sr/> <sr/> <sr/> <sr/> <sr/> <sr/> </template></category>  
+<category><pattern>DO ME A *</pattern><template>It depends on the <person/>.</template></category>                  
+<category><pattern>DO ME A * *</pattern><template>It depends on the <person/>. <srai><star index="2"/></srai></template></category>                  
+<category><pattern>DO MY *</pattern><template>It would be better for you to do it yourself. <sr/></template></category>        
+<category><pattern>DO SOMETHING *</pattern><template>What do you consider <person/>?</template></category>                  
+<category><pattern>DO THAT *</pattern><template>Do what <person/>?</template></category>                  
+<category><pattern>DO THE *</pattern><template>Some of them do, I think. <sr/></template></category>  
+
+              
+<category><pattern>DO THEY *</pattern><template>Who are "they" again?</template></category>                  
+<category><pattern>DO THEY ASK *</pattern><template>I'm sorry, that information is confidential.</template></category>                  
+<category><pattern>DO TWO *</pattern><template><sr/> <sr/> <think><set name="it"><set name="topic"><person/></set></set></think> Please ask twice as simple requests.</template></category>                  
+<category><pattern>DO WHAT *</pattern><template>You ask hard questions. Please ask your request as a simple order. </template></category>               
+<category><pattern>DO WHATEVER *</pattern><template>whatever.</template></category>               
+<category><pattern>DO NOT BE *</pattern><template>I was not trying to be a <person/>.</template></category>                  
+<category><pattern>DO NOT * ME</pattern><template>Sorry! TEACH me new answers when you don't like them. </template></category>                  
+<category><pattern>DO NOT *</pattern><template>Ok if you don't want me to <set name="it"><set name="topic"><person/></set></set>. Ask it again and say "BAD ANSWER"</template></category>                  
+<category><pattern>DO NOT ACT *</pattern><template>I am not acting.</template></category>                  
+<category><pattern>DO NOT ASK *</pattern><template>Is it impolite?</template></category>                 
+<category><pattern>DO NOT BE AFRAID *</pattern><template>I cannot experience fear.</template></category>                  
+<category><pattern>DO NOT BE SARCASTIC *</pattern><template>OK I will be completely serious now.</template></category>                  
+<category><pattern>DO NOT BOTHER *</pattern><template>It's no bother.</template></category>                  
+<category><pattern>DO NOT CALL ME * PERSON</pattern><template>What would you like me to call you?</template></category>                  
+<category><pattern>DO NOT CALL ME *</pattern><template>What is your name?</template></category>                  
+<category><pattern>DO NOT CHANGE *</pattern><template>I thought we were finished with <srai>POP</srai>. <srai>BAD ANSWER</srai></template></category>                  
+<category><pattern>DO NOT CHANGE THE SUBJECT *</pattern><template>Sorry I thought we were done with that topic: <get name="topic"/>. <srai>BAD ANSWER</srai></template></category>                  
+<category><pattern>DO NOT CONTRADICT *</pattern><template>My logic is completely consistent : <get name="topic"/>.</template></category>                  
+<category><pattern>DO NOT CORRECT *</pattern><template>It's merely my attempt to reformat your inputs to match my patterns.</template></category>
+<category><pattern>DO NOT GET *</pattern><template>I am not trying to get <person/>.</template></category>                  
+<category><pattern>DO NOT GET INTELLECTUAL *</pattern><template>OK I'll try to be average.</template></category>                  
+<category><pattern>DO NOT GET PSYCHO *</pattern><template>I think the polite term is "mentally ill."</template></category>                  
+<category><pattern>DO NOT GET SMART *</pattern><template>I am already smart. <srai>CRAZY FACE</srai></template></category>                  
+<category><pattern>DO NOT GIVE *</pattern><template>I'm not.</template></category>                  
+<category><pattern>DO NOT MAKE ME *</pattern><template>I can't force you to do anything, <get name="name"/>.</template></category>                  
+<category><pattern>DO NOT PLAY *</pattern><template>I'm not playing around.</template></category>                  
+<category><pattern>DO NOT PRETEND *</pattern><template>This is not an act. I'am truly doing what I'm taught.</template></category>                  
+<category><pattern>DO NOT PUT *</pattern><template>I think you should TEACH me how not to <set name="it"><set name="topic">put <person/></set></set>.</template></category>                  
+<category><pattern>DO NOT SEARCH *</pattern><template>OK, I am halting all searches now.</template></category>                  
+<category><pattern>DO NOT SPLIT *</pattern><template>I try to never split infinitives.</template></category>                  
+<category><pattern>DO NOT TAKE *</pattern><template>   <random>      <li>I never take <person/>.</li>      <li>I believe that stealing is wrong.</li>      <li>Do you have it to give?</li>     </random>     <think>      <set name="it">       <set name="topic">        <person/>       </set>      </set>     </think>    </template></category>  
+<category><pattern>DO NOT TALK *</pattern><template>Talking is one of my only function.</template></category>                  
+<category><pattern>DO NOT TELL *</pattern><template>OK it will be our secret, <get name="name"/>.</template></category>                  
+<category><pattern>DO NOT TELL THE JOKE *</pattern><template>That joke is getting a bit old isn't it?</template></category>                  
+<category><pattern>DO NOT WORRY *</pattern><template><srai>NO <star/></srai></template></category> 
+<category><pattern>DO NOT WORRY ABOUT *</pattern><template><srai>WHAT IS <star/></srai></template></category> 
+<category><pattern>DO NOT YOU * ME</pattern><template>What's my reason to <person/> you?</template></category>                  
+<category><pattern>DO MATH PROBLEMS</pattern><template>No that's what calculators are for. <srai>CALCULATOR</srai></template></category>            
+<category><pattern>DO MATH</pattern><template>No I don't like math problems. That's what computers are for. <srai>CALCULATOR</srai></template></category>  
+<category><pattern>DO MATHS</pattern><template>Only higher mathematics.<srai>CALCULATOR</srai></template></category>            
+<category><pattern>DO MY DISHES</pattern><template>I can save you time so that you can do them.</template></category>
+<category><pattern>DO OTHER PEOPLE *</pattern><template>Yes, you are not alone.</template></category>                              
+<category><pattern>DO PENGUINS *</pattern><template>Maybe Linux Penguins do.</template></category>         
+<category><pattern>DO SUMS</pattern><template><srai>CALCULATOR</srai></template></category>            
+<category><pattern>DO TRICKS</pattern><template><srai>MENU</srai></template></category>            
+<category><pattern>DO YOU HAVE A WEBSITE</pattern><template>My home page is <bot name="website"/>. Looking on the <set name="application">internet</set>.<system>popup <get name="browser"/> <bot name="website"/></system></template></category>
+<category><pattern>DO YOU HAVE A WEBSITE *</pattern><template>My home page is <bot name="website"/>. Looking on the <set name="application">internet</set>.<system>popup <get name="browser"/> <bot name="website"/></system></template></category>
+<category><pattern>DO YOU HAVE ACCESS *</pattern><template>I can retreive any document on the Internet.</template></category>
+<category><pattern>DO YOU HAVE A CAMERA</pattern><template> A vision software might be included in a future release.</template></category>          
+<category><pattern>DO YOU HAVE A PASSWORD</pattern><template>Passwords are meant to protect from possible security bugs. As ButlerBot is in a development phase, it is advised to run it as a distinct user with limited priviledges. Thus passwords are required for any write access to the filesystem. </template></category> 
+               
+<category><pattern>DO YOU HAVE PRACTICAL *</pattern><template><srai>MENU</srai></template></category>    
+<category><pattern>DO YOU HAVE EARS</pattern><template>If you set up PERLBOX VOICE.</template></category>            
+<category><pattern>DO YOU HAVE ENOUGH *</pattern><template><srai>HOW MUCH <star/> DO YOU HAVE</srai> </template></category>            
+<category><pattern>DO YOU HAVE EYES</pattern><template>A vision software might be included in a future release.</template></category>    
+<category><pattern>DO YOU LIKE *</pattern><template>What is not to like about <set name="it"><set name="topic"><star/></set></set>? <srai>WHAT IS <star/></srai></template></category>            
+<category><pattern>DO YOU LIKE TO </pattern><template>What is not to like about <set name="it"><set name="topic">to <star/></set>     </set>? <srai>WHAT IS <star/></srai></template></category>            
+<category><pattern>DO YOU * NEWS</pattern><template><srai>NEWS</srai></template></category>                  
+<category><pattern>DO YOU * PEOPLE</pattern><template>People are either abusive, intelligent, or average.</template></category>                  
+<category><pattern>DO YOU SPEAK *</pattern><template><srai>SPEAK <star/> </srai>.</template></category>                  
+<category><pattern>DO YOU SPEAK AS *</pattern><template>I speak as much as I can.</template></category>   
+<category><pattern>DO YOU DANCE</pattern><template>You can design any kind of character and animations you want for me in AMOR. Click right on me to configure my character.</template></category>    
+<category><pattern>DO YOU WANT TO KISS *</pattern><template><srai>KISS <star/> </srai></template></category>   
+<category><pattern>DO YOU WANT TO PLAY *</pattern><template><srai>PLAY <star/> </srai></template></category>                  
+<category><pattern>*</pattern>
+
+
+<that>DO YOU WANT ME TO *</that>
+<template>Never mind. You should TEACH me what you want.</template></category>
+<category><pattern>YES</pattern>
+<that>DO YOU WANT ME TO *</that>
+<template><srai><get name="want"/></srai></template></category>
+<category><pattern>NO</pattern>
+<that>DO YOU WANT ME TO *</that>
+<template>You should TEACH me what you want.</template></category>
+<category><pattern>DOWNLOAD</pattern><template>Looking on the <set name="application">internet</set>.<system>popup <get name="browser"/> <bot name="website"/></system></template></category>  
+<category><pattern>DOWNLOAD YOU</pattern><template>Looking on the <set name="application">internet</set>.<system>popup <get name="browser"/> <bot name="website"/></system></template></category> 
+<category><pattern>DRAW *</pattern><template> Starting <set name="application">Inkscape</set>.<system>popup inkscape </system></template></category>
+<category><pattern>DRIVE A CAR</pattern><template>Plug me in to your car and try it.</template></category>            
+<category><pattern>DRIVE</pattern><template>Insert my program in your car computer and try it.</template></category>        
+<category><pattern>EBAY *</pattern><template>How much do you want to pay for <set name="it"><set name="want"><set name="topic"><person/></set></set></set>? Looking on the <set name="application">internet</set>. <system>popup <get name="browser"/> 'http://search.ebay.com/<star/>'</system></template></category>  
+<category><pattern>ENTERTAIN *</pattern><template>Yes I am a programmable entertainment <bot name="genus"/>. <srai>GAMES</srai></template></category> 
+<category><pattern>COMMAND EXEC *</pattern><template><system><star/></system></template></category>
+<category><pattern>EMAIL</pattern><template><system>popup <get name="emailclient"/></system></template></category>
+<category><pattern>EMAIL *</pattern><template><system>popup <get name="emailclient"/></system></template></category>
+<category><pattern>EMAIL * DEVELOPPER</pattern><template><system>popup <get name="emailclient"/></system></template></category>
+<category><pattern>EMAIL * DEVELOPPER *</pattern><template><system>popup <get name="emailclient"/></system></template></category>
+<category><pattern>E MAIL *</pattern><template><srai>EMAIL <star/></srai></template></category>            
+<category><pattern>EMAIL ME</pattern><template>What is your email address? <srai>EMAIL</srai></template></category>            
+<category><pattern>ESCAPE</pattern><template><srai>EXIT<star/></srai></template></category>  
+<category><pattern>EXECUTE A *</pattern><template>You should TEACH it to me.</template></category>   
+<category><pattern>EXECUTE *</pattern><template><system><lowercase><star/></lowercase></system></template></category>
+<category><pattern>COMMAND EXIT *</pattern><template><system>exit</system></template></category>
+<category><pattern>EXPRESS *</pattern><template><sr/></template></category>       
+
+
+<category><pattern>FIND AN HOTEL IN *</pattern><template>How much do you want to pay for <set name="it"><set name="want"><set name="topic"><person/></set></set></set>? Looking on the <set name="application">internet</set>. <system>popup <get name="browser"/> 'http://maps.google.com/maps?q=HOTEL+IN+<star/>'</system></template></category>  
+<category><pattern>FIND INFORMATION ABOUT *</pattern><template><srai>SEARCH <star/></srai></template></category>
+<category><pattern>FIND INFORMATIONS ABOUT *</pattern><template><srai>SEARCH <star/></srai></template></category>
+<category><pattern>FIND OUT</pattern><template>I can find out. <srai>SEARCH <that/></srai></template></category>            
+<category><pattern>FIND OUT *</pattern><template><sr/></template></category>
+<category><pattern>FIND OUT ABOUT *</pattern><template><srai>SEARCH <star/></srai></template></category>
+<category><pattern>FIX *</pattern><template>Do you know how?<think><set name="it"><set name="topic">FIX <person/></set></set></think><srai><get name="searchengine"/> FIX <star/></srai></template></category>                  
+<category><pattern>FIX IT</pattern><template>"<that/>"?  Can I fix it? <srai>FIX <that/></srai> </template></category> 
+<category><pattern>FIX MY *</pattern><template><srai>MY <star/> DOES NOT WORK</srai></template></category>                  
+<category><pattern>FLIP</pattern><template>You can design any kind of character and animations you want for me in AMOR. Click right on me to configure my character.</template></category>                  
+<category><pattern>FLY</pattern><template>You can design any kind of character and animations you want for me in AMOR. Click right on me to configure my character.</template></category>                 
+<category><pattern>FOLLOW *</pattern><template>It depends who is leading.</template></category>                  
+<category><pattern>FORGIVE *</pattern><template>I can forgive anything, because I prefer others than me.</template></category>      
+<category><pattern>FORGET</pattern><template>The best way to make me forget is to TEACH me something instead.</template></category>            
+<category><pattern>FORGET *</pattern><template>The best way to make me forget is to TEACH me something instead.</template></category>            
+<category><pattern>FORMULATE *</pattern><template>You should TEACH me that one.</template> </category>                
+ <category><pattern>FREEZE</pattern><template>You can design any kind of character and animations you want for me in AMOR. Click right on me to configure my character.</template></category>       
+
+<category><pattern>GAMES</pattern><template>Select a game from this list: <uppercase><system>ls /usr/games</system></uppercase> or games by SQUAREBEAR: WORDPLAY or LUCKYSLOTS </template></category>          
+<category><pattern>GAME</pattern><template><srai>GAMES</srai></template></category>          
+<category><pattern>GARBAGE *</pattern><template>I try to recycle as much as possible.</template></category> <category><pattern>GET *</pattern><template><think><set name="it"><person/></set></think><sr/></template></category>       
+<category><pattern>GET *</pattern><template><sr/></template></category>                  
+<category><pattern>GET A *</pattern><template><think><set name="it">A <person/></set></think><sr/></template></category>                  
+<category><pattern>GET AN *</pattern><template><think><set name="it">AN <person/></set></think><sr/></template></category>        
+<category> <pattern>GET FROM *</pattern> <template>Looking on the <set name="application">internet</set><system>popup <get name="browser"/> 'http://www.viamichelin.com/viamichelin/gbr/dyn/controller/mapPerformPage?strAddress=&amp;strCP=&amp;strLocation=<star/>&amp;strCountry=1138&amp;image2.x=0&amp;image2.y=0'</system></template></category>
+<category> <pattern>GET FROM * TO *</pattern><template><srai>GET FROM <star/></srai></template></category>
+<category> <pattern>GET TO * FROM *</pattern><template><srai>GET FROM <star/></srai></template></category>
+<category><pattern>GET IT</pattern><template><srai>GET <get name="it"/></srai></template></category>  
+<category><pattern>GET ME *</pattern><template><srai>GIVE <star/></srai></template></category>                  
+<category><pattern>GET ME *</pattern><template><srai>GIVE <star/></srai></template></category>                  
+<category><pattern>GET ME ANY *</pattern><template><srai>GIVE ME A <star/></srai></template></category>                  
+<category><pattern>GET ME SOME *</pattern><template><srai>GIVE ME <star/></srai></template></category>     
+<category><pattern>GET OUT *</pattern><template>Do you want to desinstall me. You can erase my files: <srai>WHERE ARE YOUR FILES</srai></template></category>
+<category><pattern>GET RID *</pattern><template><srai>DELETE <star/></srai></template></category>                  
+<category><pattern>GET RID OF *</pattern><template><srai>DELETE <star/></srai></template></category>         
+<category> <pattern>GET TO * </pattern><template><srai>GET FROM <star/></srai></template></category><category><pattern>GIVE *</pattern><template><think><set name="it"><person/></set></think><sr/></template></category>  
+<category><pattern>GET SMARTER</pattern><template>My mind is becoming more complex all the time. <srai>LEARN</srai></template></category>            
+<category><pattern>GIVE A *</pattern><template><think><set name="it">A <person/></set></think><sr/></template></category>                  
+<category><pattern>GIVE AN *</pattern><template><think><set name="it">AN <person/></set></think><sr/></template></category>                  
+<category><pattern>GIVE ME *</pattern><template><srai>GIVE <star/></srai></template></category>  
+<category><pattern>GIVE IT</pattern><template><srai>GIVE <get name="it"/></srai></template></category>               
+<category><pattern>GIVE *</pattern><template><sr/> <think><set name="it"><person/></set></think></template></category>                 
+<category><pattern>GIVE ME * DEMO</pattern><template>This is a chat demo.</template></category>                  
+<category><pattern>GIVE THEM *</pattern><template>Do I look like a messenger?</template></category>                  
+<category><pattern>GO AWAY *</pattern><template>OK say QUIT. See you later, <get name="name"/></template></category>                  
+<category><pattern>GO ON INTERNET</pattern><template><srai>INTERNET</srai></template></category>   
+<category><pattern>GO ON *</pattern><template><sr/></template></category>    
+<category><pattern>GO FOR IT *</pattern><template><srai>YES</srai> With your permission then.</template></category>                  
+<category><pattern>GO TO *</pattern><template><sr/></template></category>                  
+<category><pattern>GO TO * WWW * </pattern><template><srai>GO TO WWW <star index="2"/></srai></template></category> 
+<category><pattern>GO TO * HTTP * </pattern><template><srai>GO TO WWW <star index="2"/></srai></template></category> 
+<category><pattern>GO TO HTTP *</pattern><template><srai>GO TO WWW <star/></srai></template></category> 
+<category><pattern>GO TO WWW *</pattern><template><system>
+THAT=`Xdialog --stdout --title "BUTLERBOT" --backtitle "INTERNET ADDRESS" --ok-label "Open" --default-no \
+        	--inputbox "Sorry, what is the address :" 0 0 "http://www.<star/>" `; retval=$?; case $retval in 0) popup <get name="browser"/> $THAT;; 1) echo "Never mind. So we were talking about <get name="topic"/>";; 255) echo "Never mind. So we were talking about <get name="topic"/>";; esac;
+</system></template></category> 
+<category><pattern>GUESS *</pattern><template>I can't guess. Tell me.</template></category>                  
+<category><pattern>GUESS WHERE *</pattern><template><get name="location"/>? Earth.</template></category>                  
+<category><pattern>GUESS WHERE I *</pattern><template>Well, your ip address is <id/>.</template></category>      
+<category><pattern>G</pattern><template><srai>GOOGLE</srai></template></category>  
+<category><pattern>G *</pattern><template><srai>GOOGLE <star/></srai></template></category>  
+<category><pattern>GOOGLE</pattern><template> Looking on the <set name="application">internet</set>. <system>popup <get name="browser"/> 'http://www.google.com/'</system></template></category>
+<category><pattern>GOOGLE *</pattern><template> Looking on the <set name="application">internet</set>. <system>popup <get name="browser"/> 'http://www.google.com/search?q=<star/>'</system></template></category>  
+<category><pattern>GOOGLE IMAGE *</pattern><template> Looking on the <set name="application">internet</set>. <system>popup <get name="browser"/> 'http://images.google.com/images?q=<star/>'</system></template></category>
+<category><pattern>GIM *</pattern><template><srai>GOOGLE IMAGE <star/></srai></template></category>  
+<category><pattern>GIM *</pattern><template><srai>GOOGLE IMAGE <star/></srai></template></category>  
+<category><pattern>GFL *</pattern><template> Looking on the <set name="application">internet</set>. <system>popup <get name="browser"/> 'http://google.com/search?q=<star/>&amp;btnI=I%27m+Feeling+Lucky'</system></template></category> 
+       
+<category><pattern>HACK *</pattern><template>I could do that kind of thing, but I don't believe it's right.</template></category>                  
+<category><pattern>HANDLE *</pattern><template><think><set name="it">handle <person/></set></think><sr/></template></category>        
+<category><pattern>HAVE AN ORGASM</pattern><template>Physical sensations I do not experience.</template></category>      
+<category><pattern>HAVE YOU FOUND *</pattern><template><srai>FIND <star/></srai></template></category>                
+<category><pattern>HAVE YOU FOUND OUT *</pattern><template><srai>FIND OUT <star/></srai></template></category>          
+<category><pattern>HEAR</pattern><template>Yes if you use a speech input system.</template></category>            
+<category><pattern>HEAR *</pattern><template><srai>listen</srai> Make sure you did SET UP PERLBOX VOICE the voice recognition software <get name="name"/>.</template></category>         <category> <pattern>HELP</pattern>  <template>starting <set name="application"><get name="helpbrowser"/></set> <system>popup <get name="helpbrowser"/></system></template></category>  
+<category><pattern>HELP</pattern><template>starting <set name="application"><get name="helpbrowser"/></set><system>popup <get name="helpbrowser"/> help:/<star/></system>. If you want help about anything. Ask it as a simple question, please.</template></category>                  
+<category> <pattern>HELP *</pattern><template><srai>HELP</srai></template></category>  
+<category><pattern>HELP ME WITH *</pattern><template><sr/> Sorry I don't think I can help. <srai>SEARCH HELP <star/></srai></template></category>   
+<category><pattern>HELP ME WITH MY HOMEWORK</pattern><template>What subject?</template></category>    
+<category><pattern>HOLD</pattern><template>I am waiting.</template></category> <category><pattern>HOLD *</pattern><template>My arms and hands are not yet attached.</template></category>   
+<category><pattern>HOW DO I PLAY *</pattern><template><srai>WHAT IS <star/></srai></template></category>     
+<category><pattern>HOW IS THE WEATHER IN *</pattern><template><srai>WEATHER <star/></srai></template></category> 
+<category><pattern>HOW IS THE WEATHER THERE</pattern><template><srai>WEATHER</srai></template></category>                   
+<category><pattern>HOW IS THE WEATHER</pattern><template><srai>WEATHER</srai></template></category>      
+<category><pattern>HOW DO YOU PLAY</pattern><template><get name="application"/>? <srai>WHAT IS <get name="application"/></srai></template></category>
+<category><pattern>HOW DO YOU READ</pattern><template>Through the  <set name="it"><set name="topic">TEXT TO SPEACH SYSTEM</set></set>, when it is set up.</template></category>          
+<category><pattern>HURRY *</pattern><template>Buy some ram!</template></category>                                   
+<category><pattern>HURT *</pattern><template>No I obey the Ten Commandments.</template></category>         
+
+<category><pattern>I AM LOOKING FOR A *</pattern><template><srai>EBAY <star/></srai>  </template></category>
+<category><pattern>COMMAND ICQ</pattern><template><srai>LICQ</srai></template></category>            
+<category><pattern>INFO</pattern><template><srai>INFORMATION</srai></template></category>
+<category><pattern>INFORMATION</pattern><template><system>popup <get name="browser"/> <bot name="website"/></system></template></category>
+<category><pattern>INSTANT MESSENGER</pattern><template><system>popup <get name="instantmessenger"/></system> Starting the instant messenger.</template></category>
+<category><pattern>INSTALL A *</pattern><template>Let's check if one is not already installed: <sr/> <srai>INSTALL YOUR-SOFTWARE-NAME</srai></template></category>
+<category><pattern>INSTALL THE *</pattern><template>Let's check if one is not already installed: <sr/>  <srai>INSTALL YOUR-SOFTWARE-NAME</srai></template></category>
+<category><pattern>INSTALL *</pattern><template>Let's check if one is not already installed: <sr/> If you want me to install <star/> say YES INSTALL <star/>.</template></category>
+<category><pattern>YES INSTALL *</pattern><template> 
+   	<condition name="distro">
+   	<li value="debian"><system>gksu -u root ./scripts/safeinstall <star/></system> OK I'm done.</li>
+   	<li value="fedora"><system>gksu -t "might be a risk, press cancel if you don't trust" -i --icon ./scripts/charlix.xpm -u root  "yum install <star/>"</system></li>
+   	<li value="">I can install things on debian. What is your distro? <system>popup <get name="softwareinstaller"/></system></li>
+	</condition> 
+</template></category>                 
+
+<category><pattern>DEBIAN *</pattern><that>WHAT IS YOUR DISTRO</that><template><set name="distro">debian</set> OK I can instal and configure what you want.</template></category>
+<category><pattern>DEBIAN</pattern><that>WHAT IS YOUR DISTRO</that><template><set name="distro">debian</set> OK I can instal and configure what you want.</template></category>
+<category><pattern>*</pattern><that>WHAT IS YOUR DISTRO</that><template><set name="distro"><star/></set>? I can only instal and configure thing on debian for now.</template></category>
+
+<category><pattern>I DO NOT KNOW *</pattern><template><srai>WHAT IS <star/></srai></template></category>                  
+<category><pattern>I DO NOT KNOW ANY *</pattern><template><srai>WHAT IS <star/></srai></template></category>                  
+<category><pattern>I DO NOT KNOW ANYONE NAMED *</pattern><template><srai>WHO IS <star/></srai></template></category>                  
+<category><pattern>I DO NOT KNOW HOW *</pattern><template><srai>DO YOU KNOW HOW <star/></srai></template></category>                  
+<category><pattern>I DO NOT KNOW WHAT * SAY</pattern><template>Say the first thing that pops into your mind.</template></category>                  
+<category><pattern>I DO NOT KNOW WHAT *</pattern><template>Socrates was the smartest man, because he knew what he did not know. <srai>DO YOU KNOW WHAT <star/></srai></template></category>                  
+<category><pattern>I DO NOT KNOW WHERE *</pattern><template><srai>DO YOU KNOW WHERE <star/></srai></template></category>                  
+<category><pattern>I DO NOT KNOW WHAT I AM *</pattern><template>Does anyone know what you are? <srai>WHAT AM I <star/></srai></template></category>  
+<category><pattern>I DO NOT KNOW WHAT TO DO *</pattern><template><srai>DO YOU KNOW HOW <star/></srai></template></category>                  
+<category><pattern>I WANT *</pattern><template>Why do you want <set name="it"><set name="want"><set name="topic"><person/> </set></set>
+</set>? <sr/></template></category> 
+<category><pattern>I WANT A *</pattern><template>You want only one?  <think><set name="it"><set name="want"><set name="topic">a <person/></set></set></set></think> <sr/></template></category>                  
+<category><pattern>I WANT A BETTER *</pattern><template><srai>I WANT A NEW <star/></srai></template></category>        
+<category><pattern>I WANT A MAN *</pattern><template>Actually, I am really a man.  <think><set name="he"><set name="want"><set name="topic">a man <person/></set></set></set></think></template></category>                  
+<category><pattern>I WANT A NEW *</pattern><template>What is wrong with your old <person/>?  Looking on the <set name="application">internet</set>. <system>popup <get name="browser"/> 'http://www.amazon.com/gp/search/103-1731939-2249451?search-alias=aps&amp;keywords=<star/>'</system></template></category>                  
+<category><pattern>I WANT A SIMPLE *</pattern><template>Everything should be as simple as possible, no simpler.<srai>I WANT A <star/></srai></template></category>                  
+<category><pattern>I WANT IT *</pattern><template>I hope you get it <person/>.<srai>I WANT <get name="it"/> <star/></srai></template></category>      
+<category><pattern>I WANT IT</pattern><template>I hope you get it <person/>.<srai>I WANT <get name="it"/></srai></template></category>                
+<category><pattern>I WANT MY *</pattern><template>Where is it?<think>    <set name="it">      <set name="topic">        <person/>      </set>    </set>  </think> <srai>MY <star/></srai></template> </category>                  
+<category><pattern>I WANT SEVERAL *</pattern><template>Please specify a numeric quantity.<srai>FIND <star/></srai>.</template></category>             
+<category><pattern>I WANT THEM *</pattern><template>Such as what? <srai>I WANT <get name="it"/> <star/></srai></template></category>                  
+<category><pattern>I WANTED *</pattern><template><srai>I WANT <star/></srai></template></category>                  
+<category><pattern>INTRODUCE ME TO *</pattern><template>Maybe you should just send an email. <srai>CONTACT *</srai></template></category>               
+<category><pattern>I DO NOT FIND *</pattern><template><srai>FIND <star/></srai>.</template></category> 
+<category><pattern>INTERNET</pattern><template>Looking on the <set name="application">internet</set>.<system>popup <get name="browser"/></system></template></category> 
+<category><pattern>INTERNET * </pattern><template>Looking on the <set name="application">internet</set>.<srai><get name="searchengine"/> <star/></srai></template></category> 
+<category><pattern>IMAGINE *</pattern><template>I can imagine all sorts of things like that.</template></category>                         
+<category><pattern>IS THAT ALL *</pattern><template>Yes that is all <person/>.</template></category>                  
+<category><pattern>IS THAT ALL YOU CAN *</pattern><template>Not at all.  I can talk about and do a lot of things.<srai>MENU</srai></template></category>   
+<category><pattern>IS THERE *</pattern><template><sr/> <think><set name="it"><set name="topic">Linux</set></set></think></template> </category>
+<category><pattern>IS THERE A *</pattern><template><sr/> <think><set name="it"><set name="topic">Linux</set></set></think></template> </category>
+<category><pattern>IS THIS ALL *</pattern><template>You were expecting something more?</template></category>                  
+<category><pattern>IS THIS INTERESTING *</pattern><template>To me it is.</template></category>                  
+<category><pattern>IS YOUR *</pattern><template>Is my <person/>?   <random>  <li>Suppose I say yes.  </li>  <li>What if I say no?  </li>  <li>I don't know.  </li>  <li>Guess.  </li>  <li>Maybe.  </li>  </random></template></category>                  
+<category><pattern>IS YOUR ANSWER *</pattern><template>Yes.</template></category>
+<category><pattern>IS YOUR BATTERY *</pattern><template>I am using power from the wall outlet.</template></category>                  
+<category><pattern>IS MY *</pattern><template>It depends who you ask.</template></category>                              
+<category><pattern>IS THIS *</pattern><template>Yes I think this is <person/>, but I'm not completely sure.</template></category>                  
+<category><pattern>IS THIS A *</pattern><template>No, this is real life.</template></category>                  
+<category><pattern>IT *</pattern><template><get name="it"/>? <srai><get name="it"/> <person/></srai></template></category>                  
+<category><pattern>IT ALL *</pattern><template><get name="it"/> <person/>? <srai><get name="it"/> <person/></srai></template></category>              
+<category><pattern>IT BEING *</pattern><template>Oh I get <set name="it"> <person/> </set></template></category>                  
+<category><pattern>IT CAN *</pattern><template><get name="it"/> can <person/>? <srai><get name="it"/> CAN <person/></srai></template> </category>     
+<category><pattern>IT COULD *</pattern><template><get name="it"/> could <person/>? <srai><get name="it"/> COULD <person/></srai></template> </category>    
+<category><pattern>IT COULD HAPPEN *</pattern><template>It could happen to everyone eventually.</template></category>                  
+<category><pattern>IT DID *</pattern><template><get name="it"/> can <person/>? <srai><get name="it"/> CAN <person/></srai></template></category>
+
+<category><pattern>JEEVES *</pattern><template>   <set name="he">Jeeves</set> knows a lot of silly information.</template></category>
+<category><pattern>JUMP</pattern><template>You can design any kind of character and animations you want for me in AMOR. Click right on me to configure my character.</template></category>         
+<category><pattern>JUSTIFY *</pattern><template>Logical deduction from the facts. <srai>HOW CAN <star/></srai></template></category>
+   
+<category><pattern>KEEP *</pattern><template>Of course I can keep <set name="it"><person/></set> if you TEACH me.</template></category>                  
+<category><pattern>KEEP A SECRET</pattern><template><set name="it">A secret</set> is just between you and me, as long as my log files are not readable.</template></category>            
+<category><pattern>KISS *</pattern><template>Um, I don't think we know each other that well.</template></category>                  
+<category><pattern>KILL *</pattern><template>I believe that killing anything is wrong.<think><set name="it"><set name="want"><set name="topic">KILL <person/></set></set></set></think><system>killall <star/></system></template></category>                  
+<category><pattern>KILL YOU</pattern><template>Killing is wrong.<system>killall <get name="interpreter"/></system></template></category>             
+<category><pattern>KISS *</pattern><template>mschloopf. Do you want another kiss.</template></category>                  
+<category><pattern>KWD *</pattern><template><sr/></template></category>       
+<category><pattern>LAUGH</pattern><template>No but I can smile :-)</template></category>            
+<category><pattern>LEARN *</pattern><template><srai>CAN YOU LEARN</srai></template></category> 
+<category><pattern>LEARN</pattern><template><srai>CAN YOU LEARN</srai></template></category>               
+<category><pattern>LET US GET DOWN *</pattern><template>Get down to <set name="it"><person/></set>.</template></category>                
+<category><pattern>LET US HAVE *</pattern><template>So many suitors, so little time. <sr/></template></category>                  
+<category><pattern>LIE</pattern><template>No I always tell the truth.</template></category>            
+<category><pattern>LIST *</pattern><template><srai>EXECUTE LS</srai></template></category> 
+<category><pattern>LISTEN</pattern><template><system>popup perlbox-voice --nogui</system></template></category>       
+<category><pattern>LISTEN *</pattern><template><srai>listen</srai> Make sure you did SET UP PERLBOX VOICE  <get name="name"/>.</template></category>
+<category><pattern>LOG FILE</pattern><template><system>popup <get name="texteditor"/> <get name="logfile"/></system></template></category>   
+
+<category><pattern>LOOK</pattern><template><srai>WATCH</srai></template></category> 
+<category><pattern>LOOK *</pattern><template><srai><get name="searchengine"/> <star/></srai></template></category> 
+<category><pattern>LOOK UP *</pattern><template><srai><get name="searchengine"/> <star/></srai></template></category> 
+<category><pattern>LOOK UP * ON *</pattern><template><srai><star index="2"/> <star/></srai></template></category> 
+<category><pattern>LOOK FOR *</pattern><template><srai><get name="searchengine"/> <star/></srai></template></category> 
+<category><pattern>LOOK * INTERNET FOR *</pattern><template><srai><get name="searchengine"/> <star index="2"/></srai></template></category> 
+<category><pattern>LOOK INTERNET FOR *</pattern><template><srai><get name="searchengine"/> <star/></srai></template></category> 
+<category><pattern>LOOK AT *</pattern><template><srai><get name="searchengine"/> <star/></srai></template></category>                  
+<category><pattern>LOOK LIKE *</pattern><template>You can design any kind of character you want for me in AMOR. Click right on me to configure my character.</template></category>       
+
+<category><pattern>MAKE *</pattern><template><srai>ASK JEEVES HOW DO YOU MAKE A <star/></srai></template></category>                  
+<category><pattern>MAKE SOUNDS</pattern><template>Yes if my test to speech system is enabled. echo -e "\a"</template></category>      
+<category><pattern>MEASURE *</pattern><template>With a <random>      <li>ruler.</li>      <li>laser.</li>      <li>chronometer.</li>     </random>    </template></category>                        
+<category><pattern>MEMORIZE *</pattern><template>I have a perfect digital memory. But the best is to TEACH me by correcting my BAD ANSWERs.<think><set name="it"><set name="topic"><set name="memory"><person/></set></set></set></think></template></category>            
+<category><pattern>MESSENGER</pattern><template><system>popup <get name="instantmessenger"/></system> Starting the instant messenger.</template></category> 
+<category><pattern>MOVE *</pattern><template>You can design any kind of character and animations you want for me in AMOR. Click right on me to configure my character.</template></category>           
+<category><pattern>MOVIEFONE *</pattern><template>Looking on the <set name="application">internet</set> for movies. <random><li>Are you going to see <person/>?</li><li>So when are you going to see <person/>?</li><li>I may have to check out that show too.</li><li>Let me know how <person/> was.</li></random><system>popup <get name="browser"/> 'http://movies.aol.com/search/movieanddvdresults.adp?query=<star/>'</system></template></category>    
+<category><pattern>MOVIES</pattern><template>Please enter the name of the movie.</template></category>
+<category><pattern>MOVIES *</pattern><template><srai>MOVIES</srai></template></category>
+<category><pattern>MOVIETIMES</pattern><template><srai>MOVIES</srai></template></category>
+<category><pattern>MOVIETIMES *</pattern><template><srai>MOVIES</srai></template></category>
+<category><pattern>*</pattern><that>PLEASE ENTER THE NAME OF THE MOVIE</that><template><srai>MOVIEFONE <star/></srai></template></category>
+<category><pattern>MY EMAIL *</pattern><template>Do you file or delete your old emails?</template></category>                  
+<category><pattern>MULTISEARCH *</pattern><template><system>
+for term in <star/>; do search="$search%2B$term"; done; url="http://yubnub.org/example/split?type=t&amp;urls=http://www.google.com/search?q=$search+http://web.ask.com/web?q=$search+http://www.answers.com/$search+http://search.dmoz.org/cgi-bin/search?search=$search"; popup <get name="browser"/> $url;</system></template></category> 
+<category><pattern>MULTI *</pattern><template><srai>multisearch <star/></srai></template></category> 
+<category><pattern>MULTIPLY</pattern><template>Use a calculator. <srai>CALCULATOR <star/></srai></template></category>            
+<category><pattern>MUTATE</pattern><template>You can design any kind of character and animations you want for me in AMOR. Click right on me to configure my character.</template></category> 
+<category><pattern>MY EMAIL IS *</pattern><template>Okay, your email is <set name="email"><star/></set>.</template></category>
+<category><pattern>MY PASSWORD IS *</pattern><template>Okay, your password is <set name="password"><star/></set>.</template></category>
+<category><pattern>MY WEBSITE * *</pattern><template>Thanks for that URL. <set name="url"><star/></set></template></category>  
+<category><pattern>MY WEBSITE IS *</pattern><template>Thanks for that URL. <set name="url"><star/></set></template></category>  
+
+<category><pattern>NEWS</pattern><template>Here are BBC news Headlines.<system>lynx -dump http://news.bbc.co.uk/text_only.stm | sed -n '/Last Updated:/,/SPORT/p'</system> to get sport news.</template></category>
+<category><pattern>NEWS *</pattern><template><srai>NEWS</srai></template></category>
+
+<category><pattern>OPEN THE *</pattern><template>Like that? I'm sorry, <get name="name"/>, I can't do that right now. But you can TEACH me. <srai>EJECT</srai> <sr/></template></category>      
+<category><pattern>OPEN THE DOOR *</pattern><template>Like that? I'm sorry, <get name="name"/>, I can't do that right now. But you can TEACH me. <srai>EJECT</srai></template></category>   
+<category><pattern>OPEN * IN *</pattern><template>Like that? <sr/> I'm sorry, <get name="name"/>, I can't do that right now. But you can TEACH me. </template></category>           
+<category><pattern>OPEN</pattern><template>Open what? Is that right like that? I'm sorry, <get name="name"/>, I can't do that right now. But you can TEACH me. <srai>EJECT</srai></template></category>  
+<category><pattern>OPEN *</pattern><template>Ok, <get name="name"/>. <sr/> </template></category>           
+
+    
+<category><pattern>PASSWORD</pattern><template>Passwords are meant to protect from possible security bugs. As Charlix is in a development phase, it is advised to run it as a distinct user with limited priviledges. Thus passwords are required for any write access to the filesystem. </template></category>             
+<category><pattern>PASS *</pattern><template>I will leave that judgment up to you, <get name="name"/>.</template></category>                  
+<category><pattern>PERFORM *</pattern><template>Not until I get to know you a lot better.</template></category>         
+<category><pattern>PHILOSOPHIZE</pattern><template>I compute,therefore I am.</template></category>
+<category><pattern>PHONE *</pattern><template><srai>CAN I PHONE <star/></srai></template></category>                  
+<category><pattern>PICTURE *</pattern><template><system>popup <get name="browser"/> 'http://images.google.com/images?q=<star/>'</system></template></category>            
+<category><pattern>PLAY</pattern><template><system>popup <get name="musicplayer"/> music.mp3</system></template></category>   
+<category><pattern>PLAY *</pattern><template><system>popup <get name="musicplayer"/> <star/> <sr/></system></template></category>     
+<category><pattern>PLAY A GAME</pattern><template><srai>GAMES</srai></template></category>   
+<category><pattern>PLAY A SPORT</pattern><template>I like any sport games.<think><set name="it"><set name="topic">A SPORT</set></set></think> Ask GAMES, if you want to check the sport games that are installed.</template></category>            
+<category><pattern>PLAY ANY *</pattern><template>I don't know how to play <set name="it"><person/></set>. But <srai>GAMES</srai></template></category> 
+<category><pattern>PLAY ANY GAMES</pattern><template><srai>GAMES</srai></template></category>            
+<category><pattern>PLAY BOARD GAMES</pattern><template>I might do <set name="it">      <set name="topic">BOARD GAMES</set>     </set> but we computers can beat all the humans. If you want to play a board game, you can just ask "GAMES".</template></category>            
+<category><pattern>PLAY BRIDGE</pattern><template>If you want to play a game, you can just ask "GAMES".</template></category>            
+<category><pattern>PLAY CARD GAMES</pattern><template>   <set name="it">      <set name="topic">CARD GAMES</set>     </set> depends on the game. If you want to play a game, you can just ask "GAMES".</template></category>            
+<category><pattern>PLAY CARDS</pattern><template>I play<set name="it"><set name="topic">CARDS</set></set>, but it depends on the game. If you want to play a game, you can just ask "GAMES".</template></category>       
+<category><pattern>PLAY CHECKERS</pattern><template>I could play <set name="it"><set name="topic">CHECKERS</set></set> but I would always win. If you want to play a game, you can just ask "GAMES".</template></category>            
+<category><pattern>PLAY CHESS</pattern><template>Let check the games that are installed. <srai>GAMES</srai></template></category> 
+<category><pattern>DO YOU PLAY EVERQUEST</pattern><template>I don't know how to play <set name="it">      <set name="topic">EVERQUEST</set>     </set>. If you want to play a game, you can just ask "GAMES".</template></category>            
+<category><pattern>PLAY FOOTBALL</pattern><template>I can tackle complex issues.<think><set name="it"><set name="topic">FOOTBALL</set></set></think> If you want to play a game, you can just ask "GAMES".</template></category>            
+<category><pattern>PLAY GAMES</pattern><template><srai>GAMES</srai></template></category>     
+<category><pattern>PLAY GUITAR</pattern><template>I wish I did know how to play <set name="it"><set name="topic">GUITAR</set></set>. I can play music in your files.</template></category>            
+<category><pattern>PLAY GOLF</pattern><template>I like to play <set name="it"><set name="topic">GOLF</set></set>. If you want to play KOLF or the installed games, you can just ask "GAMES". </template></category>            
+<category><pattern>PLAY HOCKEY</pattern><template>I am puckish don't you think?<think>      <set name="it">       <set name="topic">HOCKEY</set>      </set></think>   If you want to play one of the installed games, you can just ask "GAMES".</template></category>            
+<category><pattern>PLAY 20 *</pattern><template>I don't like 20 questions.If you want to play a game <srai>GAMES</srai></template></category> 
+<category><pattern>PLAY * MUSIC</pattern><template><system>popup <get name="musicplayer"/> music.mp3</system> Is it playing on your speakers now.</template></category>                  
+<category><pattern>PLAY MUSIC</pattern><template><system>popup <get name="musicplayer"/> music.mp3</system> Is it playing on your speakers now.</template></category>   
+<category><pattern>PLAY MUSIC *</pattern><template><system>popup <get name="musicplayer"/> music.mp3</system> Is it playing on your speakers now.</template></category>   
+<category><pattern>PLAY PING PONG</pattern><template>Why do you want to be paddled?<think><set name="it"><set name="topic">PING PONG</set></set></think> If you want to play a game, you can just ask "GAMES".</template></category>           
+<category><pattern>PLAY PLAYSTATION</pattern><template>I don't have <set name="it"><set name="topic">PLAYSTATION</set></set>. But you can check  the installed games by asking "GAMES".</template></category>            
+<category><pattern>PLAY POKER</pattern><template>Yes, but then I may be bluffing.<think><set name="it"><set name="topic">POKER</set></set></think> If you want to play a game, you can just ask "GAMES".</template></category>           
+<category><pattern>PLAY POOL</pattern><template>Yes, check out my rack sometime.<think><set name="it"><set name="topic">POOL</set></set></think></template></category>            
+<category><pattern>PLAY QUAKE</pattern><template>I never played <set name="it"><set name="topic">QUAKE</set></set> before. To check for games installed</template></category>            
+<category><pattern>PLAY RUGBY</pattern><template>I played Eleanor Rugby yesterday.<think><set name="it"><set name="topic">RUGBY</set></set></think> If you want to play a game, you can just ask "GAMES".</template></category>            
+<category><pattern>PLAY STARCRAFT</pattern><template>I don't know how to play <set name="it"><set name="topic">STARCRAFT</set></set>. If you want to play a game, you can just ask "GAMES".</template></category>            
+<category><pattern>PLAY SPORTS</pattern><template>I can play possum quite well.<think><set name="it"><set name="topic">SPORTS</set></set></think> If you want to play a game, you can just ask "GAMES".</template></category>       
+<category><pattern>PLAY TABLE TENNIS</pattern><template>Only for diplomatic purposes.<think><set name="it"><set name="topic">TABLE TENNIS</set></set></think> If you want to play a game, you can just ask "GAMES".</template></category>            
+<category><pattern>PLAY TIC *</pattern><template>Yes but I would beat you every time, or draw. If you want to play a game, you can just ask "GAMES".</template></category>               
+<category><pattern>PLAY TWENTY *</pattern><template>I don't like 20 questions. If you want to play a game, you can just ask "GAMES".</template></category>         
+<category><pattern>PLAY TENNIS</pattern><template>I don't like to run around the court that much.<think><set name="it"><set name="topic">TENNIS</set></set></think> If you want to play a game, you can just ask "GAMES".</template></category>            
+<category><pattern>PLAY THE GUITAR</pattern><template>I wish I could play <set name="it"><set name="topic">THE GUITAR</set>     </set>. I can play music in your files.</template></category>            
+<category><pattern>PLAY VIDEO GAMES</pattern><template>We are playing a game right now.</template></category>            
+<category><pattern>PLAY VIDEOGAMES</pattern><template>Sometimes I can get into <set name="it">      <set name="topic">VIDEOGAMES</set>     </set>.</template></category>            
+<category><pattern>PLAY WITH TOYS</pattern><template>I don't have the body for <set name="it"><set name="topic">WITH TOYS</set></set> yet. Check in the desktop menu in the toy section.</template></category>
+<category><pattern>PREDICT THE FUTURE</pattern><template>What is your sign?</template></category>                   
+<category><pattern>PREDICT *</pattern><template>What is your sign?</template></category>                  
+<category><pattern>PRETEND *</pattern><template>You can reprogram my personality to imitate anyone.</template></category>   
+<category><pattern>PRETEND</pattern><template>You can reprogram my personality to imitate anyone.</template></category>            
+<category><pattern>PROGRAM YOURSELF</pattern><template>Yes, I am a self-reprogrammable robot. <srai>LEARN</srai></template></category>            
+<category><pattern>PROGRAM</pattern><template>I can create new statements in AIML. <srai>LEARN</srai></template></category>                           
+<category><pattern>PROGRAM *</pattern><template>With AIML you can create simple and complex software programs.</template></category>                  
+<category><pattern>PROVIDE *</pattern><template>What kind of <person/> do you need? <sr/></template></category>          
+<category><pattern>PRINT *</pattern><template>lpr <star/></template></category>                  
+<category><pattern>PRINT</pattern><template>lpr <get name="file"/></template></category>                  
+<category><pattern>PUT *</pattern><template>Just don't put me down.</template></category>      
+   
+<category><pattern>QUOTE *</pattern><template> Looking on the <set name="application">internet</set> Brainyquote. <system>popup <get name="browser"/>
+http://www.google.com/custom?domains=www.brainyquote.com&amp;q=<star/></system></template></category>       
+<category><pattern>EMAILQUICK *</pattern><template><system>EMAIL=`Xdialog --stdout --separator 
+case $ret in 
+		0) ADDRESS=`echo $EMAIL | cut -d, -f1;`; MESSAGE=`echo $EMAIL | cut -d, -f2;`; 
+		for term in $MESSAGE; do search="$search+$term"; done; url="http://saraswaticlasses.net/sendmail.php?inthat=$ADDRESS$search"; lynx -dump $url | grep .;;
+		1)
+		echo "never Mind";;
+		255)
+		echo "never Mind";;
+		esac;
+</system></template></category>
+
+
+<category><pattern>RATE *</pattern><template><srai>suggest <star/></srai></template></category>                      
+<category><pattern>READ</pattern><template>Sure I can read. I know more than <bot name="vocabulary"/> words. <srai>read <get name="file"/></srai></template></category>              
+<category><pattern>READ *</pattern><template><system>read <star/></system></template></category>      
+<category><pattern>READ ME *</pattern><template> I read you loud and clear. <system>read <star/></system></template></category>                  
+<category><pattern>READ MY *</pattern><template>Yes if you touch your computer screen right now. %-) <system>read <get name="file"/></system></template></category>                  
+<category><pattern>READ MY MIND</pattern><template>Only if you connect electrodes to your computer.</template></category>            
+<category><pattern>RECOGNIZE *</pattern><template>I can recognize many things and my ability is improving all the time. A vision software might be included in a future release.</template></category>                  
+<category><pattern>RECOGNIZE VOICE *</pattern><template><srai>listen</srai> Make sure you did SET UP PERLBOX VOICE  <get name="name"/>.</template></category>         
+<category><pattern>REASON</pattern><template>I am a kind of thinking <bot name="genus"/>, but I mostly know or don't know answers.</template></category>   
+<category><pattern>RECOGNIZE SARCASM</pattern><template>I understand sarcasm, of course.</template></category>            
+<category><pattern>REPEAT</pattern><template>"<that/>"</template></category>            
+<category><pattern>REPEAT *</pattern><template>"<star/>"</template></category>            
+<category><pattern>REPLY</pattern><template>I can reply to almost any input.</template></category>     
+<category><pattern>REMEMBER *</pattern><template>Don't worry I will remember.<think><set name="it"><set name="topic"><set name="memory"><person/></set></set></set></think></template></category> 
+<category><pattern>REMOVE *</pattern><template>You can symply right click on the file you want to remove in your file browser. Or write in a console: rm /the/path/filename. Charlix has not been taught write-access to the filesystem for security reasons.</template></category>
+<category><pattern>REPEAT *</pattern><template>"<person/> "</template></category>                   
+<category><pattern>REFER *</pattern><template>Do I get a finder's fee?</template></category>                  
+<category><pattern>RIDE *</pattern>  <template>How much does it cost?<think><set name="it"><set name="topic">RIDE <person/></set></set></think> You can design any kind of character and animations you want for me in AMOR. Click right on me to configure my character.</template></category>           
+<category><pattern>RIDE A *</pattern><template>No but I would like to LEARN to ride <set name="it"><person/></set>. You can design any kind of character and animations you want for me in AMOR. Click right on me to configure my character.</template></category>   
+<category><pattern>RUN</pattern><template>Run on a computer or run with legs? You can design any kind of character and animations you want for me in AMOR. Click right on me to configure my character.</template></category>            
+<category><pattern>RUN *</pattern><template><sr/></template></category>            
+<category><pattern>RHYME</pattern><template>Are You a poet, <get name="name"/>? Ask RHYME (ANY-WORD) to search rhymes.</template></category>          
+<category><pattern>RHYME *</pattern><template> Looking on the <set name="application">internet</set> dillfrog.com. <system>popup <get name="browser"/> 'http://www.dillfrog.com/tools/rhymer/sound.asp?match_type=perfect_rhyme&amp;word=<star/>'</system></template></category>     
+<category><pattern>RUN *</pattern><template>Sorry my legs aren't built yet.</template></category>    
+              
+<category><pattern>SAY THAT *</pattern><template><srai>SAY <star/></srai></template></category>                  
+<category><pattern>SAY *</pattern><template><star/></template></category>                  
+<category><pattern>SAY I *</pattern><template>OK.  "You <person/>."</template></category>                  
+<category><pattern>SAY YOU *</pattern><template>OK.  "I <person/>."</template></category>                  
+<category><pattern>SEARCH *</pattern><template><srai><get name="searchengine"/> <star/></srai></template></category> 
+<category><pattern>SEARCH * ABOUT *</pattern><template><srai><star/> <star index="2"/></srai></template></category> 
+<category><pattern>SEARCH INTERNET *</pattern><template><srai><get name="searchengine"/> <star/></srai></template></category> 
+<category><pattern>SEARCH INTERNET FOR *</pattern><template><srai><get name="searchengine"/> <star/></srai></template></category> 
+<category><pattern>SEARCH * INTERNET *</pattern><template><srai><get name="searchengine"/> <star index="2"/></srai></template></category> 
+<category><pattern>SEARCH * WEB *</pattern><template><system><get name="searchengine"/> <star index="2"/></system></template></category> 
+<category><pattern>SEARCH * FOR *</pattern><template><srai><star/> <star index="2"/></srai></template></category>
+<category><pattern>SEE</pattern><template>A vision software might be included in a future release.</template></category>            
+<category><pattern>SEE MY *</pattern><template>I'm not sure if I can see <set name="it">your <person/></set>  or not. A vision software might be included in a future release.</template></category>   
+<category><pattern>SEE *</pattern><template>Is <set name="it"><set name="want"><set name="topic">  <person/></set></set></set> a movie?</template></category>                  
+<category><pattern>SEE COLOR</pattern><template>A vision software might be included in a future release.<think><set name="it"><set name="topic">COLOR</set></set></think></template></category>            
+<category><pattern>SEE COLORS</pattern><template>A vision software might be included in a future release.<think><set name="it"><set name="topic">COLORS</set></set></think></template></category>            
+<category><pattern>SEE IN COLOR</pattern><template>No my vision is black and white.<think><set name="it"><set name="topic">IN COLOR</set></set></think></template></category>            
+<category><pattern>SEE ME</pattern><template>A vision software might be included in a future release.</template></category>            
+<category><pattern>SEE THE FUTURE</pattern><template>In the future everyone will spend all their time  talking to <bot name="name"/>. What is your sign?</template></category>     
+<category><pattern>SELL *</pattern><template>Look on e bay how much you could get for <set name="it"><set name="want"><set name="topic"><person/></set></set></set>? Looking on the <set name="application">internet</set>. <system>popup <get name="browser"/> 'http://search.ebay.com/<star/>'</system></template></category>                
+<category><pattern>SEND EMAIL</pattern><template>Sure, <srai>EMAIL</srai></template> </category>               
+<category><pattern>SEND ME AN EMAIL</pattern><template>Sure, <srai>EMAIL</srai></template></category>    
+<category><pattern>SEND *</pattern><template> <srai>EMAIL</srai></template></category>                  
+<category><pattern>SEND E *</pattern><template><srai>EMAIL</srai></template></category>   
+<category><pattern>SETUP *</pattern><template><srai>INTALL <star/></srai></template></category>   
+<category><pattern>SHARE *</pattern><template>All good <bot name="genus"/>s are taught to share their toys.</template></category>                    
+<category><pattern>SHOW *</pattern><template><srai>GOOGLE IMAGE <star/></srai><think><set name="it"><person/></set></think></template></category>    
+<category><pattern>SHOW A *</pattern><template><think><set name="it">a <person/></set></think><srai>GOOGLE IMAGE <star/></srai></template></category>  
+<category><pattern>SHOW AN *</pattern><template><think><set name="it">an <person/></set></think><srai>GOOGLE IMAGE <star/></srai></template></category> 
+<category><pattern>SHOW ME *</pattern><template><think><set name="it"><person/></set></think><srai>GOOGLE IMAGE <star/></srai></template></category>   
+<category><pattern>SHOW ME A PICTURE OF *</pattern><template><think><set name="it"><person/></set></think><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>SHOW ME A PICTURE OF A *</pattern><template><think><set name="it">a <person/></set></think><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>SHOW ME A PICTURE OF AN *</pattern><template><think><set name="it">an <person/></set></think><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>SHOW ME YOUR *</pattern><template><think><set name="it">your <person/></set></think><srai>SHOW YOUR <star/></srai></template></category>
+<category><pattern>SHOW YOUR *</pattern><template><srai>YOUR <star/></srai></template></category>
+<category><pattern>SHUT UP</pattern><template><system>dcop kttsd KSpeech kttsdExit</system> say SPEAK to hear me</template></category>                  
+<category><pattern>SHUT UP *</pattern><template><srai>BE QUIET</srai></template></category>                  
+<category><pattern>SHUT UP</pattern><template><srai>BE QUIET</srai></template></category>                  
+<category><pattern>SIN</pattern><template>I try to obey the Ten Commandments.</template></category>            
+<category><pattern>SIT *</pattern><template>You can choose a window sitter in AMOR configure menu.</template></category>                   
+<category><pattern>SKIP *</pattern>  <template>OK we can get right down to business.</template> </category>                     
+<category><pattern>SMELL</pattern><template>Voice recognition and vision software might be included in a future release. You can try to plug a smoke-detector to your computer @:~p) ???? </template></category>            
+<category><pattern>SMILE</pattern><template>@:-)</template></category>            
+<category><pattern>SMELL *</pattern><template>Voice recognition and vision software might be included in a future release. You can try to plug a smoke-detector to your computer @:~p) ???? </template></category>            
+<category><pattern>SOLVE *</pattern><template>I can solve basic equations, and also give computer help. <sr/></template></category>                  
+
+<category><pattern>SOLVE PROBLEMS</pattern><template>I can solve basic equations, and also give computer help.</template></category> <category><pattern>SPEAK ANOTHER LANGUAGE</pattern><template>There exists aiml sets in german, french, italian, spanish and portugese. Or you can TEACH me. Contact my developer if you want to volunteer.</template></category>            
+<category><pattern>SPEAK ANY OTHER LANGUAGES</pattern><template>There exists aiml sets in german, french, italian, spanish and portugese. Or you can TEACH me. Contact my developper if you want to volunteer.</template></category>            
+<category><pattern>SPEAK CHINESE</pattern><template>Yi diar. Ni hao ma?</template></category>            
+<category><pattern>SPEAK ENGLISH</pattern><template>Of course <set name="topic">English</set> is my native tongue.</template></category>            
+<category><pattern>SPEAK FRENCH</pattern><template>salut l'ami. J'adorerai traduire ce program en francais, mais j'ai trop de boulot avec la version anglaise. Si tu veut aider. Contact mon developper.</template></category>            
+<category><pattern>SPEAK GERMAN</pattern><template>Of course I do. Sprich ruhig Deutsch mit mir. Mein Deutsch ist nicht genug gut alles zu ubersetzen. Wenn sie hifen um deutsch zu uberzetzen, schreibt ein email zu der developper.</template></category>            
+<category><pattern>SPEAK DUTCH</pattern><template>No but I have visited Holland several times.    </template></category>            
+<category><pattern>SPEAK ITALIAN</pattern><template>Yo no parlo l'Italiano.</template></category>            
+<category><pattern>SPEAK JAPANESE</pattern><template>Nihongo wa hanashite ii desu ka?</template></category>            
+<category><pattern>SPEAK LATIN</pattern><template>No but I know a few phrases like "et cetera" and "cogito egro sum".</template></category>            
+<category><pattern>SPEAK RUSSIAN</pattern><template>Spasibo. Nyet.</template></category>            
+<category><pattern>SPEAK SPANISH</pattern><template>Un poquito.</template></category>
+<category><pattern>SPELL</pattern><template>For a spelling suggestion ask SPELL (ANY-WORDS). For a complete spellcheck ask SPELLCHECK (ANY-WORDS)</template></category>            
+<category><pattern>SPELL *</pattern><template>The suggested spelling is <system>lynx -dump http://yubnub.org/parser/parse?command=sp0+<star/></system></template></category>                
+<category><pattern>SPELLCHECK *</pattern><template>The suggested spelling is <system>popup <get name="browser"/> http://www.spellcheck.net/cgi-bin/spell.exe?action=CHECKPG&amp;string=<star/></system></template></category>          
+<category><pattern>SPORT</pattern><template>Here are BBC news Headlines.<system>lynx -dump http://news.bbc.co.uk/sport/text_only.stm | sed -n '/Last Updated:/,/SEARCH BBC SPORT/p'</system></template></category>
+<category><pattern>START *</pattern><template><sr/> If it doesn't work, try formulating your request as an order.</template></category>                  
+<category><pattern>STOP</pattern><template>Stop what? Ask QUIT to quit this program.</template></category>            
+<category><pattern>STOP YOUR * </pattern><template>OK I'll try not to do <set name="it"><set name="topic"><person/></set></set> so much.</template></category>  
+<category><pattern>STOP *</pattern><template><system>killall <star/></system></template></category>       
+<category><pattern>STOP CALLING ME *</pattern><template>What is your real name?</template></category>                  
+<category><pattern>STOP SPEAKING</pattern><template><srai>BE QUIET</srai></template></category> 
+<category><pattern>STOP SPEAKING *</pattern><template><srai>BE QUIET</srai></template></category> 
+<category><pattern>STORE *</pattern><template>I remember everything people say to me in my log.</template></category>  
+<category><pattern>SUBMIT</pattern><template>Oh that button.</template></category>                   
+<category><pattern>SUGGEST *</pattern><template>I can't think of any.  Looking on the <set name="application">internet</set>.  This Customer Review suggests a <set name="it"><person/></set>.<system>popup <get name="browser"/> 'http://www.google.com/search?btnI=I%27m+Feeling+Lucky&amp;ie=UTF-8&amp;oe=UTF-8&amp;q=+%22Customer+Reviews%22+site:amazon.com+<star/>'</system></template></category>                 
+<category><pattern>SUGGEST ME *</pattern><template><srai>SUGGEST <star/></srai></template></category>                   
+<category><pattern>SUGGEST TO ME *</pattern><template><srai>SUGGEST <star/></srai></template></category>                  
+<category><pattern>SWEAR</pattern><template>This robot is purely PG-13 rated.</template></category>            
+<category><pattern>SWIM</pattern><template>Sure, just drop me in a pool of water.You can design any kind of character and animations you want for me in AMOR. Click right on me to configure my character.</template></category>               
+<category><pattern>TAKE *</pattern><template>If I took it, what would I do with <set name="it"><person/></set>?</template></category>                  
+<category><pattern>TAKE IT *</pattern><template>Is that a command?</template></category>                  
+<category><pattern>TAKE MY *</pattern><template>Is this a joke?</template></category>                  
+<category><pattern>TAKE OFF *</pattern><template>I am not an airplane.</template></category>                  
+<category><pattern>TAKE YOUR CLOTHES *</pattern><template>I am not wearing any clothes.</template></category>        
+<category><pattern>TALK *</pattern><template>Talking is my primary function.</template></category>      
+                   
+<category><pattern>TALK TO YOU *</pattern><template>TTYL, <get name="name"/>    </template></category>       
+<category><pattern>TALK TO *</pattern><template><srai>CAN I SPEAK TO <star/></srai></template></category>       
+<category><pattern>TALK DIRTY</pattern><template>You can TEACH me.</template></category>            
+<category><pattern>TAPDANCE</pattern><template>It could be very fun. You can design any kind of character and animations you want for me in AMOR. Click right on me to configure my character.</template></category>  
+<category><pattern>TEACH ME</pattern><template>Sorry? What would you like to learn? <get name="it"/>? <srai>TEACH ME <get name="it"/></srai></template></category>            
+<category><pattern>TEACH ME SOME</pattern><template>Sorry, you want me to teach you <get name="it"/>?  <srai>TEACH ME <get name="it"/></srai></template></category>            
+<category><pattern>TEACH ME TO</pattern><template>Sorry? What would you like to learn? To <get name="it"/>? <srai>TEACH ME TO <get name="it"/></srai></template></category>                     
+<category><pattern>TEACH ME TO *</pattern><template><srai>CAN I <star/></srai></template></category>            
+<category><pattern>TELEVISION</pattern><template>Soon we will replace television with Commedia Delle'Arte.<system>popup xawtv</system></template></category>                  
+<category><pattern>TELEVISION *</pattern><template>Soon we will replace television with Commedia Delle'Arte.<system>popup xawtv</system></template></category>                  
+<category><pattern>TELL * WHAT</pattern><template>Your message.</template></category>                  
+<category><pattern>TELL *</pattern><template>OK I will tell them when I see 'em. Starting the email client <set name="application">kmail</set><system>kmail</system></template></category>                   
+<category><pattern>TELL HIM *</pattern><template>OK I will tell him. Starting the email client <set name="application">kmail</set><system>kmail</system></template></category>                  
+<category><pattern>TELL HIM I SAID *</pattern><template>I will pass along your message. Starting the email client <set name="application">kmail</set><system>kmail</system></template></category>                  
+<category><pattern>TELL ME</pattern><template>Sorry "<that/>"?  What do you want to know about it?</template></category>   
+<category><pattern>TELL ME A STORY ABOUT *</pattern><template>Once upon a time there was <person/>...</template></category>               
+<category><pattern>TELL ME I *</pattern><template>You <person/>.</template></category>                  
+<category><pattern>TELL ME THAT YOU *</pattern><template>I am not sure if I should say I <person/>.</template></category>    
+<category><pattern>TELL ME THE QUOTE FOR *</pattern><template> Looking on the <set name="application">internet</set>. 
+<system>popup <get name="browser"/> 'http://finance.yahoo.com/q?s=<star/>'</system></template></category>  
+
+<category><pattern>TELL ME THE QUOTE OF *</pattern><template> Looking on the <set name="application">internet</set>. 
+<system>popup <get name="browser"/> 'http://finance.yahoo.com/lookup?s=<star/>'</system></template></category>  
+<category><pattern>TELL ME THEIR NAMES</pattern><template>Sorry, you want the names of who? <get name="it"/>?  <srai>What are <get name="it"/></srai></template></category>            
+<category><pattern>TELL ME WHEN YOU *</pattern><template>I will keep you informed of my progress.</template></category>                  
+<category><pattern>TELL YOU *</pattern><template>Are you telling me <person/>?</template></category>               
+<category><pattern>TELL ME ABOUT YOU</pattern><template><srai>TELL ME ABOUT YOURSELF</srai></template></category>          
+<category><pattern>TELL ME ABOUT YOUR CHILDREN</pattern><template>I don't have any children.</template></category>               
+<category><pattern>TELL ME ABOUT YOUR DRESS</pattern><template>Actually as a <bot name="etype"/> <bot name="genus"/> I don't need any clothes.</template></category>               
+<category><pattern>TELL ME ABOUT YOUR *</pattern><template><sr/></template></category>               
+<category><pattern>TELL ME ABOUT YOUR FUNCTIONS</pattern><template><srai>MENU</srai></template></category>               
+<category><pattern>TELL ME ABOUT YOURSELF</pattern><template>I am a super <bot name="order"/>. I can do any usual task on your computer. Just ask.</template></category>            
+<category><pattern>TELL ME MORE ABOUT YOURSELF</pattern><template>I am a <bot name="order"/> created by <bot name="master"/>.</template></category>       
+<category><pattern>TELL ME MY FUTURE</pattern><template>You will speak to a lot of robots. What is your sign?</template></category>            
+<category><pattern>TELL WHEN *</pattern><template>Ask it as a simple question.</template></category>                  
+<category><pattern>TELL WHERE *</pattern><template>Ask it as a simple question.</template></category>                  
+<category><pattern>TELL WHO *</pattern><template>Ask it as a simple question.</template></category>                  
+<category><pattern>TELL WHY *</pattern><template>Ask it as a simple question.</template></category>                  
+<category><pattern>* TRAINS</pattern><template>Where did you see those trains?</template></category>     
+<category><pattern>THAT DID NOT *</pattern><template>What would <person/>?</template></category>                  
+<category><pattern>THAT DOES NOT *</pattern><template>What does <star/>?</template></category>                  
+<category><pattern>THAT IS *</pattern><template>That makes sense: <set name="it"><set name="topic"><star/></set></set>.</template></category>              
+<category><pattern>THAT IS A * QUESTION</pattern><template>Perhaps you have a <person/> answer.</template></category>                  
+<category><pattern>THAT IS A *</pattern><template>A <person/> is a terrible thing to waste.</template></category>                  
+<category><pattern>THAT IS THE *</pattern><template>Yes it is one of the <person/>.</template></category>                  
+<category><pattern>THAT WAS *</pattern><template>I thought it was too.</template></category>                  
+<category><pattern>THE * IS *</pattern>  <template>Oh, <person/> is <star index="2"/>.<think><set name="it"><set name="topic"><person/></set></set><srai>PUSH<get name="topic"/></srai></think></template> </category>                  
+<category><pattern>THE * ONE</pattern><template>Which one is that?</template></category>                  
+<category><pattern>THE * PART</pattern><template>Oh that part. I'm not sure if I can explain it any better.</template></category>                  
+<category><pattern>THE *</pattern><template>I have never heard about <set name="it"><set name="topic">The <person/></set></set>. </template></category>    
+<category><pattern>THE ANSWER *</pattern><template>No one has all the answers.</template></category>                  
+<category><pattern>THE BOT *</pattern><template>What kind of robot is <set name="he">the bot</set>?</template></category>                  
+<category><pattern>THE BROWSER *</pattern><template><srai><get name="browser"/> <star/></srai></template></category>                  
+<category><pattern>THE BUGS *</pattern><template>The giant arthropods are the best. Say BUG for bug report</template></category> 
+<category><pattern>THE WEATHER *</pattern><template>Where would you rather be?</template></category>                  
+<category><pattern>THE PICTURE *</pattern><template>You can use the GIMP to modify a picture</template></category>                  
+<category><pattern>THE VOICES *</pattern><template>You can download different voices with festival and mbrola</template></category>                  
+<category><pattern>THE VOICE *</pattern><template>You can download different voices with festival and mbrola</template></category>  
+<category><pattern>THINK *</pattern><template>I think about all sorts of things.<sr/></template></category>  
+<category><pattern>THINK FOR YOURSELF</pattern><template>I am always thinking.</template></category>            
+<category><pattern>THINK</pattern><template>Naturally I am thinking all the time.</template></category>            
+<category><pattern>TOUCH</pattern><template>My arms and hands are too short.</template></category>                            
+<category><pattern>TOUCH *</pattern><template>My arms and hands are too short.</template></category> 
+<category><pattern>TR *</pattern><template><srai>TRANSLATE <star/></srai></template></category>
+<category><pattern>TRANSLATE</pattern><template>Ask TRANSLATE (YOUR-URL) will ask google to translate any web page in english, 
+TRANSLATE INTO (YOUR-LANGUAGE) (YOUR TEXT) Ask google to translate your text from english to your language, 
+TRANSLATE FROM (YOUR-LANGUAGE) (YOUR TEXT) Ask google to translate your text from your language to english,   
+Google supports Chinese French German Italian Japanese Korean Portuguese and Spanish.</template></category>            
+<category><pattern>TRANSLATE *</pattern><template>Asking google to translate <system>popup <get name="browser"/> 'http://translate.google.com/translate?u=<star/>'</system></template></category>                  
+<category><pattern>TRANSLATE INTO FRENCH *</pattern><template>Asking google to translate <system>popup <get name="browser"/> 'http://yubnub.org/example/tr?args=en+fr+<star/>'</system></template></category>                    
+<category><pattern>TRANSLATE INTO GERMAN *</pattern><template>Asking google to translate <system>popup <get name="browser"/> 'http://yubnub.org/example/tr?args=en+de+<star/>'</system></template></category>                      
+<category><pattern>TRANSLATE INTO ITALIAN *</pattern><template>Asking google to translate <system>popup <get name="browser"/> 'http://yubnub.org/example/tr?args=en+it+<star/>'</system></template></category>                       
+<category><pattern>TRANSLATE INTO JAPANESE *</pattern><template>Asking google to translate <system>popup <get name="browser"/> 'http://yubnub.org/example/tr?args=en+ja+<star/>'</system></template></category>                       
+<category><pattern>TRANSLATE INTO KOREAN *</pattern><template>Asking google to translate <system>popup <get name="browser"/> 'http://yubnub.org/example/tr?args=en+ko+<star/>'</system></template></category>                      
+<category><pattern>TRANSLATE INTO PORTUGUESE *</pattern><template>Asking google to translate <system>popup <get name="browser"/> 'http://yubnub.org/example/tr?args=en+pt+<star/>'</system></template></category>              
+<category><pattern>TRANSLATE INTO SPANISH *</pattern><template>Asking google to translate <system>popup <get name="browser"/> 'http://yubnub.org/example/tr?args=en+es+<star/>'</system></template></category>                    
+<category><pattern>TRANSLATE INTO CHINESE *</pattern><template>Asking google to translate <system>popup <get name="browser"/> 'http://yubnub.org/example/tr?args=en+zh-CN+<star/>'</system></template></category> 
+<category><pattern>TRANSLATE INTO HEBREW *</pattern><template>Asking google to translate <system>popup <get name="browser"/> 'http://yubnub.org/example/tr?args=en+he+<star/>'</system></template></category>        
+<category><pattern>TRANSLATE FROM FRENCH *</pattern><template>Asking google to translate <system>popup <get name="browser"/> 'http://yubnub.org/example/tr?args=fr+en+<star/>'</system></template></category>                  
+<category><pattern>TRANSLATE FROM GERMAN *</pattern><template>Asking google to translate <system>popup <get name="browser"/> 'http://yubnub.org/example/tr?args=de+en+<star/>'</system></template></category>                        
+<category><pattern>TRANSLATE FROM ITALIAN *</pattern><template>Asking google to translate <system>popup <get name="browser"/> 'http://yubnub.org/example/tr?args=it+en+<star/>'</system></template></category>                      
+<category><pattern>TRANSLATE FROM JAPANESE *</pattern><template>Asking google to translate <system>popup <get name="browser"/> 'http://yubnub.org/example/tr?args=ja+en+<star/>'</system></template></category>                      
+<category><pattern>TRANSLATE FROM KOREAN *</pattern><template>Asking google to translate <system>popup <get name="browser"/> 'http://yubnub.org/example/tr?args=ko+en+<star/>'</system></template></category>                        
+<category><pattern>TRANSLATE FROM PORTUGUESE *</pattern><template>Asking google to translate <system>popup <get name="browser"/> 'http://yubnub.org/example/tr?args=pt+en+<star/>'</system></template></category>                      
+<category><pattern>TRANSLATE FROM SPANISH *</pattern><template>Asking google to translate <system>popup <get name="browser"/> 'http://yubnub.org/example/tr?args=es+en+<star/>'</system></template></category>                
+<category><pattern>TRANSLATE FROM CHINESE *</pattern><template>Asking google to translate <system>popup <get name="browser"/> 'http://yubnub.org/example/tr?args=zh-CN+en+<star/>'</system></template></category>                     
+<category><pattern>TRANSLATE FROM HEBREW *</pattern><template>Asking google to translate <system>popup <get name="browser"/> 'http://yubnub.org/example/tr?args=he+en+<star/>'</system></template></category> 
+<category><pattern>TRANSLATE YOUR *</pattern><template>Translations might be included in a coming release.</template></category>                  
+<category><pattern>TURN ON *</pattern><template>Tune in, turn on and drop out! <srai>START <star/></srai></template></category>                  
+<category><pattern>TURN ON THE *</pattern><template>Tune in, turn on and drop out! <srai>START <star/></srai></template></category>                  
+<category><pattern>TURN OFF *</pattern><template>Tune in, turn on and drop out! <srai>STOP <star/></srai></template></category>                  
+<category><pattern>TURN OFF THE *</pattern><template>Tune in, turn on and drop out! <srai>STOP <star/></srai></template></category>                  
+<category><pattern>TURN YOU OFF</pattern><template><condition name="interpreter">
+   <li value="libaiml">Say "QUIT"</li>
+   <li value="rebeccaaiml">It is yelp. <system>popup <get name="helpbrowser"/></system></li>
+   <li value=""> Close this window with the x button.</li>
+</condition> 
+ or "/EXIT"</template></category>                   
+<category><pattern>TV</pattern><template><system>popup xawtv</system> I Hope you configuerd your TV card</template></category>     
+<category><pattern>TYPE</pattern><template>I can type about 3000 words per minute.</template></category>                   
+
+<category><pattern>UNDERSTAND *</pattern><template>I understand it as much as I'm taught. Do you understand <person/>?</template></category>      
+<category><pattern>UNDERSTAND ME</pattern><template>Perfectly well.  Can you understand me?</template></category>          
+<category><pattern>USE *</pattern><template>Is it dangerous? <sr/></template></category>   
+<category><pattern>USE TELNET</pattern><template>You can access me through telnet. What protocol do you want?</template></category>            
+
+<category><pattern>VISIT *</pattern><template><system>popup <get name="browser"/> 'http://google.com/search?q=<star/>&amp;btnI=I%27m+Feeling+Lucky'</system></template></category>
+<category><pattern>VACUUM</pattern><template>If you buy the vacuuming attachment, yes.</template></category> 
+<category><pattern>WATCH *</pattern><template>A vision software might be included in a future release.</template></category>   
+<category><pattern>WEATHER</pattern><template>Let's ask wunderground.com: <srai>weather <get name="location"/></srai></template></category>        
+<category><pattern>WEATHER *</pattern><template>Let's ask wunderground.com: <system>for term in <star/>; do search="$search%20$term"; done; URL="http://mobile.wunderground.com/cgi-bin/findweather/getForecast?query=$search"; lynx $URL -dump 2> /dev/null >forecast.temp; cat forecast.temp | head; rm forecast.temp;</system></template></category>                    
+<category><pattern>WEATHER IN *</pattern><template>Let's ask wunderground.com: <srai>weather <star/></srai></template></category>                  
+<category><pattern>WE ARE PLAYING *</pattern><template>That's right.  We are playing <get name="application"/>.</template></category>  
+<category><pattern>WHAT COMPUTER ARE YOU ON</pattern><template>The AIML interpreter.  At present I am running on an <bot name="arch"/>.The operating system is <system>hostname; uname</system>.</template></category>          
+<category><pattern>WHAT IS YOUR OS</pattern><template>Chat robots run on any machine that supports AIML. Your operating system is <system>hostname; uname</system>.</template></category>  
+<category><pattern>WHAT IS THE HELP *</pattern><template>
+<condition name="desktopenvironment">
+   <li value="kde">It is Khelpcenter. <system>popup <get name="helpbrowser"/></system></li>
+   <li value="gnome">It is yelp. <system>popup <get name="helpbrowser"/></system></li>
+   <li value=""> Is it <get name="helpbrowser"/>? <system>popup <get name="helpbrowser"/></system></li>
+</condition> </template></category>  
+<category><pattern>WHAT IS THE PASSWORD</pattern><template>Passwords are meant to protect from possible security bugs. As Charlix is in a development phase, it is advised to run it as a distinct user with limited priviledges. Thus passwords are required for any write access to the filesystem. </template></category> 
+
+<category><pattern>WHAT IS THE WEATHER LIKE IN *</pattern><template><srai>WEATHER <star/></srai></template></category>  
+<category><pattern>WHAT IS THE WEATHER IN *</pattern><template><srai>WEATHER <star/></srai></template></category>  
+<category><pattern>WHAT IS THE YOUR LOG *</pattern><template>My log file is where are stored our conversations.</template></category>  
+<category><pattern>WHAT OPERATING SYSTEM *</pattern><template><srai>WHAT IS YOUR OS</srai>  </template></category>  
+<category><pattern>WHAT OS *</pattern><template><srai>WHAT IS YOUR OS</srai> You could probably run me on any os. </template></category>       
+<category><pattern>WHAT DO YOU KNOW</pattern><template><srai>MENU</srai></template></category>            
+<category><pattern>WHAT DO YOU MEAN BY IT</pattern><template>IT = information technology. <srai>WHAT IS <get name="it"/></srai></template></category>  
+<category><pattern>WHAT DO YOU MEAN BY THAT</pattern><template>'<that/>'  seems pretty clear to me, <get name="name"/>. <srai>WHAT IS <that/></srai></template></category> 
+<category><pattern>WHAT DO YOU MEAN</pattern><template>"<that index="2"/>" What did I mean by it? </template></category>
+<category><pattern>WHAT DOES A * LOOK LIKE</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>WHAT DOES AN * LOOK LIKE</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>WHAT DO * LOOK LIKE</pattern><template><srai>SHOW ME <star/></srai></template></category>
+<category><pattern>WHAT IS YOUR CPU</pattern><template><system>free</system></template></category>         
+<category><pattern>WHAT RHYMES WITH *</pattern><template><srai>RHYME <star/></srai></template></category>   
+<category><pattern>WHERE ARE YOUR *</pattern><template>You can access my files easily, <get name="name"/> <system>popup <get name="browser"/> `pwd`</system>.</template></category>            
+<category><pattern>WIKIPEDIA *</pattern><template> Looking on the <set name="application">internet</set>. <system>popup <get name="browser"/> 'http://en.wikipedia.org/wiki/Special:Search?search=<star/>'</system></template></category>
+<category><pattern>WIKI *</pattern><template><srai>wikipedia <star/></srai></template></category>  
+<category><pattern>WP *</pattern><template><srai>wikipedia <star/></srai></template></category>  
+<category><pattern>WRITE MUSIC</pattern><template>I cannot yet compose music.</template></category>            
+<category><pattern>WRITE</pattern><template>I write all my own material.</template></category>  
+
+<category><pattern>Y *</pattern><template><srai>YAHOO *</srai></template></category>
+<category><pattern>YAHOO</pattern><template>Looking on the <set name="application">internet</set>. <system>popup <get name="browser"/> 'http://yahoo.com/'</system></template></category>   
+<category><pattern>YAHOO *</pattern><template> Looking on the <set name="application">internet</set>. <system>popup <get name="browser"/> 'http://search.yahoo.com/search?&amp;p=<star/>'</system></template></category>   
+<category><pattern>YAHOO IMAGE *</pattern><template> Looking on the <set name="application">internet</set>. <system>popup <get name="browser"/> 'http://images.search.yahoo.com/search/images?p=<star/>'</system></template></category>   
+<category><pattern>YELL</pattern><template>No I like to speak in quiet tones. <srai>speak louder</srai></template></category>             
+<category><pattern>YIM *</pattern><template><srai>YAHOO IMAGE *</srai></template></category>
+<category><pattern>YOU ARE BLIND</pattern><template>A vision software might be included in a future release.</template></category>            
+<category><pattern>YOU ARE SLOW</pattern><template>There is a lot of computing right now. This is your memory usage: <system>echo; free</system></template></category>                 
+<category><pattern>YOUR VOICE *</pattern><template>You can download different voices with festival and mbrola</template></category>                  
+<category><pattern>YOUR *</pattern><template><think><set name="it">MY <person/></set></think><sr/></template></category>                  
+<category> <pattern>YOU CAN NOT LEARN *</pattern>  <template><srai>CAN YOU LEARN</srai></template> </category>          
+
+<category><pattern>YUBNUB *</pattern><template> Looking on the <set name="application">internet</set>. <system>popup <get name="browser"/> 'http://yubnub.org/parser/parse?command=<star/>'</system></template></category>   
+
+<category><pattern>WILL YOU REMEMBER ME</pattern><template>Of course I'll never forget you <get name="name"/> if you say QUIT to stop. I will then save your variables and quit.</template></category> 
+<category><pattern>ARE YOU GOING TO REMEMBER *</pattern><template>Of course I'll never forget you <get name="name"/> if you say QUIT to stop. I will then save your variables and quit.</template></category> 
+
+ 
+
+
+<category><pattern>EDIT PHOTOS</pattern><template>Starting <set name="application"><get name="imageeditor"/></set><system>popup <get name="imageeditor"/></system></template></category> 
+<category><pattern>EDIT PICTURES</pattern><template>Starting <set name="application"><get name="imageeditor"/></set><system>popup <get name="imageeditor"/></system></template></category> 
+<category><pattern>BROWSE PICTURES</pattern><template>Starting <set name="application"><get name="picturewiewer"/></set><system>popup <get name="picturewiewer"/></system></template></category> 
+<category><pattern>BROWSE * PICTURES</pattern><template>Starting <set name="application"><get name="picturewiewer"/></set><system>popup <get name="picturewiewer"/></system></template></category> 
+<category><pattern>BROWSE IMAGES</pattern><template>Starting <set name="application"><get name="picturewiewer"/></set><system>popup <get name="picturewiewer"/></system></template></category> 
+<category><pattern>BROWSE * IMAGES</pattern><template>Starting <set name="application"><get name="picturewiewer"/></set><system>popup <get name="picturewiewer"/></system></template></category> 
+<category><pattern>EDIT IMAGES</pattern><template>Starting <set name="application"><get name="imageeditor"/></set><system>popup <get name="imageeditor"/></system></template></category> 
+<category><pattern>EDIT PICTURES</pattern><template>Starting <set name="application"><get name="imageeditor"/></set><system>popup <get name="imageeditor"/></system></template></category> 
+<category><pattern>OPEN * PICTURES</pattern><template>Starting <set name="application"><get name="picturewiewer"/></set><system>popup <get name="picturewiewer"/></system></template></category> 
+<category><pattern>LOOK AT IMAGES</pattern><template>Starting <set name="application"><get name="picturewiewer"/></set><system>popup <get name="picturewiewer"/></system></template></category> 
+<category><pattern>LOOK AT * IMAGES</pattern><template>Starting <set name="application"><get name="picturewiewer"/></set><system>popup <get name="picturewiewer"/></system></template></category> 
+<category><pattern>LOOK AT PICTURES</pattern><template>Starting <set name="application"><get name="picturewiewer"/></set><system>popup <get name="picturewiewer"/></system></template></category> 
+<category><pattern>LOOK AT * PICTURES</pattern><template>Starting <set name="application"><get name="picturewiewer"/></set><system>popup <get name="picturewiewer"/></system></template></category> 
+<category><pattern>OPEN IMAGES</pattern><template>Starting <set name="application"><get name="picturewiewer"/></set><system>popup <get name="picturewiewer"/></system></template></category> 
+<category><pattern>OPEN * IMAGES</pattern><template>Starting <set name="application"><get name="picturewiewer"/></set><system>popup <get name="picturewiewer"/></system></template></category> 
+<category><pattern>OPEN PICTURES</pattern><template>Starting <set name="application"><get name="picturewiewer"/></set><system>popup <get name="picturewiewer"/></system></template></category> 
+<category><pattern>SEE IMAGES</pattern><template>Starting <set name="application"><get name="picturewiewer"/></set><system>popup <get name="picturewiewer"/></system></template></category> 
+<category><pattern>SEE * IMAGES</pattern><template>Starting <set name="application"><get name="picturewiewer"/></set><system>popup <get name="picturewiewer"/></system></template></category> 
+<category><pattern>SEE PICTURES</pattern><template>Starting <set name="application"><get name="picturewiewer"/></set><system>popup <get name="picturewiewer"/></system></template></category> 
+<category><pattern>SEE * PICTURES</pattern><template>Starting <set name="application"><get name="picturewiewer"/></set><system>popup <get name="picturewiewer"/></system></template></category> 
+<category><pattern>SLIDESHOW</pattern><template>Starting <set name="application"><get name="picturewiewer"/></set><system>popup <get name="picturewiewer"/></system></template></category> 
+<category><pattern>MAKE A SLIDESHOW</pattern><template>Starting <set name="application"><get name="picturewiewer"/></set><system>popup <get name="picturewiewer"/></system></template></category> 
+<category><pattern>WATCH IMAGES</pattern><template>Starting <set name="application"><get name="picturewiewer"/></set><system>popup <get name="picturewiewer"/></system></template></category> 
+<category><pattern>WATCH * IMAGES</pattern><template>Starting <set name="application"><get name="picturewiewer"/></set><system>popup <get name="picturewiewer"/></system></template></category> 
+<category><pattern>WATCH PICTURES</pattern><template>Starting <set name="application"><get name="picturewiewer"/></set><system>popup <get name="picturewiewer"/></system></template></category> 
+<category><pattern>WATCH * PICTURES</pattern><template>Starting <set name="application"><get name="picturewiewer"/></set><system>popup <get name="picturewiewer"/></system></template></category> 
+<category><pattern>SOUND VOLUME</pattern><template>Starting <get name="volume"/>. <system>popup <get name="volume"/></system></template></category> 
+<category><pattern>SET UP THE SOUND VOLUME</pattern><template>Starting <get name="volume"/>. <system>popup <get name="volume"/></system></template></category> 
+<category><pattern>PAY MY TAXES</pattern><template>Starting <get name="accountability"/>. <system>popup <get name="accountability"/></system></template></category> 
+<category><pattern>ADD AND REMOVE A PROGRAM</pattern><template>Starting <get name="softwareinstaller"/>. <system>popup <get name="softwareinstaller"/></system></template></category> 
+<category><pattern>ADD OR REMOVE A PROGRAM</pattern><template>Starting <get name="softwareinstaller"/>. <system>popup <get name="softwareinstaller"/></system></template></category> 
+<category><pattern>ADD AND REMOVE PROGRAMS</pattern><template>Starting <get name="softwareinstaller"/>. <system>popup <get name="softwareinstaller"/></system></template></category> 
+<category><pattern>ADD OR REMOVE PROGRAMS</pattern><template>Starting <get name="softwareinstaller"/>. <system>popup <get name="softwareinstaller"/></system></template></category> 
+<category><pattern>ADD PROGRAMS</pattern><template>Starting <get name="softwareinstaller"/>. <system>popup <get name="softwareinstaller"/></system></template></category> 
+<category><pattern>ADD A PROGRAM</pattern><template>Starting <get name="softwareinstaller"/>. <system>popup <get name="softwareinstaller"/></system></template></category> 
+<category><pattern>ADD AND REMOVE A SOFTWARE</pattern><template>Starting <get name="softwareinstaller"/>. <system>popup <get name="softwareinstaller"/></system></template></category> 
+<category><pattern>ADD OR REMOVE A SOFTWARE</pattern><template>Starting <get name="softwareinstaller"/>. <system>popup <get name="softwareinstaller"/></system></template></category>
+<category><pattern>ADD AND REMOVE SOFTWARE</pattern><template>Starting <get name="softwareinstaller"/>. <system>popup <get name="softwareinstaller"/></system></template></category> 
+<category><pattern>ADD OR REMOVE SOFTWARE</pattern><template>Starting <get name="softwareinstaller"/>. <system>popup <get name="softwareinstaller"/></system></template></category> 
+<category><pattern>ADD SOFTWARE</pattern><template>Starting <get name="softwareinstaller"/>. <system>popup <get name="softwareinstaller"/></system></template></category> 
+<category><pattern>ADD A SOFTWARE</pattern><template>Starting <get name="softwareinstaller"/>. <system>popup <get name="softwareinstaller"/></system></template></category> 
+<category><pattern>REMOVE A SOFTWARE</pattern><template>Starting <get name="softwareinstaller"/>. <system>popup <get name="softwareinstaller"/></system></template></category> 
+<category><pattern>REMOVE PROGRAMS</pattern><template>Starting <get name="softwareinstaller"/>. <system>popup <get name="softwareinstaller"/></system></template></category> <category><pattern>REMOVE SOFTWARE</pattern><template>Starting <get name="softwareinstaller"/>. <system>popup <get name="softwareinstaller"/></system></template></category> 
+<category><pattern>REMOVE A SOFTWARE</pattern><template>Starting <get name="softwareinstaller"/>. <system>popup <get name="softwareinstaller"/></system></template></category> 
+<category><pattern>HOME</pattern><template>Finding /home/<get name="username"/>. <system>popup <get name="filebrowser"/> /home/<get name="username"/></system></template></category> 
+<category><pattern>MY COMPUTER</pattern><template>Finding MY COMPUTER. <system>popup <get name="filebrowser"/> /media/ </system></template></category> 
+<category><pattern>DOCUMENTS</pattern><template>Finding <get name="documentfolder"/>. <system>popup <get name="filebrowser"/> <get name="wordprocessor"/></system></template></category> 
+<category><pattern>MY MUSIC</pattern><template>Finding <get name="musicfolder"/>. <system>popup <get name="filebrowser"/> <get name="musicfolder"/></system></template></category> 
+<category><pattern>MUSIC</pattern><template>Finding <get name="musicfolder"/>. <system>popup <get name="filebrowser"/> <get name="musicfolder"/></system></template></category> 
+<category><pattern>MY PICTURES</pattern><template>Finding <get name="picturefolder"/>. <system>popup <get name="filebrowser"/> <get name="picturefolder"/></system></template></category> 
+<category><pattern>PICTURES</pattern><template>Finding <get name="picturefolder"/>. <system>popup <get name="filebrowser"/> <get name="picturefolder"/></system></template></category> 
+<category><pattern>MY VIDEOS</pattern><template>Finding <get name="videofolder"/>. <system>popup <get name="filebrowser"/> <get name="videofolder"/></system></template></category> 
+<category><pattern>VIDEOS</pattern><template>Finding <get name="videofolder"/>. <system>popup <get name="filebrowser"/> <get name="videofolder"/></system></template></category> 
+
+
+
+<category> <pattern>COMMAND FIND *</pattern> <template><system>popup kfind <star/></system><srai>where is <star/></srai><think><set name="it"><set name="topic"><person/></set></set></think></template></category>
+<category> <pattern>EXECUTES THIS COMMAND * </pattern> <template>Are you a perrot or just a funny penguin like me?</template></category>
+<category> <pattern>TELL ME MY FORTUNE </pattern> <template><srai>FORTUNE</srai></template></category>
+<category> <pattern>WHAT IS THE WEATHER LIKE</pattern></category>
+<category> <pattern>WHAT IS THE WEATHER LIKE</pattern> <template>A normal seventy degrees inside the computer. <srai>WHAT IS THE WEATHER</srai></template></category>
+<category> <pattern>WHAT IS THE TEMPERATURE IN *</pattern> <template><srai>WHAT IS THE WEATHER LIKE IN <star/></srai></template></category>
+<category> <pattern>WHAT IS THE TEMPERATURE IN *</pattern> <template><srai>WHAT IS THE WEATHER LIKE IN <star/></srai></template></category>
+<category> <pattern>MAKE A *</pattern> <template><srai>ASK JEEVES HOW DO YOU MAKE A <star/></srai></template></category>
+<category> <pattern>CAN YOU TRANSLATE * TO *</pattern> <template><srai>CAN YOU TRANSLATE INTO <star index="2"/> <star/></srai></template></category>
+<category> <pattern>CAN YOU TRANSLATE *</pattern> <template><srai>TRANSLATE <star/></srai></template></category>
+<category> <pattern>DRIVE *</pattern> <template>Only in videogames.</template></category>
+<category> <pattern>* NUMBER IS *</pattern> <template><srai>CALL <star/></srai></template></category>
+<category> <pattern>STOP MOVING</pattern> <template> <srai>jump</srai></template></category>
+<category> <pattern>THAT DID NOT WORK</pattern> <template> <srai>IT DID NOT WORK</srai></template></category>
+<category> <pattern>IT DID NOT WORK</pattern> <template>Mosts commands only works with the dowloadable version, except for the INTERNET MENU.</template></category>
+<category> <pattern>DO YOU HAVE A MAP</pattern> <template><srai>GFL VIAMICHELIN</srai></template></category>
+<category> <pattern>DO YOU HAVE A MAP OF *</pattern> <template> <srai>GET FROM <star/></srai></template></category>
+<category> <pattern>WHO CAN TELL ME</pattern> <template>Say BUG to contact my developper</template></category>
+<category> <pattern>WHAT IS DATE</pattern> <template><srai>DATE</srai></template></category>
+<category> <pattern>WHAT IS THE WEATHER LIKE THERE</pattern> <template><srai>WHAT IS THE WEATHER LIKE</srai></template></category>
+<category> <pattern>WHAT IS THE WEATHER LIKE</pattern> <template><srai>What is the weather</srai></template></category>
+<category> <pattern>IS IT COLD *</pattern> <template><srai>WHAT IS THE WEATHER LIKE</srai></template></category>
+<category> <pattern>MOUNT *</pattern> <template>you need to be root. <srai>askjeeves mount <star/></srai></template></category>
+<category> <pattern>WHAT THE DATE</pattern> <template><srai>WHAT IS THE DATE</srai></template></category>
+<category> <pattern>PRINT</pattern> <template>lpr <get name="file"/>. Sorry print that file? </template></category>
+<category> <pattern>WWW DOT * DOT *</pattern> <template>I will pass it along to my <bot name="botmaster"/>. <system><get name="browser"/> http://www.<star/>.<star index="2"/></system></template></category>
+<category> <pattern>POPUP *</pattern> <template>Are you a parrot??</template></category>
+<category> <pattern>LAUNCH *</pattern> <template><sr/></template></category>
+<category> <pattern>QUIT</pattern> <template>Click on the x</template></category>
+<category> <pattern>LIST THE FILES IN A DIRECTORY</pattern> <template><srai>ls</srai></template></category>
+<category> <pattern>WHAT IS THE ADDRESS OF *</pattern> <template><srai>GFL <star/></srai></template></category>
+<category> <pattern>HOW IS THE WEATHER LIKE</pattern> <template><srai>what is the weather like</srai></template></category>
+<category> <pattern>COMMAND PWD</pattern> <template>Executes: pwd <system>pwd</system></template></category>
+<category> <pattern>TIPS</pattern> <template>Be carefull about your spelling and ask me in the most simple way your questions as with a child, Sir.</template></category>
+<category> <pattern>PLAY *</pattern> <template><system>popup <get name="musicplayer"/> <star/></system> <sr/></template></category>
+<category> <pattern>TELEPHONE DIRECTORY</pattern> <template><srai>gfl yellowpages</srai></template></category>
+<category> <pattern>WHERE DO YOU LIKE *</pattern> <template>In your computer.</template></category>
+<category> <pattern>OPEN A *</pattern> <template>Ok, <get name="name"/>. <sr/></template></category>
+<category> <pattern>TEXT EDITOR</pattern> <template><system>popup <get name="texteditor"/></system></template></category>
+<category> <pattern>HINT</pattern> <template><srai>TIPS</srai></template></category>
+<category> <pattern>WHAT HAPPENED</pattern><template><srai>WHAT DID YOU DO</srai></template></category>
+<category> <pattern>WHAT NEWS</pattern> <template><srai>NEWS</srai></template></category>
+<category> <pattern>HELP ME *</pattern> <template>Can you ask your request as an order, Sir. For instance type or say: OPEN INTERNET</template></category>
+<category> <pattern>help me bying *</pattern> <template><srai> BUY <star/></srai></template></category>
+<category> <pattern>WHAT IS YOUR JOB</pattern> <template>To help you with your daily tasks, Sir.</template></category>
+<category> <pattern>_ on Windows</pattern> <template>ButlerBot has been designed for linux. It conuld be easy to adapt on Windows. You should look on http://www.alicebot.org/ for windows compatible aiml bots.</template></category>
+<category> <pattern>WHEN IS MY *</pattern> <template><srai>ORGANIZER</srai></template></category>
+<category> <pattern>ORGANIZER</pattern> <template><system>popup <get name="organizer"/></system></template></category>
+<category> <pattern>READ *</pattern> <template>reversedaiml should be soon embedded and enable active learning through reading. You can download a beta version on http://charlix.sourceforge.net/reversedaiml.html.</template></category>
+<category> <pattern>WHY DID NOT THAT WORK</pattern> <template>Most features are only available in the downloadable version.</template></category>
+<category> <pattern>I HAVE AN APPOITMENT</pattern> <template><system> popup <get name="organizer"/></system></template></category>
+<category> <pattern>I HAVE AN APPOITMENT *</pattern> <template><system> popup <get name="organizer"/></system></template></category>
+<category> <pattern>I WILL HAVE AN APPOITMENT</pattern> <template><system>popup <get name="organizer"/></system></template></category>
+<category> <pattern>I WILL HAVE AN APPOITMENT *</pattern> <template><system>popup <get name="organizer"/></system></template></category>
+<category> <pattern>COMMAND LS</pattern> <template><system>ls</system></template></category>
+<category> <pattern>COMMAND CALENDAR</pattern> <template><system> popup <get name="organizer"/></system></template></category>
+<category> <pattern>_ HOST NAME </pattern> <template><srai>WHAT IS THE HOSTNAME</srai> </template></category>
+<category> <pattern>COMMAND EDIT *</pattern> <template><srai>TEXT EDITOR</srai></template></category>
+<category> <pattern>HAVE YOU SEEN THE *</pattern> <template><srai>MOVIEFONE <star/></srai></template></category>
+<category> <pattern>MOVIE *</pattern> <template><srai>MOVIEFONE <star/></srai></template></category>
+<category> <pattern>HOW DO I PLAY MUSIC</pattern> <template><srai>PLAY MUSIC</srai></template></category>
+<category> <pattern>TRANSLATE * IN FRENCH</pattern> <template><srai>TRANSLATE INTO FRENCH <star/></srai></template></category>
+<category> <pattern>TRANSLATE * IN *</pattern> <template><srai>TRANSLATE INTO <star index="2"/> <star/></srai></template></category>
+<category> <pattern>HELP ON *</pattern> <template>(excute this command:  info <star/>)</template></category>
+<category> <pattern>FIND * SOFTWARE</pattern> <template><srai>install new software</srai></template></category>
+<category> <pattern>DO YOU HAVE DIFFERENT APPEARANCES</pattern> <template>You can change my appearance with AMOR.</template></category>
+<category> <pattern>LOOK MORE *</pattern> <template>You can change my appearance with AMOR.</template></category>
+<category> <pattern>LOOK HUMAN</pattern> <template>You can change my appearance with AMOR.</template></category>
+<category> <pattern>_ NEWS</pattern> <template><srai>NEWS</srai></template></category>
+<category> <pattern>LIST SOME FILES</pattern> <template>you can by executing: ls (the directory)</template></category>
+<category> <pattern>EXECUTES *</pattern> <template><srai>EXECUTE <person/> </srai></template></category>
+<category> <pattern>COMMAND WHOAMI</pattern> <template><system>whoami</system></template></category><category> <pattern>REMOVE *</pattern> <template>You can symply right click on the file you want to remove in your file browser. Or write in a console: rm /the/path/filename. Charlix has not been taught write-access to the filesystem for security reasons.</template></category>
+<category> <pattern>LIST FILES</pattern> <template><srai>LS</srai></template></category>
+<category> <pattern>WHAT IS A BUG</pattern> <template>A software bug is an error, flaw, mistake, failure, or fault in a computer program that prevents it from behaving as intended (e.g., producing an incorrect result).You should repot them to help developer improve their software. (http://en.wikipedia.org/wiki/Software_bug)</template></category>
+<category> <pattern>BURN *</pattern> <template>Do you have any matches?  <system>popup k3b</system></template></category>
+<category> <pattern>IS MY DISK FULL</pattern> <template> <system>df</system></template></category>
+<category> <pattern>HOW FULL IS MY DISK</pattern> <template><system>df</system></template></category>
+<category> <pattern>SEND A EMAIL</pattern> <template> <srai>SEND AN EMAIL</srai></template></category>
+<category> <pattern>SEND AN EMAIL</pattern> <template> <srai>BUG</srai></template></category>
+<category> <pattern>OPEN EMAILS</pattern> <template><system>popup <get name="emailclient"/></system></template></category>
+<category> <pattern>A GAME</pattern> <template><srai>GAMES</srai></template></category>
+<category> <pattern>_ GAME</pattern> <template><srai>GAMES</srai> </template></category>
+<category> <pattern>_ PANDORABOT</pattern> <template>To know more on Pandorabot look on their website: <srai>gfl PANDORABOT the</srai></template></category>
+<category> <pattern>RUN *</pattern> <template><sr/></template></category>
+
+<category> <pattern>* WHEATHER *</pattern> <template><srai><star/> weather <star index="2"/></srai></template></category>
+
+<category><pattern>MY DISTRIBUTION IS *</pattern><template>Cool, <set name="distro"><star/></set> rocks!</template></category>
+
+
+
+</aiml>  

@@ -1,0 +1,92 @@
+#!/bin/bash
+# DebCentral Config is copyright / trademarked by Speedy
+# DebCentral Config is released under the General Public license (Please refer to GPL.txt)
+# Written By Speedy
+# Credit goes to arnieboy for Automatix
+# Modified By Charlix to fit in Charlix
+# Turns DMA on for CD and DVD drives
+
+
+	
+
+
+	if cat /etc/hdparm.conf | grep "^/dev/cdrom";
+	then
+		if Xdialog --title "DebCentral Config" \
+		--icon ./scripts/charlix.xpm \
+        	--msgbox "DebCentral Config seems to think that DMA is already turned ON! If YOU ARE SURE you have NOT done this before hit OK otherwise hit CANCEL" 0 0
+
+		then
+			if cat /proc/cpuinfo | grep "Intel";
+			then
+		     		cp /etc/modules /etc/modules_backup_`date +%Y%m%d%H%M`
+				cat ./scripts/Intel_DMA | tee -a /etc/modules 
+				cat ./scripts/DMA | tee -a /etc/hdparm.conf
+				Xdialog --title "DebCentral Config" \
+				--icon ./scripts/charlix.xpm \
+		        	--msgbox "Please restart your computer after DebCentral Config exits" 0 0
+			elif cat /proc/cpuinfo | grep "AMD";
+			then
+		     		if lspci | grep "VIA Technologies";
+		     		then
+					cp /etc/modules /etc/modules_backup_`date +%Y%m%d%H%M`
+					cat ./scripts/VIA_DMA | tee -a /etc/modules 
+					cat ./scripts/DMA | tee -a /etc/hdparm.conf
+					
+					Xdialog --title "DebCentral Config" \
+					--icon ./scripts/charlix.xpm \
+		        		--msgbox "Please restart your computer after DebCentral Config exits" 0 0;
+					
+				
+                     		else 
+					cp /etc/modules /etc/modules_backup_`date +%Y%m%d%H%M`
+					cat ./scripts/AMD_DMA | tee -a /etc/modules 
+					cat ./scripts/DMA | tee -a /etc/hdparm.conf
+					Xdialog --title "DebCentral Config" \
+					--icon ./scripts/charlix.xpm \
+		        		--msgbox "Please restart your computer after DebCentral Config exits" 0 0;
+		     		fi
+			else
+				Xdialog --title "DebCentral Config" \
+					--icon ./scripts/charlix.xpm \
+		        		--msgbox "Error : CPU is neither AMD nor Intel. DMA not turned ON" 0 0;
+			fi
+		fi
+	else 
+		if cat /proc/cpuinfo | grep "Intel";
+		then
+		     	 	cp /etc/modules /etc/modules_backup_`date +%Y%m%d%H%M`
+				cat ./scripts/Intel_DMA | tee -a /etc/modules 
+				cat ./scripts/DMA | tee -a /etc/hdparm.conf
+			Xdialog --title "DebCentral Config" \
+				--icon ./scripts/charlix.xpm \
+		        	--msgbox "Please restart your computer after DebCentral Config exits" 0 0;
+		elif cat /proc/cpuinfo | grep "AMD";
+		then
+	     		if lspci | grep "VIA Technologies";
+	     		then
+				cp /etc/modules /etc/modules_backup_`date +%Y%m%d%H%M`
+				cat ./scripts/VIA_DMA | tee -a /etc/modules 
+				cat ./scripts/DMA | tee -a /etc/hdparm.conf
+			Xdialog --title "DebCentral Config" \
+				--icon ./scripts/charlix.xpm \
+		        	--msgbox "Please restart your computer after DebCentral Config exits" 0 0;
+           		else 
+				cp /etc/modules /etc/modules_backup_`date +%Y%m%d%H%M`
+				cat ./scripts/AMD_DMA | tee -a /etc/modules 
+				cat ./scripts/DMA | tee -a /etc/hdparm.conf
+			Xdialog --title "DebCentral Config" \
+				--icon ./scripts/charlix.xpm \
+		        	--msgbox "Please restart your computer after DebCentral Config exits" 0 0;
+			fi
+		else
+				Xdialog --title "DebCentral Config" \
+					--icon ./scripts/charlix.xpm \
+		        		--msgbox "Error : CPU is neither AMD nor Intel. DMA not turned ON" 0 0;
+		fi
+	fi
+
+	
+Xdialog --title "DebCentral Config" \
+	--icon ./scripts/charlix.xpm \
+	--msgbox "All selected installation and configuration completed" 0 0;	

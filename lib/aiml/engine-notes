@@ -1,0 +1,317 @@
+list of modules and classes:
+
+
+bayes.py:
+----------------------------------------------
+
+class bayesdata:
+
+	def __init__
+	
+	# initilization of the class bayesdata
+
+	def trainedOn
+	
+	# training method
+
+	def __repr__
+
+	# returns a dictonary of the trained tokens
+
+
+class bayes:
+
+	def __init__
+
+		# initilization of the class bayes
+		# sets up variables. the tokenizer takes
+		# an object and returns a list of strings
+
+	def commit
+	
+		# saves changes
+
+	def newPool
+	
+		# creates a new pool, with out actual doing any training
+
+
+	def removePool
+
+		# removes the pool
+
+	def renamePool
+
+		# renames the pool
+
+	def mergePools
+
+		# merges a group of pools together
+
+	def poolData
+
+		# returns a list of tokens in this pool
+
+	def save
+
+		# saves pool to file bayesdata.dat via
+		# cPickle.dump
+
+	def load
+
+		# loads pools from bayesdata.dat via
+		# cPickle.load
+
+	def poolNames
+
+		# returns a sorted list of pool names.
+		# does not include the system pool '__Corpus__'
+
+	def buildCache
+
+		# merges corpora and computes probabilities
+		# for every word in the corpus check to
+		# see if this pool contains this word
+
+	def poolProbs
+		
+		# turns the probabilities output into a pool?
+
+	def getTokens
+
+		# By default, we expect obj to be a screen and split
+        	# it on whitespace. Note that this does not change the case.
+        	# In some applications you may want to lowecase everthing
+	        # so that "king" and "King" generate the same token.
+        	# Override this in your subclass for objects other
+		# than text. Alternatively, you can pass in a tokenizer as part 		# of an instance creation.
+
+	def getProbs
+
+		# extracts the probabilites of the tokens in a message
+
+	def train
+	
+		# Train Bayes by telling him that item belongs
+        	# in pool. uid is optional and may be used to uniquely
+        	# identify the item that is being trained on.
+
+
+	def untrain
+
+		# removes training from the pool
+
+	def _train
+
+		# training subfunction
+
+	def _untrain
+
+		# untrain subfunction
+
+	def trainedOn
+
+		# for loop tor training on cached pools
+
+	def guess
+
+		# makes a guess from tokens in the pools
+
+	def robinson
+
+		# computes the probability of a message being spam (Robinson's 			# method)
+	        #    P = 1 - prod(1-p)^(1/n)
+	        #    Q = 1 - prod(p)^(1/n)
+	        #    S = (1 + (P-Q)/(P+Q)) / 2
+	        #    Courtesy of http://christophe.delord.free.fr/en/index.html
+
+	def robinsonFisher
+
+		# computes the probability of a message being spam 
+		# (Robinson-Fisher method)
+	        #    H = C-1( -2.ln(prod(p)), 2*n )
+	        #    S = C-1( -2.ln(prod(1-p)), 2*n )
+	        #    I = (1 + H - S) / 2
+	        #    Courtesy of http://christophe.delord.free.fr/en/index.html
+
+
+
+
+class tokenizer:
+
+	def __init__
+
+		# initalizes the class
+
+	def tokenize
+		
+		# for loop which searches a match in a sentence
+
+
+def chi2P
+	
+	# function which return P(chisq >= chi, with df degree of freedom)
+	# df must be even
+----------------------------------------------------
+
+
+
+
+
+
+
+aimlbayes.py
+----------------------------------------------------
+class aimlBayes
+
+	# wrapper around the Reverend Bayes parser.
+	
+	def __init__
+	
+		# initalizes the class
+
+	def train
+
+		# Nominate a bucket to which the words apply, and train 		# accordingly
+
+	def untrain
+
+		# Remove nominated words from the relevant bucket
+
+	def forget
+
+		# passes on info that is not wanted
+
+	def save
+
+		# Save the brain to disk
+---------------------------------------------------------
+
+
+
+
+
+
+aimlbot.py
+----------------------------------------------------------
+class aimlBot
+
+	# An AIML chat bot that attempts to use a Bayesian guesser to 
+  	# reduce the amount of AIML that needs to be written, allowing
+	# us to just write very generic AIML and train the filter accordingly.
+	# Ideally the bot should ask for help whenever it cannot find a 
+	# reponse. AIMLBot also intends to be highly extensible by allowing for 	# callbacks to be inserted in the AIML using 'handler' predicates. 	
+	# You can extend this class and supply your own AIML and callbacks 		# which will execute once the bot is fully trained.
+
+
+	def __init__
+
+		# Initialize the AIML interpreter, Initialise the Bayes parser 
+
+	def do_RESPONSE
+
+		# Sends the AIML response back to the other user.
+		# Typing timeout code written by Michael Wakerly
+
+
+	def fetch_aiml_response
+
+		# Returns the response from the AIML parser
+
+	def guess
+
+		# Guess the topic of conversation using a Bayesian filter
+
+	def on_BAYES
+
+		# Guess the topic and then try to find a reponse.
+		# If that fails, ask for help.
+
+	def on_FORGET
+
+		# Purposefully forget information stored in the Bayesian filter
+
+
+
+	def on_MSG_IN
+
+		# Main method called in reponse to an incoming message
+
+		    # Order of relevance:
+		    # 1. Handler set by AIML (mainly used for training)
+		    # 2. Bayesian guess (whether the topic agrees or not)
+		    # 3. Persistent topic
+		    # 4. Ask for help
+
+		      # Handle further implementations (borrowed from PyTOC in 			      # the old GrokItBot code)
+		      # Persistant topic, which Bayes agrees with
+		      # Lets try a guess
+
+
+		# We can support persistant topics here but that requires much 			# more training of the bot in the long run, as the topic of 			# conversation will only change once the bot is able to guess 			# at a change of topic from keywords in your input. Since this 			# can take some time and doesn't show off the Bayes guessing 			# ability so well, I've disabled that. If you want to try this 			# out, just uncomment the following else statement. You'll find 		# the bot will stay on topic and that you'll need to make use 			# of the 'learn x' statement to train the bot accordingly.
+		
+
+	def on_NEVERMIND
+	
+		# Just a get out clause that resets topics and handlers
+
+	def on_RELOAD
+
+		# uses the bot to reload its' AIML files
+
+
+	def on_SAVEBRAIN
+
+		# Save the bayes file to disk
+
+
+
+	def on_TOPIC
+
+		# A topic is already set, try and find a reponse for it.
+		# If that fails, let the bayes filter try its' luck
+
+
+
+
+	def on_UNKNOWN
+
+		# Ask the user for help. The AIML parser will generate a 			# dynamic AIML file which it can learn, in anticipation of a 			# meaningful reply
+
+	def parse_msg
+	
+		# Munge the input and hack any URLs so that they aren't split 			# into multiple sentences by the AIML parser
+
+
+
+	def strip_tags
+
+		# Return the given HTML with all tags stripped. 
+		# From http://xrl.us/beb7n7
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

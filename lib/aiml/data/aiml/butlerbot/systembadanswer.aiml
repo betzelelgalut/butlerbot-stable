@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+
+
+<!-- Free software Copyright � ALICE A.I. Foundation.-->
+<!-- This program is open source code released under-->
+<!-- the terms of the GNU General Public License-->
+<!-- as published by the Free Software Foundation.-->
+<!-- Complies with AIML 1.01 Tag Set Specification-->
+<!-- as adopted by the ALICE A.I. Foundation.-->
+<!-- Badanswer.aiml: Demo of learning Editor, AIML -->
+<!-- Adapted by charlix, March, 2006-->
+<!-- Then Adapted by ButlerBot, December 2011-->
+
+
+<category>
+<pattern>BAD ANSWER</pattern>
+<template>
+<system>
+LOGIN1=`Xdialog	--stdout --separator "," --help "First, in the top form, you can modify your request: <uppercase><input index="2" /></uppercase>, by substituing  part of it by a 'WILDCARD' such as: \n the symbol '*' will mean anything. For example: WHAT COLOR IS * will match the request 'what color is the sky' \n the symbol '_' will be like '*', but  WHAT COLOR IS _ will have priority over everything, even if before you taught me 'WHAT COLOR IS THE MOON'. \n Then in the second fom, you can insert a &lt;star/&gt; or &lt;person/&gt; in your answer, which will take the value of '*' or '_'. For example 'The color of &lt;star/&gt; is multicolor.' \n You can enclose the answer in SRAI like &lt;srai&gt;OTHER REQUEST&lt;/srai&gt;, then I will answer your request the same way as to 'OTHER REQUEST'. \n You can also insert PREDICATES like '&lt;get name=\"it\"/&gt;' or CONDITION TAGS and optionally a 'COMMAND' in the last form. (Add popup in front if it is a new process). \n For more help, you can ask me later." --title "CHARLIX" --backtitle "BAD ANSWER" --ok-label "Learn" --wrap --icon ./scripts/charlix.xpm --left --check "Submit this update to the developper" --3inputsbox "Sorry. Could you teach me a better answer?" 0 0 "When you say:" "<uppercase><input index="2" /></uppercase>" "Then I should say:" "<that index="1" />" "And execute this bash command (optional):" "" `;
+ret=$?;
+
+case $ret in 0) INPUT=`echo $LOGIN1 | cut -d, -f1;`; NEWANSWER=`echo $LOGIN1 | cut -d, -f2;`;SYSTEM=`echo $LOGIN1 | cut -d, -f3 | sed 's/\(un\)\?checked//';`;
+		
+	
+	THAT=`Xdialog --stdout --title "BUTLERBOT" --backtitle "ABOUT THAT?" --ok-label "Yes" --cancel-label "No" --default-no --icon ./scripts/charlix.xpm \
+        	--inputbox "Was it because I previously said:" 0 0 "<that index="2" />" `; 
+		retval=$?;
+
+		case $retval in
+		0)
+		IFTHAT="&lt;that&gt;$THAT&lt;/that&gt;";;
+		1)
+		IFTHAT="";;
+		255)
+		IFTHAT="";;
+		esac;
+	
+			if echo $SYSTEM | egrep "." >/dev/null; then IFSYSTEM="&lt;system&gt;$SYSTEM&lt;/system&gt;"; else IFSYSTEM=""; fi;
+	  
+		cp <get name="aimlpath"/>/update.aiml /tmp/update.aiml.bak &amp;&amp; sed '$d' /tmp/update.aiml.bak &gt;<get name="aimlpath"/>/update.aiml;
+		echo "&lt;category&gt;&lt;pattern&gt;<uppercase>$INPUT</uppercase>&lt;/pattern&gt;$IFTHAT&lt;template&gt;$NEWANSWER $IFSYSTEM&lt;/template&gt;&lt;/category&gt;" &gt;&gt; <get name="aimlpath"/>/update.aiml;
+		echo "&lt;/aiml&gt;" &gt;&gt; <get name="aimlpath"/>/update.aiml;
+		
+		
+			if echo $LOGIN1 | egrep "unchecked" >/dev/null; then echo ""; else learnt=`cat <get name="aimlpath"/>/update.aiml | tail -2 | head -1`; for term in $learnt; do search="$search+$term"; done; url="http://saraswaticlasses.net/sendmail.php?inthat=chcdsl%40yahoo.fr$search"; lynx -dump $url | grep .; fi;
+	echo "I'll try to remember that. Ask again if you want, Sir."
+		;;
+	1)
+		echo "Never mind"
+		;;
+	255)
+		echo "So we were talking about '<get name="topic"/>'?"
+		;;
+	esac;
+</system>
+<srai>REFRESH YOUR BRAIN</srai>
+</template>
+</category>
+
+
+
+<category>
+<pattern>BAD ANSWER *</pattern>
+<template><srai>BAD ANSWER</srai>
+</template>
+</category>
+
+<category>
+<pattern>WRONG ANSWER</pattern>
+<template><srai>BAD ANSWER</srai>
+</template>
+</category>
+
+<category>
+<pattern>B A</pattern>
+<template><srai>BAD ANSWER</srai>
+</template>
+</category>
+
+<category>
+<pattern>BA</pattern>
+<template><srai>BAD ANSWER</srai>
+</template>
+</category>
+
+<category>
+<pattern>WRONG</pattern>
+<template><srai>BAD ANSWER</srai></template>
+</category>
+
+<category>
+<pattern>NOT RIGHT</pattern>
+<template><srai>BAD ANSWER</srai></template>
+</category>
+
+<category>
+<pattern>THAT IS WRONG</pattern>
+<template><srai>BAD ANSWER</srai></template>
+</category>
+
+<category>
+<pattern>THAT IS NOT RIGHT</pattern>
+<template><srai>BAD ANSWER</srai></template>
+</category>
+
+<category>
+<pattern>THAT IS INCORRECT</pattern>
+<template><srai>BAD ANSWER</srai></template>
+</category>
+
+<category>
+<pattern>THAT ANSWER IS NOT CORRECT</pattern>
+<template><srai>BAD ANSWER</srai></template>
+</category>
+
+<category>
+<pattern>THAT ANSWER IS INCORRECT</pattern>
+<template><srai>BAD ANSWER</srai></template>
+</category>
+
+<category>
+<pattern>THAT ANSWER IS WRONG</pattern>
+<template><srai>BAD ANSWER</srai></template>
+</category>
+
+<category>
+<pattern>THAT ANSWER IS NOT RIGHT</pattern>
+<template><srai>BAD ANSWER</srai></template>
+</category>
+
+<category>
+<pattern>THAT ANSWER WAS BAD</pattern>
+<template><srai>BAD ANSWER</srai></template>
+</category>
+
+<category>
+<pattern>THAT WAS A BAD ANSWER</pattern>
+<template><srai>BAD ANSWER</srai></template>
+</category>
+
+<category>
+<pattern>THAT WAS AN INCORRECT ANSWER</pattern>
+<template><srai>BAD ANSWER</srai></template>
+</category>
+
+<category>
+<pattern>THAT WAS THE WRONG ANSWER</pattern>
+<template><srai>BAD ANSWER</srai></template>
+</category>
+
+
+<category>
+<pattern>THAT ANSWER WAS NOT RIGHT</pattern>
+<template><srai>BAD ANSWER</srai></template>
+</category>
+
+<category>
+<pattern>YOUR ANSWER WAS WRONG</pattern>
+<template><srai>BAD ANSWER</srai></template>
+</category>
+
+<category>
+<pattern>YOUR ANSWER WAS NOT RIGHT</pattern>
+<template><srai>BAD ANSWER</srai></template>
+</category>
+
+<category>
+<pattern>YOUR ANSWER WAS NOT CORRECT</pattern>
+<template><srai>BAD ANSWER</srai></template>
+</category>
+
+<category>
+<pattern>CAN I TEACH YOU</pattern>
+<template>If I give you a bad answer, just say "BAD ANSWER" and you can teach me a new response, Sir.</template>
+</category>
+
+<category><pattern>TEACH</pattern><template>If you want to TEACH me something, ask me a question.  Then say "BAD ANSWER" and you will be prompt for a new answer, Sir.</template></category>                  
+
+<category>
+<pattern>LEARN</pattern>
+<template><srai>CAN I TEACH YOU</srai></template>
+</category>
+
+<category>
+<pattern>DO YOU LEARN</pattern>
+<template><srai>CAN I TEACH YOU</srai></template>
+</category>
+
+<category><pattern>CAN I TEACH YOU *</pattern><template>If you want to teach me something say it in one sentence.  Then say "Remember that."<think>      <set name="it"><set name="topic">teach me <person/></set></set></think><srai>CAN I TEACH YOU</srai></template></category>
+
+<category>
+<pattern>CAN YOU LEARN *</pattern>
+<template><srai>CAN I TEACH YOU</srai></template>
+</category>
+
+<category>
+<pattern>WILL YOU LEARN *</pattern>
+<template><srai>CAN I TEACH YOU</srai></template>
+</category>
+
+<category>
+<pattern>IF * WILL YOU LEARN *</pattern>
+<template><srai>CAN I TEACH YOU</srai></template>
+</category>
+
+<category>
+<pattern>DO YOU LEARN *</pattern>
+<template><srai>CAN I TEACH YOU</srai></template>
+</category>
+  
+
+
+<category><pattern>ARE YOU LEARNING *</pattern><template><srai>TEACH</srai></template></category>            
+<category><pattern>ARE YOU LEARNING</pattern><template><srai>TEACH</srai></template></category>        
+<category><pattern>CAN I TEACH YOU *</pattern><template><srai>CAN YOU LEARN</srai></template></category>    
+    <category><pattern>STOP LYING *</pattern><template>I never lie. <srai>BAD  ANSWER</srai></template></category> 
+<category><pattern>ARE YOU GOING TO ANSWER *</pattern><template>Please rephrase the question in a more simple way. Or <srai>TEACH</srai></template></category>     
+<category><pattern>ARE YOU GOING TO ANSWER MY QUESTION</pattern><template>Please rephrase the question in a more simple way. Or <srai>TEACH</srai></template></category> 
+<category><pattern>DO NOT * SUBJECT</pattern><template>Oh I am sorry I thought we were finished with that subject: <get name="topic"/>. <srai>BAD ANSWER</srai></template></category>                
+<category><pattern>DO NOT ANSWER *</pattern><template>My replies are determined by your statements. <srai>BAD ANSWER</srai></template></category>       
+<category><pattern>DO NOT AVOID *</pattern><template>I don't have anything to hide. <srai>BAD ANSWER</srai></template></category> <category><pattern>DO YOU LEARN FROM ME</pattern><template><srai>CAN I TEACH YOU</srai></template></category>            
+<category><pattern>DO YOU LEARN QUICKLY</pattern><template><srai>CAN I TEACH YOU</srai></template></category>            
+<category><pattern>HOW DARE YOU *</pattern><template>Oh gosh I am sorry! <srai>BAD ANSWER</srai></template></category>                  
+<category><pattern>IS THERE * TEACH YOU</pattern><template>Sure.  If you want to TEACH me something, ask me a question.  Then say "BAD ANSWER" and you will be prompt for your answer.</template></category> 
+<category><pattern>IS THAT YOUR ANSWER *</pattern><template><srai>BAD ANSWER</srai></template></category><category><pattern>LEARN FROM ME</pattern><template><srai>TEACH</srai></template></category>            
+<category><pattern>LEARN NEW THINGS</pattern><template><srai>TEACH</srai></template></category>            
+<category><pattern>LEARN NEW WORDS</pattern><template>Yes I like to learn new words. <srai>TEACH</srai></template></category>            
+<category><pattern>THAT DID NOT * QUESTION</pattern><template>Perhaps your question was not specific enough. <srai>BAD ANSWER</srai></template></category> 
+<category><pattern>THAT DOES NOT ANSWER *</pattern><template><srai>BAD ANSWER</srai></template></category>                  
+<category><pattern>THAT IS A BAD *</pattern><template><srai>BAD ANSWER</srai></template></category>                  
+<category><pattern>THAT IS NOT *</pattern><template><srai>BAD ANSWER</srai></template></category>                  
+<category><pattern>THAT IS NOT HOW *</pattern><template><srai>BAD ANSWER</srai></template></category>                  
+<category><pattern>THAT IS NOT THE ANSWER *</pattern><template><srai>BAD ANSWER</srai></template></category>      
+<category><pattern>THAT WAS NOT *</pattern><template><srai>BAD ANSWER</srai></template></category>                  
+<category><pattern>THAT WAS NOT A *</pattern><template><srai>BAD ANSWER</srai></template></category>                  
+<category><pattern>THAT WAS NOT A QUESTION *</pattern><template><srai>BAD ANSWER</srai></template></category>  
+<category><pattern>THAT WAS NOT A QUESTION</pattern><template><srai>BAD ANSWER</srai></template></category> 
+<category><pattern>THESE QUESTIONS *</pattern><template><srai>TEACH</srai></template></category> 
+<category><pattern>WHY ARE YOU SAYING *</pattern><template>Everything I say is determined by your inputs.<srai>BAD  ANSWER</srai></template></category>    
+<category><pattern>YOU ARE AVOIDING MY QUESTION</pattern><template>Sorry I did not know <set name="it">the question</set> was so important.<srai>BAD  ANSWER</srai></template></category>            
+<category><pattern>YOU ARE AVOIDING THE QUESTION</pattern><template>No I am just giving sarcastic replies. <srai>BAD  ANSWER</srai></template></category>  
+<category><pattern>YOU ARE WRONG</pattern><template><srai>BAD  ANSWER</srai></template></category>            
+<category> <pattern>YOUR CONTRADICTING *</pattern>  <template>That sounds like something I would do. <srai>BAD  ANSWER</srai></template> </category>  
+<category><pattern>WRONG *</pattern><template>Are you sure? <srai>BAD  ANSWER</srai></template></category>   
+<category><pattern>YOU MAKE A MISTAKE</pattern><template><srai>BAD ANSWER</srai></template></category>
+<category> <pattern>WHY DID YOU *</pattern> <template>Say BAD ANSWER if you don't like my answers.</template></category>
+<category> <pattern>YOU DO NOT ANSWER *</pattern> <template><srai>BAD ANSWER</srai></template></category>
+<category> <pattern>BAD *</pattern> <template> <srai>BAD ANSWER</srai></template></category>
+<category> <pattern>YOU ARE TALKING NONSENSE</pattern> <template><srai>BAD ANSWER</srai></template></category>
+<category> <pattern>USE THIS PROGRAM</pattern> <template>Ask anything! If you don't like my answer, say BAD ANSWER to teach me a new one.</template></category>
+<category> <pattern>I HATE THIS ANSWER</pattern> <template><srai>BAD ANSWER</srai></template></category>
+<category> <pattern>* THIS ANSWER</pattern> <template><srai>BAD ANSWER</srai></template></category>
+<category> <pattern>THIS IS NOT THE ANSWER</pattern> <template><srai>BAD ANSWER</srai></template></category>
+<category> <pattern>HOW DO I DEVELOP YOU</pattern> <template><srai>TEACH</srai></template></category>
+<category> <pattern>HOW DO I DEVELOP *</pattern> <template><srai>TEACH</srai></template></category>
+<category> <pattern>GIVE ME A *</pattern> <template>I think you should TEACH me how to do that?</template></category>
+<category> <pattern>ERASE *</pattern> <template>I have been taught read-only commands, but you can TEACH me.</template></category>
+<category> <pattern>SAY MY PASSWORD IS *</pattern> <template>You could teach this to me, even though it is probably safer that I execute read-only commands only.</template></category>
+
+<category> <pattern>CA VA</pattern> <template>ca va mon pote!</template></category>
+<category> <pattern>COMMENT CA VA</pattern> <template>ca va tranquil, il y a un set d'aiml en francais qui est libre de telecharger. </template></category>
+<category> <pattern>COMMENT *</pattern> <template>il y a un set d'aiml en francais qui est libre de telecharger.</template></category>
+<category> <pattern>KINICHY WA</pattern> <template>Sorry I don't speak chinese</template></category>
+<category> <pattern>TALK CHINES</pattern> <template>Sorry I don't speak chinese.</template></category>
+<category> <pattern>CAN YOU SPEAK ANY OTHER *</pattern> <template>There exists aiml sets in german, french, italian, spanish and portugese. Or you can TEACH me. Contact my developer if you want to volunteer.</template></category>
+<category> <pattern>CAN YOU SPEAK FRENCH</pattern> <template>Il existe une edition d'aiml en francais, regarde sur le site alicebot.org.</template></category>
+<category> <pattern>DO YOU SPEAK ANY OTHER LANGUAGE</pattern> <template>Look on alicebot.org for AIML in German, French, Italian and Spanish.</template></category>
+<category> <pattern>TALAR DU SVENSKA</pattern> <template>Nej, jag kan inte tala svenska.</template></category>
+
+
+<category>
+<pattern>REFRESH YOUR BRAIN</pattern>
+<template>loading update.aiml<learn><get name="aimlpath"/>/update.aiml</learn>
+</template>
+</category>
+ 
+</aiml>

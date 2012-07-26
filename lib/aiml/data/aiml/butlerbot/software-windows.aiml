@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+      
+<!-- Free software (c) 2006 Charlix.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.01 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+
+<!-- ########################################################################################## -->
+<!-- ############### MICROSOFT WINDOWS COMMANDS ########################################### -->
+<category><pattern>COMMAND LINE</pattern><template>Starting <get name="console"/>. <system>popup powershell<get name="console"/></system></template></category> 
+<category><pattern>COMMAND PROMPT</pattern><template>Starting <get name="console"/>.<system>popup powershell<get name="console"/></system></template></category> 
+<category><pattern>COMMAND TERMINAL</pattern><template>Starting <get name="console"/>. <system>popup powershell<get name="console"/></system></template></category> 
+<category><pattern>POWERSHELL</pattern><template>Starting <get name="console"/>.<system>popup powershell<get name="console"/></system></template></category> 
+<category><pattern>COMMAND CMD</pattern><template>Starting <get name="console"/>.<system>popup cmd<get name="console"/></system></template></category> 
+<category><pattern>COMMAND DIR</pattern><template>Starting <get name="console"/>.<system>dir<get name="console"/></system></template></category>
+<category><pattern>COMMAND ATTRIB</pattern><template>Starting <get name="console"/>.<system>attrib <get name="console"/></system></template></category>
+<category><pattern>COMMAND MOVE</pattern><template>Starting <get name="console"/>.<system>move<get name="console"/></system></template></category>
+<category><pattern>COMMAND COPY</pattern><template>Starting <get name="console"/>.<system>copy<get name="console"/></system></template></category>
+<category><pattern>COMMAND XCOPY</pattern><template>Starting <get name="console"/>.<system>xcopy<get name="console"/></system></template></category>
+<category><pattern>COMMAND DEL</pattern><template>Starting <get name="console"/>.<system>del<get name="console"/></system></template></category>
+<category><pattern>COMMAND DELTREE</pattern><template>Starting <get name="console"/>.<system>deltree<get name="console"/></system></template></category>
+<!-- ############### MICROSOFT WINDOWS APPLICATIONS ########################################### -->
+<category><pattern>COMMAND KWORD</pattern><template>Starting <set name="application">KWord</set><system>popup kword</system></template></category> 
+<category><pattern>COMMAND WORD</pattern><template>Starting <set name="application"><get name="wordprocessor"/></set><system>popup <get name="wordprocessor"/></system></template></category> 
+<category><pattern>WORD PROCESSOR</pattern><template>Starting <set name="application"><get name="wordprocessor"/></set><system>popup kword</system></template></category> 
+<category><pattern>MICROSOFT WORD</pattern><template>Starting <set name="application"><get name="wordprocessor"/></set><system>popup <get name="wordprocessor"/></system></template></category> 
+<category><pattern>COMMAND WORD *</pattern><template>Starting <set name="application"><get name="wordprocessor"/></set><system>popup <get name="wordprocessor"/></system></template></category> 
+<category><pattern>COMMAND KSPREAD</pattern><template>Starting <set name="application">KSpread</set><system>popup kspread</system></template></category> 
+<category><pattern>SPREADSHEET APPLICATION</pattern><template>Starting <set name="application"><get name="spreadsheet"/></set><system>popup <get name="spreadsheet"/></system></template></category> 
+<category><pattern>COMMAND SPREADSHEETS</pattern><template>Starting <set name="application"><get name="spreadsheet"/></set><system>popup <get name="spreadsheet"/></system></template></category> 
+<category><pattern>COMMAND SPREADSHEET *</pattern><template>Starting <set name="application"><get name="spreadsheet"/></set><system>popup <get name="spreadsheet"/></system></template></category> 
+<category><pattern>MICROSOFT EXCEL</pattern><template>Starting <set name="application"><get name="spreadsheet"/></set><system>popup <get name="spreadsheet"/></system></template></category>  
+<category><pattern>COMMAND EXCEL</pattern><template>Starting <set name="application"><get name="spreadsheet"/></set><system>popup <get name="spreadsheet"/></system></template></category> 
+<category><pattern>COMMAND EXCEL *</pattern><template>Starting <set name="application"><get name="spreadsheet"/></set><system>popup <get name="spreadsheet"/></system></template></category> 
+<category><pattern>COMMAND KPRESENTER</pattern><template>Starting <set name="application">KPresenter</set><system>popup kpresenter</system></template></category> 
+<category><pattern>COMMAND POWERPOINT</pattern><template>Starting <set name="application"><get name="presentationeditor"/></set><system>popup <get name="presentationeditor"/></system></template></category> 
+<category><pattern>MICROSOFT POWERPOINT</pattern><template>Starting <set name="application"><get name="presentationeditor"/></set><system>popup <get name="presentationeditor"/></system></template></category> 
+<category><pattern>POWERPOINT PRESENTATION</pattern><template>Starting <set name="application"><get name="presentationeditor"/></set><system>popup <get name="presentationeditor"/></system></template></category> 
+<category><pattern>POWERPOINT PRESENTATIONS</pattern><template>Starting <set name="application"><get name="presentationeditor"/></set><system>popup <get name="presentationeditor"/></system></template></category> 
+<category><pattern>COMMAND PHOTOSHOP</pattern><template>Starting <set name="application"><get name="imageeditor"/></set><system>popup <get name="imageeditor"/></system></template></category> 
+<category><pattern>ADOBE PHOTOSHOP</pattern><template>Starting <set name="application"><get name="imageeditor"/></set><system>popup <get name="imageeditor"/></system></template></category> 
+<category><pattern>PHOTO EDITOR</pattern><template>Starting <set name="application"><get name="imageeditor"/></set><system>popup <get name="imageeditor"/></system></template></category> 
+ <category><pattern>COMMAND ACDC</pattern><template>Starting <set name="application"><get name="picturewiewer"/></set><system>popup <get name="picturewiewer"/></system></template></category> 
+<category><pattern>COMMAND SKYPE</pattern><template>Starting <set name="application">Skype</set><system>popup skype</system></template></category> 
+<category><pattern>NETWORK NEIGHBORHOOD</pattern><template>Starting <set name="application">SMB</set><system>popup smb</system></template></category> 
+<category><pattern>AZUREUS BITTORRENT</pattern><template>Starting <set name="application">azureus</set><system>popup smb</system></template></category> 
+<category><pattern>COMMAND AIM</pattern><template><system>popup <get name="instantmessenger"/></system>Starting the instant messenger.</template></category> 
+<category><pattern>COMMAND ICQ</pattern><template><system>popup <get name="instantmessenger"/></system>Starting the instant messenger.</template></category> 
+<category><pattern>MSN MESSENGER</pattern><template><system>popup <get name="instantmessenger"/></system>Starting the instant messenger.</template></category> 
+<category><pattern>COMMAND MSN</pattern><template><system>popup <get name="instantmessenger"/></system>Starting the instant messenger.</template></category> 
+<category><pattern>COMMAND YAHOOIM</pattern><template><system>popup <get name="instantmessenger"/></system>Starting the instant messenger.</template></category> 
+<category><pattern>YAHOO MESSENGER</pattern><template><system>popup <get name="instantmessenger"/></system>Starting the instant messenger.</template></category> 
+<category><pattern>INSTANT MESSENGER</pattern><template><system>popup <get name="instantmessenger"/></system>Starting the instant messenger.</template></category> 
+<category><pattern>COMMAND GAIM</pattern><template><system>popup <get name="instantmessenger"/></system>Starting the instant messenger.</template></category> 
+<category><pattern>COMMAND OUTLOOK EXPRESS</pattern><template><system>popup <get name="emailclient"/></system>Starting  <get name="emailclient"/>.</template></category> 
+<category><pattern>COMMAND OUTLOOK</pattern><template><system>popup <get name="emailclient"/></system>Starting  <get name="emailclient"/>.</template></category> 
+<category><pattern>MICROSOFT OUTLOOK</pattern><template><system>popup <get name="emailclient"/></system>Starting  <get name="emailclient"/>.</template></category> 
+<category><pattern>MICROSOFT OUTLOOK EXPRESS</pattern><template><system>popup <get name="emailclient"/></system>Starting  <get name="emailclient"/>.</template></category> 
+<category><pattern>MICROSOFT INTERNET EXPLORER</pattern><template><system>popup <get name="browser"/></system>Starting  <get name="browser"/>.</template></category> 
+<category><pattern>COMMAND INTERNET EXPLORER</pattern><template><system>popup <get name="browser"/></system>Starting  <get name="browser"/>.</template></category> 
+<category><pattern>COMMAND EXPLORER</pattern><template>Starting <get name="browser"/>. <system>popup <get name="browser"/></system></template></category> 
+<category><pattern>COMMAND ROXIO</pattern><template>Starting <get name="cdburner"/>. <system>popup <get name="cdburner"/></system></template></category> 
+<category><pattern>COMMAND NERO</pattern><template>Starting <get name="cdburner"/>. <system>popup <get name="cdburner"/></system></template></category> 
+<category><pattern>COMMAND CD PLAYER</pattern><template>Starting <get name="musicplayer"/>. <system>popup <get name="musicplayer"/></system></template></category> 
+<category><pattern>COMMAND WINAMP</pattern><template>Starting <get name="musicplayer"/>. <system>popup <get name="musicplayer"/></system></template></category> 
+<category><pattern>COMMAND MUSIC PLAYER</pattern><template>Starting <get name="musicplayer"/>. <system>popup <get name="musicplayer"/></system></template></category> 
+<category><pattern>WINDOWS MEDIA PLAYER</pattern><template>Starting <get name="movieplayer"/>. <system>popup <get name="movieplayer"/></system></template></category> 
+<category><pattern>COMMAND MEDIA PLAYER</pattern><template>Starting <get name="movieplayer"/>. <system>popup <get name="movieplayer"/></system></template></category> 
+<category><pattern>COMMAND MOVIE PLAYER</pattern><template>Starting <get name="movieplayer"/>. <system>popup <get name="movieplayer"/></system></template></category> 
+<category><pattern>COMMAND VIDEO PLAYER</pattern><template>Starting <get name="movieplayer"/>. <system>popup <get name="movieplayer"/></system></template></category> 
+<category><pattern>COMMAND MS MONEY</pattern><template>Starting <get name="accountability"/>. <system>popup <get name="accountability"/></system></template></category> 
+<category><pattern>MICROSOFT MONEY</pattern><template>Starting <get name="accountability"/>. <system>popup <get name="accountability"/></system></template></category> 
+<category><pattern>COMMAND MONEY</pattern><template>Starting <get name="accountability"/>. <system>popup <get name="accountability"/></system></template></category> 
+<category><pattern>OPENOFFICE CALC</pattern><template>Starting <get name="spreadsheet"/>. <system>popup soffice<get name="spreadsheet"/></system></template></category> 
+<category><pattern>OPENOFFICE IMPRESS</pattern><template>Starting <get name="presentationeditor"/>. <system>popup soffice<get name="presentationeditor"/></system></template></category> 
+<category><pattern>OPENOFFICE WRITER</pattern><template>Starting <get name="wordprocessor"/>. <system>popup soffice<get name="wordprocessor"/></system></template></category> 
+<category><pattern>COMMAND WORDPAD</pattern><template>Starting <get name="texteditor"/>.<system>popup <get name="texteditor"/></system></template></category> 
+<category><pattern>COMMAND NOTEPAD</pattern><template>Starting <get name="texteditor"/>.<system>popup <get name="texteditor"/></system></template></category> 
+<category><pattern>COMMAND WINZIP</pattern><template>Starting <get name="archiver"/>. <system>popup <get name="archiver"/></system></template></category> 
+<category><pattern>COMMAND WINRAR</pattern><template>Starting <get name="archiver"/>. <system>popup <get name="archiver"/></system></template></category> 
+</aiml>
+
+

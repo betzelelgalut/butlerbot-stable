@@ -1,0 +1,117 @@
+#!/bin/bash
+# DebCentral Config is copyright / trademarked by Speedy
+# DebCentral Config is released under the General Public license (Please refer to GPL.txt)
+# Written By Speedy
+# Credit goes to arnieboy for Automatix
+# Modified By Charlix to fit in Charlix
+# gdesklets setup 
+
+
+
+	if ! echo $DESKTOP_SESSION | grep "gnome";
+	then Xdialog --title "GNOME SESSION?" \
+	--icon ./scripts/charlix.xpm \
+        --msgbox "You are not runing a gnome session sorry." 0 0
+	exit 0
+	fi
+
+
+Xdialog --title "IS APT BUSY?" \
+	--icon ./scripts/charlix.xpm \
+        --msgbox "Make sure you DO NOT have Synaptic or Kpackage open before u hit OK!" 0 0
+
+DIALOG=Xdialog
+
+(
+echo "10" ; sleep 1
+echo "20" ; sleep 1
+echo "XXX" ; echo "Updating sources"; echo "XXX"
+xterm -e apt-get update
+echo "30" ; sleep 1
+cat << EOF > /tmp/editbox.tmp.$$
+ TO INSTALL gawk gdesklets gdesklets-data, THESE CHANGES NEED TO BE DONE. PLEASE CHECK IF ANY SOFTWARE YOU NEED WOULD BE REMOVED:
+EOF
+echo "" >> /tmp/editbox.tmp.$$
+echo "XXX" ; echo "Controling security"; echo "XXX"
+echo "40" ; sleep 1
+apt-get install -s gawk gdesklets gdesklets-data >> /tmp/editbox.tmp.$$
+echo "" >> /tmp/editbox.tmp.$$
+echo "DO YOU STILL WANT ME TO INSTALL gawk gdesklets gdesklets-data" >> /tmp/editbox.tmp.$$
+echo "50" ; sleep 1
+
+) |
+$DIALOG --title "GAUGE" --gauge "Preparing installation!" 8 30
+
+if [ "$?" = 255 ] ; then
+	echo ""
+	echo "Box closed !"
+	exit 1
+fi
+
+
+
+
+
+
+Xdialog --title "APT LOG" --fixed-font \
+	--editbox /tmp/editbox.tmp.$$ 0 0 2>/tmp/editbox.txt.$$
+
+
+case $? in
+  0) 
+	(
+	echo "75" ; sleep 1
+	xterm -hold -e  apt-get install --assume-yes --force-yes gawk gdesklets gdesklets-data
+	
+	if ! test -e $HOME/.gnome2/session-manual;
+			then
+				cp -f ./scripts/gdesklets/session-manual $HOME/.gnome2/
+		elif (cat $HOME/.gnome2/session-manual | egrep "gdesklets");
+			then
+				Xdialog --title "DebCentral Config" \
+		--icon ./scripts/charlix.xpm \
+		--msgbox "Gdesklets already installed" 0 0
+				
+		elif cat $HOME/.gnome2/session-manual | grep "num_clients=0";
+			then
+				mv -f $HOME/.gnome2/session-manual $HOME/.gnome2/session-manual_backup
+				gawk '/num_clients/{gsub(/0/, "1")};{print}' $HOME/.gnome2/session-manual_backup >> $HOME/.gnome2/session-manual
+				cat ./scripts/deskletstartup >> $HOME/.gnome2/session-manual;
+					
+		else
+			mv -f $HOME/.gnome2/session-manual $HOME/.gnome2/session-manual_backup
+			foo=`tail -1 $HOME/.gnome2/session-manual_backup | gawk -F "," '{ print $1 }'`
+			foo2=`expr 1 + $foo`
+			foo3=`expr 1 + $foo2`
+			gawk '/num_clients/{gsub(/'$foo2'/,'$foo3')};{print}' $HOME/.gnome2/session-manual_backup >> $HOME/.gnome2/session-manual
+			gawk '{sub(/0/,'$foo2');print}' ./scripts/deskletstartup >> $HOME/.gnome2/session-manual;
+			
+	fi
+				
+	
+	echo "100" ; sleep 1
+	) |
+	$DIALOG --title "GAUGE" --gauge "Installing" 8 30
+	Xdialog --title "IT'S DONE " \
+	--icon ./scripts/charlix.xpm \
+        --msgbox "All selected installation and configuration completed" 0 0
+    ;;
+  1)
+    echo "Cancel pressed."
+    
+    ;;
+  255)
+    echo "Box closed."
+
+    ;;
+esac
+
+
+rm -f /tmp/editbox.tmp.$$
+rm -f /tmp/editbox.txt.$$
+	
+
+
+Xdialog --title "IT'S DONE " \
+	--icon ./scripts/charlix.xpm \
+        --msgbox "All selected installation and configuration completed" 0 0

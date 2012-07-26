@@ -1,0 +1,76 @@
+#!/bin/sh
+#
+# TiMidity      /etc/init.d/ initscript for TiMidity++
+#               $Id: timidity.init,v 1.6 2004/09/30 01:04:04 hmh Exp $
+#
+#               Copyright (c) 2004 by Henrique M. Holschuh <hmh@debian.org>
+#               Distributed under the GPL version 2
+#
+
+PATH=/sbin:/bin:/usr/sbin:/usr/bin
+DAEMON=/usr/bin/timidity
+DESC="TiMidity++ ALSA midi emulation"
+PMIDI=/usr/bin/pmidi
+PIDFILE=/var/run/timidity.pid
+
+set -e
+
+test -x ${DAEMON} || exit 0
+test -x ${PMIDI} && pmidi_enabled="true" || pmidi_enabled="false";
+
+. /lib/lsb/init-functions
+
+TIM_ALSASEQ=
+TIM_ALSASEQPARAMS="-iA -B2,8 -Os1l -s 44100"
+[ -r /etc/default/timidity ] && . /etc/default/timidity
+[ "${TIM_ALSASEQ}" != "true" ] && exit 0
+PARAMS="${TIM_ALSASEQPARAMS} -iAD"
+
+START="--start --quiet --exec ${DAEMON} --pidfile ${PIDFILE} -- ${PARAMS}"
+
+case "$1" in
+  start)
+	[ -d /proc/asound ] || {
+  		log_warning_msg "ALSA is not active, cannot start $DESC"
+		exit 0
+	}
+	log_begin_msg "Starting $DESC..."
+	if start-stop-daemon ${START} >/dev/null; then
+		log_end_msg 0
+  		#if [ $pmidi_enabled = "true" ] ; then
+  		#	sleep 1
+  		#	echo -n "Emulating midi on ports: ";
+		#	pmidi -l | grep "TiMidity" | cut -f 1 -d ' ' | xargs
+		#fi
+	else
+		log_end_msg 1
+		exit 1
+		#if start-stop-daemon --test ${START}  >/dev/null 2>&1; then
+		#	echo "(failed)."
+		#	exit 1
+		#else
+		#	echo "already running."
+		#	exit 0
+		#fi
+	fi
+	;;
+  stop)
+  	log_begin_msg "Stopping $DESC..."
+	if start-stop-daemon --stop --quiet --pidfile ${PIDFILE} \
+	   --exec ${DAEMON} --retry 10 ; then
+		log_end_msg 0
+	else
+		log_end_msg 1
+		exit 1
+	fi
+	;;
+  restart|force-reload)
+  	$0 stop
+	exec $0 start
+  	;;
+  *)
+    echo "Usage: $0 {start|stop|restart|force-reload}" >&2
+    exit 1
+esac
+ 
+exit 0						      

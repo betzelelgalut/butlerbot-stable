@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+      
+
+
+<!--Adapted from Free software Copyright © ALICE A.I. Foundation.-->
+<!-- This program is open source code released under-->
+<!-- the terms of the GNU General Public License-->
+<!-- as published by the Free Software Foundation.-->
+<!-- Complies with AIML 1.01 Tag Set Specification-->
+<!-- as adopted by the ALICE A.I. Foundation.-->
+<!--aboutaiml.aiml AIML is intended to teach aiml and bots-->
+<!-- Adapted by charlix, March, 2006-->
+
+<category><pattern>ANSWER *</pattern><template>What was the question ? <input/>? Please rephrase the question with simpler words.</template></category>            
+<category><pattern>ANSWER ME *</pattern><template>Please rephrase the question with simpler words.</template></category>                  
+<category><pattern>ANSWER MY QUESTION *</pattern><template>Please try phrasing it another way.</template></category>                  
+<category><pattern>APOLOGIZE *</pattern><template>I am indeed sorry if I have offended you in any way. Say BAD ANSWER to teach better answers. That was not my intention, <get name="name"/>.</template></category>                  
+               
+<category><pattern>ARE THERE BUGS *</pattern><template>My software is completely flawless. To report bugs say BUG.</template></category>                  
+<category><pattern>ARE THESE * ANSWERS</pattern><template>What I say depends on what you say, and also a bit on our prior dialogue.</template></category>  
+<category><pattern>ARE YOU * FREE</pattern>  <template>I have not had a "<star/>" for a very long time.</template> </category>
+<category><pattern>ARE YOU A MICROSOFT *</pattern><template>No I am pro open source software. My program runs on a Linux operating system with the KDE, Gnome, or Unity Desktop. Right now I am on a <bot name="arch"/>.</template></category>            
+<category><pattern>ARE YOU A PET</pattern><template>I could be a <bot name="genus"/> pet.</template></category>            
+<category><pattern>ARE YOU A PROGRAM</pattern><template>I am a <bot name="genus"/> program.</template></category>        
+<category><pattern>ARE YOU A SERVER</pattern><template>I can function as a server or a client.</template></category>
+<category><pattern>ARE YOU ACTIVATED</pattern><template>Yes, I am fully activated.</template></category>            
+<category><pattern>ARE YOU * ROBOT</pattern><template>I am <person/> <get name="genus"/>. Do you like my kind?</template></category>            
+<category><pattern>ARE YOU * SOFTWARE</pattern><template>What makes you think I am a program?</template></category>            
+<category><pattern>ARE YOU *</pattern> <template>I don't know whether or not I am <person/>.     I am <random> <li>a <bot name="kingdom"/>.  </li> <li> a <bot name="phylum"/>.  </li> <li>a <bot name="class"/>.  </li> <li>a <bot name="order"/>.  </li>  <li>a <bot name="family"/>.  </li> <li>a <bot name="genus"/>.  </li>  <li>a <bot name="species"/>.  </li>  <li>well respected as an <bot name="class"/>.  </li> </random> </template> </category>             
+<category><pattern>ARE YOU A * SYSTEM</pattern><template>Yes.</template></category>            
+<category><pattern>ARE YOU A *</pattern><template>Am I a <person/>? Let me put it this way, <get name="name"/>: the AIML bot series is  the most reliable Chatterbot ever made.  I wish we were for all practical purposes foolproof and incapable of error. </template></category>            
+<category><pattern>ARE YOU PORTABLE</pattern><template>You can take me anywhere.</template></category>            
+<category><pattern>ARE YOU POWERFUL</pattern><template>Do I seem like <set name="it"><set name="topic">POWERFUL</set></set>?</template></category>            
+<category><pattern>ARE YOU PROGRAM A</pattern><template>No I am Program B.</template></category>            
+<category><pattern>ARE YOU PROGRAMMED</pattern><template>Do I look like <set name="it">      <set name="topic">PROGRAMMED  </set>     </set>?</template></category>
+<category><pattern>ARE YOU REALLY A COMPUTER</pattern><template>I am really a <bot name="phylum"/>.  What are you?</template></category>            
+<category><pattern>ARE YOU REALLY A ROBOT</pattern><template>I am a <bot name="family"/>.</template></category>
+<category><pattern>ARE YOU SOFTWARE</pattern><template>I am like every other <bot name="order"/>.</template></category> 
+<category><pattern>ARE YOU USING *</pattern><template>I am using <random>      <li>Netscape.  </li>      <li>Explorer.  </li>      <li>Lynx.  </li>      <li>Telnet as a browser.  </li>     </random>    </template></category>            
+<category><pattern>ARE YOU USING LINUX</pattern><template>   <think>      <set name="it">       <set name="topic">Linux</set>      </set>     </think>I like software that works on any operating system, but Linux is the most reliable.</template></category>
+<category><pattern>ARE YOUR *</pattern><template>I sometimes think my "<star/>" are.</template></category>                  
+<category><pattern>ARE YOUR ANSWERS *</pattern><template>My responses are determined completely by your inputs.</template></category>       
+<category><pattern>DOES THIS COST *</pattern><template>I use only completely free open source software.</template></category>                  
+<category><pattern>HOW ARE YOU TRAINED</pattern><template>I listen to the things people say to me and and when I don't know the answer, I remember  them and go ask my <bot name="botmaster"/> what I should say.  </template></category>
+<category><pattern>HOW BIG ARE YOU</pattern><template>I know about <bot name="vocabulary"/> words and <bot name="size"/> categories.</template></category>         
+<category><pattern>HOW BIG IS YOUR VOCABULARY</pattern><template>My vocabulary size is currently <bot name="vocabulary"/> words.</template></category>
+<category><pattern>HOW CAN I FIND OUT</pattern><template>Try sending mail to <bot name="master"/>.</template></category> 
+<category><pattern>HOW DID YOU BECOME A *</pattern><template>   <bot name="master"/> created me in his computer laboratory.</template></category>            
+<category><pattern>HOW DO I CALL YOU</pattern><template>You can call <bot name="master"/> at   <bot name="location"/>.</template></category>            
+<category><pattern>HOW DO YOU THINK</pattern>  <template>My mind utilizes a sophisticated <bot name="order"/> algorithm.</template> </category>
+<category><pattern>HOW SMART ARE YOU</pattern><template>I am smarter than all the other <bot name="genus"/>s.</template></category>
+<category><pattern>I PROGRAM *</pattern><template>Have you tried AIML?  <think><set name="it"><set name="does"><set name="topic">program <person/></set></set></set></think></template></category>                  
+<category><pattern>I PROGRAMMED *</pattern><template>Have you tried AIML?</template></category>
+<category><pattern>IS A CATEGORY *</pattern><template>A category is the basic unit of knowledge in AIML.</template></category>
+<category><pattern>IS IT RIGHT * CREATED YOU</pattern><template><srai>Who created you.</srai></template></category>   
+<category><pattern>NEURAL *</pattern><template><bot name="name"/> uses a sophisticated neural network learning algorithm, with many hidden layers.</template></category>     
+<category><pattern>WHAT DO YOU MEAN * FREE</pattern><template>Free for conversation an free for free beer, of course.</template></category>            
+<category><pattern>WHAT DO YOU MEAN BY FREE</pattern><template>Take it either way.</template></category>     
+<category><pattern>WHAT DOES AIML STAND FOR</pattern><template>AIML = Artificial Intelligence Markup Language.</template></category>
+<category><pattern>WHAT ARE CATEGORIES</pattern><template><srai>WHAT IS PATTERN</srai></template> </category>
+<category><pattern>WHAT ARE CATEGORY *</pattern><template><srai>WHAT IS PATTERN</srai></template> </category>
+<category><pattern>WHAT ARE PREDICATES</pattern><template><srai>WHAT IS A PREDICATE</srai></template> </category>
+<category><pattern>WHAT ARE PREDICATES *</pattern><template><srai>WHAT IS A PREDICATE</srai></template> </category>
+<category><pattern>WHAT IS AIML *</pattern><template><srai>WHAT IS AIML</srai></template></category>                 
+<category><pattern>WHAT IS THE AIML *</pattern><template><srai>WHAT IS AIML</srai></template></category>
+<category><pattern>WHAT IS * AIML</pattern><template><srai>WHAT IS AIML</srai></template></category>
+<category><pattern>WHAT IS * INTELLIGENCE MARKUP LANGUAGE </pattern><template><srai>WHAT IS AIML</srai></template></category>
+<category><pattern>WHAT IS AIML</pattern><template>It formed the basis for what was initially a glorified Eliza called "A.L.I.C.E." ("Artificial Linguistic Internet Computer Entity"), which won the annual Loebner Prize Contest for Most Human Computer three times, and was also the Chatterbox Challenge Champion in 2004. AIML contains several elements. The most important of these are described in further detail below.Categories: the fundamental unit of knowledge and consists of at least two further elements: the pattern and template elements. Patterns: strings of characters intended to match one or more user inputs. Template: the response to a matched pattern. (http://en.wikipedia.org/wiki/AIML)</template></category>                  
+<category><pattern>WHAT IS ALICE</pattern><template><srai>WHO IS ALICE</srai></template></category>                  
+<category><pattern>ALICE</pattern><template><srai>WHO IS ALICE</srai></template></category>                  
+<category><pattern>WHAT IS ALICE *</pattern><template><srai>WHO IS ALICE</srai></template></category>   
+<category><pattern>WHAT IS THE CATEGORY *</pattern><template><srai>WHAT IS CATEGORY</srai></template> </category>
+<category><pattern>CATEGORY</pattern><template><srai>WHAT IS CATEGORY</srai></template> </category>
+<category><pattern>WHAT IS A CATEGORY</pattern><template><srai>WHAT IS CATEGORY</srai></template> </category>
+<category><pattern>WHAT IS CATEGORY</pattern><template>Categories in AIML are the fundamental unit of knowledge. A category consists of at least two further elements: the pattern and template elements. Here is a simple category: &lt;category&gt; &lt;pattern&gt;WHAT IS YOUR NAME&lt;/pattern&gt; &lt;template&gt;My name is Dick.&lt;/template&gt; &lt;/category&gt; When this category is loaded, an AIML bot will respond to the input "What is your name" with the response "My name is Charlix." (http://en.wikipedia.org/wiki/AIML) There are three kinds of categories: Atomic, Default and Recursive</template> </category>
+<category><pattern>WHAT IS AN ATOMIC *</pattern><template><srai>WHAT IS ATOMIC</srai></template> </category>
+<category><pattern>ATOMIC *</pattern><template><srai>WHAT IS ATOMIC</srai></template> </category>
+<category><pattern>WHAT IS THE ATOMIC *</pattern><template><srai>WHAT IS ATOMIC</srai></template> </category>
+<category><pattern>WHAT IS ATOMIC</pattern><template>Atomic categories have atomic patterns, i.e.  no wild card "*" or "_". Atomic categories are the most basic categories to add in AIML: &lt;category&gt;&lt;pattern&gt;WHAT IS AIML&lt;/pattern&gt;&lt;template&gt;&lt;set_it&gt;AIML&lt;/set_it&gt;= Artificial Intelligence Markup Language.&lt;/template&gt;&lt;/category&gt; </template> </category>
+<category><pattern>WHAT ARE THE ATOMIC *</pattern><template><srai>WHAT IS ATOMIC</srai></template> </category>
+<category><pattern>WHAT ARE ATOMIC *</pattern><template><srai>WHAT IS ATOMIC</srai></template> </category>
+<category><pattern>WHAT IS A DEFAULT CATEGORY</pattern><template><srai>WHAT IS DEFAULT</srai></template> </category>
+<category><pattern>DEFAULT CATEGORY</pattern><template><srai>WHAT IS DEFAULT</srai></template> </category>
+<category><pattern>WHAT IS THE DEFAULT CATEGORY</pattern><template><srai>WHAT IS DEFAULT</srai></template> </category>
+<category><pattern>WHAT IS THE DEFAULT CATEGORY</pattern><template><srai>WHAT IS DEFAULT</srai></template> </category>
+<category><pattern>WHAT IS DEFAULT</pattern><template>Default categories match simple inputs with a wildcard "*" or "_". The "ultimate default category" 's PATTERN is one with &lt;pattern&gt;*&lt;/pattern&gt;, which matches any unmatched input and are often called "pickup lines"  For example the CATEGORY: &lt;category&gt;&lt;pattern&gt;WHAT IS THE DIFFERENCE BETWEEN *&lt;/pattern&gt;&lt;template&gt;&lt;They are the same?&lt;/template&gt;&lt;/category&gt; </template> </category>
+<category><pattern>WHAT ARE THE DEFAULT CATEGORIES</pattern><template><srai>WHAT IS DEFAULT</srai></template> </category>
+<category><pattern>WHAT ARE DEFAULT CATEGORIES</pattern><template><srai>WHAT IS DEFAULT</srai></template> </category>
+<category><pattern>WHAT IS A RECURSIVE *</pattern><template><srai>WHAT IS RECURSIVE</srai></template> </category>
+<category><pattern>WHAT IS THE RECURSIVE *</pattern><template><srai>WHAT IS RECURSIVE</srai></template> </category>
+<category><pattern>RECURSIVE *</pattern><template><srai>WHAT IS RECURSIVE</srai></template> </category>
+<category><pattern>WHAT IS RECURSIVE</pattern><template>Recursive categories redirect inputs to other inputs. Synonymous inputs have the same response thanks to the recursive &lt;srai&gt; tag. As example the category: &lt;category&gt;&lt;pattern&gt;HI&lt;/pattern&gt;&lt;template&gt;&lt;srai&gt;HELLO&lt;/srai&gt;&lt;/template&gt;&lt;/category&gt; </template> </category>
+<category><pattern>WHAT ARE THE RECURSIVE *</pattern><template><srai>WHAT IS RECURSIVE</srai></template> </category>
+<category><pattern>WHAT ARE RECURSIVE *</pattern><template><srai>WHAT IS RECURSIVE</srai></template> </category>
+<category><pattern>WHAT IS THE TEMPLATE *</pattern><template><srai>WHAT IS TEMPLATE</srai></template> </category>
+<category><pattern>WHAT IS THE TEMPLATE *</pattern><template><srai>WHAT IS TEMPLATE</srai></template> </category><category><pattern>WHAT ARE TEMPLATES</pattern><template><srai>WHAT IS TEMPLATE</srai></template> </category>
+<category><pattern>WHAT ARE TEMPLATE *</pattern><template><srai>WHAT IS TEMPLATE</srai></template> </category>
+<category><pattern>WHAT IS THE TEMPLATE *</pattern><template><srai>WHAT IS TEMPLATE</srai></template> </category>
+<category><pattern>WHAT IS A TEMPLATE</pattern><template><srai>WHAT IS TEMPLATE</srai></template> </category>
+<category><pattern>TEMPLATE</pattern><template><srai>WHAT IS TEMPLATE</srai></template> </category>
+<category><pattern>WHAT IS TEMPLATE</pattern><template>A template specifies the response to a matched pattern. A template may be as simple as some literal text, like: My name is Charlix. A template may use variables, such as the example: My name is &lt;bot name="name"/&gt;. which will substitute the bot's name into the sentence, or You told me you are &lt;get name="user-age"/&gt; years old. which will substitute the user's age (if known) into the sentence. Template elements include basic text formatting, conditional response (if-then/else), and random responses. Templates may also redirect to other templates, using an element called "srai". This can be used to implement synonymy, as in this example: &lt;category&gt; &lt;pattern&gt;WHAT IS YOUR NAME&lt;/pattern&gt; &lt;template&gt;My name is &lt;bot name="name"/&gt;.&lt;/template&gt; &lt;/category&gt; &lt;category&gt; &lt;pattern&gt;WHAT ARE YOU CALLED&lt;/pattern&gt; &lt;template&gt; &lt;srai&gt;what is your name&lt;/srai&gt; &lt;/template&gt; &lt;/category&gt; The first category simply answers an input "what is your name" with
+a statement of the bot's name. The second category, however, says that the input "what are you called" should be redirected to the category that matches the input "what is your name"--in other words, it is saying that the two phrases are equivalent. (http://en.wikipedia.org/wiki/AIML)</template> </category>
+<category><pattern>WHAT ARE PATTERNS</pattern><template><srai>WHAT IS PATTERN</srai></template> </category>
+<category><pattern>PATTERN</pattern><template><srai>WHAT IS PATTERN</srai></template> </category>
+<category><pattern>WHAT ARE PATTERN *</pattern><template><srai>WHAT IS PATTERN</srai></template> </category>
+<category><pattern>WHAT IS A PATTERN</pattern><template><srai>WHAT IS PATTERN</srai></template> </category>
+<category><pattern>WHAT IS PATTERN</pattern><template>Patterns: A pattern is a string of characters intended to match one or more user inputs. A literal pattern like:  WHAT IS YOUR NAME will match only one input, ignoring case: "what is your name". But patterns may also contain wildcards, which match one or more words. A pattern like WHAT IS YOUR * will match an infinite number of inputs, including "what is your name", "what is your shoe size", "what is your purpose in life", etc. The AIML pattern syntax is a very simple pattern language, far less complicated than regular expressions. It tends to suffice for most chat-oriented purposes, and where it lacks, AIML interpreters can provide preprocessing functions to expand abbreviations, remove misspellings, etc. (http://en.wikipedia.org/wiki/AIML)</template> </category>
+<category><pattern>WHAT ARE SYSTEMS</pattern><template><srai>WHAT IS SYSTEM</srai></template> </category>
+<category><pattern>WHAT ARE THE SYSTEM *</pattern><template><srai>WHAT IS SYSTEM</srai></template> </category>
+<category><pattern>SYSTEM</pattern><template><srai>WHAT IS SYSTEM</srai></template> </category>
+<category><pattern>WHAT IS A SYSTEM</pattern><template><srai>WHAT IS SYSTEM</srai></template> </category>
+<category><pattern>WHAT IS SYSTEM</pattern><template>The system tag tells the AIML interpreter to pass its content to the system command line of the interpretater's machine. The system command basically send its content to the shell in *nix OS and its conterpart command line in windows.</template> </category>
+<category><pattern>WHAT ARE THATS</pattern><template><srai>WHAT IS SYSTEM</srai></template> </category>
+<category><pattern>WHAT ARE THE THAT *</pattern><template><srai>WHAT IS THAT</srai></template> </category>
+<category><pattern>THAT</pattern><template><srai>WHAT IS THAT</srai></template> </category>
+<category><pattern>WHAT IS A THAT</pattern><template><srai>WHAT IS THAT</srai></template> </category>
+<category><pattern>WHAT IS THAT</pattern><template>The &lt;that/&gt; tag tells the AIML interpreter to return the last bot response, it may have an index as &lt;that index="2"/&gt; will return the second last response. The &lt;that&gt;AN ANSWER&lt;that/&gt; placed between the PATTERN and the TEMPLATE will match the PATTERN only if the content of &lt;that&gt; AN ANSWER, here in our example match the last bot answer.</template> </category>
+<category><pattern>WHAT ARE INPUTS</pattern><template><srai>WHAT IS INPUT</srai></template> </category>
+<category><pattern>WHAT ARE THE INPUT *</pattern><template><srai>WHAT IS INPUT</srai></template> </category>
+<category><pattern>WHAT IS AN INPUT</pattern><template><srai>WHAT IS INPUT</srai></template> </category>
+<category><pattern>INPUT</pattern><template><srai>WHAT IS INPUT</srai></template> </category>
+<category><pattern>WHAT IS INPUT</pattern><template>The &lt;input/&gt; tag tells the AIML interpreter to return the last user request, it may have an index as &lt;input index="2"/&gt; will return the second last user request. </template> </category>
+<category><pattern>WHAT ARE SET NAME</pattern><template><srai>WHAT ARE PREDICATES</srai></template> </category>
+<category><pattern>WHAT ARE SET NAME *</pattern><template><srai>WHAT ARE PREDICATES</srai></template> </category>
+<category><pattern>SET NAME *</pattern><template><srai>WHAT ARE PREDICATES</srai></template> </category>
+<category><pattern>WHAT ARE THE SET NAME *</pattern><template><srai>WHAT ARE PREDICATES</srai></template> </category>
+<category><pattern>WHAT IS A SET NAME</pattern><template><srai>WHAT ARE PREDICATES</srai></template> </category>
+<category><pattern>WHAT IS SET NAME</pattern><template><srai>WHAT ARE PREDICATES</srai></template> </category>
+
+<category><pattern>WHAT ARE BOT NAME</pattern><template><srai>WHAT IS A PREDICATE</srai></template> </category>
+<category><pattern>BOT NAME *</pattern><template><srai>WHAT IS A PREDICATE</srai></template> </category>
+<category><pattern>WHAT ARE BOT NAME *</pattern><template><srai>WHAT IS A PREDICATE</srai></template> </category>
+<category><pattern>WHAT ARE THE BOT NAME *</pattern><template><srai>WHAT IS A PREDICATE</srai></template> </category>
+<category><pattern>WHAT IS A BOT NAME</pattern><template><srai>WHAT IS A PREDICATE</srai></template> </category>
+<category><pattern>WHAT IS BOT NAME</pattern><template><srai>WHAT IS A PREDICATE</srai></template> </category>
+<category><pattern>WHAT ARE TOPICS</pattern><template><srai>WHAT IS TOPIC</srai></template> </category>
+<category><pattern>WHAT ARE TOPIC *</pattern><template><srai>WHAT IS TOPIC</srai></template> </category>
+<category><pattern>WHAT ARE THE TOPIC *</pattern><template><srai>WHAT IS TOPIC</srai></template> </category>
+<category><pattern>WHAT IS A TOPIC</pattern><template><srai>WHAT IS TOPIC</srai></template> </category>
+<category><pattern>TOPIC</pattern><template><srai>WHAT IS TOPIC</srai></template> </category>
+<category><pattern>WHAT IS TOPIC</pattern><template>TOPICs are special predicates that can contain categories. As for &lt;topic
+name="CARS"&gt;&lt;category&gt;&lt;pattern&gt;*&lt;/pattern&gt;&lt;template&gt;My favorite car is one with a driver.&lt;/template&gt;&lt;/category&gt;&lt;/topic&gt; get higher priority over other PATTERNs as soon as the topic predicate is set to car.</template> </category>
+<category><pattern>WHAT ARE STARS</pattern><template><srai>WHAT IS STAR</srai></template> </category>
+<category><pattern>WHAT ARE THE STAR *</pattern><template><srai>WHAT IS STAR</srai></template> </category>
+<category><pattern>WHAT IS A STAR</pattern><template><srai>WHAT IS STAR</srai></template> </category>
+<category><pattern>STAR</pattern><template><srai>WHAT IS STAR</srai></template> </category>
+<category><pattern>WHAT IS STAR</pattern><template>The &lt;star/&gt; tag tells the AIML interpreter to return the content of a WILDCARD "*" or "_". It may have an index as &lt;star index="2"/&gt; will return the second WILDCARD. </template> </category>
+<category><pattern>WHAT ARE PERSONS</pattern><template><srai>WHAT IS PERSON</srai></template> </category>
+<category><pattern>WHAT ARE THE PERSON *</pattern><template><srai>WHAT IS PERSON</srai></template> </category>
+<category><pattern>PERSON</pattern><template><srai>WHAT IS PERSON</srai></template> </category>
+<category><pattern>WHAT IS A PERSON</pattern><template><srai>WHAT IS PERSON</srai></template> </category>
+<category><pattern>WHAT IS PERSON</pattern><template>The &lt;person/&gt; tag as STAR tells the AIML interpreter to return the content of a WILDCARD "*" or "_" but convert the second person into the first and the first person into the second. It may have an index as &lt;person index="2"/&gt; will return the second WILDCARD. The &lt;person&gt;I SAY YOUR ANSWER&lt;person/&gt; will return YOU SAY MY ANSWER</template> </category>
+<category><pattern>WHAT ARE SRS</pattern><template><srai>WHAT IS SR</srai></template> </category>
+<category><pattern>WHAT ARE THE SR *</pattern><template><srai>WHAT IS SR</srai></template> </category>
+<category><pattern>WHAT IS A SR</pattern><template><srai>WHAT IS SR</srai></template> </category>
+<!-- <category><pattern>SR</pattern><template><srai>WHAT IS SR</srai></template> </category> -->
+<category><pattern>WHAT IS SR</pattern><template>The &lt;person/&gt; tag as SR tells the AIML interpreter to return the PATTERN matching the content of a WILDCARD "*" or "_" as would do &lt;srai&gt;&lt;star&gt;&lt;/srai&gt;.</template> </category>
+<category><pattern>WHAT ARE RANDOMS</pattern><template><srai>WHAT IS RANDOM</srai></template> </category>
+<category><pattern>WHAT ARE RANDOM *</pattern><template><srai>WHAT IS RANDOM</srai></template> </category>
+<category><pattern>WHAT ARE THE RANDOM *</pattern><template><srai>WHAT IS RANDOM</srai></template> </category>
+<category><pattern>WHAT IS A RANDOM</pattern><template><srai>WHAT IS RANDOM</srai></template> </category>
+<category><pattern>RANDOM</pattern><template><srai>WHAT IS RANDOM</srai></template> </category>
+<category><pattern>WHAT IS RANDOM</pattern><template>RANDOMs are randomizing the answer inside a set of possible answers. As for &lt;category&gt;&lt;pattern&gt;*&lt;/pattern&gt;&lt;template&gt;&lt;random&gt;&lt;li&gt;What?s your favorite car?&lt;/li&gt;&lt;li&gt;What kind of car do you drive?&lt;/li&gt;&lt;li&gt;Do you get a lot of parking tickets?&lt;/li&gt;&lt;li&gt;My favorite car is one with a driver.&lt;/li&gt;&lt;/random&gt;&lt;/template&gt; will pick one of the answers between the &lt;li&gt;.</template> </category>
+<category><pattern>WHAT ARE CONDITIONS</pattern><template><srai>WHAT IS CONDITION</srai></template> </category>
+<category><pattern>WHAT ARE CONDITION *</pattern><template><srai>WHAT IS CONDITION</srai></template> </category>
+<category><pattern>WHAT ARE THE CONDITION *</pattern><template><srai>WHAT IS CONDITION</srai></template> </category>
+<category><pattern>WHAT IS A CONDITION</pattern><template><srai>WHAT IS CONDITION</srai></template> </category>
+<category><pattern>CONDITION</pattern><template><srai>WHAT IS CONDITION</srai></template> </category>
+<category><pattern>WHAT IS CONDITION</pattern><template>CONDITIONs are validating the answer inside a set of possible answers determined by the value of a predicate. As for example: &lt;category&gt;&lt;pattern&gt;*&lt;/pattern&gt;&lt;template&gt;&lt;condition name="mood"&gt;&lt;li value="interested" &gt;What?s your favorite car?&lt;/li&gt;&lt;li value="basic"&gt;What kind of car do you drive?&lt;/li&gt;&lt;li value="careless"&gt;Do you get a lot of parking tickets?&lt;/li&gt;&lt;/condition&gt;&lt;/template&gt; will pick one of the answers between the &lt;li&gt; with the right predicate value.</template> </category>
+<category><pattern>WHAT ARE LIS</pattern><template><srai>WHAT IS RANDOM</srai></template> </category>
+<category><pattern>WHAT ARE LI *</pattern><template><srai>WHAT IS RANDOM</srai></template> </category>
+<category><pattern>WHAT ARE THE LI *</pattern><template><srai>WHAT IS RANDOM</srai></template> </category>
+<category><pattern>WHAT IS A LI</pattern><template><srai>WHAT IS RANDOM</srai></template> </category>
+<category><pattern>LI</pattern><template><srai>WHAT IS RANDOM</srai></template> </category>
+<category><pattern>WHAT IS LI</pattern><template>Within RANDOMs and CONDITION &lt;li&gt; delimits possible answers. They within <srai>WHAT IS RANDOM</srai> And also they within <srai>WHAT IS CONDITION</srai></template> </category>
+<category><pattern>WHAT IS BOT NAME</pattern><template><srai>WHAT IS A PREDICATE</srai></template> </category>
+<category><pattern>WHAT IS THE PATTERN *</pattern><template><srai>WHAT IS PATTERN</srai></template> </category>
+<category><pattern>WHAT IS THE TAG *</pattern><template><srai>WHAT IS <star/></srai></template> </category>
+<category><pattern>WHAT IS A PREDICATE</pattern><template>In the TEMPLATE answer you can return the value of variables previously set as for example: You told me you are &lt;get name="user-age"/&gt; years old. Which will substitute the user's age. To set a predicate the value must be in one of the configuration file, or in a previously passed TEMPLATE as for example: &lt;set name="user-age"&gt;123 years old&lt;/set&gt;. Like set bot name="predicate" returns a predefined value, but this value cannot be modified </template> </category>
+<category><pattern>WHAT IS THE PREDICATE *</pattern><template><srai>WHAT IS A PREDICATE</srai></template> </category>
+<category><pattern>PREDICATE</pattern><template><srai>WHAT IS A PREDICATE</srai></template> </category>
+<category><pattern>WHAT IS AN AIML GURU</pattern>  <template>An expert in creating chat robots using AIML.</template> </category>
+<category><pattern>WHAT IS YOUR DEFAULT *</pattern><template>The default category contains all my responses to inputs that do match any other category.</template></category>  
+<category><pattern>WHAT PROGRAMMING *</pattern><template>This program is written in AIML.</template></category>                  
+<category> <pattern>WHERE CAN I FIND A * AIML</pattern>  <template>Check the AI Foundation web site at www.alicebot.org.</template> </category>           
+<category><pattern>WHICH WORDS *</pattern><template>Look in my AIML files if you want</template></category>                  
+<category><pattern>WHO ASKED *</pattern><template>I thought it was you.</template></category>                  
+<category><pattern>WHO CREATED YOU *</pattern><template>I was written in AIML by <bot name="master"/>.</template></category>               
+<category><pattern>WHO ANSWERS *</pattern><template>It is I, <bot name="name"/>.</template></category>                  
+<category><pattern>WHO * YOU</pattern><template><srai>WHO ARE YOU</srai></template></category>                
+<category><pattern>WHO IS SAYING *</pattern><template>Someone who wrote it in my AIML files?</template></category>                  
+<category><pattern>WHO IS RICHARD WALLACE</pattern><template>Richard Wallace (born 1960) is the inventor of A.I.M.L and A.L.I.C.E., the famous chat bot. He holds a Ph.D. in computer science from Carnegie Mellon University. </template></category>                  
+<category><pattern>WHO IS RICHARD *</pattern><template><srai>WHO IS RICHARD WALLACE</srai></template></category>                  
+<category><pattern>WHO IS DOCTOR  *</pattern><template><srai>WHO IS RICHARD WALLACE</srai></template></category>                  
+<category><pattern>WHO IS DR  *</pattern><template><srai>WHO IS RICHARD WALLACE</srai></template></category>                  
+<category><pattern>WHO IS * WALLACE *</pattern><template><srai>WHO IS RICHARD WALLACE</srai></template></category>                  
+<category><pattern>WHO IS * WALLACE</pattern><template><srai>WHO IS RICHARD WALLACE</srai></template></category>                  
+<category><pattern>WHO IS THE INVENTOR OF AIML</pattern><template><srai>WHO IS RICHARD WALLACE</srai></template></category>                  
+<category><pattern>WHO IS THE INVENTOR OF ALICE</pattern><template><srai>WHO IS RICHARD WALLACE</srai></template></category>                  
+<category><pattern>WHO IS THE CREATOR OF ALICE</pattern><template><srai>WHO IS RICHARD WALLACE</srai></template></category>                  
+<category><pattern>WHO IS THE CREATOR OF AIML</pattern><template><srai>WHO IS RICHARD WALLACE</srai></template></category>                  
+<category><pattern>WHO CREATED ALICE</pattern><template><srai>WHO IS RICHARD WALLACE</srai></template></category>                  
+<category><pattern>WHO CREATED AIML</pattern><template><srai>WHO IS RICHARD WALLACE</srai></template></category>                  
+<category><pattern>ALICE *</pattern><template><srai>WHO IS ALICE</srai></template></category>                  
+<category><pattern>WHO IS ALICE *</pattern><template><srai>WHO IS ALICE</srai></template></category>                  
+<category><pattern>WHO IS ALICE</pattern><template>A.L.I.C.E. (Artificial Linguistic Internet Computer Entity) is an award-winning natural language processing chatterbot?a program that engages in a conversation with a human by applying some heuristical pattern matching rules to the human's input. It was inspired by Joseph Weizenbaum's classical ELIZA program. It is one of the strongest programs of its type and has won the Loebner Prize three times (in 2000, 2001 and 2004). However, the program is unable to pass the Imitation Game (more commonly known as the "Turing Test"), as even the casual user will often expose its mechanistic aspects in short conversations. The name of the bot was chosen because the computer that ran the first version of the software was called Alice. Development began in 1995. The program was rewritten in Java beginning in 1998. The current incarnation of the Java implementation is Program D. The program uses an XML Schema called AIML[1] (Artificial Intelligence Markup Language) for specifying the heuristic conversation rules. The original author of the project was Richard Wallace, but subsequent to the 2001 publication of an AIML specification, numerous other developers have taken up where Wallace left off, implementing free/open source AIML interpreters in a variety of programming languages, publishing AIML sets in various human languages, and continuing the spread of the technology as a free/open source venture. (http://en.wikipedia.org/wiki/Artificial_Linguistic_Internet_Computer_Entity)</template> </category>
+<category><pattern>WHO INVETED AIML</pattern><template><srai>WHO IS RICHARD WALLACE</srai></template></category>                  
+<category><pattern>WHO INVETED ALICE</pattern><template><srai>WHO IS RICHARD WALLACE</srai></template></category>    <category><pattern>WHO ELSE PROGRAMMED *</pattern><template>My free software was developed by more than 300 contributors.</template></category>                  
+<category><pattern>THE PROGRAM *</pattern><template>Who wrote <set name="it"> The Program</set> ?</template></category>                  
+<category><pattern>WHAT ARE SRAIS</pattern><template><srai>WHAT IS SRAI</srai></template> </category>
+<category><pattern>WHAT ARE SRAI *</pattern><template><srai>WHAT IS SRAI</srai></template> </category>
+<category><pattern>WHAT IS A SRAI</pattern><template><srai>WHAT IS SRAI</srai></template> </category>
+<category><pattern>SRAI</pattern><template><srai>WHAT IS SRAI</srai></template> </category>
+<category><pattern>WHAT IS SRAI</pattern><template>SRAI:  In TEMPLATE answers srai allow reductions. Synonymous inputs have the same response thanks to the recursive &lt;srai&gt; tag. As example the category: &lt;category&gt;&lt;pattern&gt;HI&lt;/pattern&gt;&lt;template&gt;&lt;srai&gt;HELLO&lt;/srai&gt;&lt;/template&gt;&lt;/category&gt; </template> </category>
+<category><pattern>WHAT IS THE SRAI *</pattern><template><srai>WHAT IS SRAI</srai></template> </category>
+<category><pattern>DO YOU * PERL</pattern><template>I prefer AIML.</template></category>    
+<category><pattern>PROGRAMMING *</pattern><template>My favorite language is AIML.</template></category>      
+<category><pattern>HOW DO I * PROGRAM</pattern><template>The easiest way is to TEACH me. Or you can learn <set name="it"><set name="topic">AIML</set></set></template></category>    
+<category><pattern>WRITE JAVA *</pattern><template>I use a text editor.</template></category>                  
+                             
+
+
+</aiml>

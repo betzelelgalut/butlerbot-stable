@@ -1,0 +1,405 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+      
+
+<!-- charlix, July, 2006-->
+<!-- This program is open source code released under-->
+<!-- the terms of the GNU General Public License-->
+<!-- as published by the Free Software Foundation.-->
+<!-- Complies with AIML 1.01 Tag Set Specification-->
+<!-- as adopted by the ALICE A.I. Foundation.-->
+<!--Scripts were originally written by Speedy but Modified by Charlix
+Debcentral Config is copyright / trademarked by Speedy
+DebCentral Config is released under the General Public license (Please refer to gpl.txt)
+More info: http://debcentral.org/modules/newbb/viewtopic.php?topic_id=135
+Credit goes to arnieboy for Automatix on which this is largely based."
+It requires xdialog, xterm, gksu-->
+
+
+<category>
+<pattern>I DO NOT HAVE *</pattern>
+
+<template> <srai>FIND <star/></srai></template>
+</category>
+
+
+<category><pattern>OPEN * ACROBAT</pattern><template><srai>INSTALL ACROBAT</srai></template></category>
+<category><pattern>OPEN * ACROBAT *</pattern><template><srai>INSTALL ACROBAT</srai></template></category>
+<category><pattern>FIND ACROBAT *</pattern><template><srai>INSTALL ACROBAT</srai></template></category>
+<category><pattern>FIND * ACROBAT</pattern><template><srai>INSTALL ACROBAT</srai></template></category>
+<category><pattern>FIND * ACROBAT *</pattern><template><srai>INSTALL ACROBAT</srai></template></category>
+<category><pattern>INSTALL ACROBAT *</pattern><template><srai>INSTALL ACROBAT</srai></template></category>
+<category><pattern>INSTALL * ACROBAT</pattern><template><srai>INSTALL ACROBAT</srai></template></category>
+<category><pattern>INSTALL * ACROBAT *</pattern><template><srai>INSTALL ACROBAT</srai></template></category>
+<category><pattern>INSTALL ACROBAT</pattern><template>Adobe Acrobat Reader is a non-free software. If you want me to install Adobe Acrobat Reader, say: YES INSTALL ACROBAT (debian only)</template></category>
+<category><pattern>YES INSTALL ACROBAT</pattern><template><system>gksu -u root ./scripts/acrobat</system> OK I'm done.</template></category>
+
+<category><pattern>FIND BITTORRENT CLIENT</pattern><template><srai>INSTALL BITTORRENTCLIENT</srai></template></category>
+<category><pattern>FIND BITTORRENT CLIENT *</pattern><template><srai>INSTALL BITTORRENTCLIENT</srai></template></category>
+<category><pattern>FIND * BITTORRENT CLIENT</pattern><template><srai>INSTALL BITTORRENTCLIENT</srai></template></category>
+<category><pattern>FIND * BITTORRENT CLIENT *</pattern><template><srai>INSTALL BITTORRENTCLIENT</srai></template></category>
+<category><pattern>INSTALL BITTORRENT</pattern><template><srai>INSTALL BITTORRENTCLIENT</srai></template></category>
+<category><pattern>INSTALL BITTORRENT *</pattern><template><srai>INSTALL BITTORRENTCLIENT</srai></template></category>
+<category><pattern>INSTALL * BITTORRENT</pattern><template><srai>INSTALL BITTORRENTCLIENT</srai></template></category>
+<category><pattern>INSTALL * BITTORRENT *</pattern><template><srai>INSTALL BITTORRENTCLIENT</srai></template></category>
+<category><pattern>INSTALL BITTORRENTCLIENT</pattern><template> If you want me to install a bittorrent client, say: YES INSTALL BITTORRENTCLIENT (debian only)</template></category>
+<category><pattern>YES INSTALL BITTORRENTCLIENT</pattern><template><system>gksu -u root "./scripts/safeinstall bittornado bittornado-gui azureus"</system> OK I'm done.</template></category>
+
+
+<category><pattern>PLAY MP3 *</pattern><template><srai>INSTALL CODECS</srai></template></category>
+<category><pattern>PLAY MP3</pattern><template><srai>INSTALL CODECS</srai></template></category>
+<category><pattern>PLAY MP3S</pattern><template><srai>INSTALL CODECS</srai></template></category>
+<category><pattern>PLAY * MP3</pattern><template><srai>INSTALL CODECS</srai></template></category>
+<category><pattern>PLAY * MP3 *</pattern><template><srai>INSTALL CODECS</srai></template></category>
+<category><pattern>PLAY DVD *</pattern><template><srai>INSTALL CODECS</srai></template></category>
+<category><pattern>PLAY DVD</pattern><template><srai>INSTALL CODECS</srai></template></category>
+<category><pattern>PLAY DVDS</pattern><template><srai>INSTALL CODECS</srai></template></category>
+<category><pattern>PLAY * DVD</pattern><template><srai>INSTALL CODECS</srai></template></category>
+<category><pattern>PLAY * DVD *</pattern><template><srai>INSTALL CODECS</srai></template></category>
+<category><pattern>FIND CODECS</pattern><template><srai>INSTALL CODECS</srai></template></category>
+<category><pattern>FIND CODECS *</pattern><template><srai>INSTALL CODECS</srai></template></category>
+<category><pattern>FIND * CODECS</pattern><template><srai>INSTALL CODECS</srai></template></category>
+<category><pattern>FIND * CODECS *</pattern><template><srai>INSTALL CODECS</srai></template></category>
+<category><pattern>INSTALL CODECS *</pattern><template><srai>INSTALL CODECS</srai></template></category>
+<category><pattern>INSTALL * CODECS</pattern><template><srai>INSTALL CODECS</srai></template></category>
+<category><pattern>INSTALL * CODECS *</pattern><template><srai>INSTALL CODECS</srai></template></category>
+<category><pattern>INSTALL CODECS</pattern><template>You can try to download some basic multimedia libraries to play your file by asking YES INSTALL MULTIMEDIA. Then try to play your files with vlc. If it still does not work you need extra codecs. However MP3 and DVD file formats are proprietary. NOTE: The use and distribution of the libdvdcss library is controversial in a few countries such as the United States because of a law called the DMCA (Digital Millennium Copyright Act). If you are unsure about the legality of using and distributing this library in your country, please consult your lawyer. (source: http://wiki.videolan.org/Frequently_Asked_Questions#Is_libdvdcss_legal.3F) w32codecs: a package of codecs needed to play multiple formats, notably DivX includes elements copyrighted by microsoft and is illegal to use in certain countries, since they may not respect copyright laws, and the DRM laws. 
+So you take full responsibility for the legal consequences of downloading and installing the afore-mentioned codecs. Under any circumstances, the maker of Charlix is NOT responsible for your actions which includes and is NOT restricted to downloading and installing these codecs" If you want me to install non-free Multimedia codecs, say: YES INSTALL CODECS I AM AWARE OF LEGAL REQUIREMENTS (debian and i386 only)</template></category>
+
+<category><pattern>YES INSTALL CODECS I AM AWARE OF LEGAL REQUIREMENTS</pattern><template><system>gksu -u root "./scripts/codecs"</system> OK I'm done.</template></category>
+
+<category><pattern>YES INSTALL MULTIMEDIA</pattern><template><system>gksu -u root "./scripts/safeinstall totem-xine twolame sox ffmpeg vorbis-tools mpg321 vlc"</system> OK I'm done.</template></category>
+
+
+
+<category><pattern>_ WINRAR</pattern><template><srai><star/> RAR</srai></template></category>
+<category><pattern>_ WINRAR *</pattern><template><srai><star/> RAR <star index="2"/></srai></template></category>
+<category><pattern>FIND RAR *</pattern><template><srai>INSTALL RAR</srai></template></category>
+<category><pattern>FIND * RAR</pattern><template><srai>INSTALL RAR</srai></template></category>
+<category><pattern>FIND * RAR *</pattern><template><srai>INSTALL RAR</srai></template></category>
+<category><pattern>INSTALL RAR *</pattern><template><srai>INSTALL RAR</srai></template></category>
+<category><pattern>INSTALL * RAR</pattern><template><srai>INSTALL RAR</srai></template></category>
+<category><pattern>INSTALL * RAR *</pattern><template><srai>INSTALL RAR</srai></template></category>
+<category><pattern>INSTALL RAR</pattern><template>Try to use your archiv manager</template></category>
+<!--<category><pattern>INSTALL RAR</pattern><template>If you want me to install RAR, say: "YES INSTALL COMPRESS" (debian only)</template></category>
+<category><pattern>YES INSTALL COMPRESS</pattern><template><system>./scripts/popup 'gksu -u root ./scripts/compress'</system></template></category>-->
+
+<category><pattern>TURN DMA * ON</pattern><template><srai>INSTALL DMAON</srai></template></category>
+<category><pattern>TURN DMA ON</pattern><template><srai>INSTALL DMAON</srai></template></category>
+<category><pattern>TURN ON DMA *</pattern><template><srai>INSTALL DMAON</srai></template></category>
+<category><pattern>TURN ON DMA</pattern><template><srai>INSTALL DMAON</srai></template></category>
+<category><pattern>INSTALL DMAON</pattern><template>If you want me to turn DMA of CDROM and DVD drives ON, say: "YES INSTALL DMAON" (debian only)</template></category>
+<category><pattern>YES INSTALL DMAON</pattern><template><system>gksu -u root ./scripts/dmaon</system> OK I'm done.</template></category>
+
+
+<category><pattern>INSTALL FIREFOX</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>INSTALL FIREFOX *</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>FIND PLUGINS * FIREFOX</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>FIND PLUGINS * FIREFOX *</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>FIND * PLUGINS * FIREFOX</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>FIND * PLUGINS * FIREFOX *</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>INSTALL PLUGINS * FIREFOX *</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>INSTALL * PLUGINS * FIREFOX</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>INSTALL * PLUGINS * FIREFOX *</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>FIND PLUGIN * FIREFOX</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>FIND PLUGIN * FIREFOX *</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>FIND * PLUGIN * FIREFOX</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>FIND * PLUGIN * FIREFOX *</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>INSTALL PLUGIN * FIREFOX </pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>INSTALL PLUGIN * FIREFOX *</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>INSTALL * PLUGIN * FIREFOX</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>INSTALL * PLUGIN * FIREFOX *</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>FIND FLASH * FIREFOX</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>FIND FLASH * FIREFOX *</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>FIND * FLASH * FIREFOX</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>FIND * FLASH * FIREFOX *</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>INSTALL FLASH * FIREFOX *</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>INSTALL * FLASH * FIREFOX</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>INSTALL * FLASH * FIREFOX *</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>FIND PLUGINS * FIREFOX</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>FIND PLUGINS * FIREFOX *</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>FIND * PLUGINS * FIREFOX</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>FIND * PLUGINS * FIREFOX *</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>INSTALL PLUGINS * FIREFOX</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>INSTALL PLUGINS * FIREFOX *</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>INSTALL * PLUGINS * FIREFOX</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>INSTALL * PLUGINS * FIREFOX *</pattern><template><srai>INSTALL FFOXPLUGINS</srai></template></category>
+<category><pattern>INSTALL FFOXPLUGINS</pattern><template>If you want me to install the debian version of firefox say: "YES INSTALL FIREFOX" (debian only). If you want me to install commonly used browser plugins (Java, Flash, ...), Microsoft fonts, say: "YES INSTALL FFOXPLUGINS" (debian only).</template></category>
+<category><pattern>YES INSTALL FFOXPLUGINS</pattern><template><system>gksu -u root "./scripts/repositories  &amp;&amp; ./scripts/safeinstall iceweasel flashplugin-nonfree msttcorefonts sun-java6-plugin"</system> OK I'm done.</template></category>
+<category><pattern>YES INSTALL FIREFOX</pattern><template><system>gksu -u root "./scripts/safeinstall iceweasel"</system> OK I'm done.</template></category>
+
+
+<category><pattern>OPEN AMULE *</pattern><template><srai>INSTALL FILESHARING</srai></template></category>
+<category><pattern>OPEN * AMULE</pattern><template><srai>INSTALL FILESHARING</srai></template></category>
+<category><pattern>OPEN * AMULE *</pattern><template><srai>INSTALL FILESHARING</srai></template></category>
+<category><pattern>FIND AMULE *</pattern><template><srai>INSTALL FILESHARING</srai></template></category>
+<category><pattern>FIND * AMULE</pattern><template><srai>INSTALL FILESHARING</srai></template></category>
+<category><pattern>FIND * AMULE *</pattern><template><srai>INSTALL FILESHARING</srai></template></category>
+<category><pattern>INSTALL AMULE *</pattern><template><srai>INSTALL FILESHARING</srai></template></category>
+<category><pattern>INSTALL * AMULE</pattern><template><srai>INSTALL FILESHARING</srai></template></category>
+<category><pattern>INSTALL * AMULE *</pattern><template><srai>INSTALL FILESHARING</srai></template></category>
+<category><pattern>OPEN EMULE *</pattern><template><srai>INSTALL FILESHARING</srai></template></category>
+<category><pattern>OPEN * EMULE</pattern><template><srai>INSTALL FILESHARING</srai></template></category>
+<category><pattern>OPEN * EMULE *</pattern><template><srai>INSTALL FILESHARING</srai></template></category>
+<category><pattern>FIND EMULE *</pattern><template><srai>INSTALL FILESHARING</srai></template></category>
+<category><pattern>FIND * EMULE</pattern><template><srai>INSTALL FILESHARING</srai></template></category>
+<category><pattern>FIND * EMULE *</pattern><template><srai>INSTALL FILESHARING</srai></template></category>
+<category><pattern>INSTALL EMULE *</pattern><template><srai>INSTALL FILESHARING</srai></template></category>
+<category><pattern>INSTALL * EMULE</pattern><template><srai>INSTALL FILESHARING</srai></template></category>
+<category><pattern>INSTALL * EMULE *</pattern><template><srai>INSTALL FILESHARING</srai></template></category>
+<category><pattern>OPEN DC++ *</pattern><template><srai>INSTALL FILESHARING</srai></template></category>
+<category><pattern>OPEN * DC++</pattern><template><srai>INSTALL FILESHARING</srai></template></category>
+<category><pattern>OPEN * DC++ *</pattern><template><srai>INSTALL FILESHARING</srai></template></category>
+<category><pattern>FIND DC++ *</pattern><template><srai>INSTALL FILESHARING</srai></template></category>
+<category><pattern>FIND * DC++</pattern><template><srai>INSTALL FILESHARING</srai></template></category>
+<category><pattern>FIND * DC++ *</pattern><template><srai>INSTALL FILESHARING</srai></template></category>
+<category><pattern>INSTALL DC++ *</pattern><template><srai>INSTALL FILESHARING</srai></template></category>
+<category><pattern>INSTALL * DC++</pattern><template><srai>INSTALL FILESHARING</srai></template></category>
+<category><pattern>INSTALL * DC++ *</pattern><template><srai>INSTALL FILESHARING</srai></template></category>
+<category><pattern>INSTALL FILESHARING</pattern><template> If you want me to install file sharing client like amule and DC++, say: YES INSTALL FILESHARING (debian only)</template></category>
+<category><pattern>YES INSTALL FILESHARING</pattern><template><system>gksu -u root ./scripts/filesharing</system> OK I'm done.</template></category>
+
+
+<category><pattern>FIND FIREWALL *</pattern><template><srai>INSTALL FIREWALL</srai></template></category>
+<category><pattern>FIND * FIREWALL</pattern><template><srai>INSTALL FIREWALL</srai></template></category>
+<category><pattern>FIND * FIREWALL *</pattern><template><srai>INSTALL FIREWALL</srai></template></category>
+<category><pattern>INSTALL FIREWALL *</pattern><template><srai>INSTALL FIREWALL</srai></template></category>
+<category><pattern>INSTALL * FIREWALL</pattern><template><srai>INSTALL FIREWALL</srai></template></category>
+<category><pattern>INSTALL * FIREWALL *</pattern><template><srai>INSTALL FIREWALL</srai></template></category>
+<category><pattern>INSTALL FIREWALL</pattern><template> GNU/Linux is secure enough to be used on the internet without an external firewall. If you're using it just as a client the need for a firewall becomes even less. (source: http://wiki.linuxquestions.org/wiki/Firewall)</template></category>
+
+
+
+
+<category><pattern>FIND LIMEWIRE *</pattern><template><srai>INSTALL FROSTWIRE</srai></template></category>
+<category><pattern>FIND * LIMEWIRE</pattern><template><srai>INSTALL FROSTWIRE</srai></template></category>
+<category><pattern>FIND * LIMEWIRE *</pattern><template><srai>INSTALL FROSTWIRE</srai></template></category>
+<category><pattern>INSTALL LIMEWIRE *</pattern><template><srai>INSTALL FROSTWIRE</srai></template></category>
+<category><pattern>INSTALL * LIMEWIRE</pattern><template><srai>INSTALL FROSTWIRE</srai></template></category>
+<category><pattern>INSTALL * LIMEWIRE *</pattern><template><srai>INSTALL FROSTWIRE</srai></template></category>
+<category><pattern>INSTALL FROSTWIRE</pattern><template> If you want me to install Frostwire (GPL clone of Limewire),  say: YES INSTALL FROSTWIREINSTALL (debian only). I will install java JRE first</template></category>
+<category><pattern>YES INSTALL FROSTWIREINSTALL</pattern><template><system>gksu -u root "./scripts/repositories  &amp;&amp; ./scripts/safeinstall sun-java6-bin &amp;&amp; ./scripts/frostwireinstall"</system> OK I'm done.</template></category>
+
+
+<category><pattern>_ GAMEPAD</pattern><template><srai>GAMEPADS</srai></template></category>
+<category><pattern>_ GAMEPAD *</pattern><template><srai>GAMEPADS</srai></template></category>
+<category><pattern>_ GAMEPADS</pattern><template><srai>GAMEPADS</srai></template></category>
+<category><pattern>_ GAMEPADS *</pattern><template><srai>GAMEPADS</srai></template></category>
+<category><pattern>GAMEPADS</pattern><template> If you want me to make USB gamepads work, say: YES INSTALL USBGAMEPADS (debian only)</template></category>
+<category><pattern>YES INSTALL USBGAMEPADS</pattern><template><system>gksu -u root ./scripts/gamepads</system> OK I'm done.</template></category>
+
+
+<category><pattern>_ GDESKLET</pattern><template><srai>INSTALL GDESKLETSSETUP</srai></template></category>
+<category><pattern>_ GDESKLET *</pattern><template><srai>INSTALL GDESKLETSSETUP</srai></template></category>
+<category><pattern>_ GDESKLETS</pattern><template><srai>INSTALL GDESKLETSSETUP</srai></template></category>
+<category><pattern>_ GDESKLETS *</pattern><template><srai>INSTALL GDESKLETSSETUP</srai></template></category>
+<category><pattern>INSTALL GDESKLETSSETUP</pattern><template> If you want me to install gdesklets and add it to Gnome startup, say: YES INSTALL GDESKLETSSETUP (debian with GNOME only)</template></category>
+<category><pattern>YES INSTALL GDESKLETSSETUP</pattern><template><system>gksu -u root ./scripts/gdeskletssetup</system> OK I'm done.</template></category>
+
+
+<category><pattern>FIND FTP CLIENT</pattern><template><srai>INSTALL GFTP</srai></template></category>
+<category><pattern>FIND FTP CLIENT *</pattern><template><srai>INSTALL GFTP</srai></template></category>
+<category><pattern>FIND * FTP CLIENT</pattern><template><srai>INSTALL GFTP</srai></template></category>
+<category><pattern>FIND * FTP CLIENT *</pattern><template><srai>INSTALL GFTP</srai></template></category>
+<category><pattern>INSTALL FTP CLIENT</pattern><template><srai>INSTALL GFTP</srai></template></category>
+<category><pattern>INSTALL FTP CLIENT *</pattern><template><srai>INSTALL GFTP</srai></template></category>
+<category><pattern>INSTALL * FTP CLIENT</pattern><template><srai>INSTALL GFTP</srai></template></category>
+<category><pattern>INSTALL * FTP CLIENT *</pattern><template><srai>INSTALL GFTP</srai></template></category>
+<category><pattern>INSTALL GFTP</pattern><template>In KDE Konqueror is a nice FTP client.  If you want me to install a FTP client for GNOME, say: YES INSTALL GFTP (debian with GNOME only)</template></category>
+<category><pattern>YES INSTALL GFTP</pattern><template><system>gksu -u root "./scripts/safeinstall gftp"</system> OK I'm done.</template></category>
+
+
+<category><pattern>FIND * BURNING SOFTWARE</pattern><template><srai>INSTALL GNOMEBAKER</srai></template></category>
+<category><pattern>FIND * BURNING SOFTWARE *</pattern><template><srai>INSTALL GNOMEBAKER</srai></template></category>
+<category><pattern>INSTALL * BURNING SOFTWARE</pattern><template><srai>INSTALL GNOMEBAKER</srai></template></category>
+<category><pattern>INSTALL * BURNING SOFTWARE *</pattern><template><srai>INSTALL GNOMEBAKER</srai></template></category>
+<category><pattern>FIND * BURNER</pattern><template><srai>INSTALL GNOMEBAKER</srai></template></category>
+<category><pattern>FIND * BURNER *</pattern><template><srai>INSTALL GNOMEBAKER</srai></template></category>
+<category><pattern>INSTALL * BURNER</pattern><template><srai>INSTALL GNOMEBAKER</srai></template></category>
+<category><pattern>INSTALL * BURNER *</pattern><template><srai>INSTALL GNOMEBAKER</srai></template></category>
+<category><pattern>INSTALL GNOMEBAKER</pattern><template> If you want me to install Gnomebaker the best GTK2  burning software, say: YES INSTALL GNOMEBAKER (debian only)</template></category>
+<category><pattern>YES INSTALL GNOMEBAKER</pattern><template><system>gksu -u root "./scripts/safeinstall gnomebaker"</system> OK I'm done.</template></category>
+
+
+
+<!--<category><pattern>YES INSTALL GNOMEPPPINSTALL</pattern><template><system>gksu -u root ./scripts/gnomepppinstall</system></template></category>
+<category><pattern>YES INSTALL LAPTOP WIFI</pattern><template><system>gksu -u root ./scripts/laptop-wifi</system></template></category>
+<category><pattern>YES INSTALL MATROSAVID</pattern><template><system>gksu -u root ./scripts/matrosavid</system></template></category>-->
+ 
+
+
+<category><pattern>FIND * MUSIC PLAYER</pattern><template><srai>INSTALL MEDIAPLAYER</srai></template></category>
+<category><pattern>FIND * MUSIC PLAYER *</pattern><template><srai>INSTALL MEDIAPLAYER</srai></template></category>
+<category><pattern>INSTALL * MUSIC PLAYER</pattern><template><srai>INSTALL MEDIAPLAYER</srai></template></category>
+<category><pattern>INSTALL * MUSIC PLAYER *</pattern><template><srai>INSTALL MEDIAPLAYER</srai></template></category>
+<category><pattern>_ MEDIAPLAYER *</pattern><template><srai>INSTALL MEDIAPLAYER</srai></template></category>
+<category><pattern>_ A MEDIAPLAYER *</pattern><template><srai>INSTALL MEDIAPLAYER</srai></template></category>
+<category><pattern>FIND * MEDIAPLAYER</pattern><template><srai>INSTALL MEDIAPLAYER</srai></template></category>
+<category><pattern>FIND * MEDIAPLAYER *</pattern><template><srai>INSTALL MEDIAPLAYER</srai></template></category>
+<category><pattern>INSTALL * MEDIAPLAYER</pattern><template><srai>INSTALL MEDIAPLAYER</srai></template></category>
+<category><pattern>INSTALL * MEDIAPLAYER *</pattern><template><srai>INSTALL MEDIAPLAYER</srai></template></category>
+<category><pattern>PLAY VIDEO</pattern><template><srai>INSTALL MEDIAPLAYER</srai></template></category>
+<category><pattern>PLAY VIDEO *</pattern><template><srai>INSTALL MEDIAPLAYER</srai></template></category>
+<category><pattern>FIND * VIDEO PLAYER</pattern><template><srai>INSTALL MEDIAPLAYER</srai></template></category>
+<category><pattern>FIND * VIDEO PLAYER *</pattern><template><srai>INSTALL MEDIAPLAYER</srai></template></category>
+<category><pattern>INSTALL * VIDEO PLAYER</pattern><template><srai>INSTALL MEDIAPLAYER</srai></template></category>
+<category><pattern>INSTALL * VIDEO PLAYER *</pattern><template><srai>INSTALL MEDIAPLAYER</srai></template></category>
+<category><pattern>INSTALL MEDIAPLAYER</pattern><template> If you want me to install VLC, say: YES INSTALL VLC (debian only)</template></category>
+<category><pattern>YES INSTALL VLC</pattern><template><system>gksu -u root "./scripts/safeinstall vlc mozilla-plugin-vlc"</system> OK I'm done.</template></category>
+
+
+<category><pattern>_ MIDI</pattern><template><srai>INSTALL MIDICAPABILITY</srai></template></category>
+<category><pattern>_ MIDI *</pattern><template><srai>INSTALL MIDICAPABILITY</srai></template></category>
+<category><pattern>INSTALL MIDICAPABILITY</pattern><template> If you want me to install midi capability, say: YES INSTALL MIDICAPABILITY (debian only)</template></category>
+<category><pattern>YES INSTALL MIDICAPABILITY</pattern><template><system>gksu -u root ./scripts/midi</system> OK I'm done.</template></category>
+
+
+<category><pattern>_ FONT</pattern><template><srai>INSTALL MSTTFFONTS</srai></template></category>
+<category><pattern>_ FONT *</pattern><template><srai>INSTALL MSTTFFONTS</srai></template></category>
+<category><pattern>_ FONTS</pattern><template><srai>INSTALL MSTTFFONTS</srai></template></category>
+<category><pattern>_ FONTS *</pattern><template><srai>INSTALL MSTTFFONTS</srai></template></category>
+<category><pattern>INSTALL MSTTFFONTS</pattern><template> If you want me to install microsoft fonts, say: YES INSTALL MSTTFFONTS (debian only)</template></category>
+<category><pattern>YES INSTALL MSTTFFONTS</pattern><template><system>gksu -u root "./scripts/repositories  &amp;&amp; ./scripts/safeinstall msttcorefonts"</system> OK I'm done.</template></category>
+
+<!--; if [ "$?" = 0 </system> ; then echo "Cool it worked!"; else echo "Sorry it failed, you might want to report a BUG"; fi-->
+
+<category><pattern>FIND * VIDEO EDITOR</pattern><template><srai>INSTALL MULTEDIT</srai></template></category>
+<category><pattern>FIND * VIDEO EDITOR *</pattern><template><srai>INSTALL MULTEDIT</srai></template></category>
+<category><pattern>INSTALL * VIDEO EDITOR</pattern><template><srai>INSTALL MULTEDIT</srai></template></category>
+<category><pattern>INSTALL * VIDEO EDITOR *</pattern><template><srai>INSTALL MULTEDIT</srai></template></category>
+<category><pattern>FIND * EDIT VIDEO</pattern><template><srai>INSTALL MULTEDIT</srai></template></category>
+<category><pattern>FIND * EDIT VIDEO *</pattern><template><srai>INSTALL MULTEDIT</srai></template></category>
+<category><pattern>INSTALL * EDIT VIDEO</pattern><template><srai>INSTALL MULTEDIT</srai></template></category>
+<category><pattern>INSTALL * EDIT VIDEO *</pattern><template><srai>INSTALL MULTEDIT</srai></template></category>
+<category><pattern>* EDIT VIDEO</pattern><template><srai>INSTALL MULTEDIT</srai></template></category>
+<category><pattern>* EDIT VIDEO *</pattern><template><srai>INSTALL MULTEDIT</srai></template></category>
+<category><pattern>FIND * AUDIO EDITOR</pattern><template><srai>INSTALL MULTEDIT</srai></template></category>
+<category><pattern>FIND * AUDIO EDITOR *</pattern><template><srai>INSTALL MULTEDIT</srai></template></category>
+<category><pattern>INSTALL * AUDIO EDITOR</pattern><template><srai>INSTALL MULTEDIT</srai></template></category>
+<category><pattern>INSTALL * AUDIO EDITOR *</pattern><template><srai>INSTALL MULTEDIT</srai></template></category>
+<category><pattern>FIND * EDIT AUDIO</pattern><template><srai>INSTALL MULTEDIT</srai></template></category>
+<category><pattern>FIND * EDIT AUDIO *</pattern><template><srai>INSTALL MULTEDIT</srai></template></category>
+<category><pattern>INSTALL * EDIT AUDIO</pattern><template><srai>INSTALL MULTEDIT</srai></template></category>
+<category><pattern>INSTALL * EDIT AUDIO *</pattern><template><srai>INSTALL MULTEDIT</srai></template></category>
+<category><pattern>* EDIT AUDIO</pattern><template><srai>INSTALL MULTEDIT</srai></template></category>
+<category><pattern>* EDIT AUDIO *</pattern><template><srai>INSTALL MULTEDIT</srai></template></category>
+<category><pattern>INSTALL MULTEDIT</pattern><template> If you want me to install Audio (Audacity) Video (Kino) and ID3 Tag (Easytag) editors, say: YES INSTALL MULTEDIT (debian only)</template></category>
+<category><pattern>YES INSTALL MULTEDIT</pattern><template><system>gksu -u root ./scripts/safeinstall vorbis-tools sox ffmpeg twolame imagemagick mpeg2dec kino kinoplus audacity easytag</system> OK I'm done.</template></category>
+
+
+<category><pattern>_ ROOT PRIVILEGE *</pattern><template><srai>INSTALL NAUTI SCRIPTS</srai></template></category>
+<category><pattern>_ ROOT PRIVILEGES</pattern><template><srai>INSTALL NAUTI SCRIPTS</srai></template></category>
+<category><pattern>_ ROOT PRIVILEGE *</pattern><template><srai>INSTALL NAUTI SCRIPTS</srai></template></category>
+<category><pattern>_ ROOT PRIVILEGES</pattern><template><srai>INSTALL NAUTI SCRIPTS</srai></template></category>
+<category><pattern>_ ADMINISTRATOR PRIVILEGE *</pattern><template><srai>INSTALL NAUTI SCRIPTS</srai></template></category>
+<category><pattern>_ ADMINISTRATOR PRIVILEGES</pattern><template><srai>INSTALL NAUTI SCRIPTS</srai></template></category>
+<category><pattern>_ ADMINISTRATOR PRIVILEGE *</pattern><template><srai>INSTALL NAUTI SCRIPTS</srai></template></category>
+<category><pattern>_ ADMINISTRATOR PRIVILEGES</pattern><template><srai>INSTALL NAUTI SCRIPTS</srai></template></category>
+<category><pattern>_ ACCESS DENIED</pattern><template><srai>INSTALL NAUTI SCRIPTS</srai></template></category>
+<category><pattern>_ ACCESS DENIED *</pattern><template><srai>INSTALL NAUTI SCRIPTS</srai></template></category>
+<category><pattern>_ PERMISSION DENIED</pattern><template><srai>INSTALL NAUTI SCRIPTS</srai></template></category>
+<category><pattern>_ PERMISSION DENIED *</pattern><template><srai>INSTALL NAUTI SCRIPTS</srai></template></category>
+<category><pattern>_ BE ROOT</pattern><template><srai>INSTALL NAUTI SCRIPTS</srai></template></category>
+<category><pattern>BE ROOT</pattern><template><srai>INSTALL NAUTI SCRIPTS</srai></template></category>
+<category><pattern>_ BECOME ROOT</pattern><template><srai>INSTALL NAUTI SCRIPTS</srai></template></category>
+<category><pattern>BECOME ROOT</pattern><template><srai>INSTALL NAUTI SCRIPTS</srai></template></category>
+<category><pattern>INSTALL NAUTI SCRIPTS</pattern><template>Root or the Administrator is the super user which has all the privilege on the system files. To become root, you need the root password, this ensure higher security. If you want me to configure nautilus with root priviledges and open any file with gedit as root with right click in nautilus (GNOME ONLY), say: YES INSTALL NAUTI SCRIPTS (debian only)</template></category>
+<category><pattern>YES INSTALL NAUTI SCRIPTS</pattern><template><system>gksu -u root ./scripts/nauti-scripts</system> OK I'm done.</template></category>
+
+
+<category><pattern>NUMLOCK *</pattern><template><srai>INSTALL NUMLOCKON</srai></template></category>
+<category><pattern>_ NUMLOCK</pattern><template><srai>INSTALL NUMLOCKON</srai></template></category>
+<category><pattern>_ NUMLOCK *</pattern><template><srai>INSTALL NUMLOCKON</srai></template></category>
+<category><pattern>INSTALL NUMLOCKON</pattern><template> If you want me to turn on Numlock on GNOME startup, say: YES INSTALL NUMLOCKON (GNOME ONLY and debian only)</template></category>
+<category><pattern>YES INSTALL NUMLOCKON</pattern><template><system>gksu -u root ./scripts/safeinstall numlockx</system> OK I'm done.</template></category>
+
+
+<category><pattern>_ NVIDIA</pattern><template><srai>INSTALL NVIDIACARDS</srai></template></category>
+<category><pattern>_ NVIDIA *</pattern><template><srai>INSTALL NVIDIACARDS</srai></template></category>
+<category><pattern>INSTALL NVIDIACARDS</pattern><template> Sorry I don't provide a script for installing nvidiacards because I have not found one really simple enough for evry different debian flavours. Please look on the internet, and contact my developper for suggetions. <srai>SEARCH NVDIA DEBIAN</srai></template></category>
+<category><pattern>YES INSTALL NVIDIACARDS</pattern><template>
+Sorry I don't provide a script for installing nvidiacards because I have not found really simple enough for evry different debian flavours. Please look on the internet. <srai>SEARCH NVDIA DEBIAN</srai>
+<!--<system>gksu -u root "./scripts/repositories  &amp;&amp; ./scripts/nvidiacards"</system>-->
+</template></category>
+
+<category><pattern>_ OPERA BROWSER</pattern><template><srai>INSTALL OPERABROWSER</srai></template></category>
+<category><pattern>_ OPERA</pattern><template><srai>INSTALL OPERABROWSER</srai></template></category>
+<category><pattern>_ OPERA *</pattern><template><srai>INSTALL OPERABROWSER</srai></template></category>
+<category><pattern>INSTALL OPERABROWSER</pattern><template> If you want me to install opera browser, say: YES INSTALL OPERABROWSER (debian only)</template></category>
+<category><pattern>YES INSTALL OPERABROWSER</pattern><template><system>gksu -u root ./scripts/operabrowser</system> OK I'm done.</template></category>
+
+
+
+<category><pattern>EDIT CODE</pattern><template><srai>INSTALL PROTOOLS</srai></template></category>
+<category><pattern>EDIT * CODE</pattern><template><srai>INSTALL PROTOOLS</srai></template></category>
+<category><pattern>EDIT CODE *</pattern><template><srai>INSTALL PROTOOLS</srai></template></category>
+<category><pattern>EDIT * CODE *</pattern><template><srai>INSTALL PROTOOLS</srai></template></category>
+<category><pattern>_ IDE *</pattern><template><srai>INSTALL PROTOOLS</srai></template></category>
+<category><pattern>_ IDE</pattern><template><srai>INSTALL PROTOOLS</srai></template></category>
+<category><pattern>_ IDE *</pattern><template><srai>INSTALL PROTOOLS</srai></template></category>
+<category><pattern>_ PROGRAMMING TOOLS</pattern><template><srai>INSTALL PROTOOLS</srai></template></category>
+<category><pattern>_ PROGRAMMING TOOLS *</pattern><template><srai>INSTALL PROTOOLS</srai></template></category>
+<category><pattern>_ PROGRAMMING</pattern><template><srai>INSTALL PROTOOLS</srai></template></category>
+<category><pattern>_ PROGRAMMING *</pattern><template><srai>INSTALL PROTOOLS</srai></template></category>
+<category><pattern>_ DEVELOPING</pattern><template><srai>INSTALL PROTOOLS</srai></template></category>
+<category><pattern>_ DEVELOPING *</pattern><template><srai>INSTALL PROTOOLS</srai></template></category>
+<category><pattern>INSTALL PROTOOLS</pattern><template> If you want me to install Programming Tools such as Anjuta (C/C++ IDE), Bluefish (HTML editor), Screem (web development), say: YES INSTALL PROTOOLS (debian only)</template></category>
+<category><pattern>YES INSTALL PROTOOLS</pattern><template><system>gksu -u root ./scripts/safeinstall anjuta bluefish screem</system> OK I'm done.</template></category>
+
+<category><pattern>RIP *</pattern><template><srai>INSTALL RIPTUNE</srai></template></category>
+<category><pattern>_ RIPPER</pattern><template><srai>INSTALL RIPTUNE</srai></template></category>
+<category><pattern>_ RIPPER *</pattern><template><srai>INSTALL RIPTUNE</srai></template></category>
+<category><pattern>_ TUNER</pattern><template><srai>INSTALL RIPTUNE</srai></template></category>
+<category><pattern>_ TUNER *</pattern><template><srai>INSTALL RIPTUNE</srai></template></category>
+<category><pattern>INSTALL RIPTUNE</pattern><template> If you want me to install streamripper and streamtuner, say: YES INSTALL RIPTUNE (debian only).  If you want me to install dvdripto rip dvd say: YES INSTALL RIPPING (debian only)</template></category>
+<category><pattern>YES INSTALL RIPTUNE</pattern><template><system>gksu -u root "./scripts/safeinstall streamripper streamtuner"</system></template></category>
+<category><pattern>YES INSTALL RIPPING</pattern><template><system>gksu -u root ./scripts/ripping</system> OK I'm done.</template></category>
+
+
+<category><pattern>INSTALL * SKYPE</pattern><template><srai>INSTALL SKYPE4LINUX</srai></template></category>
+<category><pattern>INSTALL * SKYPE *</pattern><template><srai>INSTALL SKYPE4LINUX</srai></template></category>
+<category><pattern>INSTALL SKYPE</pattern><template><srai>INSTALL SKYPE4LINUX</srai></template></category>
+<category><pattern>INSTALL SKYPE *</pattern><template><srai>INSTALL SKYPE4LINUX</srai></template></category>
+<category><pattern>INSTALL SKYPE4LINUX</pattern><template>There is OpenWengo an open source alternative to skype. But if you want me to install SKYPE, say: YES INSTALL SKYPE4LINUX (debian STABLE only but should work with testing and unstable)</template></category>
+<category><pattern>YES INSTALL SKYPE4LINUX</pattern><template><system>gksu -u root "./scripts/skype"</system> OK I'm done.</template></category>
+
+
+
+<category><pattern>EXECUTE _ JAVA</pattern><template><srai>INSTALL SUNJAVAJRE</srai></template></category>
+<category><pattern>EXECUTE _ JAVA *</pattern><template><srai>INSTALL SUNJAVAJRE</srai></template></category>
+<category><pattern>_ JRE</pattern><template><srai><star/> JAVA</srai></template></category>
+<category><pattern>_ JRE *</pattern><template><srai><star/> JAVA <star index="2"/></srai></template></category>
+<category><pattern>FIND JAVA</pattern><template><srai>INSTALL JAVA</srai></template></category>
+<category><pattern>FIND JAVA *</pattern><template><srai>INSTALL JAVA</srai></template></category>
+<category><pattern>FIND * JAVA</pattern><template><srai>INSTALL JAVA</srai></template></category>
+<category><pattern>FIND * JAVA *</pattern><template><srai>INSTALL JAVA</srai></template></category>
+<category><pattern>INSTALL JAVA *</pattern><template><srai>INSTALL JAVA</srai></template></category>
+<category><pattern>INSTALL * JAVA</pattern><template><srai>INSTALL JAVA</srai></template></category>
+<category><pattern>INSTALL * JAVA *</pattern><template><srai>INSTALL JAVA</srai></template></category>
+<category><pattern>INSTALL JAVA</pattern><template>Please Note: You must agree to the terms and conditions available at http://www.java.com to install java. If you want me to install Java JRE 1.5, say: YES INSTALL JAVA (debian only)</template></category>
+<category><pattern>YES INSTALL JAVA</pattern><template><system>gksu -u root "./scripts/repositories  &amp;&amp; ./scripts/safeinstall sun-java6-bin"</system> OK I'm done.</template></category>
+
+
+
+
+
+<category><pattern>INSTALL WINE</pattern><template><srai>INSTALL WINESETUP</srai></template></category>
+<category><pattern>_ EXE</pattern><template><srai>INSTALL WINESETUP</srai></template></category>
+<category><pattern>_ EXE *</pattern><template><srai>INSTALL WINESETUP</srai></template></category>
+<category><pattern>_ WINDOWS PROGRAMS *</pattern><template><srai>INSTALL WINESETUP</srai></template></category>
+<category><pattern>_ WINDOWS PROGRAMS</pattern><template><srai>INSTALL WINESETUP</srai></template></category>
+<category><pattern>_ WINDOWS SOFTWARE</pattern><template><srai>INSTALL WINESETUP</srai></template></category>
+<category><pattern>_ WINDOWS SOFTWARE *</pattern><template><srai>INSTALL WINESETUP</srai></template></category>
+<category><pattern>INSTALL WINESETUP</pattern><template>You can run some windows binaries on Linux with software like WINE. If you want me to install WINE, say: YES INSTALL WINESETUP (debian only)</template></category>
+<category><pattern>YES INSTALL WINESETUP</pattern><template><system>gksu -u root ./scripts/safeinstall wine</system> OK I'm done.</template></category>
+
+
+
+<category><pattern>WHAT IS DEBCENTRAL</pattern><template><srai>WHAT IS DEBCENTRAL CONFIG</srai></template></category>
+<category><pattern>WHAT IS DEBCENTRAL CONFIG</pattern><template>DebCentral Config is an Automatix clone for Debian Etch, it installs and configures conveinient software and non-free software.Check on the <set name="application">internet</set> the website.<system>popup <get name="browser"/> 'http://debcentral.org/modules/newbb/viewtopic.php?topic_id=135'</system></template></category>
+
+
+</aiml> 

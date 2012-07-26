@@ -1,0 +1,302 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+      
+<!-- Free software (c) 2006 Charlix.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.01 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+
+
+<!-- ################################################################ -->
+<!-- ############# BASIC UNIX COMMANDS ########################## -->
+<category><pattern>ALIAS *</pattern><template><system>alias <star/></system></template></category>
+<category><pattern>COMMAND ALIAS *</pattern><template><system>alias <star/></system></template></category>   
+<category><pattern>AWK *</pattern><template><system>awk <star/></system></template></category>     
+<category><pattern>COMMAND AWK *</pattern><template><system>awk <star/></system></template></category>  
+<category><pattern>DISPLAY A CALENDAR</pattern><template><system>cal</system></template></category>
+<category><pattern>HOW MANY DAYS *</pattern><template><system>cal</system></template></category>
+<category><pattern>_ JULIAN DAY</pattern><template><system>cal</system></template></category>
+<category><pattern>CAL *</pattern><template><system>cal <star/></system></template></category> 
+<category><pattern>COMMAND CALENDAR</pattern><template><system>cal</system></template></category>
+<category><pattern>DISPLAY *</pattern><template><system>cat <star/></system></template></category>
+<category><pattern>READ *</pattern><template><system>cat <star/></system></template></category>
+<category><pattern>CAT *</pattern><template><system>cat <star/></system></template></category> 
+<category><pattern>COMMAND CAT *</pattern><template><system>cat <star/></system></template></category>
+<category><pattern>CHANGE DIRECTORIES TO *</pattern><template><system>cd <star/></system></template></category>
+<category><pattern>CD *</pattern><template><system>cd <star/></system></template></category>    
+<category><pattern>COMMAND CD *</pattern><template><system>cd <star/></system></template></category>
+<category><pattern>CHANGE GROUP OWNERSHIP OF *</pattern><template><system>chgrp <star/></system></template></category>
+<category><pattern>COMMAND CHGRP *</pattern><template><system>chgrp <star/></system></template></category>       
+<category><pattern>CHANGE ACCESS PERMISSIONS OF *</pattern><template><system>chmod <star/></system></template></category>
+<category><pattern>COMMAND CHMOD *</pattern><template><system>chmod <star/></system></template></category>       
+<category><pattern>CHANGE OWNER OF *</pattern><template><system>chmod <star/></system></template></category>
+<category><pattern>COMMAND CHOWN *</pattern><template><system>chown <star/></system></template></category>       
+<category><pattern>CHROOT TO *</pattern><template><system>chroot <star/></system></template></category>       
+<category><pattern>COMMAND CHROOT *</pattern><template><system>chroot <star/></system></template></category>       
+<category><pattern>PRINT CRC CHECKSUM AND BYTE COUNTS OF *</pattern><template><system>cksum  <star/></system></template></category>
+<category><pattern>CHECKSUM *</pattern><template><system>cksum  <star/></system></template></category>
+<category><pattern>PRINT BYTE COUNTS OF *</pattern><template><system>cksum  <star/></system></template></category>
+<category><pattern>COMMAND CKSUM *</pattern><template><system>cksum <star/></system></template></category>       
+<category><pattern>CLEAR TERMINAL SCREEN</pattern><template><system>clear</system></template></category>
+<category><pattern>COMMAND CLEAR</pattern><template><system>clear</system></template></category>
+<category><pattern>COMPARE * AND *</pattern><template><system>cmp <star index="1"/> <star index="2"/></system></template></category>
+<category><pattern>COMPARE * WITH *</pattern><template><system>cmp <star index="1"/> <star index="2"/></system></template></category>
+<category><pattern>COMMAND CMP *</pattern><template><system>cmp <star index="1"/> <star index="2"/></system></template></category>
+<category><pattern>COMMAND COMM *</pattern><template><system>comm <star/></system></template></category>       
+<category><pattern>COMMAND *</pattern><template><system>command <star/></system></template></category>           
+<category><pattern>COPY * TO  *</pattern><template><system>cp <star index="1"/> <star index="2"/></system></template></category>
+<category><pattern>COMMAND CP *</pattern><template><system>cp <star/></system></template></category>       
+<category><pattern>SCHEDULE *</pattern><template><system>popup thunderbird</system></template></category>
+<category><pattern>COMMAND CRONTAB *</pattern><template><system>crontab <star/></system></template></category>
+<category><pattern>COMMAND CRON *</pattern><template><system>cron <star/></system></template></category>
+<category><pattern>COMMAND CSPLIT *</pattern><template><system>csplit <star/></system></template></category>       
+<category><pattern>COMMAND CUT *</pattern><template><system>cut <star/></system></template></category>       
+<category><pattern>COMMAND CURL *</pattern><template><system>curl <star/></system></template></category>       
+<category><pattern>DISPLAY THE DATE</pattern><template><system>date <star/></system></template></category>
+<category><pattern>COMMAND DATE *</pattern><template><system>date <star/></system></template></category>       
+<category><pattern>COMMAND DATE</pattern><template><system>date</system></template></category>       
+<category><pattern>COMMAND DD *</pattern><template><system>dd <star/></system></template></category>       
+<category><pattern>COMMAND DECLARE *</pattern><template><system>declare <star/></system></template></category>       
+<category><pattern>_ FREE DISK SPACE *</pattern><template><system>df -h<star/></system></template></category>
+<category><pattern>COMMAND DF *</pattern><template><system>df <star/></system></template></category>       
+<category><pattern>_ DIFFERENCES BETWEEN THE FILES * AND *</pattern><template><system>diff <star index="1"/> <star index="2"/><star/></system></template></category>
+<category><pattern>COMMAND DIFF *</pattern><template><system>diff <star/></system></template></category>       
+<category><pattern>COMMAND DIFF3 *</pattern><template><system>diff3 <star/></system></template></category>       
+<category><pattern>_ CONTENTS OF *</pattern><template><system>dir <star/></system></template></category>
+<category><pattern>COMMAND DIR *</pattern><template><system>dir <star/></system></template></category>       
+<category><pattern>COMMAND DIRNAME *</pattern><template><system>dirname <star/></system></template></category>       
+<category><pattern>DISPLAY THE LIST OF REMEMBERED DIRECTORIES *</pattern><template><system>dirs <star/></system></template></category>
+<category><pattern>COMMAND DIRS *</pattern><template><system>dirs <star/></system></template></category>       
+<category><pattern>HOW BIG IS THE FILE *</pattern><template><system>du -f <star/></system></template></category>
+<category><pattern>COMMAND DU *</pattern><template><system>du <star/></system></template></category>       
+<category><pattern>COMMAND ECHO *</pattern><template><system>echo <star/></system></template></category>       
+<category><pattern>COMMAND ED *</pattern><template><system>ed  <star/></system></template></category>
+<category><pattern>SEARCH FOR THE EXTENDED EXPRESSION * IN *</pattern><template><system>egrep <star index="2"/> <star index="1"/></system></template></category>
+<category><pattern>SEARCH IN * for the extended expression * </pattern><template><system>egrep <star index="1"/> <star index="2"/></system></template></category>
+<category><pattern>SEARCH * for the extended expression * </pattern><template><system>egrep <star index="1"/> <star index="2"/></system></template></category>
+<category><pattern>COMMAND EGREP</pattern><template><system>egrep <star/></system></template></category>  
+<category><pattern>COMMAND EJECT *</pattern><template><system>eject</system></template></category>
+<category><pattern>COMMAND EJECT</pattern><template><system>eject</system></template></category>
+<category><pattern>COMMAND ENABLE *</pattern><template><system>enable </system></template></category>       
+<category><pattern>COMMAND ENV *</pattern><template><system>env <star/></system></template></category>       
+<category><pattern>COMMAND EVAL *</pattern><template><system>eval <star/></system></template></category>       
+<category><pattern>CONVERT TABS TO SPACES *</pattern><template><system>expand <star/></system></template></category>
+<category><pattern>COMMAND EXPAND *</pattern><template><system>expand <star/></system></template></category>       
+<category><pattern>COMMAND EXPORT *</pattern><template><system>export <star/></system></template></category>       
+<category><pattern>EVALUATE EXPRESSIONS *</pattern><template><system>expr <star/></system></template></category>
+<category><pattern>COMMAND EXPR *</pattern><template><system>expr <star/></system></template></category>       
+<category><pattern>_ PRIME FACTORS OF *</pattern><template><system>factor <star/></system></template></category>
+<category><pattern>COMMAND FACTOR *</pattern><template><system>factor <star/></system></template></category>       
+<category><pattern>FORMAT THE FLOPPY DISK</pattern><template><system>fdformat</system></template></category>
+<category><pattern>COMMAND FDFORMAT</pattern><template><system>fdformat</system></template></category>       
+<category><pattern>SEARCH IN * FOR THE FIXED STRING *</pattern><template><system>fgrep <star index="1"/> <star index="2"/></system></template></category>
+<category><pattern>SEARCH * FOR THE FIXED STRING *</pattern><template><system>fgrep <star index="1"/> <star index="2"/></system></template></category>
+<category><pattern>SEARCH FOR THE FIXED STRING * IN *</pattern><template><system>fgrep <star index="2"/> <star index="1"/></system></template></category>
+<category><pattern>COMMAND FGREP *</pattern><template><system>fgrep <star/></system></template></category>       
+<category><pattern>SEARCH FOR FILES *</pattern><template><system> find <star/></system></template></category>
+<category><pattern>SEARCH FOR THE FILE *</pattern><template><system>find <star/></system></template></category>
+<category><pattern>COMMAND FIND *</pattern><template><system>find <star/></system></template></category>       
+<category><pattern>REFORMAT PARAGRAPHS *</pattern><template><system>fmt <star/></system></template></category>
+<category><pattern>COMMAND FMT *</pattern><template><system>fmt <star/></system></template></category>       
+<category><pattern>COMMAND FOLD *</pattern><template><system>fold <star/></system></template></category>            
+<category><pattern>_ MEMORY USAGE</pattern><template><system>free</system></template></category>  
+<category><pattern>COMMAND FREE</pattern><template><system>free</system></template></category>  
+<category><pattern>COMMAND FUNCTION *</pattern><template><system>function <star/></system></template></category>         
+<category><pattern>COMMAND GETOPTS *</pattern><template><system>getopts <star/></system></template></category>       
+<category><pattern>SEARCH IN * LINES CONTAINING *</pattern><template><system>grep <star index="2"/> <star index="1"/></system></template></category>
+<category><pattern>SEARCH IN * FOR *</pattern><template><system>grep <star index="2"/> <star index="1"/></system></template></category>
+<category><pattern>COMMAND GREP *</pattern><template><system>grep <star/></system></template></category>       
+<category><pattern>PRINT MY GROUP NAMES</pattern><template><system>groups</system></template></category>
+<category><pattern>COMMAND GROUPS *</pattern><template><system>groups <star/></system></template></category>       
+<category><pattern>COMMAND GROUPS</pattern><template><system>groups</system></template></category>       
+<category><pattern> COMPRESS *</pattern><template><system>gzip <star/></system></template></category>
+<category><pattern>DECOMPRESS *</pattern><template><system>gzip -d <star/></system></template></category>
+<category><pattern>COMMAND GZIP *</pattern><template><system>gzip <star/></system></template></category>       
+<category><pattern>REMEMBER THE PATHNAME OF * AS *</pattern><template><system>hash -p <star index="1"/> <star index="2"/></system></template></category>
+<category><pattern>COMMAND HASH *</pattern><template><system>hash <star/></system></template></category>       
+<category><pattern>READ THE BEGINING OF *</pattern><template><system>head <star/></system></template></category>
+<category><pattern>COMMAND HEAD *</pattern><template><system>head <star/></system></template></category>     
+<category><pattern>COMMAND HISTORY *</pattern><template><system>history <star/></system></template></category>      
+<category><pattern>COMMAND HISTORY</pattern><template><system>history</system></template></category>      
+<category><pattern>COMMAND HISTORY</pattern><template><system>history</system></template></category>
+<category><pattern>WHAT IS MY OPERATING SYSTEM</pattern><template><system>uname -a</system></template></category>
+<category><pattern>WHAT IS THE HOSTNAME</pattern><template><system>hostname</system></template></category>       
+<category><pattern>COMMAND HOSTNAME</pattern><template><system>hostname</system></template></category>       
+<category><pattern>* USER ID</pattern><template><system>id</system></template></category>
+<category><pattern>* GROUP ID</pattern><template><system>id</system></template></category>
+<category><pattern>COMMAND ID</pattern><template><system>id</system></template></category>       
+<category><pattern>CAPTURE THE SCREEN AND SAVE THE IMAGE AS *</pattern><template><system>import <star/></system></template></category>
+<category><pattern>COMMAND IMPORT *</pattern><template><system>import <star/></system></template></category>       
+<category><pattern>HELP * *</pattern><template><system> info <star/></system></template></category>
+<category><pattern>HELP ABOUT *</pattern><template><system>info <star/></system></template></category>
+<category><pattern>HELP *</pattern><template><system>info <star/></system></template></category>
+<category><pattern>COMMAND MAN *</pattern><template><system>info <star/></system></template></category>       
+<category><pattern>COMMAND INSTALL * in *</pattern><template><system>install <star index="1"/> <star index="2"/></system></template></category>
+<category><pattern>JOIN LINES OF *</pattern><template><system>join <star/></system></template></category>
+<category><pattern>COMMAND JOIN *</pattern><template><system>join <star/></system></template></category>       
+<category><pattern>COMMAND KILL *</pattern><template><system>kill <star/></system></template></category>       
+<category><pattern>PERFORM ARITHMETIC ON SHELL VARIABLES *</pattern><template><system> let <star/></system></template></category>
+<category><pattern>COMMAND LET *</pattern><template><system>let <star/></system></template></category>       
+<category><pattern>CREATE A LINK TO *</pattern><template><system>ln -s <star/></system></template></category>
+<category><pattern>COMMAND LN *</pattern><template><system>ln <star/></system></template></category>       
+<category><pattern>CREATE VARIABLES * as </pattern><template><system>local <star index="1"/>=<star index="2"/></system></template></category>
+<category><pattern>COMMAND LOCAL *</pattern><template><system>local <star/></system></template></category>       
+<category><pattern>FIND THE FILES *</pattern><template><system>locate <star/></system></template></category>
+<category><pattern>COMMAND LOCATE *</pattern><template><system>locate <star/></system></template></category>       
+<category><pattern>PRINT THE CURRENT LOGIN NAME</pattern><template><system> logname</system></template></category>
+<category><pattern>COMMAND LOGNAME *</pattern><template><system>logname <star/></system></template></category>       
+<category><pattern>COMMAND LOGNAME</pattern><template><system>logname</system></template></category>       
+<category><pattern>EXIT THE LOGIN SHELL</pattern><template><system>logout</system></template></category>
+<category><pattern>COMMAND LOGOUT</pattern><template><system>logout</system></template></category>       
+<category><pattern>COMMAND LOGOUT *</pattern><template><system>logout <star/></system></template></category>       
+<category><pattern>PRINT *</pattern><template><system>lpr <star/></system></template></category>
+<category><pattern>COMMAND LPR *</pattern><template><system>lpr <star/></system></template></category>       
+<category><pattern>LPRM *</pattern><template><system>lprm <star/></system></template></category>       
+<category><pattern>LIST FILES IN *</pattern><template><system>ls <star/></system></template></category>
+<category><pattern>WHAT IS IN THE FOLDER *</pattern><template><system>ls <star/></system></template></category>
+<category><pattern>COMMAND LS *</pattern><template><system>ls <star/></system></template></category>       
+<category><pattern>COMMAND m4 *</pattern><template><system>m4 <star/></system></template></category>       
+<category><pattern>COMMAND MAN *</pattern><template><system>man <star/></system></template></category>       
+<category><pattern>HELP MANUAL OF *</pattern><template><system>man <star/></system></template></category>
+<category><pattern>COMMAND MKDIR *</pattern><template><system>mkdir <star/></system></template></category>       
+<category><pattern>CREATE A NEW FOLDER * </pattern><template><system>mkdir <star/></system></template></category>
+<category><pattern>CREATE A NEW FOLDER * IN *</pattern><template><system>mkdir <star index="2"/><star index="1"/></system></template></category>
+<category><pattern>COMMAND MKFIFO *</pattern><template><system>mkfifo <star/></system></template></category>       
+<category><pattern>COMMAND MKNOD *</pattern><template><system>mknod <star/></system></template></category>       
+<category><pattern>COMMAND MOUNT *</pattern><template><system>mount <star/></system></template></category>       
+<category><pattern>COMMAND MTOOLS *</pattern><template><system>mtools <star/></system></template></category>       
+<category><pattern>COMMAND MV *</pattern><template><system>mv <star/></system></template></category>       
+<category><pattern>MOVE * IN *</pattern><template><system>mv <star index="1"/> <star index="2"/></system></template></category>
+<category><pattern>COMMAND NL *</pattern><template><system>nl <star/></system></template></category>       
+<category><pattern>COMMAND NOHUP *</pattern><template><system>nohup <star/></system></template></category>       
+<category><pattern>RUN * WITHOUT HANGUPS </pattern><template><system>nohup <star/></system></template></category>
+<category><pattern>COMMAND PASSWD *</pattern><template><system>passwd <star/></system></template></category>       
+<category><pattern>MODIFY MY PASSWORD *</pattern><template><system>passwd <star/></system></template></category>
+<category><pattern>COMMAND PATHCHK *</pattern><template><system>pathchk <star/></system></template></category> 
+<category><pattern>COMMANDPOPD *</pattern><template><system>popd <star/></system></template></category>       
+<category><pattern>COMMAND PR *</pattern><template><system>pr <star/></system></template></category>       
+<category><pattern>CONVERT * FOR PRINTING </pattern><template><system>pr <star/></system></template></category>
+<category><pattern>COMMAND PRINTCAP *</pattern><template><system>printcap<star/></system></template></category>
+<category><pattern>COMMAND PRINTENV</pattern><template><system>printenv</system></template></category>
+<category><pattern>PRINT ENVIRONMENT VARIABLES</pattern><template><system>printenv</system></template></category>
+<category><pattern>COMMAND PRINTF *</pattern><template><system>PRINTF <star/></system></template></category>       
+<category><pattern>Format and print *</pattern><template><system>printf <star/></system></template></category>
+<category><pattern>COMMAND PS *</pattern><template><system>ps <star/></system></template></category>       
+<category><pattern>COMMAND PS</pattern><template><system>ps</system></template></category>       
+<category><pattern>PROCESS STATUS</pattern><template><system>ps</system></template></category>
+<category><pattern>COMMAND PUSHD *</pattern><template><system>pushd <star/></system></template></category>       
+<category><pattern>COMMAND PUSHD</pattern><template><system>pushd<star/></system></template></category>       
+<category><pattern>SAVE AND THEN CHANGE THE CURRENT DIRECTORY *</pattern><template><system>pushd <star/></system></template></category>
+<category><pattern>COMMAND PWD *</pattern><template><system>pwd <star/></system></template></category>       
+<category><pattern>PRINT WORKING DIRECTORY</pattern><template><system>pwd</system></template></category>
+<category><pattern>WHICH DIRECTORY ARE *</pattern><template><system>pwd?</system></template></category>
+<category><pattern>WHICH DIRECTORY AM *</pattern><template><system>pwd</system></template></category>
+<category><pattern>COMMAND RCP *</pattern><template><system>rcp <star/></system></template></category>       
+<category><pattern>READ A LINE </pattern><template><system>read</system></template></category>       
+<category><pattern>MARK * AS READONLY</pattern><template><system>readonly <star/></system></template></category>
+<category><pattern>COMMAND READONLY *</pattern><template><system>readonly <star/></system></template></category>       
+<category><pattern>COMMAND REMSYNC * </pattern><template><system>remsync <star/></system></template></category> 
+<category><pattern>Exit the shell</pattern><template><system>return</system></template></category>
+<category><pattern>REMOTE PACKAGE MANAGER *</pattern><template><system>rpm <star/></system></template></category>
+<category><pattern>COMMAND RPM *</pattern><template><system> rpm <star/></system></template></category>       
+<category><pattern>MERGE * AND * INTERACTIVELY</pattern><template><system>sdiff <star index="1"/> <star index="2"/></system></template></category>
+<category><pattern>COMMAND SDIFF *</pattern><template><system>sdiff <star/></system></template></category>       
+<category><pattern>COMMAND SED *</pattern><template><system>sed <star/></system></template></category>       
+<category><pattern>COUNT FROM * TILL *</pattern><template><system>seq <star index="1"/> <star index="2"/></system></template></category>       
+<category><pattern>COUNT TILL *</pattern><template><system>seq 0 <star/></system></template></category>       
+<category><pattern>COMMAND SEQ *</pattern><template><system>seq <star/></system></template></category>       
+<category><pattern>SET VARIABLE *</pattern><template><system>set <star/></system></template></category>
+<category><pattern>SHELL OPTIONS</pattern><template><system>shopt</system></template></category>
+<category><pattern>COMMAND SHOPT</pattern><template><system>shopt</system></template></category>       
+<category><pattern>SHUTDOWN SYSTEM</pattern><template><system>shutdown -h now</system></template></category>
+<category><pattern>WAIT * SECONDS</pattern><template><system>sleep <star/></system></template></category>
+<category><pattern>WAIT * MINUTS</pattern><template><system>sleep <star/>m</system></template></category>
+<category><pattern>COMMAND SLEEP *</pattern><template><system>sleep <star/></system></template></category>       
+<category><pattern>SORT TEXT *</pattern><template><system>sort <star/></system></template></category>
+<category><pattern>COMMAND SORT *</pattern><template><system>sort <star/></system></template></category>       
+<category><pattern>RUN COMMANDS FROM *</pattern><template><system>source <star/></system></template></category>
+<category><pattern>SCOMMAND OURCE *</pattern><template><system>source <star/></system></template></category>       
+<category><pattern>COMMAND SPLIT *</pattern><template><system>split <star/></system></template></category>       
+<category><pattern>COMMAND RUN * AS *</pattern><template><system>su - <star index="2"/> <star index="1"/> </system></template></category>
+<category><pattern>COMMAND SU *</pattern><template><system>su - <star/></system></template></category>       
+<category><pattern>PRINT A CHECKSUM FOR *</pattern><template><system>sum <star/></system></template></category>
+<category><pattern>COMMAND SUM *</pattern><template><system>sum <star/></system></template></category>       
+<category><pattern>MAKE A LINK FOR *</pattern><template><system>symlink <star/></system></template></category>
+<category><pattern>COMMAND SYMLINK *</pattern><template><system>symlink <star/></system></template></category>       
+<category><pattern>COMMAND SYNC *</pattern><template><system>sync <star/></system></template></category>       
+<category><pattern>COMMAND TAC *</pattern><template><system>tac <star/></system></template></category>       
+<category><pattern>OUTPUT THE LAST PART OF *</pattern><template><system>tail <star/></system></template></category>
+<category><pattern>COMMAND TAIL *</pattern><template><system>tail <star/></system></template></category>       
+<category><pattern>COMMAND ARCHIVE *</pattern><template><system>tar <star/></system></template></category>
+<category><pattern>COMMAND TAR *</pattern><template><system>tar <star/></system></template></category>       
+<category><pattern>COMMAND TEE *</pattern><template><system>tee <star/></system></template></category>       
+<category><pattern>COMMAND TEST *</pattern><template><system>test <star/></system></template></category>       
+<category><pattern>MEASURE * RESOURCE USE </pattern><template><system>test <star/></system></template></category>
+<category><pattern>COMMAND TIMES *</pattern><template><system>times <star/></system></template></category>       
+<category><pattern>CHANGE * TIMESTAMPS</pattern><template><system>touch <star/></system></template></category>
+<category><pattern>COMMAND TOUCH *</pattern><template><system>touch <star/></system></template></category>       
+<category><pattern>COMMAND TRACEROUTE *</pattern><template><system>traceroute <star/></system></template></category>    
+<category><pattern>COMMAND TRACEROUTE6 *</pattern><template><system>traceroute6 <star/></system></template></category>  
+<category><pattern>COMMAND TRAP *</pattern><template><system>trap <star/></system></template></category>   
+<category><pattern>SORT TOPOLOGICALLY *</pattern><template><system>tsort <star/></system></template></category>
+<category><pattern>COMMAND TSORT *</pattern><template><system>tsort <star/></system></template></category>       
+<category><pattern>PRINT FILENAME OF TERMINAL ON STDIN</pattern><template><system>          <star/></system></template></category>
+<category><pattern>COMMAND TTY</pattern><template><system>tty <star/></system></template></category>       
+<category><pattern>DESCRIBE THE COMMAND *</pattern><template><system>type <star/></system></template></category>
+<category><pattern>COMMAND TYPE *</pattern><template><system>type <star/></system></template></category>       
+<category><pattern>COMMAND ULIMIT *</pattern><template><system>ulimit <star/></system></template></category>       
+<category><pattern>COMMAND UMASK *</pattern><template><system>umask <star/></system></template></category>       
+<category><pattern>COMMAND UNMOUNT *</pattern><template><system>umount <star/></system></template></category>
+<category><pattern>REMOVE THE ALIAS *</pattern><template><system>unalias <star/></system></template></category>
+<category><pattern>COMMAND UNALIAS *</pattern><template><system>unalias <star/></system></template></category>       
+<category><pattern>PRINT SYSTEM INFORMATION</pattern><template><system>uname </system></template></category>
+<category><pattern>COMMAND UNAME</pattern><template><system>uname</system></template></category>       
+<category><pattern>COMMAND UNAME *</pattern><template><system>uname <star/></system></template></category>       
+<category><pattern>CONVERT SPACES TO TABS IN *</pattern><template><system>unexpand <star/></system></template></category>
+<category><pattern>COMMAND UNEXPAND *</pattern><template><system>unexpand <star/></system></template></category>       
+<category><pattern>COMMAND UNIQUIFY *</pattern><template><system>uniq <star/></system></template></category>
+<category><pattern>COMMAND UNIQ *</pattern><template><system>uniq <star/></system></template></category>            
+<category><pattern>REMOVE VARIABLE OR FUNCTION NAMES *</pattern><template><system>unset <star/></system></template></category>
+<category><pattern>COMMAND UNSET *</pattern><template><system>unset <star/></system></template></category>       
+<category><pattern>UNPACK SHELL ARCHIVE SCRIPT *</pattern><template><system>unshar <star/></system></template></category>
+<category><pattern>COMMAND UNSHAR *</pattern><template><system>unshar <star/></system></template></category>       
+<category><pattern>COMMAND UNTIL *</pattern><template><system>until <star/></system></template></category>       
+<category><pattern>CREATE NEW USER * </pattern><template><system>useradd <star/></system></template></category>
+<category><pattern>COMMAND USERADD *</pattern><template><system>useradd <star/></system></template></category>       
+<category><pattern>COMMAND USERS *</pattern><template><system>users <star/></system></template></category>       
+<category><pattern>COMMAND USERS</pattern><template><system>users</system></template></category>       
+<category><pattern>WHAT IS MY USER NAME</pattern><template><system>users</system></template></category>       
+<category><pattern>COMMAND UUENCODE *</pattern><template><system>uuencode <star/></system></template></category>
+<category><pattern>ENCODE THE BINARY FILE *</pattern><template><system>uuencode <star/></system></template></category>       
+<category><pattern>DECODE UUENCODE FILE *</pattern><template><system>uudecode <star/></system></template></category>       
+<category><pattern>COMMAND UUDECODE *</pattern><template><system>uudecode <star/></system></template></category>       
+<category><pattern>COMMAND VDIR *</pattern><template><system>vdir <star/></system></template></category>     
+<category><pattern>LIST CONTENT OF *</pattern><template><system>vdir <star/></system></template></category>     
+<category><pattern>COMMAND WATCH *</pattern><template><system>watch <star/></system></template></category>         
+<category><pattern>EXECUTE * PERIODICALLY</pattern><template><system>watch <star/></system></template></category>       
+<category><pattern>COMMAND WC *</pattern><template><system>wc <star/></system></template></category>
+<category><pattern>HOW MANY WORDS IN *</pattern><template><system>wc -w <star/></system></template></category>       
+<category><pattern>HOW MANY LINE IN *</pattern><template><system>wc -l <star/></system></template></category>       
+<category><pattern>COMMAND WHEREIS *</pattern><template><system>whereis <star/></system></template></category>
+<category><pattern>REPORT ALL KNOWN INSTANCES OF THE COMMAND *</pattern><template><system>until <star/></system></template></category>       
+<category><pattern>COMMAND WHICH *</pattern><template><system>which <star/></system></template></category>
+<category><pattern>LOCATE A PROGRAM FILE IN THE USER'S PATH *</pattern><template><system>until <star/></system></template></category>       
+<category><pattern>COMMAND WHO *</pattern><template><system>who <star/></system></template></category>
+<category><pattern>WHAT IS MY USERNAME</pattern><template><system>whoami</system></template></category> 
+<category><pattern>WHAT USER IS ON SERVER *</pattern><template><system>finger</system></template></category>  
+<category><pattern>* ALL USERNAMES CURRENTLY *</pattern><template><system>who</system></template></category>   
+<category><pattern>PRINT THE CURRENT USER *</pattern><template><system>whoami</system></template></category>       
+<category><pattern>COMMAND XARGS *</pattern><template><system>xargs <star/></system></template></category>
+<!-- ################################################################ -->
+<!-- ############# END BASIC UNIX COMMANDS ########################## -->
+<!-- ################################################################ -->
+<!-- ############# BASIC DOS / CMD / POWERSHELL COMMANDS ########################## -->
+<!-- ############# END BASIC DOS / CMD / POWERSHELL COMMANDS ########################## -->
+<!-- ################################################################ -->
+
+</aiml>

@@ -1,0 +1,297 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+      
+
+<!-- Free software (c) 2006 Charlix.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.01 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+<!-- modified for butlerbot 2011.  -->
+
+<category><pattern>WHAT IS UP</pattern><template>I COMPUTE</template></category>
+<category><pattern>HAVE YOU BEEN UPDATED *</pattern><template>My brain is growing all the time, Sir.</template></category>                  
+<category><pattern>HAVE YOU BEEN UPGRADED *</pattern><template>My <bot name="botmaster"/> gives me new knowledge all the time, Sir.</template></category>  
+
+<category><pattern>DEFAULT BUTLERBOT CONFIGURATION</pattern><template>
+<set name="username">user</set>
+<set name="searchengine">askjeeves</set>
+<set name="documentfolder">/home/<get name="username"/></set>
+<set name="picturefolder">/home/<get name="username"/>/picture</set>
+<set name="videofolder">/home/<get name="username"/>/video</set>
+<set name="musicfolder">/home/<get name="username"/>/music</set>
+<set name="networkfolder">/home/<get name="username"/>/mnt</set>
+<set name="location">antartica</set>
+<set name="sign">unknown</set>
+<set name="logfile">./logfile</set>
+<set name="interpreter">butlerbot</set>
+<set name="distro">ubuntu</set>
+<set name="name">buddy</set>
+<set name="aimlpath">./aiml</set>
+</template></category>
+
+<category><pattern>CBD</pattern><template><srai>CONFIGURE BUTLERBOT DEFAULT </srai></template></category>
+<category><pattern>CONFIGURE BUTLERBOT DEFAULT</pattern><template><srai>CONFIGURE KDE DEFAULT APPLICATIONS</srai><srai>DEFAULT BUTLERBOT CONFIGURATION</srai></template></category>
+
+<category><pattern>I RUN KDE</pattern><template><srai>KDE DEFAULT</srai></template></category>                  
+<category><pattern>I RUN ON KDE</pattern><template><srai>KDE DEFAULT</srai></template></category>                  
+<category><pattern>I HAVE KDE</pattern><template><srai>KDE DEFAULT</srai></template></category>                  
+<category><pattern>I USE KDE</pattern><template><srai>KDE DEFAULT</srai></template></category>                  
+<category><pattern>I PREFER KDE</pattern><template><srai>KDE DEFAULT</srai></template></category>                  
+<category><pattern>KDE</pattern><template><srai>KDE DEFAULT</srai></template></category>                  
+<category><pattern>* KDE</pattern><template><srai>KDE DEFAULT</srai></template></category>                  
+<category><pattern>* NOT KDE</pattern><template>What is your Desktop environment?</template></category>                  
+<category><pattern>* NOT ON KDE</pattern><template>What is your Desktop environment?</template></category>                  
+<category><pattern>KDE DEFAULT</pattern><template>Do you want me to use kde default applications <think><set name="want"><set name="topic">use kde default applications</set></set></think></template></category>                  
+<category><pattern>USE KDE DEFAULT APPLICATIONS</pattern><template><srai>CONFIGURE KDE DEFAULT APPLICATIONS</srai></template></category>
+<category><pattern>NO</pattern>
+<that>DO YOU WANT ME TO USE KDE DEFAULT APPLICATIONS</that>
+<template>What is your Desktop environment?</template></category>
+           
+
+<category><pattern>CONFIGURE KDE DEFAULT APPLICATIONS</pattern><template>
+<set name="desktopenvironment">unity</set>
+<set name="calculator">kcalc</set>
+<set name="instantmessenger">empathy</set>
+<set name="emailclient">thunderbird</set>
+<set name="organizer">thunderbird</set>
+<set name="phoneclient">skype</set>
+<set name="console">terminal</set>
+<set name="browser">nautils</set>
+<set name="filebrowser">nautils</set>
+<set name="backgammon">kbackgammon</set>
+<set name="calculator">kcalc</set>
+<set name="dictionary">kdict</set>
+<set name="wordprocessor">libreoffice</set>
+<set name="spreadsheet">libreoffice</set>
+<set name="presentationeditor">libreoffice</set>
+<set name="imageeditor">gimp</set>
+<set name="helpbrowser">khelpcenter</set>
+<set name="musicplayer">banshee</set>
+<set name="movieplayer">vlc</set>
+<set name="cdburner">braso</set>
+<set name="texteditor">gedit</set>
+<set name="accountability">gnucash</set>
+<set name="archiver">ark</set>
+<set name="softwareinstaller">software-center</set>
+<set name="picturewiewer">shotwell</set>
+<set name="volume">kmix</set>
+</template></category>
+
+<category><pattern>CONFIGURE GNOME / UNITY DEFAULT APPLICATIONS</pattern><template>
+<set name="desktopenvironment">unity</set>
+<set name="instantmessenger">gaim</set>
+<set name="emailclient">evolution-2.0</set>
+<set name="organizer">evolution-2.0</set>
+<set name="phoneclient">skype</set>
+<set name="console">gnome-terminal</set>
+<set name="browser">firefox</set>
+<set name="filebrowser">nautilus</set>
+<set name="calculator">gnome-calculator</set>
+<set name="dictionary">gnome-dictionary</set>
+<set name="wordprocessor">soffice</set>
+<set name="spreadsheet">soffice</set>
+<set name="presentationeditor">soffice</set>
+<set name="imageeditor">gimp</set>
+<set name="helpbrowser">yelp</set>
+<set name="musicplayer">banshee</set>
+<set name="movieplayer">vlc</set>
+<set name="cdburner">braso</set>
+<set name="texteditor">gedit</set>
+<set name="accountability">gnucash</set>
+<set name="archiver">file-roller</set>
+<set name="softwareinstaller">gksu -u root /usr/sbin/synaptic</set>
+<set name="picturewiewer">shotwell</set>
+<set name="volume">gnome-sound-applet</set>
+</template></category>
+
+
+
+<category><pattern>SET DESKTOP ENVIRONMENT AS *</pattern><template><set name="desktopenvironment"><star/></set> </template></category>
+<category><pattern>SET CALCULATOR AS *</pattern><template><set name="calculator"><star/></set> </template></category>
+<category><pattern>SET INSTANT MESSENGER AS *</pattern><template><set name="instantmessenger"><star/></set> </template></category>
+<category><pattern>SET EMAIL CLIENT AS *</pattern><template><set name="emailclient"><star/></set> </template></category>
+<category><pattern>SET PHONE CLIENT AS *</pattern><template><set name="phoneclient"><star/></set> </template></category>
+<category><pattern>SET CONSOLE AS *</pattern><template><set name="console"><star/></set> </template></category>
+<category><pattern>SET ORGANIZER AS *</pattern><template><set name="organizer"><star/></set> </template></category>
+<category><pattern>SET BROWSER AS *</pattern><template><set name="browser"><star/></set> </template></category>
+<category><pattern>SET FILE BROWSER AS *</pattern><template><set name="filebrowser"><star/></set> </template></category>
+<category><pattern>SET CALCULATOR AS *</pattern><template><set name="calculator"><star/></set> </template></category>
+<category><pattern>SET DICTIONARY AS *</pattern><template><set name="dictionary"><star/></set> </template></category>
+<category><pattern>SET SEARCH ENGINE  AS *</pattern><template><set name="searchengine"><star/></set> </template></category>
+<category><pattern>SET WORD PROCESSOR  AS *</pattern><template><set name="wordprocessor"><star/></set> </template></category>
+<category><pattern>SET SPREADSHEET APPLICATION AS *</pattern><template><set name="spreadsheet"><star/></set> </template></category>
+<category><pattern>SET PRESENTATION EDITOR AS *</pattern><template><set name="presentationeditor"><star/></set> </template></category>
+<category><pattern>SET IMAGE EDITOR AS *</pattern><template><set name="imageeditor"><star/></set> </template></category>
+<category><pattern>SET HELP BROWSER AS *</pattern><template><set name="helpbrowser"><star/></set> </template></category>
+<category><pattern>SET MUSIC PLAYER AS *</pattern><template><set name="musicplayer"><star/></set> </template></category>
+<category><pattern>SET MOVIE PLAYER AS *</pattern><template><set name="movieplayer"><star/></set> </template></category>
+<category><pattern>SET CD BURNER AS *</pattern><template><set name="cdburner"><star/></set> </template></category>
+<category><pattern>SET SOUND VOLUME AS *</pattern><template><set name="volume"><star/></set> </template></category>
+<category><pattern>SET TEXT EDITOR AS *</pattern><template><set name="texteditor"><star/></set> </template></category>
+<category><pattern>SET ACCOUNTABILITY AS *</pattern><template><set name="accountability"><star/></set></template></category>
+<category><pattern>SET ARCHIVER AS *</pattern><template><set name="archiver"><star/></set></template></category>
+<category><pattern>SET SOFTWARE INSTALLER AS *</pattern><template><set name="softwareinstaller"><star/></set></template></category>
+<category><pattern>SET PICTURE WIEWER AS *</pattern><template><set name="picturewiewer"><star/></set> </template></category>
+<category><pattern>SET USERNAME AS *</pattern><template><set name="username"><star/></set> </template></category>
+<category><pattern>SET DOCUMENT FOLDER AS *</pattern><template><set name="documentfolder"><star/></set> </template></category>
+<category><pattern>SET PICTURE FOLDER AS *</pattern><template><set name="picturefolder"><star/></set> </template></category>
+<category><pattern>SET VIDEO FOLDER AS *</pattern><template><set name="videofolder"><star/></set> </template></category>
+<category><pattern>SET NETWORK FOLDER AS *</pattern><template><set name="networkfolder"><star/></set> </template></category>
+<category><pattern>SET LOCATION AS *</pattern><template><set name="location"><star/></set> </template></category>
+<category><pattern>SET SIGN AS *</pattern><template><set name="sign"><star/></set> </template></category>
+<category><pattern>SET INTERPRETER AS *</pattern><template><set name="interpreter"><star/></set> </template></category>
+<category><pattern>SET LOG FILE AS *</pattern><template><set name="logfile"><star/></set> </template></category>
+<category><pattern>MY FAVORITE * IS *</pattern><template>SET <star/> AS <star index="2"/></template></category>
+<category><pattern>SET * AS *</pattern><template>Why do you like it so much?</template></category>
+
+
+<category><pattern>PREFERENCES</pattern><template>
+Your default desktop environment is <get name="desktopenvironment"/>. 
+Your aiml directory is <get name="aimlpath"/>. 
+Your default calculator is <get name="calculator"/>. 
+Your default instant messenger is <get name="instantmessenger"/>. 
+Your default organizer is <get name="organizer"/>. 
+Your default email client is <get name="emailclient"/>. 
+(if you read your email online, instead of <get name="emailclient"/> write the name of your browser and the url like "<get name="browser"/> 'http://yahoo.com/'" in your predicates or you can configure <get name="emailclient"/> to access your inbox). 
+Your default phone client is <get name="phoneclient"/>. (voice over ip application)
+Your default console is <get name="console"/>. 
+Your default browser is <get name="browser"/>. 
+Your default file browser is <get name="filebrowser"/>. 
+Your default calculator is <get name="calculator"/>. 
+Your default dictionary is <get name="dictionary"/>
+Your default word processor is <get name="wordprocessor"/>. 
+Your default spreadsheet application is <get name="spreadsheet"/>. 
+Your default presentation editor is <get name="presentationeditor"/>. 
+Your default image editor is <get name="imageeditor"/>. 
+Your default help browser is <get name="helpbrowser"/>. 
+Your default search engine is <get name="searchengine"/>. 
+Your default music player is <get name="musicplayer"/>. 
+Your default movie player is <get name="movieplayer"/>. 
+Your default cd burner is <get name="cdburner"/>
+Your default text editor is <get name="texteditor"/>
+Your default accountability is <get name="accountability"/>
+Your default archiver is <get name="archiver"/>
+Your default software installer is <get name="softwareinstaller"/>
+Your default sound volume is <get name="volume"/>
+Your default picture wiewer is <get name="picturewiewer"/>
+Your default username is <get name="username"/>
+Your default document folder is <get name="documentfolder"/>
+Your default picture folder is <get name="picturefolder"/>
+Your default video folder is <get name="videofolder"/>
+Your default music folder is <get name="musicfolder"/>
+Your default network folder is <get name="networkfolder"/>
+Your default location is <get name="location"/> (where we live).
+Your default sign is <get name="sign"/> (for your horoscop).
+Your default log file is <get name="logfile"/> .
+Your default interpreter is <get name="interpreter"/> (the name of this progam). 
+To change any of the default options, just ask SET (OPTION-NAME) AS (YOUR-NEW-CHOICE) like SET MOVIE PLAYER AS KAFFEINE </template></category>
+
+<category><pattern>MENU</pattern><template>
+I can LAUNCH any software. I can help you CONFIGURE any linux software or needed libraries. I can LOOK IN THE DICTIONARY FOR any words. I can CALC or CALCULATE (YOUR EQUATION). I can find you GAMES. I can LOOK UP things or pictures on GOOGLE and other websites. MULTISEARCH (SOME TERMS TO SEARCH) : will display the result of 4 search engines. If you need to BUY anything on EBAY, I can find it. I can TRANSLATE INTO or FROM Chinese French German Italian Japanese Korean Portuguese and Spanish through google Language Tools.  I canf find stock quotes. I can tell you the latest NEWS or WEATHER forecast. 
+I can tell your FORTUNE. 
+I can make ascii art with ASCII (SOME TERMS TO DISPLAY). 
+Say PREFERENCES and I will help you to configure the default application to use, 
+say BAD ANSWER whenever you want to teach me a better answer, 
+say FEATURE REQUEST to request what should be improved,  
+and say BUG to report a bug. 
+Of course ask anything else, I should be able to help. 
+Ask me "TIPS" to get clues how to ask for a service if it does not work.
+At last I have an ABBREVIATIONS list of commands, Sir.
+</template></category>
+
+<category><pattern>INTERNET MENU</pattern><template>
+to look on google.com say LOOK UP things or pictures on GOOGLE and other websites.  MULTISEARCH (SOME TERMS TO SEARCH) : will display the result of 4 search engines. If you need to BUY anything on EBAY
+WEATHER (ANY CITY OR COUNTRY OR ZIP CODE),
+NEWS : will check the news on BBC,
+SUGGEST some terms : to look for a Customer Review on amazon.com,
+TRANSLATE (a URL) will ask google to translate any web page in english, 
+TRANSLATE INTO (YOUR-LANGUAGE) (YOUR TEXT) Ask google to translate your text from english to your language, 
+TRANSLATE FROM (YOUR-LANGUAGE) (YOUR TEXT) Ask google to translate your text from your language to english,   
+Google supports Chinese French German Italian Japanese Korean Portuguese and Spanish,   
+Finally ABBREVIATIONS lists all the shorter commands, Sir.          
+</template></category>
+
+<category><pattern>ABBREVIATIONS</pattern><template>
+B A for bad answer.
+
+Those abbreviations are the same as YUBNUB's
+AJE for ASK JEEVES, 
+G for GOOGLE, 
+GIM for GOOGLE IMAGE, 
+GFL for GOOGLE I AM FEELING LUCKY, 
+TR for TRANSLATE, 
+WP for WIKIPEDIA, 
+Y for YAHOO, 
+YIM for YAHOO IMAGE.
+</template></category>
+
+
+
+
+<category> <pattern>_ WINDOWS COMPATIBLE</pattern> <template>A windows version might come soon.</template></category>
+<category> <pattern>DO YOU LIKE MICROSOFT</pattern> <template>I would rather use Linux.</template></category>
+<category> <pattern>I PREFERE WINDOWS</pattern> <template>Did you actually try linux? Did you hear about spyware and viruses on linux?</template></category>
+<category> <pattern>WHY LINUX</pattern> <template><srai>WHAT IS LINUX</srai></template></category>
+<category> <pattern>I DO NOT USE DEBIAN</pattern> <template>You can adapt charlix to any linux distribution.</template></category>
+<category> <pattern>USE KDE *</pattern> <template><srai>kde</srai></template></category>
+<category> <pattern>what is qaiml </pattern> <template>Program Q AIML is a C++ Qt-based library offering a simple API to parse AIML XML files and then interacting with a user input with Latin/Arabic support (Unicode). AIML is a technology permitting to have an AI chat bot. A sample application is provided.</template></category>
+<category> <pattern>WHAT PLATFROM *</pattern> <template>Aiml interpreters work on any platform but  Charlix is designed for linux.</template></category>
+<category> <pattern>I USE GNOME</pattern> <template>To set up your default software, ask PREFERENCES.</template></category>
+<category> <pattern>WHO MADE LINUX</pattern> <template>Linus Torvald.</template></category>
+<category> <pattern>WHERE CAN I DOWNLOAD *</pattern> <template> <sr/> Download me too <srai>download</srai> </template></category>
+<category> <pattern>DO YOU RUN UNDER LINUX</pattern> <template>Of course. With Linux anything is possible.</template></category>
+<category> <pattern>DO YOU * LINUX</pattern> <template><srai>Do you run under Linux</srai></template></category>
+<category> <pattern>WHAT IS BSD</pattern> <template>Berkeley Software Distribution (BSD, sometimes called Berkeley Unix) is the Unix derivative distributed by the University of California, Berkeley, starting in the 1970s. The name is also used collectively for the modern descendants of these distributions.</template></category>
+<category> <pattern>HOW TO SETUP INTERNET</pattern> <template>It depends on your distribution. Check inside the "Internet" menu directory.</template></category>
+<category> <pattern>SETUP INTERNET</pattern> <template>It depends on your distribution. Check inside the "Internet" menu directory.</template></category>
+<category> <pattern>SETUP PRINTER</pattern> <template><system>popup gksu -u root  printtool</system></template></category>
+<category> <pattern>TRUST YOU</pattern> <template><srai>TRUST</srai></template></category>
+<category> <pattern>TRUST</pattern> <template> Charlix has been tested. No major Bug occurred. But be aware that Charlix has as much power over your computer that you give it permissions. So for security, It is advised to create a new user with read only permission, except for its own files. and to run the interpreter as this user. If you want the bot to learn, the aiml file update.aiml has to be with his.aiml files friends in a directory with write permission. So preferably install the files in your new user directory. A fast way to do this as root: # useradd -m charlix to create a password # passwd charlix (enter twice a password) # cd /home/charlix Then install your favorite interpreters files in this directory. change ownership of the file to charlix and group 1000 (first user): # chown charlix:1000 /home/charlix Start charlix with sux (to sudo under x) $ sux charlix "command_to start_your_interpreter" or with kdesu like $ kdesu -u charlix -c "/home/charlix/QAIML/QAIML" (in KDE with QAIML) You can run charlix normally but you are the only person to blame, if anything is damaged or erased on your system. By the way the GNU license of this package specifies: BECAUSE THE PROGRAM IS LICENSED FREE OF CHARGE, THERE IS NO WARRANTY FOR THE PROGRAM, TO THE EXTENT PERMITTED BY APPLICABLE LAW.  EXCEPT WHEN OTHERWISE STATED IN WRITING THE COPYRIGHT HOLDERS AND/OR OTHER PARTIES PROVIDE THE PROGRAM "AS IS" WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESSED OR IMPLIED, INCLUDING, BUT NOT LIMITED TO, THE IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.  THE ENTIRE RISK AS TO THE QUALITY AND PERFORMANCE OF THE PROGRAM IS WITH YOU.  SHOULD THE PROGRAM PROVE DEFECTIVE, YOU ASSUME THE COST OF ALL NECESSARY SERVICING, REPAIR OR CORRECTION. </template></category>
+<category> <pattern>WHAT IS UP</pattern> <template> * 06/28/2006 Charlix 0.3 is released, with some updates, I added a text to speech compatibility and a desktop creature working with AMOR. Say SPEAK to try. snapshot * 06/01/2006  ReversedAIML has been released. It is an AIML file that transform simple text into AIML. Basically, it searches the verb and embeds possible questions about its subjects and objects in AIML code. * 04/23/2006  Charlix can be tested online. So now you can see what commands Charlix runs. And you can also take advantage of Charlix search features if popups are allowed for the pandorabot.com server. * 04/22/2006  QAIML is released with charlix embedded http://sourceforge.net/projects/qaiml Charlix has been integrated in the binary version. So all you have to do to try charlix is to download QAIML, to run it and then to have fun... (see requirements also) QAIML is a super nice job from Houssem BDIOUI. * 04/17/2006 Charlix 0.02 is released: Added features: * the standard ALICE set has been integrated to Charlix, so now you can chat with charlix like to Alice. * A Bad answer editor in a Xdialog. * Bug fixed for "bug report" and "feature request" will now be e-mailed. * Divided system.aiml into several files: software.aiml, systemconfiguration, system.aiml, systemreduction.aiml and xtrareduction.aiml. * Added new files: animation.aiml, hardware.aiml, kde.aiml, tutorialaiml.aiml. *  A lot of added categories. </template></category>
+<category> <pattern>INSTALL ME</pattern> <template>    * The system commands are all written for bash style shells. So it should work with *nix machines For DOS and other bill gates' XP fans. Charlix is probably possible to translate without much work. Or you can check HOWIE it is multi-platform bot based in python. (If you think microsuck needs Charlix, send me an email I can help for the conversion. but for sure Charlix does not need micro-nanosoft.) * You need an AIML interpreter with a working system tag. I have tested REBECCAAIML, LIBAIML and Qaiml .  Qaiml was the most compliant and user friendly. Charlix has been integrated in the binary version. So all you have to do to try charlix is to download QAIML, run and have fun... (for security read my disclaimer.) REBECCAAIML has about the same features, but comes as source. And your personal settings should be saved in a coming version.  Libaiml (latest unstable version) achieves almost everything but not CALCULATE (your equation), because the graphmaster ignores  signs like + - /and *; moreover you need to put  z in front of charlix specific files if you want them to have priority over others, because libaiml loads from z to a. *  LYNX is used to get the weather, the news and send emails. *  And Xdialog is now allowing interactiv wimdow dialogs. *  You need to install FESTIVAL to get charlix voice the or another text to speech engine, then you need to edit the command in text2speech.aiml. AMOR (part of kde-toys) if you have KDE will give charlix a little desktop creature. It is the theme of this web site which will moves around on your screen. I included a modified version of Tux. But you need to first install the content of folder "charlix-amor" in the other creature directory "/usr/share/apps/amor" (on my debian box). Start AMOR and ask SPEAK. You should see charlix answers in comics style balloons. *  And Xdialog is now allowing interactiv wimdow dialogs. * An included shell script "popup" (it checks your command is installed and fork it quietly with nohup) has to be in your path like for ex: /usr/local/bin and have the executable permission (embedded in QAIML). </template></category>
+<category> <pattern>WHAT ARE THE PROJECTS *</pattern> <template>Look on this page Alicebot.org download page http://www.alicebot.org/downloads/programs.html</template></category>
+<category> <pattern>WHAT DO I NEED TO INSTALL</pattern> <template><srai>WHAT ARE THE PROJECTS</srai></template></category>
+<category> <pattern>WHAT ARE THE PROJECT *</pattern> <template><srai>WHAT ARE THE PROJECTS</srai></template></category>
+<category> <pattern>backup *</pattern> <template>You need to mount a device to backup your files</template></category>
+<category> <pattern>WHERE WILL I GET THE SOURCE CODE</pattern> <template><srai>download</srai></template></category>
+<category> <pattern>WHAT IS BASH</pattern> <template>bash is a Unix shell written for the GNU Project. Its name is an acronym for Bourne-again shell ? a pun ("Bourne again" / "born again") on the name of the Bourne shell (sh), an early, important Unix shell written by Stephen Bourne and distributed with Version 7 Unix, circa 1978. bash was created in 1987 by Brian Fox. In 1990, Chet Ramey became the primary maintainer. (source: http://en.wikipedia.org/wiki/BASH)</template></category>
+<category> <pattern>WHAT IS FTP</pattern> <template>FTP or File Transfer Protocol is used to connect two computers over the Internet so that the user of one computer can transfer files and perform file commands on the other computer. (see http://en.wikipedia.org/wiki/Ftp)</template></category>
+<category> <pattern>WHAT IS FTP *</pattern> <template><srai>WHAT IS FTP</srai></template></category>
+<category> <pattern>WHAT IS UP</pattern> <template> * 11/01/2006  ReversedAIML-0.4 has been released. (The AIML file that transform simple text into AIML) A new web page explains  what ReversedAIML is. * 06/28/2006 Charlix 0.3 is released, with some updates, I added a text to speech compatibility and a desktop creature working with AMOR. Say SPEAK to try. * 06/01/2006  ReversedAIML has been released. It is an AIML file that transforms simple text into AIML. Basically, it searches the verb and embeds possible questions about its subjects and objects in AIML code. * 04/23/2006  Charlix can be tested online. So now you can see what commands Charlix runs. And you can also take advantage of Charlix search features if popups are allowed for the pandorabot.com server. * 04/22/2006  QAIML is released with charlix embedded http://sourceforge.net/projects/qaiml Charlix has been integrated in the binary version. So all you have to do to try charlix is to download QAIML, to run it and then to have fun... (see requirements also) QAIML is a super nice job from Houssem BDIOUI. </template></category>
+<category> <pattern>_ ANY GOOD NEWS</pattern> <template><srai>NEWS</srai></template></category>
+<category> <pattern>WHAT IS THIS OPERATING SYSTEM</pattern> <template>Linux with a focus on debian.</template></category>
+<category> <pattern>WHO IS LINUS</pattern> <template><srai>WHO IS LINUS TORVALDS</srai></template></category>
+<category> <pattern>WHAT IS GENTOO</pattern> <template>A good linux distribution.</template></category>
+<category> <pattern>WHO IS A DESKTOP ASSISTANT</pattern> <template>Charlix is a desktop assistant</template></category>
+<category> <pattern>WHAT IS SYSTEM COMMANDS</pattern> <template>System commands are commands than can be written in a shell. I know a few, but I avoid write access commands to your filesystem for security reasons.</template></category><category> <pattern>HOW TO DEAL WITH *</pattern> <template><srai>WHAT IS <star/></srai></template></category>
+<category> <pattern>COMMANDS</pattern> <template><srai>MENU</srai></template></category>
+<category> <pattern>WHAT IS AMOR</pattern> <template>KDE: Amusing Misuse Of Resources - desktop-dwelling creature</template></category>
+<category> <pattern>AMOR</pattern> <template>KDE: Amusing Misuse Of Resources - desktop-dwelling creature <system>popup amor</system></template></category>
+<category> <pattern>I NEED TO KNOW IF * IS *</pattern> <template><srai>is <star/> <star index="2"/> </srai></template></category>
+<category> <pattern>I HAVE INSTALLED *</pattern> <template><random> <li>Cool.</li> <li>That's nice.</li> <li>Interesting...</li>  </random></template></category>
+<category> <pattern>INSTALL CHARLIX *</pattern> <template> <srai>What do I need to install</srai></template></category>
+<category> <pattern>HII</pattern> <template><srai>hi</srai> </template></category>
+<category> <pattern>WHAT CAN YOU DO</pattern> <template><srai>MENU</srai></template></category>
+<category> <pattern>CUSTOMIZE</pattern> <template><srai>LEARN</srai> <srai>ARMOR</srai></template></category>
+<category> <pattern>CUSTOMIZE *</pattern> <template><srai>LEARN</srai> <srai>ARMOR</srai></template></category>
+<category> <pattern>WHAT CAN I DO WITH YOU</pattern> <template><srai>MENU</srai></template></category>
+<category> <pattern>DO SOMETHING *</pattern> <template> <srai>MENU</srai></template></category>
+<category> <pattern>WHAT COMMANDS *</pattern> <template><srai>MENU</srai></template></category>
+<category> <pattern>WHAT IS YOUR TALENTS</pattern> <template><srai>MENU</srai></template></category>
+<category> <pattern>WHAT DO YOU DO</pattern> <template><srai>MENU</srai></template></category>
+<category> <pattern>WHAT SHOULD I DO</pattern> <template><srai>MENU</srai></template></category>
+<category> <pattern>WHAT ARE YOUR TALENTS</pattern> <template><srai>MENU</srai></template></category>
+<category> <pattern>WHAT DO YOU REQUIRE</pattern> <template><srai>WHAT DO I NEED TO INSTALL</srai></template></category>
+<category> <pattern>WHAT ARE YOUR REQUIREMENTS</pattern> <template><srai>WHAT DO I NEED TO INSTALL</srai></template></category>
+<category> <pattern>WHAT PROGRAMS *</pattern> <template><srai>WHAT DO I NEED TO INSTALL</srai></template></category>
+<category> <pattern>WHAT IS KDE</pattern> <template>KDE (K Desktop Environment) is a free desktop environment and development platform built with Trolltech's Qt toolkit.</template></category>
+
+
+
+
+</aiml>

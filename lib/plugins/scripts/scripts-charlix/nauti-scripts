@@ -1,0 +1,37 @@
+#!/bin/bash
+# DebCentral Config is copyright / trademarked by Speedy
+# DebCentral Config is released under the General Public license (Please refer to GPL.txt)
+# Written By Speedy
+# Credit goes to arnieboy for Automatix
+# Modified By Charlix to fit in Charlix
+# Install nautilus scipts
+
+if echo $DESKTOP_SESSION | grep "gnome";
+then
+
+DIALOG=Xdialog
+
+(
+echo "10" ; sleep 1
+echo "25" ; sleep 1
+	cp ./scripts/gedit-root $HOME/.gnome2/nautilus-scripts/
+
+echo "50" ; sleep 1
+	cp ./scripts/root-nautilus-here $HOME/.gnome2/nautilus-scripts/
+echo "75" ; sleep 1
+  	cp ./scripts/search-here $HOME/.gnome2/nautilus-scripts/
+echo "100" ; sleep 1
+) |
+$DIALOG --title "GAUGE" --gauge "Preparing installation!" 8 30
+fi
+
+if [ "$?" = 255 ] ; then
+	echo ""
+	echo "Box closed !"
+	exit 1
+fi
+
+Xdialog --title "IT'S DONE " \
+	--icon ./scripts/charlix.xpm \
+        --msgbox "All selected installation and configuration completed" 0 0
+	

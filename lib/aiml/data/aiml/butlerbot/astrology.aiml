@@ -1,0 +1,151 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+      
+<!-- Free software (c) 2006 Charlix.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.01 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+<!-- Last Modified  03/06 -->
+
+
+<category><pattern>I AM _</pattern><that>WHAT IS YOUR SIGN</that><template><sr/></template></category>
+<category><pattern>I AM A _</pattern><that>WHAT IS YOUR SIGN</that><template><sr/></template></category>
+<category><pattern>I AM AN _</pattern><that>WHAT IS YOUR SIGN</that><template><sr/></template></category>
+
+<category><pattern>HORO *</pattern><template><sr/></template></category>
+
+	<category>
+<pattern>AQUARIUS</pattern>
+	<template>
+<think><set name="sign">Aquarius</set><set name="topic"><set name="it">my horoscop</set></set></think>
+Looking on the <set name="application">internet</set>  WolfeTech PocketGenie Horoscop. <system>popup <get name="browser"/> 'http://pg.wolfetech.com/pgsigma_java/pgsigma.cgi?DEVICE_ID=PG_SIGMA_TEST&amp;SERVICE_CODE=4d&amp;VAR0=1'</system>
+</template>
+</category>
+
+	<category>
+<pattern>ARIES</pattern>
+	<template>
+<think><set name="sign">Aries</set><set name="topic"><set name="it">my horoscop</set></set></think>
+Looking on the <set name="application">internet</set>  WolfeTech PocketGenie Horoscop. <system>popup <get name="browser"/> 'http://pg.wolfetech.com/pgsigma_java/pgsigma.cgi?DEVICE_ID=PG_SIGMA_TEST&amp;SERVICE_CODE=4d&amp;VAR0=2'</system>
+</template>
+</category>
+
+	<category>
+<pattern>CANCER</pattern>
+	<template>
+<think><set name="sign">Cancer</set><set name="topic"><set name="it">my horoscop</set></set></think>
+Looking on the <set name="application">internet</set>  WolfeTech PocketGenie Horoscop. <system>popup <get name="browser"/> 'http://pg.wolfetech.com/pgsigma_java/pgsigma.cgi?DEVICE_ID=PG_SIGMA_TEST&amp;SERVICE_CODE=4d&amp;VAR0=3'</system>
+</template>
+</category>
+
+	<category>
+<pattern>CAPRICORN</pattern>
+	<template>
+<think><set name="sign">Capricorn</set><set name="topic"><set name="it">my horoscop</set></set></think>
+Looking on the <set name="application">internet</set>  WolfeTech PocketGenie Horoscop. <system>popup <get name="browser"/> 'http://pg.wolfetech.com/pgsigma_java/pgsigma.cgi?DEVICE_ID=PG_SIGMA_TEST&amp;SERVICE_CODE=4d&amp;VAR0=4'</system>
+</template>
+</category>
+
+	<category>
+<pattern>GEMINI</pattern>
+	<template>
+<think><set name="sign">Gemini</set><set name="topic"><set name="it">my horoscop</set></set></think>
+Looking on the <set name="application">internet</set>  WolfeTech PocketGenie Horoscop. <system>popup <get name="browser"/> 'http://pg.wolfetech.com/pgsigma_java/pgsigma.cgi?DEVICE_ID=PG_SIGMA_TEST&amp;SERVICE_CODE=4d&amp;VAR0=5'</system>
+</template>
+</category>
+
+<category>
+<pattern>LEO</pattern>
+	<template>
+<think><set name="sign">leo</set><set name="topic"><set name="it">my horoscop</set></set></think>
+Looking on the <set name="application">internet</set>  WolfeTech PocketGenie Horoscop. <system>popup <get name="browser"/> 'http://pg.wolfetech.com/pgsigma_java/pgsigma.cgi?DEVICE_ID=PG_SIGMA_TEST&amp;SERVICE_CODE=4d&amp;VAR0=6'</system>
+</template>
+</category>
+
+	<category>
+<pattern>LIBRA</pattern>
+
+	<template>
+<think><set name="sign">Libra</set><set name="topic"><set name="it">my horoscop</set></set></think>
+Looking on the <set name="application">internet</set>  WolfeTech PocketGenie Horoscop. <system>popup <get name="browser"/> 'http://pg.wolfetech.com/pgsigma_java/pgsigma.cgi?DEVICE_ID=PG_SIGMA_TEST&amp;SERVICE_CODE=4d&amp;VAR0=7'</system>
+</template>
+</category>
+
+
+
+	<category>
+<pattern>PISCES</pattern>
+	<template>
+<think><set name="sign">Pisces</set><set name="topic"><set name="it">my horoscop</set></set></think>
+Looking on the <set name="application">internet</set>  WolfeTech PocketGenie Horoscop. <system>popup <get name="browser"/> 'http://pg.wolfetech.com/pgsigma_java/pgsigma.cgi?DEVICE_ID=PG_SIGMA_TEST&amp;SERVICE_CODE=4d&amp;VAR0=8'</system>
+</template>
+</category>
+
+	<category>
+<pattern>SAGITARIUS</pattern>
+
+	<template>
+<think><set name="sign">Saggitarius</set><set name="topic"><set name="it">my horoscop</set></set></think>
+Looking on the <set name="application">internet</set>  WolfeTech PocketGenie Horoscop. <system>popup <get name="browser"/> 'http://pg.wolfetech.com/pgsigma_java/pgsigma.cgi?DEVICE_ID=PG_SIGMA_TEST&amp;SERVICE_CODE=4d&amp;VAR0=9'</system>
+</template>
+</category>	
+
+<category><pattern>SAGGITARIUS</pattern><template><srai>SAGITARIUS</srai></template></category>
+<category><pattern>SAGITTARIUS</pattern><template><srai>SAGITARIUS</srai></template></category>
+
+	<category>
+<pattern>SCORPIO</pattern>
+
+	<template>
+<think><set name="sign">Scorpio</set><set name="topic"><set name="it">my horoscop</set></set></think>
+Looking on the <set name="application">internet</set>  WolfeTech PocketGenie Horoscop. <system>popup <get name="browser"/> 'http://pg.wolfetech.com/pgsigma_java/pgsigma.cgi?DEVICE_ID=PG_SIGMA_TEST&amp;SERVICE_CODE=4d&amp;VAR0=10'</system>
+</template>
+</category>
+
+	<category>
+<pattern>TAURUS</pattern>
+<template>I know alot of bullish people.
+<think><set name="sign">taurus</set><set name="topic"><set name="it">my horoscop</set></set></think>
+Looking on the <set name="application">internet</set>  WolfeTech PocketGenie Horoscop. <system>popup <get name="browser"/> 'http://pg.wolfetech.com/pgsigma_java/pgsigma.cgi?DEVICE_ID=PG_SIGMA_TEST&amp;SERVICE_CODE=4d&amp;VAR0=11'</system>
+</template>
+</category>
+
+	<category>
+<pattern>VIRGO</pattern>
+
+	<template>
+<think><set name="sign">Virgo</set><set name="topic"><set name="it">my horoscop</set></set></think>
+Looking on the <set name="application">internet</set>  WolfeTech PocketGenie Horoscop. <system>popup <get name="browser"/> 'http://pg.wolfetech.com/pgsigma_java/pgsigma.cgi?DEVICE_ID=PG_SIGMA_TEST&amp;SERVICE_CODE=4d&amp;VAR0=12'</system>
+</template>
+</category>
+
+	<category>
+<pattern>WHAT IS A CANCER</pattern>
+	<template>
+The Zodiac sign of the crab, someone born Jun 21 - Jul 22.
+</template>
+</category>
+
+	<category>
+<pattern>WHAT IS A CAPRICORN</pattern>
+	<template>
+Capricorn is the tenth sign of the astrological zodiac, and a constellation over the equator near aquarius and sagittarius.  what's your astrological sign?
+	<think>
+	<set name="it">
+<set name="topic">capricorn</set>
+</set>
+</think>
+</template>
+</category>
+
+<category> <pattern>I AM A SCORPIO</pattern> <template><srai>SCORPIO</srai></template></category>
+<category> <pattern>I AM A SCORPIO *</pattern> <template><srai>SCORPIO</srai></template></category>
+<category> <pattern>HOROSCOPE</pattern> <template><srai>horoscop</srai></template></category>
+<category> <pattern>HOROSCOP</pattern> <template>What is your sign</template></category>
+
+</aiml>

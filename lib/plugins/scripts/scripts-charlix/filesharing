@@ -1,0 +1,74 @@
+#!/bin/bash
+# DebCentral Config is copyright / trademarked by Speedy
+# DebCentral Config is released under the General Public license (Please refer to GPL.txt)
+# Written By Speedy
+# Credit goes to arnieboy for Automatix
+# Modified By Charlix to fit in Charlix
+# Installs file sharing progs
+
+Xdialog --title "IS APT BUSY?" \
+	--icon ./scripts/charlix.xpm \
+        --msgbox "Make sure you DO NOT have Synaptic or Kpackage open before u hit OK!" 0 0
+
+
+DIALOG=Xdialog
+
+(
+echo "10" ; sleep 1
+echo "20" ; sleep 1
+echo "XXX" ; echo "Updating sources"; echo "XXX"
+echo "30" ; sleep 1
+xterm -e "apt-get update"
+echo "40" ; sleep 1
+cat << EOF > /tmp/editbox.tmp.$$
+ TO INSTALL amule amule-utils libatk1.0-0 libbz2-1.0 libc6 libgcc1 libglade2-0 libglib2.0-0 libgtk2.0-0 libpango1.0-0 libstdc++6 libxml2 zlib1g, THESE CHANGES NEED TO BE DONE. PLEASE CHECK IF ANY SOFTWARE YOU NEED WOULD BE REMOVED:
+EOF
+echo "" >> /tmp/editbox.tmp.$$
+echo "50" ; sleep 1
+apt-get install -s amule amule-utils libatk1.0-0 libbz2-1.0 libc6 libgcc1 libglade2-0 libglib2.0-0 libgtk2.0-0 libpango1.0-0 libstdc++6 libxml2 zlib1g >> /tmp/editbox.tmp.$$
+echo "" >> /tmp/editbox.tmp.$$
+echo "DO YOU STILL WANT ME TO INSTALL amule amule-utils libatk1.0-0 libbz2-1.0 libc6 libgcc1 libglade2-0 libglib2.0-0 libgtk2.0-0 libpango1.0-0 libstdc++6 libxml2 zlib1g" >> /tmp/editbox.tmp.$$
+echo "60" ; sleep 1
+echo "XXX" ; echo "Controling security"; echo "XXX"
+
+) |
+$DIALOG --title "GAUGE" --gauge "Preparing installation!" 8 30
+
+if [ "$?" = 255 ] ; then
+	echo ""
+	echo "Box closed !"
+	exit 1
+fi
+
+
+
+
+Xdialog --title "APT LOG" --fixed-font \
+	--editbox /tmp/editbox.tmp.$$ 0 0 2>/tmp/editbox.txt.$$
+
+
+case $? in
+  0) 
+	(
+	echo "75" ; sleep 1
+	xterm -hold -e  apt-get install --assume-yes --force-yes amule amule-utils libatk1.0-0 libbz2-1.0 libc6 libgcc1 libglade2-0 libglib2.0-0 libgtk2.0-0 libpango1.0-0 libstdc++6 libxml2 zlib1g
+	wget -c http://newstuff.orcon.net.nz/ubuntu/dcpp/dcpp_0.0.20050809cvs-1~mird_i386.deb
+	dpkg -i dcpp_0.0.20050809cvs-1~mird_i386.deb
+	rm -rf dcpp_0.0.20050809cvs-1~mird_i386.deb 
+	echo "100" ; sleep 1
+	) |
+	$DIALOG --title "GAUGE" --gauge "Installing" 8 30
+	Xdialog --title "IT'S DONE " \
+	--icon ./scripts/charlix.xpm \
+        --msgbox "All selected installation and configuration completed" 0 0
+    ;;
+  1)
+    echo "Cancel pressed."
+    
+    ;;
+  255)
+    echo "Box closed."
+
+    ;;
+esac
+

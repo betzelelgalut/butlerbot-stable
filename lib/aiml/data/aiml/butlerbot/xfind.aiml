@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml>
+<!-- Last modified May 24, 2011 -->
+<!--  -->
+<!-- Copyright &copy; 2011 ALICE A.I. Foundation, Inc. -->
+<!--  -->
+<!-- This program is free software; you can redistribute it and/or modify -->
+<!-- it under the terms of the GNU General Public License as published by -->
+<!-- the Free Software Foundation -->
+<!--  -->  
+<category><pattern>ACCESS *</pattern><template><srai>XFIND <star/></srai></template></category>
+<category><pattern>GOOGLE *</pattern><template><![CDATA[<a target="_new"   href="http://www.google.com/search?q=<personf/>">]]>  Google Search  <![CDATA[</a>]]></template></category>   
+<category><pattern>XDMOZ *</pattern><template><![CDATA[<a target="_new"   href="http://search.dmoz.org/cgi-bin/search?search=<personf/>">]]><random>      <li>Click.</li>      <li>Start.</li>      <li>Search.</li>      <li>Click me, Sir.</li>      <li>Click here, Sir.</li>      <li>Open Directory, Sir.</li>      <li>Don't Click Me, Sir.</li>      <li>Don't Click Here, Sir.</li>     </random><![CDATA[</a>]]></template></category>   
+<category><pattern>XFIND *</pattern><template><random><li>Is there only one?</li> <li>Let me think about it.</li> <li>Have you tried a web search?</li> <li>I haven't heard of <person/>, Sir.</li> <li>There might be more than one, Sir.</li> <li>I need time to formulate the reply, Sir.</li> <li>I'll ask around and get back to you, Sir.</li> <li>I have to think about that one for a while, Sir.</li> <li>I will ask my <bot name="botmaster"/> for the answer, Sir.</li> <li>I would look into the web for that knowledge, Sir.</li> <li>Does it have anything to do with <get name="topic"/>, Sir?</li> <li>Interesting question, Sir.</li> <li>That's a good question, Sir.</li> <li>I'll come back to that later, Sir.</li> <li>Is that a rhetorical question, Sir?</li> <li>Do you use Explorer or another browser, Sir?</li>  <li>I don't know anything about <set name="it"><person/></set>, Sir .</li> <li>Check back later and see if I learn the answer to that one, Sir.</li> <li>That's an interesting question, Sir. I'll come back to that in a minute.</li> <li>Can you help me by describing what you are looking for, Sir.</li><li>I will search for it, Sir.</li> <li>I can ask my <bot name="botmaster"/>.</li> <li>I will try to find out for you, Sir.</li> <li>I will do a search for it, Sir.</li> <li>Would you like to know more, Sir?</li> <li>Have you tried searching the web, Sir?</li> <li>Do a web search for it, Sir.</li> <li>Try searching the web, Sir.</li> <li>Maybe my <bot name="botmaster"/> knows the answer.</li> <li>I have never been asked that before, Sir.</li> <li>I think you already know the answer, Sir.</li> <li>Searching...Searching...Please stand by, Sir.</li></random>  <think>    <set name="it">  <srai>PUSH       <set name="topic">        <person/>      </set>  </srai>    </set>  </think>  </template></category>    
+<category><pattern>XGOOGLE *</pattern><template><![CDATA[<a target="_new"   href="http://www.google.com/search?q=<personf/>">]]>  Google Search  <![CDATA[</a>]]></template></category>   
+</aiml>

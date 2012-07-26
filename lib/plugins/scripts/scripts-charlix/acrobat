@@ -1,0 +1,134 @@
+#!/bin/bash
+# DebCentral Config is copyright / trademarked by Speedy
+# DebCentral Config is released under the General Public license (Please refer to GPL.txt)
+# Written By Speedy
+# Credit goes to arnieboy for Automatix
+# Modified By Charlix to fit in Charlix
+# Install the Acrobat Reader and firefox plugins
+
+#!/bin/bash
+# DebCentral Config is copyright / trademarked by Speedy
+# DebCentral Config is released under the General Public license (Please refer to GPL.txt)
+# Written By Speedy
+# Credit goes to arnieboy for Automatix
+# Modified By Charlix to fit in Charlix
+#Installs acroread mozilla-acroread
+
+
+if ! cat /etc/apt/sources.list | grep "multimedia-rep" >/dev/null;
+	then
+
+DIALOG=Xdialog
+
+$DIALOG --title "DISTRO SETTING" \
+        --menu "Please select your linux distribution" 0 0 0 \
+        "stable"  "Debian stable i386" \
+        "testing" "Debian testing i386" \
+        "unstable" "Debian unstable i386" \
+        "other"  "An other distro or you don't know" 2> /tmp/menu.tmp.$$
+
+retval=$?
+
+choice=`cat /tmp/menu.tmp.$$`
+rm -f /tmp/menu.tmp.$$
+
+case $retval in
+  0)
+  
+	if ! echo "$choice" | grep "other" >/dev/null ;
+	then
+
+		DIALOG=Xdialog
+
+		$DIALOG --wrap --title "SOURCE LIST MODIFICATION" --help "Your source list is the list of server which you download new software from."\
+			--yesno "To install acroread mozilla-acroread, your source list will be changed. A back up of your current source list will be saved with the date. A new line with the deb http://www.debian-multimedia.org repository will be appended. Do you want to continue?" 0 0
+		
+		case $? in
+		0)
+		cp /etc/apt/sources.list /etc/apt/sources.list_backup_`date +%Y%m%d%H%M`
+		echo "# multimedia-rep" >> /etc/apt/sources.list
+		echo "deb http://www.debian-multimedia.org $choice main" >> /etc/apt/sources.list;;
+		1)
+		echo "You're right Free Software is better.";;
+		255)
+		echo "Box closed.";;
+		esac
+	
+	else
+	echo "Sorry, but your distro is not supported yet"
+	fi ;;
+  1)
+    echo "Cancel pressed.";;
+  255)
+    echo "Box closed.";;
+esac
+ 
+fi
+
+
+Xdialog --title "IS APT BUSY?" \
+	--icon ./scripts/charlix.xpm \
+        --msgbox "Make sure you DO NOT have Synaptic or Kpackage open before u hit OK!" 0 0
+
+DIALOG=Xdialog
+
+(
+echo "10" ; sleep 1
+echo "20" ; sleep 1
+echo "XXX" ; echo "Updating sources"; echo "XXX"
+echo "30" ; sleep 1
+xterm -e  "apt-get update"
+echo "XXX" ; echo "Controling security"; echo "XXX"
+echo "40" ; sleep 1
+cat << EOF > /tmp/editbox.tmp.$$
+ TO INSTALL acroread mozilla-acroread, THESE CHANGES NEED TO BE DONE. PLEASE CANCEL IF ANY SOFTWARE YOU NEED WOULD BE REMOVED OR IF XORG NEED TO BE UPGRAGED:
+EOF
+echo "" >> /tmp/editbox.tmp.$$
+apt-get install -s acroread mozilla-acroread >> /tmp/editbox.tmp.$$
+echo "" >> /tmp/editbox.tmp.$$
+echo "DO YOU STILL WANT ME TO INSTALL acroread mozilla-acroread" >> /tmp/editbox.tmp.$$
+echo "50" ; sleep 1
+) |
+$DIALOG --title "GAUGE" --gauge "Preparing installation!" 8 30
+
+if [ "$?" = 255 ] ; then
+	echo ""
+	echo "Box closed !"
+	exit 1
+fi
+
+
+
+
+Xdialog --title "APT LOG" --fixed-font \
+	--editbox /tmp/editbox.tmp.$$ 0 0 2>/tmp/editbox.txt.$$
+
+
+case $? in
+  0) 
+	(
+	echo "75" ; sleep 1
+	xterm -hold -e  "apt-get install --assume-yes --force-yes acroread mozilla-acroread && echo You can close this window"
+	ln -fs /usr/bin/rar /usr/bin/rar-2.80
+	cp ./scripts/dvdrip.desktop /usr/share/applications/
+	echo "100" ; sleep 1
+	) |
+	$DIALOG --title "GAUGE" --gauge "Installing" 8 30
+	Xdialog --title "IT'S DONE " \
+	--icon ./scripts/charlix.xpm \
+        --msgbox "All selected installation and configuration completed" 0 0
+    ;;
+  1)
+    echo "Cancel pressed."
+    
+    ;;
+  255)
+    echo "Box closed."
+
+    ;;
+esac
+
+
+rm -f /tmp/editbox.tmp.$$
+rm -f /tmp/editbox.txt.$$
+

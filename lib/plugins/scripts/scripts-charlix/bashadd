@@ -1,0 +1,2 @@
+export ALSA_OUTPUT_PORTS="128:0"
+export SCUMMVM_PORT=128:0

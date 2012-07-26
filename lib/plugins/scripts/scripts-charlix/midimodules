@@ -1,0 +1,5 @@
+snd-seq-device
+snd-seq-midi
+snd-seq-oss
+snd-seq-midi-event
+snd-seq

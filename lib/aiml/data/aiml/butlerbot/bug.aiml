@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+      
+<!-- Free software (c) 2006 Charlix.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.01 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+
+
+<!-- !bug questions -->
+<category><pattern>_ IS NOT INSTALLED *</pattern><template><srai>PREFERENCES</srai></template></category>                  
+<category><pattern>_ IS NOT INSTALLED</pattern><template><srai>PREFERENCES</srai></template></category>    
+<category><pattern>I ALREADY TOLD *</pattern><template>Now I remember, you told me already. I get confused sometimes. May be you should send a bug report with the log og our conversation.</template></category>                                
+<category><pattern>FEATURE REQUEST</pattern><template>Thank you for suggesting features.<system>EMAIL=`Xdialog --stdout --separator "," --title "CHARLIX" --backtitle "FEATURE REQUEST" --ok-label "Send" --wrap --icon ./scripts/charlix.xpm --left --2inputsbox "This is the quick email dialog, The sender address won't yours. \n so optionally add your email address in the message." 0 0 "Send the email to (Developper's address):" "chcdsl@yahoo.fr" "Enter your message here:" "FEATURE REQUEST: "`; ret=$?; 
+case $ret in 
+		0) ADDRESS=`echo $EMAIL | cut -d, -f1;`; MESSAGE=`echo $EMAIL | cut -d, -f2;`; 
+		for term in $MESSAGE; do search="$search+$term"; done; url="http://saraswaticlasses.net/sendmail.php?inthat=$ADDRESS$search"; lynx -dump $url | grep .;;
+		1)
+		echo "Never Mind";;
+		255)
+		echo "Never Mind";;
+		esac;</system></template></category>  
+<category><pattern>BUG</pattern><template>Thank you for bug reporting.<system>EMAIL=`Xdialog --stdout --separator "," --title "CHARLIX" --backtitle "BUG REPORT" --ok-label "Send" --wrap --icon ./scripts/charlix.xpm --left --2inputsbox "This is the quick email dialog, The sender's address won't be yours. \n so optionally add your email address in the message." 0 0 "Send the email to (Developper's address):" "chcdsl@yahoo.fr" "Enter your message here:" "BUG on <get name="interpreter"/> "`; ret=$?; 
+case $ret in 
+		0) ADDRESS=`echo $EMAIL | cut -d, -f1;`; MESSAGE=`echo $EMAIL | cut -d, -f2;`; 
+		for term in $MESSAGE; do search="$search+$term"; done; url="http://saraswaticlasses.net/sendmail.php?inthat=$ADDRESS$search"; lynx -dump $url | grep .;;
+		1)
+		echo "Never Mind";;
+		255)
+		echo "Never Mind";;
+		esac; </system></template></category>  
+<category><pattern>BUGS</pattern><template><srai>BUG</srai></template></category>
+<category><pattern>REPORT BUGS</pattern><template><srai>BUG</srai></template></category>
+<category><pattern>REPORT A BUG</pattern><template><srai>BUG</srai></template></category>
+<category><pattern>_ FEATURE REQUEST</pattern><template><srai>FEATURE REQUEST</srai></template></category>
+<category><pattern>_ FEATURE REQUESTS</pattern><template><srai>FEATURE REQUEST</srai></template></category>
+<category><pattern>REQUEST FEATURE </pattern><template><srai>FEATURE REQUEST</srai></template></category>
+<category><pattern>REQUEST A FEATURE </pattern><template><srai>FEATURE REQUEST</srai></template></category>
+<category><pattern>REQUEST FEATURES </pattern><template><srai>FEATURE REQUEST</srai></template></category>
+
+<category><pattern>* DOES NOT WORK</pattern><template><system>if [ -e /usr/bin/<get name="application"/> ]; then  echo '<get name="application"/> is installed' ; else  echo 'application"> is not installed' ; fi</system> Report the bug please. </template></category> 
+<category><pattern>INTERNET DOES NOT WORK</pattern><template>Look in the menu and select "CONTROL CENTER"</template></category> 
+<category><pattern>IT DOES NOT WORK</pattern><template><system>if [ -e /usr/bin/<get name="application"/> ]; then  echo '<get name="application"/> is installed' ; else  echo 'application"> is not installed' ; fi</system> <srai><get name="application"/> DOES NOT WORK</srai> </template></category> 
+<category><pattern>IT DOES NOT WORK *</pattern><template>What seems to be the problem? <srai>IT DOES NOT WORK</srai></template></category>        
+
+<category><pattern>_ PERMISSION DENIED</pattern><template>A command tried to execute a file, which does not have the executable permission, or you do not have it. Send a BUG report please.</template></category> 
+<category><pattern>_ MALFORMED URL *</pattern><template>A command tried to be executed. But it was not found in your PATHs. Send a BUG report please.</template></category> <category><pattern>_ COMMAND NOT FOUND</pattern><template>Specify in your requests absolute pathname like /home/(your-user-name)/(the-folder)/(your-file). If it does not work, send a BUG report please.</template></category> 
+<category><pattern>_ NO SUCH FILE OR DIRECTORY</pattern><template>Specify in your requests absolute pathname like /home/(your-user-name)/(the-folder)/(your-file). If it does not work, send a BUG report please.</template></category> 
+<!--<category><pattern>WHAT DID YOU DO</pattern><template>This was the last command following its number: <system>history | tail -2 | head 
+-1</system></template></category>-->
+<category><pattern>THERE IS AN ERROR MESSAGE *</pattern><template>What was the message <person/>? <sr/></template></category>                  
+<category><pattern>THIS * SUCKS</pattern><template>What don't you like about <person/> ? Ask BUG to report a bug.</template></category>                  
+</aiml>
+

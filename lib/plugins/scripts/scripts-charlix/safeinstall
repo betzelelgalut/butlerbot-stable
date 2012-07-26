@@ -1,0 +1,72 @@
+#!/bin/sh
+# script to install software for newbies
+
+
+Xdialog --title "IS APT BUSY?" \
+	--icon ./scripts/charlix.xpm \
+        --msgbox "Make sure you DO NOT have Synaptic or Kpackage open before u hit OK!" 0 0
+
+DIALOG=Xdialog
+
+(
+echo "10" ; sleep 1
+echo "20" ; sleep 1
+echo "XXX" ; echo "Updating sources"; echo "XXX"
+echo "30" ; sleep 1
+xterm -e  "apt-get update"
+echo "XXX" ; echo "Controling security"; echo "XXX"
+cat << EOF > /tmp/editbox.tmp.$$
+ TO INSTALL $@, THESE CHANGES NEED TO BE DONE. PLEASE CANCEL IF ANY SOFTWARE YOU NEED WOULD BE REMOVED OR IF XORG NEED TO BE UPGRAGED:
+EOF
+echo "" >> /tmp/editbox.tmp.$$
+echo "40" ; sleep 1
+apt-get install -s $@ >> /tmp/editbox.tmp.$$
+echo "" >> /tmp/editbox.tmp.$$
+echo "DO YOU STILL WANT ME TO INSTALL $@" >> /tmp/editbox.tmp.$$
+
+echo "50" ; sleep 1
+) |
+$DIALOG --title "GAUGE" --gauge "Preparing installation!" 8 30
+
+if [ "$?" = 255 ] ; then
+	echo ""
+	echo "Box closed !"
+	exit 1
+fi
+
+
+
+
+
+
+Xdialog --title "APT LOG" --fixed-font \
+	--editbox /tmp/editbox.tmp.$$ 0 0 2>/tmp/editbox.txt.$$
+
+
+case $? in
+  0) 
+	(
+	echo "75" ; sleep 1
+	xterm -hold -e  "apt-get install --assume-yes --force-yes $@ && echo You can close this window"
+	echo "100" ; sleep 1
+	) |
+	$DIALOG --title "GAUGE" --gauge "Installing" 8 30
+	Xdialog --title "IT'S DONE " \
+	--icon ./scripts/charlix.xpm \
+        --msgbox "All selected installation and configuration completed" 0 0
+    ;;
+  1)
+    echo "Cancel pressed."
+    exit 1
+    ;;
+  255)
+    echo "Box closed."
+    exit 1
+    ;;
+esac
+
+
+rm -f /tmp/editbox.tmp.$$
+rm -f /tmp/editbox.txt.$$
+	
+

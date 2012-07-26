@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+      
+
+
+<!-- Free software Copyright ?ALICE A.I. Foundation.-->
+<!-- This program is open source code released under-->
+<!-- the terms of the GNU General Public License-->
+<!-- as published by the Free Software Foundation.-->
+<!-- Complies with AIML 1.01 Tag Set Specification-->
+<!-- as adopted by the ALICE A.I. Foundation.-->
+<!-- Update.aiml: Where new learned categories are written-->
+<!-- Adapted by charlix, March, 2006-->
+
+
+
+<!--HERE IS WHAT YOU TAUGHT CHARLIX
+SEND YOUR UPDATES TO THE DEVELOPER
+ IF YOU WANT TO CONTRIBUTE TO CHARLIX
+ 
+ THANK YOU
+ 
+ADD YOUR COPYLEFT HERE-->
+
+<category><pattern>WHAT TIME IS IT</pattern><that>do i look like a clock</that><template><system>festival -b ./scripts/saytime.sh</system></template></category>
+
+</aiml>

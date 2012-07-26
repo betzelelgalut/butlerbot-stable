@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+      
+<!-- Free software &copy; 2001-2003 ALICE A.I. Foundation. -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.01 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+<!-- Annotated Version updated July 2004 -->
+<!-- Revision Predicates 1.01 -->
+<category>
+<pattern>GET PREDICATES</pattern>
+<template>
+Age: <get name="age"/>, Birthday: <get name="birthday"/>, Boyfriend: <get name="boyfriend"/>, Brother: <get name="brother"/>, Cat: <get name="cat"/>, Does: <get name="does"/>, Dog: <get name="dog"/>, Email: <get name="email"/>, Father: <get name="father"/>, Favcolor:  <get name="favcolor"/>, Favmovie: <get name="favmovie"/>, Friend: <get name="friend"/>, Full name: <get name="fullname"/>, Gender: <get name="gender"/>, Girlfriend: <get name="girlfriend"/>, Has: <get name="has"/>, Heard: <get name="heard"/>, He: <get name="he"/>, Her: <get name="her"/>, Him: <get name="him"/>, Husband: <get name="husband"/>, You are: <get name="is"/>, It: <get name="it"/>, Job: <get name="job"/>, Last name: <get name="lastname"/>, You Like: <get name="like"/>, Location:  <get name="location"/>, You look like: <get name="looklike"/>, Memory: <get name="memory"/>, Meta Predicate: <get name="meta"/>, Nickname: <get name="nickname"/>, Middle name: <get name="middlename"/>, Mother: <get name="mother"/>, Name: <get name="name"/>, Password: <get name="password"/>, Personality: <get name="personality"/>, Phone: <get name="phone"/>, She: <get name="she"/>, Sign <get name="sign"/>, Sister: <get name="sister"/>, Them: <get name="them"/>, They: <get name="they"/>, Thought: <get name="thought"/>, Want: <get name="want"/>, We:  <get name="we"/>, Wife: <get name="wife"/>.
+
+</template>
+</category>
+
+<category>
+<pattern>SET PREDICATES</pattern>
+<template><srai>SET PREDICATES <get name="meta"/></srai>
+</template>
+</category>
+
+<category>
+<pattern>SET PREDICATES *</pattern>
+<template>
+The meta Predicate is set.
+</template>
+</category>
+<category>
+<pattern>SET PREDICATES OM</pattern>
+<template>
+<think>
+<!-- ######################################## -->
+<!-- ########## ENVIRONMENT SETTINGS - LOCATIONS ########## -->
+<!-- ######## edit this section to set the default apps and locations ####### -->
+<set name="logfile">/log/file/directory</set>
+<set name="documentfolder">/document/folder</set>
+<set name="picturefolder ">/picture/folder</set>
+<set name="videofolder">/video/folder</set>
+<set name="musicfolder">/music/folder</set>
+<set name="networkfolder">/network/folder</set>
+<set name="aimlpath">lib/aiml/data/aiml/butlerbot/path</set>
+<!-- ########## ENVIRONMENT SETTINGS - DEFAULT APPS########## -->
+<!-- ######## edit this section to set the default apps and locations ####### -->
+<set name="desktopenvironment">unity</set>
+<set name="instantmessenger">empathy</set>
+<set name="emailclient">thunderbird</set>
+<set name="organizer">thunderbird</set>
+<set name="phoneclient">skype</set>
+<set name="console">gnome-terminal</set>
+<set name="browser">firefox</set>
+<set name="filebrowser">nautilus</set>
+<set name="calculator">gnome-calculator</set>
+<set name="dictionary">gnome-dictionary</set>
+<set name="wordprocessor">soffice</set>
+<set name="spreadsheet">soffice</set>
+<set name="presentationeditor">soffice</set>
+<set name="imageeditor">gimp</set>
+<set name="helpbrowser">yelp</set>
+<set name="musicplayer">banshee</set>
+<set name="movieplayer">vlc</set>
+<set name="cdburner">braso</set>
+<set name="texteditor">scite</set>
+<set name="accountability">gnucash</set>
+<set name="archiver">file-roller</set>
+<set name="softwareinstaller">sudo apt-get install *</set>
+<set name="picturewiewer">shotwell</set>
+<set name="volume">kmix</set>
+<set name="searchengine">multi</set>
+<set name="ftpclient">filezilla</set>
+<set name="3danimation">blender</set>
+<set name="passwdwallet">seahorse</set>
+<!-- ########## END ENVIRONMENT SETTINGS ########## -->
+<!-- ######################################## -->
+<!-- ########## COMMAND LINE ######### -->
+<!-- ######## edit this section only if it is outdated or changed, or is a new app ####### -->
+<!-- BASIC UNIX COMMANDS -->
+<set name="addgroup">sudo addgroup *</set>
+<set name="adduser">sudo adduser *</set>
+<set name="processes">ps -aux | less</set>
+<set name="kill">kill</set>
+<set name="top">top</set>
+<!-- LINUX COMMANDS -->
+<set name="iptraffic">iptraf</set>
+<set name="tcpdump">tcpdump</set>
+<set name="ngrep">ngrep</set>
+<set name="uptime">uptime</set>
+<set name="servertype">uname -a</set>
+<set name="htop">htop</set>
+<set name="updatedb">sudo updatedb</set>
+<set name="passwdcracker">john</set>
+<set name="nano">nano</set>
+<set name="systeminfo">sudo dmidecode | less</set>
+<set name="apt-get-install">sudo apt-get install *</set>
+<!-- APPLE OSX COMMANDS -->
+<!-- MICROSOFT WINDOWS COMMANDS -->
+<!-- ########## END COMMAND LINE ######### -->
+<!-- ######################################## -->
+<!-- ########## DESKTOP ######### -->
+<!-- ######## edit this section only if it is outdated or changed, or is a new app ####### -->
+<!-- GNOME COMMANDS -->
+<set name="gnome-dictionary">gnome-dictionary</set>
+<set name="gnome-calculator">gnome-calculator</set>
+<set name="gnome-character-map">gnome-character-map</set>
+<set name="gnome-codec-install">gnome-codec-install</set>
+<set name="gnome-control-center">gnome-control-center</set>
+<set name="gnome-file-share-properties">gnome-file-share-properties</set>
+<set name="gnome-font-viewer">gnome-font-viewer</set>
+<set name="gnome-help">gnome-help</set>
+<set name="gnome-keyring">gnome-keyring</set>
+<set name="gnome-keyring-3">gnome-keyring-3</set>
+<set name="gnome-keyring-daemon">gnome-keyring-daemon</set>
+<set name="gnome-language-selector">gnome-language-selector</set>
+<set name="gnome-menus-blacklist">gnome-menus-blacklist</set>
+<set name="gnome-nettool">gnome-nettool</set>
+<set name="gnome-panel-screenshot">gnome-panel-screenshot</set>
+<set name="gnome-power-statistics">gnome-power-statistics</set>
+<set name="gnome-session">gnome-session</set>
+<set name="gnome-session-properties">gnome-session-properties</set>
+<set name="gnome-session-quit">gnome-session-quit</set>
+<set name="gnome-settings-daemon">gnome-settings-daemon</set>
+<set name="gnome-screensaver">gnome-screensaver</set>
+<set name="gnome-screensaver-command">gnome-screensaver-command</set>
+<set name="gnome-screenshot">gnome-screenshot</set>
+<set name="gnome-sound-applet">gnome-sound-applet</set>
+<set name="gnome-sound-recorder">gnome-sound-recorder</set>
+<set name="gnome-sudoku">gnome-sudoku</set>
+<set name="gnome-search-tool">gnome-search-tool</set>
+<set name="gnome-system-log">gnome-system-log</set>
+<set name="gnome-system-monitor">gnome-system-monitor</set>
+<set name="gnome-open">gnome-open</set>
+<set name="gnome-terminal">gnome-terminal</set>
+<set name="gnome-terminal.wrapper">gnome-terminal.wrapper</set>
+<set name="gnome-text-editor">gnome-text-editor</set>
+<set name="gnome-thumbnail-font">gnome-thumbnail-font</set>
+<set name="gnome-www-browser">gnome-www-browser</set>
+<!-- NAUTILUS COMMANDS -->
+<set name="nautilus">nautilus</set>
+<set name="nautilus-connect-server">nautilus-connect-server</set>
+<set name="nautilus-autorun-software">nautilus-autorun-software</set>
+<set name="nautilus-sendto">nautilus-sendto</set>
+<!-- UNITY COMMANDS -->
+<set name="unity">unity</set>
+<set name="unity-2d-places">unity-2d-places</set>
+<set name="unity-window-decorator">unity-window-decorator</set>
+<set name="unity-2d-launcher">unity-2d-launcher</set>
+<set name="unity-2d-spread">unity-2d-spread</set>
+<set name="unity-2d-panel">unity-2d-panel</set>
+<set name="unity-greeter">unity-greeter</set>
+<!-- KDE COMMANDS -->
+<set name="volume">kmix</set>
+<!-- METACITY COMMANDS -->
+<!-- FLUXBOX / BLACKBOX COMMANDS -->
+<!-- XORG COMMANDS -->
+<!-- MICROSOFT WINDOWS COMMANDS -->
+<!-- APPLE OSX COMMANDS -->
+<!-- ########## END DESKTOP ######### -->
+<!-- ######################################## -->
+<!-- ########## APPLICATIONS ######### -->
+<!-- ######## edit this section only if it is outdated or changed, or is a new app ####### -->
+<!-- LINUX APPLICATIONS -->
+<set name="multisearch">multi</set>
+<set name="shotwell">shotwell</set>
+<set name="empathy">empathy</set>
+<set name="thunderbird">thunderbird</set>
+<set name="skype">skype</set>
+<set name="firefox">firefox</set>
+<set name="soffice">soffice</set>
+<set name="openoffice">soffice</set>
+<set name="libreoffice">soffice</set>
+<set name="staroffice">soffice</set>
+<set name="gimp">gimp</set>
+<set name="yelp">yelp</set>
+<set name="banshee">banshee</set>
+<set name="vlc">vlc</set>
+<set name="braso">braso</set>
+<set name="scite">scite</set>
+<set name="gnucash">gnucash</set>
+<set name="file-roller">file-roller</set>
+<set name="filezilla">filezilla</set>
+<set name="launchpad">launchpad-integration</set>
+<set name="bluetoothsetup">bluetooth-wizard</set>
+<set name="documentAnalyzer">documentAnalyzer</set>
+<set name="seahorse">seahorse</set>
+<set name="navlog-viewer">navlog-viewer</set>
+<!-- APPLE OSX APPLICATIONS -->
+<!-- MICROSOFT WINDOWS APPLICATIONS -->
+<!-- OTHER APPLICATIONS -->
+<!-- ########## END APPLICATIONS ######### -->
+<!-- ######################################## -->
+<!-- ########## COMMON TERMS ######### -->
+<set name="username">username</set>
+<set name="interpreter">pyaiml</set>
+<set name="aimlpath">./aiml</set>
+<set name="age">how many</set>
+<set name="birthday">when</set>
+<set name="boyfriend">who</set>
+<set name="girlfriend">who</set>
+<set name="gender">he</set>
+<set name="firstname">what</set>
+<set name="middlename">what</set>
+<set name="lastname">what</set>
+<set name="fullname">what</set>
+<set name="has">mother</set>
+<set name="dog">who</set>
+<set name="cat">who</set>
+<set name="phone">what</set>
+<set name="email">what</set>
+<set name="memory">my name</set>
+<set name="nickname">what</set>
+<set name="mother">who</set>
+<set name="father">who</set>
+<set name="brother">who</set>
+<set name="sister">who</set>
+<set name="husband">who</set>
+<set name="wife">who</set>
+<set name="favmovie">what</set>
+<set name="favcolor">what</set>
+<set name="friend">who</set>
+<set name="password">what</set>
+<set name="heard">where</set>
+<set name="gender">he</set>
+<set name="he">he</set>
+<set name="her">her</set>
+<set name="him">him</set>
+<set name="is">a client</set>
+<set name="it">it</set>
+<set name="does">it</set>
+<set name="religion">what</set>
+<set name="job">your job</set>
+<set name="like">to chat</set>
+<set name="location">antartica</set>
+<set name="looklike">a person</set>
+<set name="memory">nothing</set>
+<set name="meta">set</set>
+<set name="name">buddy</set>
+<set name="personality">average</set>
+<set name="she">she</set>
+<set name="sign">your starsign</set>
+<set name="them">them</set>
+<set name="they">they</set>
+<set name="thought">nothing</set>
+<set name="want">to talk to me</set>
+<set name="we">we</set>
+<set name="etype">Unknown</set>
+<set name="eindex">1A</set>
+<set name="meta">set</set>
+<!-- ########## END COMMON TERMS ######### -->
+<!-- ######################################## -->
+</think>
+</template>
+</category>
+
+<category>
+<pattern>CLIENT PROPERTIES</pattern>
+<template>
+<srai>GET PREDICATES</srai>
+</template>
+</category>
+</aiml>

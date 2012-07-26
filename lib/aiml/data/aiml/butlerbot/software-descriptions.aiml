@@ -1,0 +1,244 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+      
+<!-- Free software (c) 2006 Charlix.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.01 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+
+ <!-- ############### DISCRIPTION OF APPS ############################## -->
+<category><pattern>WHAT IS ABIWORD</pattern><template>abiword abiword (AbiWord Personal) AbiWord Personal is a lean and fast full-featured word processor. It can import many formats including Word97/2000 and RTF, Palm, Psion, DocBook and XHTML documents, and can export to RTF, Palm, Psion, XHTML, Text, and LaTeX formats. Linux Journal calls it "an elegant, open source word processor that delivers the Word functionality most people use."</template></category> 
+<category><pattern>WHAT IS artwiz-fonts</pattern><template> This is set of (improved) artwiz fonts. The ultimate solution to your all problems with artwiz fonts.</template></category>               
+<category><pattern>WHAT IS ATERM</pattern><template> aterm is designed to provide pleasing visual effects, while performing such a mundane function as terminal emulation under X. It is largely based on rxvt code.</template></category>               
+<category><pattern>WHAT IS AZUREUS</pattern><template>azureus Azureus is a java bittorrent client. Azureus offers multiple torrent downloads, queuing/priority systems (on torrents and files), start/stop seeding options and instant access to numerous pieces of information about your torrents. Azureus now features an embedded tracker easily set up and ready to use.</template></category>               
+<category><pattern>WHAT IS BLACKBOX</pattern><template> blackbox (Blackbox window manager) Blackbox is that fast, light window manager you have been looking for without all those annoying library dependencies. Also included in this package is the bbkeys utility for controlling keyboard shortcut commands from within Blackbox. The Blackbox home page is http://blackboxwm.sourceforge.ne</template></category>               
+<category><pattern>WHAT IS ETERM</pattern><template>eterm Eterm is a color vt102 terminal emulator intended as a replacement for xterm. It is designed with a Freedom of Choice philosophy, leaving as much power, flexibility, and freedom as possible in the hands of the user. It is designed to look good and work well, but takes a feature-rich approach rather than one of minimalism while still maintaining speed and efficiency.</template></category> 
+<category><pattern>WHAT IS MOZILLA FIREFOX</pattern><template>  (Mozilla Firefox Web browser) This project is a redesign of the Mozilla browser component written using the XUL user interface language. Firefox empowers you to browse faster, more safely and more efficiently than with any other browser. Visit the Mozilla Firefox project online: http://www.mozilla.org/projects/firefox/</template></category>               
+<category><pattern>WHAT IS FIREFOX</pattern><template> mozilla-firefox (Mozilla Firefox Web browser) This project is a redesign of the Mozilla browser component written using the XUL user interface language. Firefox empowers you to browse faster, more safely and more efficiently than with any other browser. Visit the Mozilla Firefox project online: http://www.mozilla.org/projects/firefox/</template></category>               
+<category><pattern>WHAT IS FLUXBOX</pattern><template> (Fluxbox window manager) Fluxbox is yet another windowmanager for X that is based on the Blackbox 0.61.1 code but with many new features.</template></category>               
+<category><pattern>WHAT IS FVWM</pattern><template> fvwm (a small and fast virtual window manager for X) Fvwm is the classic highly-configurable virtual window manager for X11. It is a derivative of twm, redesigned to minimize memory consumption, provide a 3-D look to window frames, and provide a simple virtual desktop.</template></category>               
+<category><pattern>WHAT IS GAIM</pattern><template> Gaim allows you to talk to anyone using a variety of messaging protocols, including AIM (Oscar and TOC), ICQ, IRC, Yahoo!, MSN Messenger, Jabber, Gadu-Gadu, Napster, and Zephyr. These protocols are implemented using a modular, easy to use design. To use a protocol, just load the plugin for it. Gaim is NOT affiliated with or endorsed by AOL.</template></category>               
+<category><pattern>WHAT IS GFTP</pattern><template>gftp gftp gFTP is a multithreaded FTP client for X written using GTK+. It features simultaneous downloads, resuming of interrupted file transfers, file transfer queues, downloading of entire directories, ftp proxy support, remote directory caching, passive and non-passive file transfers, drag-n-drop support, bookmarks menu, stop button, and many more features.</template></category>               
+<category><pattern>WHAT IS GIMP</pattern><template>(The GNU Image Manipulation Program) The GIMP is a powerful tool for the preparation and manipulation of digital images. The GIMP provides the user with a wide variety of image manipulation, painting, processing, and rendering tools. The GIMP's open design and extensible architecture make for a very powerful end product for photo and image retouching, web graphics design, or digital illustration.</template></category>               
+<category><pattern>WHAT IS THE GIMP</pattern><template><srai>WHAT IS GIMP</srai></template></category>               
+<category><pattern>WHAT IS GKRELLM</pattern><template>  (GNU Krell Monitors) GKrellM charts SMP CPU, load, Disk, and all active net interfaces automatically. An on/off button and online timer for the PPP interface is provided. Monitors for memory and swap usage, file system, internet connections, APM laptop battery, mbox style mailboxes, and cpu temps. Also includes an uptime monitor, hostname label, and clock/calendar. Bill Wilson is the author of GKrellM.</template></category>               
+<category><pattern>WHAT IS GNUCHESS</pattern><template>  (GPL licensed chess engines and graphical frontends) This is a package of programs for playing chess. It includes the gnuchess and Sjeng chess engines, and the eboard and XBoard graphical interfaces to these engines.</template></category>            
+<category><pattern>WHAT IS GNUPLOT</pattern><template> Gnuplot is a portable command-line driven interactive data and function plotting utility for UNIX, IBM OS/2, MS Windows, DOS, Macintosh, VMS, Atari and many other platforms.</template></category>               
+<category><pattern>WHAT IS GPHOTO2</pattern><template>gphoto2 gPhoto2 is a free, redistributable, ready to use set of digital camera software applications for Unix-like systems, written by a whole team of dedicated volunteers around the world. It supports more than 600 cameras. gPhoto2 runs on a large range of UNIX-like operating system, including Linux, FreeBSD, NetBSD, etc. gPhoto is provided by major Linux distributions like Debian GNU/Linux, Gentoo, RedHat Linux, SUSE Linux, Mandriva, etc. gPhoto2 is freely available and distributed under the terms of the GNU LGPL.</template></category>               <category><pattern>WHAT IS GUCHARMAP</pattern><template>gucharmap gucharmap (character map utility) gucharmap is a Unicode character map and font viewer.</template></category>               
+<category><pattern>WHAT IS GXINE</pattern><template> (GTK+ media player based on Xine) Xine is a free multimedia player. It plays back CDs, DVDs, and VCDs, multimedia files, and multimedia streamed over a network. The gxine package contains a GTK+ graphical user interface for the Xine multimedia player.</template></category>               
+<category><pattern>WHAT IS IMAGEMAGICK</pattern><template> (a robust collection of image processing tools) ImageMagick is a collection of tools for manipulating and displaying digital images. It can merge images, transform image dimensions, do screen captures, create animation sequences, and convert between many different image formats. ImageMagick was written by John Cristy of ImageMagick Studio. Home page: http://www.imagemagick.org/</template></category>               
+<category><pattern>WHAT IS INKSCAPE</pattern><template> Inkscape is an Open Source vector graphics editor, with capabilities similar to Illustrator, Freehand, CorelDraw, or Xara X using the W3C standard Scalable Vector Graphics (SVG) file format.</template></category>               <category><pattern>WHAT IS lyx</pattern><template>lyx LyX is an advanced, open-source "document processor". Unlike standard word processors, LyX encourages writing based on the structure of your documents, not their appearance. It lets you concentrate on writing, leaving details of visual layout to the software.</template></category>  
+<category><pattern>WHAT IS MOZILLA</pattern><template>  (Mozilla Firefox Web browser) This project is a redesign of the Mozilla browser component written using the XUL user interface language. Firefox empowers you to browse faster, more safely and more efficiently than with any other browser. Visit the Mozilla Firefox project online: http://www.mozilla.org/projects/firefox/</template></category>               
+<category><pattern>WHAT IS MPLAYER</pattern><template>MPlayer is a movie player for Linux (runs on many other Unices, and non-x86 CPUs, see the documentation). It plays most MPEG, VOB, AVI, Ogg/OGM, VIVO, ASF/WMA/WMV, QT/MOV/MP4, FLI, RM, NuppelVideo, YUV4MPEG, FILM, RoQ, PVA files, supported by many native, XAnim, and Win32 DLL codecs. You can watch VideoCD, SVCD, DVD, 3ivx, DivX 3/4/5 and even WMV movies, too (without the avifile library).</template></category>               
+<category><pattern>WHAT IS MYTHTV</pattern><template> MythTV is a suite of programs that allow you to build the mythical home media convergence box on your own using Open Source software and operating systems.</template></category>               
+<category><pattern>WHAT IS OPENOFFICE</pattern><template> OpenOffice.org is both a multi-platform and multi-lingual office suite and an open-source project. Compatible with all other major office suites, the product is free to download, use, and distribute.</template></category>               <category><pattern>WHAT IS PAN</pattern><template>pan This is PAN, a powerful and user-friendly USENET newsreader based on GTK+2. Pan is the only Unix newsreader to score 100% on the Good Net-Keeping Seal of Approval newsreader evaluations.</template></category>               
+<category><pattern>WHAT IS RXVT</pattern><template>rxvt (terminal emulator) rxvt is a color vt102 terminal emulator intended as an xterm replacement for users who do not require features such as Tektronix 4014 emulation and toolkit-style configurability. As a result, rxvt uses much less memory -- a significant advantage on a machine serving many X sessions. Also included is rclock, an analog clock for X.</template></category>               <category><pattern>WHAT IS SANE</pattern><template>sane sane (Scanner Access Now Easy) SANE is a universal scanner interface that provides standardized access to any raster image scanner hardware, such as flatbed scanners, hand-held scanners, video and still cameras, frame-grabbers, and other similar devices.</template></category>               
+<category><pattern>WHAT IS SCRIBUS</pattern><template>Scribus brings award-winning professional DTP to Linux and *nix desktops with a combination of press-ready output and new approaches to page layout.</template></category>               
+<category><pattern>WHAT IS SYNAPTICS</pattern><template> synaptics driver for notebook touchpads</template></category>               <category><pattern>WHAT IS THUNDERBIRD</pattern><template>thunderbird mozilla-thunderbird (Mozilla Thunderbird mail application) Mozilla Thunderbird is a redesign of the Mozilla mail component written using the XUL user interface language. Thunderbird makes emailing safer, faster, and easier than ever before with the industry's best implementations of features such as intelligent spam filters, built-in RSS reader, quick search, and much more. Visit the Mozilla Thunderbird project online: http://www.mozilla.org/projects/thunderbird/</template></category>               
+<category><pattern>WHAT IS TRANSCODE</pattern><template>Transcode is a suite of command line utilities, for transcoding various video, audio, and container formats. It can decode and encode various video/audio formats.</template></category>               
+<category><pattern>WHAT IS WINDOWMAKER</pattern><template> (a fast and elegant window manager) Window Maker is a window manager for the X Window System that is relatively fast and small, feature rich, easy to use, with a simple and elegant appearance reminiscent of the NeXTSTEP(tm) graphical user interface. Window Maker is part of the official GNU project.</template></category>               
+<category><pattern>WHAT IS X3270</pattern><template> (IBM host access tool for X) x3270 opens a telnet connection to an IBM host in an X window. Since the window created by x3270 can use its own font for displaying characters, is a fairly accurate representation of an IBM 3278.</template></category>          
+<category><pattern>WHAT IS XCDROAST</pattern><template>(Graphical frontend for cdrtools) X-CD-Roast is a graphical frontend for the command line cdrtools. You can do anything X-CD-Roast does yourself using the command line tools - but it's nicer and easier with the frontend. The cdrtools contain "cdrecord" (which does the actual writing of CDs), "readcd" (reads data tracks of CDs), "mkisofs" (masters CD images), and "cdda2wav" (reads audio tracks). Cdrecord, readcd and mkisofs are maintained by Joerg Schilling, cdda2wav by Heiko Eissfeldt, and X-CD-Roast by Thomas Niederreiter.</template></category>            
+<category><pattern>WHAT IS XCHAT</pattern><template>X-Chat is a GTK+-based IRC (Internet Relay Chat) client.</template></category>               <category><pattern>WHAT IS XFCE</pattern><template>(a fast and lightweight desktop environment for X) XFce is a fast and lightweight desktop environment that is both visually appealing and easy to use. For more information, see: http://www.xfce.org XFce was developed by Olivier Fourdan.</template></category>     
+<category><pattern>WHAT IS XGAMES</pattern><template> (small X games collection) A few small games and toys for X. Includes maze, spider, xcolormap, xlander, xminesweep, xroach, xsnow.</template></category>               
+<category><pattern>WHAT IS XINE-LIB</pattern><template>(xine multimedia playback engine libraries) xine-lib is a free (GPL licensed) high-performance multimedia playback engine. The xine shared libraries are used by xine-ui (and other media players and multimedia applications) for smooth video processing and playback of multimedia streams such as movies, radio and TV network streams, DVDs, and VCDs.</template></category>               <category><pattern>WHAT IS XINE</pattern><template> (xine multimedia playback engine user interface) Xine is a free multimedia player. It plays back CDs, DVDs, and VCDs, multimedia files, and multimedia streamed over a network. The xine-ui package contains the graphical user interface for the xine multimedia player.</template></category> <category><pattern>WHAT IS XLOCKMORE</pattern><template> (screen locker for X) Patrick J. Naughton's xlock screensaver/locker for X, with many more modes added by David A. Bagley. The 'Bob' bitmap has been included especially for Slackware, as well as a Linux penguin logo. (NOTE: the image of J. R. "Bob" Dobbs is a registered trademark of The Subgenius Foundation, used by permission)</template></category>               
+<category><pattern>WHAT IS XMLTV</pattern><template> XMLTV is a set of programs to process TV (tvguide) listings and manage your TV viewing, storing listings in an XML format. There are backends to download TV listings for several countries, filter programs and Perl libraries to process listings.</template></category>               
+<category><pattern>WHAT IS XMMS</pattern><template> (X Multimedia System) XMMS is the X Multimedia System. It is used to play audio and other kinds of media files. By default XMMS can play MPEG audio, Ogg Vorbis, RIFF wav, most module formats, and a few other formats. XMMS can be extended through plugins to play a number of other audio and video formats.</template></category>               
+<category><pattern>WHAT IS XPAINT</pattern><template>(simple X paint program) XPaint is a versatile bitmap/pixmap editing tool with a feature set similar to MacPaint. The short features list: Brushes, Spray paint, Pencil, Lines, Arcs, Pattern Fill, Text, Boxes, Circles, Polygons. Works on multiple images simultaneously. Cut/Copy/Paste between all active images. Fatbits/Zoom on the image windows.</template></category>               
+<category><pattern>WHAT IS XPDF</pattern><template>(PDF viewer for X) Xpdf is a viewer for Portable Document Format (PDF) files. The package also contains some command-line PDF manipulation utilities. xpdf was written by Derek B. Noonburg. The xpdf package requires the t1lib package to render Type 1 fonts.</template></category>               
+<category><pattern>WHAT IS XSANE</pattern><template>(Graphical frontend to SANE, Scanner Access Now Easy) xsane provides a graphical user-interface to control an image acquisition device such as a flatbed scanner. It allows previewing and scanning individual images and can be invoked either directly from the command-line or through the GIMP image manipulation program. xsane accesses image acquisition devices through the SANE (Scanner Access Now Easy) interface.</template></category>               
+<category><pattern>WHAT IS XSCREENSAVER</pattern><template>(a screen saver and locker for X) A modular screen saver and locker for the X Window System. Highly customizable: allows the use of any program that can draw on the root window as a display mode. More than 100 display modes are included in this package.</template></category>               
+<category><pattern>WHAT IS XV</pattern><template>(John Bradley's interactive image viewer) xv is an interactive image manipulation program. NOTICE: This program is unregistered shareware. Please read the license information included.</template></category>               
+<category><pattern>WHAT IS XXGDB</pattern><template>(graphical program debugger interface) Xxgdb is a graphical user interface to the gdb debugger under the X Window System. It provides visual feedback and mouse input for the user to control program execution through breakpoints, to examine and traverse the function call stack, and to display values of variables and data structures.</template></category>
+
+<!-- ############### DISCRIPTION OF GAMES ############################## -->
+<category><pattern>WHAT IS ARMAGETRON</pattern><template> Tron lightcycle game in 3D</template></category> 
+<category><pattern>WHAT IS ASTEROIDS3D</pattern><template> A first person game of blowing up asteroids.</template></category> 
+<category><pattern>WHAT IS ATLANTIK</pattern><template>KDE client for playing Monopoly-like game on the monopd network</template></category> 
+<category><pattern>WHAT IS BLACKJACK</pattern><template> Blackjack provides a casino-style blackjack card game.</template></category> 
+<category><pattern>WHAT IS BANNER</pattern><template> A clone of Minesweeper for KDE.</template></category>
+<category><pattern>WHAT IS FORTUNE</pattern><template>Open a fortune cookie.</template></category> 
+<category><pattern>WHAT IS FROZEN BUBBLE </pattern><template> A Puzzle-Bobble clone.</template></category> 
+<category><pattern>WHAT IS GATAXX</pattern><template> ATAXX A disc-flipping game where you attempt to dominate the board.</template></category> 
+<category><pattern>WHAT IS GLINES</pattern><template> Five or more: GNOME port of the once-popular Colour Lines game</template></category> 
+<category><pattern>WHAT IS GNECT</pattern><template> "Four in a row" for GNOME, with a computer player driven by Giuliano Bertoletti's Velena Engine.</template></category> 
+<category><pattern>WHAT IS GNIBBLES</pattern><template> A worm game for GNOME</template></category> 
+<category><pattern>WHAT IS GNOBOTS2</pattern><template> GNOME Robots Game</template></category> 
+<category><pattern>WHAT IS GNOME STONES</pattern><template> Mine through dirt and collect gems.</template></category> 
+<category><pattern>WHAT IS GNOMETRIS</pattern><template> A clone of tetris for GNOME.</template></category> 
+<category><pattern>WHAT IS GNOMINE</pattern><template> A clone of Minesweeper for GNOME.</template></category> 
+<category><pattern>WHAT IS GNOTRAVEX</pattern><template> A clone of A Tetravex clone. for GNOME.</template></category> 
+<category><pattern>WHAT IS GNOTSKI</pattern><template> A clone of Klotski for GNOME.</template></category> 
+<category><pattern>WHAT IS GTALI</pattern><template> A sort of poker with dice and less money.</template></category> 
+<category><pattern>WHAT IS IAGNO</pattern><template> GNOME version of the popular Othello disk flipping game.</template></category> 
+<category><pattern>WHAT IS KASTEROIDS</pattern><template> Destroy the asteroids to avoid being destroyed yourself</template></category> 
+<category><pattern>WHAT IS KATOMIC</pattern><template> Sokoban-like game but you need to form molecules</template></category> 
+<category><pattern>WHAT IS KBACKGAMMON</pattern><template> Backgammon game for KDE</template></category> 
+<category><pattern>WHAT IS IAGNO</pattern><template> GNOME version of the popular Othello disk flipping game.</template></category> 
+<category><pattern>WHAT IS IAGNO</pattern><template> GNOME version of the popular Othello disk flipping game.</template></category> 
+<category><pattern>WHAT IS KBATTLESHIP</pattern><template> Battleship game that you can play as a single player against the computer or over the network.</template></category>               
+<category><pattern>WHAT IS KBLACKBOX</pattern><template>Emacs' blackbox game version for KDE</template></category>               
+<category><pattern>WHAT IS KBOUNCE</pattern><template> Shrink the area occupied by the balls the fastest possible</template></category>               
+<category><pattern>WHAT IS KENOLABA</pattern><template> Kenolaba game</template></category>               
+<category><pattern>WHAT IS KBATTLESHIP</pattern><template> Battleship game that you can play as a single player against the computer or over the network.</template></category>               
+<category><pattern>WHAT IS KFOULEGGS</pattern><template> Yet another game that resembles Tetris style </template></category>               
+<category><pattern>WHAT IS KGOLDRUNNER</pattern><template> kgoldrunner is a platform game with bricks and ladders. </template></category>               
+<category><pattern>WHAT IS KJUMPINGCUBE</pattern><template> Strategy game for 2 players </template></category>               
+<category><pattern>WHAT IS KLICKETY</pattern><template> klickety game </template></category>               
+<category><pattern>WHAT IS KLINES</pattern><template> klines game is the once-popular Colour Lines game</template></category>               
+<category><pattern>WHAT IS KMAHJONGG</pattern><template>Mahjongg for KDE where players must remove all the tiles, one pair at a time.</template></category>
+<category><pattern>WHAT IS KMINES</pattern><template> A clone of Minesweeper for KDE.</template></category> 
+<category><pattern>WHAT IS KOLF</pattern><template> A Golf game for KDE.</template></category> 
+<category><pattern>WHAT IS KONQUEST</pattern><template> Space strategy game.</template></category> 
+<category><pattern>WHAT IS KPAT</pattern><template> Patience for KDE.</template></category> 
+<category><pattern>WHAT IS KPOKER</pattern><template> A single player video poker game. </template></category>               
+<category><pattern>WHAT IS KREVERSI</pattern><template>Othello-like game for KDE.</template></category> 
+<category><pattern>WHAT IS KSAME</pattern><template> Relaxing game where you should try to remove most of the balls</template></category> 
+<category><pattern>WHAT IS KSHISEN</pattern><template> Shisen game for KDE.</template></category> 
+<category><pattern>WHAT IS KSIRTET</pattern><template> Tetris-style game in which players attempt to fit falling pieces together to form full lines.</template></category>               
+<category><pattern>WHAT IS KSMILETRIS</pattern><template> Tetris-like game for KDE.</template></category> 
+<category><pattern>WHAT IS KSNAKE</pattern><template> Evergrowing snake game for KDE.</template></category> 
+<category><pattern>WHAT IS KSOKOBAN</pattern><template> Sokoban game for KDE.</template></category> 
+<category><pattern>WHAT IS KSPACEDUEL</pattern><template> SpaceDuel game version for KDE.</template></category> 
+<category><pattern>WHAT IS KSUDOKU</pattern><template> Sudoku Puzzle Generator and Solver for KDE. GUI for playing, saving, printing, solving and dubbing puzzles. The program is fully expandable since the algorithm is extendible to any general graph coloring problem.</template></category> 
+<category><pattern>WHAT IS KTRON</pattern><template> Tron / LightCycles game version for KDE.</template></category> 
+<category><pattern>WHAT IS KTUBERLING</pattern><template>'Potato-man' drawing game for children</template></category> 
+<category><pattern>WHAT IS KTUX</pattern><template> kdetoys program.</template></category> 
+<category><pattern>WHAT IS KWIN4</pattern><template> Strategy game that vaguely resembles Othello.</template></category> 
+<category><pattern>WHAT IS KWIN4PROC</pattern><template> command line KWIN4.</template></category> 
+<category><pattern>WHAT IS LSKAT</pattern><template> Lieutnant skat for KDE. (card game)</template></category> 
+<category><pattern>WHAT IS LSKATPROC</pattern><template> command line LSKAT</template></category> 
+<category><pattern>WHAT IS MAHJONGG</pattern><template> GNOME version of the Eastern tile game, Mahjongg.</template></category> 
+<category><pattern>WHAT IS PATIENCE</pattern><template> A single player card game where you can choose any of 14 games such as Spider Solitaire and Free Cell.</template></category>               
+<category><pattern>WHAT IS PLANET PENGUIN RACER</pattern><template> A 3-D racing game in which players guide Tux, the Linux mascot, down the snowy hill, avoiding trees and rocks. Works best with 3D acceleration enabled.</template></category>               
+<category><pattern>WHAT IS SAMEGAME</pattern><template> A game based on the Macintosh SameGame in which a player tries to remove as many stones as possible in the largest groups possible.</template></category>               
+<category><pattern>WHAT IS SOL</pattern><template> AisleRiot provides a rule-based solitaire card engine that allows many different games to be played</template></category> 
+<category><pattern>WHAT IS TUXKART</pattern><template> A 3-D go-kart racing game with several race courses to choose from. Works best with 3D acceleration enabled. </template></category>               
+
+<!-- ############### DISCRIPTION OF GRAPHICS ############################## -->
+<category><pattern>WHAT IS DIGIKAM</pattern><template> A digital photo management application that makes it very easy to import, organize and manipulate digital photos. Digikam has an easy user interface which allows you to connect a digital camera, preview images and download and/or delete them. </template></category>               
+<category><pattern>WHAT IS GIMP</pattern><template>The GNU Image Manipulation Program allows you to draw, paint, edit and create images and more.</template></category>               
+<category><pattern>WHAT IS KDEPRINTFAX</pattern><template>Utility for sending faxes. </template></category>               
+<category><pattern>WHAT IS KFAX</pattern><template>Utility for viewing faxes.  </template></category>               
+<category><pattern>WHAT IS KOOKA</pattern><template>Utility for scanning images. </template></category>               
+<category><pattern>WHAT IS KUICKSHOW</pattern><template>An image browser/viewer that also performs slideshows. Supports many image formats including jpg, gif, tiff, png, bmp, psd, xpm, xbm, and pbm. </template></category>               
+<category><pattern>WHAT IS SHOWFOTO</pattern><template>:  An image viewer that also performs minor editing. </template></category>               
+<category><pattern>WHAT IS KCOLORCHOOSER</pattern><template>A utility that makes it easy to choose colors. </template></category>               
+<category><pattern>WHAT IS KCOLOREDIT</pattern><template>A color palette editor, can be used to choose and name colors. </template></category>             
+<category><pattern>WHAT IS KICONEDIT</pattern><template>This editor makes it easy to create and edit icons. </template></category>               
+<category><pattern>WHAT IS KMAGNIFIER</pattern><template>A screen magnifier tool that can be used to magnify part of the screen. </template></category>    
+<category><pattern>WHAT IS KRULER</pattern><template>A screen ruler that supports inches, centimeters and pixels. Also mesaures color.  </template></category>               
+<category><pattern>WHAT IS KSNAPSHOT</pattern><template>An applet for taking screenshots of the whole desktop or a single windows.</template></category>    
+<!-- ############### DISCRIPTION OF INTERNET ############################## -->
+<category><pattern>WHAT IS AKREGATOR</pattern><template> Feed reader program allows you to quickly browse internet feeds.</template></category>            
+<category><pattern>WHAT IS AZUREUS</pattern><template> A BitTorrent client, it offers multiple torrent download, queuing/priority systems, start/stop seeding options and instant access to information about your torrents. </template></category>               
+<category><pattern>WHAT IS GFTP</pattern><template> A multithreaded FTP client features simultaneous downloads, resuming of interrupted file transers, file transfer queues, downloading entire directories, FTP and HTTP proxy support, drag-n-drop support and more. </template></category>               
+<category><pattern>WHAT IS GAIM</pattern><template> Instant messaging client capable of using AIM, ICQ, Yahoo, MSN, IRC, Jabber, Napster, Zephyr and Gadu-Gadu all at once.  </template></category>               
+<category><pattern>WHAT IS KGET</pattern><template> A download manager which keeps all your downloads in one dialog and allows transfers to be paused, resumed, queued or scheduled.  </template></category>               
+<category><pattern>WHAT IS KMAIL</pattern><template> Email client that supports IMAP, POP3, multiple accounts, mail filtering and sorting, PGP/GnuPG privacy and inline attachments.  </template></category>               
+<category><pattern>WHAT IS KONQUEROR</pattern><template> Advanced file manager, web browser and document viewer.</template></category>               
+<category><pattern>WHAT IS MOZILLA THUNDERBIRD</pattern><template> Email client from Mozilla. Supports IMAP, POP3, multiple accounts, junk filtering and more. </template></category>               
+<category><pattern>WHAT IS THUNDERBIRD</pattern><template> Email client from Mozilla. Supports IMAP, POP3, multiple accounts, junk filtering and more. </template></category>               
+<category><pattern>WHAT IS XCHATIRC</pattern><template> Graphical IRC Client.</template></category>               
+<category><pattern>WHAT IS CAMSTREAM</pattern><template> Collection of tools for webcams and other video devices. </template></category>               
+<category><pattern>WHAT IS KRDC</pattern><template>The KDE graphical client for the rfb protocol, which can be used to connec to Windows Terminal Servers using RDP. </template></category>               
+<category><pattern>WHAT IS KPPP</pattern><template> Modem dialer and ppp frontend, it automates the dialing in process to your ISP while letting you monitor the entire process. Also allows for interactive script generation and network setup. </template></category>               
+<category><pattern>WHAT IS SKYPE</pattern><template>Free internet telephone includes conference calling for up to five groups, global directory, customization, mobility and multiple Skype accounts on one PC.</template></category>               
+<category><pattern>WHAT IS ADSL/PPPOE CONFIGURATION</pattern><template> Package that allows you to connect to ADSL internet service providers that use PPPoE. </template></category>               
+<category><pattern>WHAT IS SMB</pattern><template> Allows you to browse Microsoft Windows shares.</template></category>               
+<category><pattern>WHAT IS SMB4K</pattern><template>SMB (Windows) share browser for KDE.  </template></category>               
+<category><pattern>WHAT IS KNETATTACH</pattern><template>Network folder wizard. </template></category>               
+<category><pattern>WHAT IS GUARDDOG</pattern><template> A firewall configuration utility that is easy to use, even for those with little knowledge of networking and security.</template></category>               
+<category><pattern>WHAT IS KLAMAV</pattern><template> Anti-virus software.</template></category>               
+<category><pattern>WHAT IS KGPG</pattern><template> Gnu Privacy Guard provides file encryption, file decryption and key management.</template></category> 
+
+<!-- ############### DISCRIPTION OF MULTIMEDIA ############################## -->
+<category><pattern>WHAT IS AMAROK</pattern><template> Audio player for KDE featuring drag and drop playlist creation, collection-indexing support, album cover support, and much more.</template></category>               
+<category><pattern>WHAT IS K3B</pattern><template>Fully functional CD burning software with many features. </template></category>               
+<category><pattern>WHAT IS KSCD</pattern><template>Audio CD player.</template></category>               
+<category><pattern>WHAT IS KAFFEINE</pattern><template>Video media player that supports multiple player engines, letting Kaffeine access CDs, DVDs and network streams. </template></category>               
+<category><pattern>WHAT IS KPLAYER</pattern><template> A multimedia player based on MPlayer. </template></category>               
+<category><pattern>WHAT IS KMIX</pattern><template>Sound mixer applet. </template></category>               
+<category><pattern>WHAT IS ARTS BUILDER</pattern><template>Synthesizer designer for aRts.</template></category>               
+<category><pattern>WHAT IS REALPLAYER</pattern><template>:  Media player that plays RealAudio, RealVideo, MP3, 3GPP Video, Flash, SMIL 2.0, JPEG, GIF, PNG, RealPix, RealText and more. </template></category>               
+<category><pattern>WHAT IS KREC</pattern><template> Sound recorder utility for KDE. </template></category>               
+<category><pattern>WHAT IS KINO</pattern><template>Digital video data editor allows you to record, create, edit and play movies recorded with DV camcorders. </template></category>               
+<category><pattern>WHAT IS XAWTV</pattern><template> TV application supports video4linux devices and Xvideo extension.</template></category> 
+ 
+<!-- ############### DISCRIPTION OF OFFICE ############################## -->
+<category><pattern>WHAT IS CHECKBOOK TRACKER</pattern><template>Program that allows you to record and balance checkbook transactions.</template></category>               
+<category><pattern>WHAT IS KPDF</pattern><template> A PDF viewer for KDE.</template></category>               
+<category><pattern>WHAT IS KORGANIZER</pattern><template>A personal organizer, calendar and scheduling program. Supports information interchange with other calendar applications through vCalendar file format.</template></category>               
+<category><pattern>WHAT IS KNOTES</pattern><template>A program that lets you write sticky notes, which are saved automatically when you exit the program and display when you open the program. Also allows you to print or mail your notes. </template></category>               
+<category><pattern>WHAT IS KONTACT</pattern><template>Personal information manager combines KMail, KOrganizer and KAddressBook into one interface which makes it easy to access mail, scheduling, address book, and other functions.</template></category>               
+<category><pattern>WHAT IS KGHOSTVIEW</pattern><template> A PostScript viewer for KDE. </template></category>               
+<category><pattern>WHAT IS OPENOFFICE * BASE</pattern><template> The database component for OpenOffice. </template></category>               
+<category><pattern>WHAT IS OPENOFFICE * CALC</pattern><template>A powerful, all-purpose spreadsheet application. </template></category>               
+<category><pattern>WHAT IS OPENOFFICE * DRAW</pattern><template>A graphics package that allows you to do anything from a quick sketch to a complex plan. You can also create Flash graphics and import graphics in multiple formats, such as BMP, GIF, JPEG, PNG, TIFF, and WMF. </template></category>             
+<category><pattern>WHAT IS OPENOFFICE * IMPRESS</pattern><template>A program for creating multimedia presentations utilizing 2D and 3D clip art, special effects, animation and high-impact drawing tools.  </template></category>               
+<category><pattern>WHAT IS OPENOFFICE * MATH</pattern><template>Component for creating and editing equations and formulas which can be used inside Writer, Calc or Impress. </template></category>               
+<category><pattern>WHAT IS OPENOFFICE * WRITER</pattern><template>A fully equipped word processor program. Writer allows you to make any of your documents into .pdf files with one-click.</template></category>               
+<category><pattern>WHAT IS SCRIBUS</pattern><template> A desktop publishing program for designing brochures and newsletters to laying out newspapers and magazines. </template></category>               
+<category><pattern>WHAT IS KATE</pattern><template>: Kate is a multi-document editor based on KWrite. It is a multi-view editor which allows a user to view multiple files for easy reference or simultaneous editing. Kate also works well for editing big files, extensible syntax highlighting, and selectable encoding.  </template></category>               
+<category><pattern>WHAT IS KEDIT</pattern><template>: Kedit is a simple text editor that can be used with Konqueror for text and configuration file browing. It also works well for creating small plain text documents.</template></category>               
+<category><pattern>WHAT IS KWRITE</pattern><template>: KWrite could be considered as a partial alternative to more powerful editors, but also works very well as a simple text editor. It may be best used in conjunction with Konqueror for source file browsing for different languages.</template></category>
+
+<!-- ############### DISCRIPTION OF SYSTEM COMMANDS ############################## -->           
+<category><pattern>WHAT IS QTPARTED</pattern><template>A tool for creating partitions on your hard drive. </template></category>               
+<category><pattern>WHAT IS KDE SYSTEM GUARD</pattern><template>A program that allows you to monitor various statistics about your computer. </template></category>               
+<category><pattern>WHAT IS KSYSGUARD</pattern><template>A program that allows you to monitor various statistics about your computer. </template></category>               
+<category><pattern>WHAT IS KMENUEDIT</pattern><template>A tool for easily editing the K Menu. </template></category>               
+<category><pattern>WHAT IS PRINTING MANAGER</pattern><template>A tool for managing printers and print jobs.  </template></category>               
+<category><pattern>WHAT IS WALLET MANAGEMENT TOOL</pattern><template>A program that enables you to keep wallets containing any kind of data stored with encrypted passwords. You can also create a master password to all wallets. </template></category>               
+<category><pattern>WHAT IS INFO CENTER</pattern><template>The KDE info center is a central location to find out information about your computer.</template></category> 
+<category><pattern>WHAT IS KCONTROL</pattern><template>The KDE info center is a central location to find out information about your computer.</template></category> 
+<category><pattern>WHAT IS KONSOLE</pattern><template>A terminal program which provides a commandline interface. </template></category>               
+<category><pattern>WHAT IS KPACKAGE</pattern><template>A package management tool that allows you to view currently installed packages, available packages and install/remove packages. </template></category>               
+<category><pattern>WHAT IS KUSER</pattern><template>A user/group administration tool. </template></category>               
+<category><pattern>WHAT IS SYNAPTIC</pattern><template>A package management tool that enables you to install, upgrade, and remove software packages. Also allows you to view software that is currently installed and search available packages.</template></category> 
+ 
+<!-- ############### DISCRIPTION OF UTILITIES ############################## -->                  
+<category><pattern>WHAT IS ARK</pattern><template> A program for managing various archive formats. Archives can be viewed, extracted, created and modified. The program can handle various formats such as tar, gzip, bzip2, zip, rar and lha.</template></category>               
+<category><pattern>WHAT IS KCALC</pattern><template> A multi-function calculator, works in regular mode and scientific mode. </template></category>        
+<category><pattern>WHAT IS KDICT</pattern><template>A dictionary that searches databases for definitions and also provides synonyms.</template></category> 
+<category><pattern>WHAT IS KFLOPPY</pattern><template> Utility for formatting 3.5; and 5.25 floppy disks. </template></category>               
+<category><pattern>WHAT IS KLIPPER</pattern><template> A clipboard utility.</template></category>               
+<category><pattern>WHAT IS KPILOT</pattern><template> An application for synchronizing your Palm Pilot or similar device, similar to the Palm HotSync for MS-Windows. </template></category>               
+<category><pattern>WHAT IS KALARM</pattern><template> A utility that allows you to schedule personal timed events and set reminders. The alarm can be a text message, a spoken message or play a sound file. </template></category>               
+<category><pattern>WHAT IS KCHARSELECT</pattern><template> A character set selector. </template></category>               
+<category><pattern>WHAT IS KFONTVIEWER</pattern><template> A simple font viewer. </template></category>               
+<category><pattern>WHAT IS KJOTS</pattern><template> A note taker program. </template></category>               
+<category><pattern>WHAT IS KMOUSETOOL</pattern><template> A mouse manipulation tool that clicks the mouse when the cursor pauses briefly. Designed for those with repetitive strain injuries or for whom pressing buttons hurts. </template></category>               
+<category><pattern>WHAT IS KPAGER</pattern><template> A desktop pager program. </template></category>               
+<category><pattern>WHAT IS KPALMDOC</pattern><template> PalmDoc converter. </template></category>               
+<category><pattern>WHAT IS KSYNC</pattern><template> A small application for selecting and syncing files. </template></category>               
+<category><pattern>WHAT IS KTIMER</pattern><template> A timer application. It allows you to execute commands after a certain amount of time and also supports looping commands. </template></category>               
+<category><pattern>WHAT IS TNEF FILE VIEWER</pattern><template> A tool for unpacking attachments that are encapsulated into the TNEF attachment, which would have required MS Outlook in order to view the attachment. </template></category>    
+
+<category> <pattern>KARAMBA</pattern> <template><system>popup karamba</system></template></category>
+<category> <pattern>ARMOR</pattern> <template><srai>AMOR</srai></template></category>
+<category> <pattern>POPUP</pattern> <template><srai>WHAT IS POPUP</srai></template></category>
+<category> <pattern>KORGANIZER</pattern> <template><system>popup <get name="organizer"/></system></template></category>
+<category> <pattern>KWRITE</pattern> <template><system>popup <get name="texteditor"/></system></template></category>
+<category> <pattern>MOZILLA</pattern> <template><srai>internet</srai></template></category>
+<category> <pattern>WHERE IS MSN</pattern> <template><srai>MSN</srai></template></category>
+<category> <pattern>_ SSH</pattern> <template><srai>open a consol</srai></template></category>
+<category> <pattern>CONSOL</pattern> <template><srai>konsol</srai></template></category>
+<category> <pattern>KONSOL</pattern> <template><srai>konsole</srai></template></category>
+<category> <pattern>_ SSH *</pattern> <template><srai>konsole</srai></template></category>
+<category> <pattern>CALC</pattern> <template><srai>CALCULATOR</srai></template></category>
+<category> <pattern>VIAVOICE</pattern> <template>No voice recognition software has been integrated yet. <system>popup viavoice</system></template></category>
+<category> <pattern>BROWSER</pattern> <template><srai>INTERNET</srai> </template></category>
+
+<category> <pattern>_ FROM CONSOLE</pattern> <template><srai>KONSOLE</srai> </template></category>
+<category> <pattern>_ FROM KONSOLE</pattern> <template><srai>KONSOLE</srai> </template></category>
+<category> <pattern>KDETOYS</pattern> <template><system>popup kdetoys</system> </template></category>
+<category> <pattern>NEKORC</pattern> <template><system>popup nekorc</system> </template></category>
+</aiml>
+
+

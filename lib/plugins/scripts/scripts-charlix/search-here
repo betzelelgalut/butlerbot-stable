@@ -1,0 +1,3 @@
+#!/bin/bash
+cd $NAUTILUS_SCRIPT_CURRENT_URI
+exec gnome-search-tool

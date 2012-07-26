@@ -1,0 +1,4 @@
+#!/bin/bash
+#created by arnieboy 
+foo=`gksudo -u root -k -m "enter your password for gedit root access" /bin/echo "Do you have root access?"`
+sudo gedit $NAUTILUS_SCRIPT_SELECTED_URIS

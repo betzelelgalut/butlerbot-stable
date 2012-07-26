@@ -1,0 +1,114 @@
+#!/bin/bash
+# DebCentral Config is copyright / trademarked by Speedy
+# DebCentral Config is released under the General Public license (Please refer to GPL.txt)
+# Written By Speedy
+# Credit goes to arnieboy for Automatix
+# Modified By Charlix to fit in Charlix
+# Adds midi capability to breezy and installs timidity++
+
+
+
+
+
+Xdialog --title "IS APT BUSY?" \
+	--icon ./scripts/charlix.xpm \
+        --msgbox "Make sure you DO NOT have Synaptic or Kpackage open before u hit OK!" 0 0
+
+	if cat $HOME/.bashrc | grep "export SCUMMVM_PORT=128:0";
+	then
+		DIALOG=Xdialog
+
+		$DIALOG --wrap --title "DebCentral Config" \
+			--yesno "DebCentral Config seems to think that Midi capability is already turned ON! If YOU ARE SURE you have NOT done this before hit OK otherwise hit CANCEL" 0 0
+		
+		case $? in
+		0)
+		true;;
+		1)
+		exit 1;;
+		255)
+		echo "Box closed."
+		exit 1;;
+		esac
+	
+else true 
+
+fi
+
+
+
+DIALOG=Xdialog
+
+(
+echo "10" ; sleep 1
+echo "20" ; sleep 1
+echo "XXX" ; echo "Updating sources"; echo "XXX"
+echo "30" ; sleep 1
+xterm -e apt-get update
+echo "XXX" ; echo "Controling security"; echo "XXX"
+echo "40" ; sleep 1
+cat << EOF > /tmp/editbox.tmp.$$
+ TO INSTALL timidity pmidi, THESE CHANGES NEED TO BE DONE. PLEASE CHECK IF ANY SOFTWARE YOU NEED WOULD BE REMOVED:
+EOF
+echo "" >> /tmp/editbox.tmp.$$
+echo "50" ; sleep 1
+apt-get install -s timidity pmidi >> /tmp/editbox.tmp.$$
+echo "" >> /tmp/editbox.tmp.$$
+echo "DO YOU STILL WANT ME TO INSTALL timidity pmidi" >> /tmp/editbox.tmp.$$
+echo "60" ; sleep 1
+) |
+$DIALOG --title "GAUGE" --gauge "Preparing installation!" 8 30
+
+if [ "$?" = 255 ] ; then
+	echo ""
+	echo "Box closed !"
+	exit 1
+fi
+
+
+
+
+Xdialog --title "APT LOG" --fixed-font \
+	--editbox /tmp/editbox.tmp.$$ 0 0 2>/tmp/editbox.txt.$$
+
+
+case $? in
+  0) 
+	(
+	echo "75" ; sleep 1
+	xterm -hold -e  "apt-get install --assume-yes --force-yes timidity pmidi && cat ./scripts/midimodules | tee -a /etc/modules &&	wget -c ftp://ftp.personalcopy.net/pub/Unison.sf2.gz &&	echo You can close this window"
+	rm -rf /etc/sounds
+	mkdir /etc/sounds/
+	gunzip Unison.sf2.gz
+	mv Unison.sf2 /etc/sounds/
+	cp -rf ./scripts/timidity.cfg /etc/timidity/timidity.cfg
+	cp -rf ./scripts/timidity /etc/init.d/timidity
+	cp -rf ./scripts/def_timidity /etc/default/timidity
+	export ALSA_OUTPUT_PORTS="128:0"
+	export SCUMMVM_PORT=128:0
+	cat ./scripts/bashadd >> .bashrc
+	cat ./scripts/bashadd >> .gnomerc
+
+	echo "100" ; sleep 1
+	) |
+	$DIALOG --title "GAUGE" --gauge "Installing" 8 30
+	Xdialog --title "IT'S DONE " \
+	--icon ./scripts/charlix.xpm \
+        --msgbox "All selected installation and configuration completed" 0 0
+    ;;
+  1)
+    echo "Cancel pressed."
+    exit 1
+    ;;
+  255)
+    echo "Box closed."
+    exit 1
+    ;;
+esac
+
+
+rm -f /tmp/editbox.tmp.$$
+rm -f /tmp/editbox.txt.$$
+	
+
+

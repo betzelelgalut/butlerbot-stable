@@ -1,0 +1,19 @@
+#!/bin/bash
+# DebCentral Config is copyright / trademarked by Speedy
+# DebCentral Config is released under the General Public license (Please refer to GPL.txt)
+# Written By Speedy
+# Credit goes to arnieboy for Automatix
+# Modified By Charlix to fit in Charlix
+# add some video and audio codecs
+
+
+Xdialog --title "IS APT BUSY?" \
+	--icon ./scripts/charlix.xpm \
+        --msgbox "Make sure you DO NOT have Synaptic or Kpackage open before u hit OK!" 0 0
+
+xterm -hold -e "wget http://www.debian-multimedia.org/pool/main/w/w32codecs/w32codecs_20060611-0.0_i386.deb && dpkg -i w32codecs_20060611-0.0_i386.deb && wget http://www.debian-multimedia.org/pool/main/libd/libdvdcss/libdvdcss2_1.2.9-0sarge0.0_i386.deb && dpkg -i libdvdcss2_1.2.9-0sarge0.0_i386.deb && echo You can close this window"
+
+		
+Xdialog --title "IT'S DONE " \
+	--icon ./scripts/charlix.xpm \
+        --msgbox "All selected installation and configuration completed" 0 0

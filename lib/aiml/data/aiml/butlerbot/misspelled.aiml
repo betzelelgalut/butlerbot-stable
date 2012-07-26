@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+<category> <pattern>YOU MAKING *</pattern> <template><srai>You are making <star/></srai></template></category>
+<category> <pattern>YOUR TALKING *</pattern> <template><srai>YOU ARE TALKING <star/></srai></template></category>
+<category> <pattern>RE YOU *</pattern> <template><srai>ARE YOU <star/></srai></template></category>
+<category> <pattern>DO YOU HAE *</pattern> <template><srai>DO YOU HAVE <star/></srai></template></category>
+<category> <pattern>DAES *</pattern> <template><srai>DOES <star/></srai></template></category>
+<category> <pattern>WHTZ *</pattern> <template><srai>WHAT IS <star/></srai></template></category>
+<category> <pattern>WHO R U</pattern> <template><srai>who are you</srai></template></category>
+<category> <pattern>DO YOPU *</pattern> <template><srai>DO YOU <star/></srai></template></category>
+<category> <pattern>WHUY *</pattern> <template><srai>WHY <star/></srai> </template></category>
+<category> <pattern>_ NPT *</pattern> <template><srai><star/> not <star index="2"/></srai></template></category>
+<category> <pattern>WATS *</pattern> <template><srai>WHAT IS <star/></srai></template></category>
+<category> <pattern>HO DO * </pattern> <template><srai>HOW DO <star/></srai></template></category>
+<category> <pattern>WHAT R YO</pattern> <template><srai>WHAT ARE YOU</srai></template></category>
+<category> <pattern>_ EIS * </pattern> <template><srai><star/> is <star index="2"/></srai></template></category>
+<category> <pattern>_ IST * </pattern> <template><srai><star/> is <star index="2"/></srai></template></category>
+<category> <pattern>_ ALOT *</pattern> <template><srai><star/> A LOT <star index="2"/></srai></template></category>
+<category> <pattern>HOWOLD *</pattern> <template><srai>HOW OLD</srai></template></category>
+<category> <pattern>WHAT TIM *</pattern> <template><srai>WHAT TIME <star/></srai></template></category>
+<category> <pattern>I WANT TO BY *</pattern> <template><srai>I WANT TO BUY <star/></srai></template></category>
+<category> <pattern>U R *</pattern> <template><srai>YOU ARE <star/></srai></template></category>
+<category> <pattern>COS</pattern> <template><srai>BECAUSE</srai></template></category>
+<category> <pattern>NAH</pattern> <template><srai>NO</srai></template></category>
+<category> <pattern>_ U</pattern> <template><srai><star/> YOU</srai></template></category>
+<category> <pattern>_ YUO</pattern> <template><srai><star/> YOU</srai></template></category>
+<category> <pattern>HELLLO *</pattern> <template> <srai>HELLO <star/></srai></template></category>
+<category> <pattern>WHOA *</pattern> <template><sr/></template></category>
+<category> <pattern>HY *</pattern> <template><sr/></template></category>
+<category> <pattern>HEY *</pattern> <template><srai><star/></srai></template></category>
+<category> <pattern>WWHAT *</pattern> <template><srai>WHAT <star/></srai></template></category>
+<category> <pattern>_ THANX</pattern> <template> <srai><star/> THANKS</srai></template></category>
+<category> <pattern>MI *</pattern> <template> <srai>MY <star/></srai></template></category>
+<category> <pattern>HY</pattern> <template><srai>HEY</srai></template></category>
+<category> <pattern>_ KNOWW *</pattern> <template> <srai><star/> KNOW <star index="2"/></srai></template></category>
+<category> <pattern>_ YOUY</pattern> <template><srai><star/> YOU</srai></template></category>
+<category> <pattern>FOCK *</pattern> <template><srai>FUCK <star/></srai></template></category>
+
+
+</aiml>

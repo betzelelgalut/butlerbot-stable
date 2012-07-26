@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+      
+<!-- Free software (c) 2006 Charlix.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.01 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+
+<!--  ################ COMMON APPLE OSX APPLICATIONS ############################### -->
+<!--  ################ note most basic commands will be found in the linux / unix software aiml script ################ -->
+<category><pattern>COMMAND BLENDER</pattern><template>Starting <set name="application">blender</set><system>popup blender</system></template></category>
+<category><pattern>COMMAND CUPS</pattern><template>Starting <set name="application">cups</set><system>popup cups</system></template></category>
+<category><pattern>COMMAND ECLIPSE</pattern><template>Starting <set name="application">eclipse</set><system>popup eclipse</system></template></category>
+<category><pattern>COMMAND EMACS</pattern><template>Starting <set name="application">emacs</set><system>popup emacs</system></template></category>
+<category><pattern>COMMAND EPIPHANY</pattern><template>Starting <set name="application">epiphany</set><system>popup epiphany</system></template></category>
+<category><pattern>COMMAND ETHEREAL</pattern><template>Starting <set name="application">ethereal</set><system>popup ethereal</system></template></category>
+<category><pattern>COMMAND FIREFOX</pattern><template>Starting <set name="application">firefox</set><system>popup firefox</system></template></category>
+<category><pattern>COMMAND GIMP</pattern><template>Starting <set name="application">gimp</set><system>popup gimp</system></template></category>
+<category><pattern>COMMAND INKSCAPE</pattern><template>Starting <set name="application">inkscape</set><system>popup inkscape</system></template></category>
+<category><pattern>COMMAND LIBREOFFICE *</pattern><template>Starting <set name="application">Libraoffice</set><system>soffice <star/></system></template></category>
+<category><pattern>COMMAND MOZILLA</pattern><template>Starting <set name="application">mozilla</set><system>popup mozilla</system></template></category>
+<category><pattern>COMMAND NESSUS</pattern><template>Starting <set name="application">nessus</set><system>popup nessus</system></template></category>
+<category><pattern>COMMAND OPENOFFICE</pattern><template>Starting <set name="application">OpenOffice</set><system>popup soffice</system></template></category>
+<category><pattern>COMMAND OPERA</pattern><template>Starting <set name="application">opera</set><system>popup opera</system></template></category>
+<category><pattern>COMMAND SCRIBUS</pattern><template>Starting <set name="application">scribus</set><system>popup scribus</system></template></category>
+<category><pattern>COMMAND THUNDERBIRD</pattern><template>Starting <set name="application">thunderbird</set><system>popup thunderbird</system></template></category>
+<category><pattern>COMMAND MOZILLA THUNDERBIRD</pattern><template>Starting <set name="application">thunderbird</set><system>popup thunderbird</system></template></category>
+<category><pattern>COMMAND VLC</pattern><template>Starting <set name="application">vlc</set><system>popup vlc</system></template></category>
+<category><pattern>COMMAND WINE</pattern><template>Starting <set name="application">wine</set><system>popup wine</system></template></category>
+</aiml>
+
+

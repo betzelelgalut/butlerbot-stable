@@ -1,0 +1,17 @@
+the files:
+google.py
+wikipedia.py
+wiktionary.py
+
+are based off the googlism.py as a template... these scripts still need to be edited.
+once they are fully functional, they will need to be added to the 
+tools or ask-howie-aiml file.
+
+also in the future i would like to add the following option scirpts...
+
+google.books.com
+sacred-texts.com
+britannica.com
+hulu.com
+netflix.com
+amazon.com

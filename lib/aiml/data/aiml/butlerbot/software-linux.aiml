@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+      
+<!-- Free software (c) 2006 Charlix.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.01 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+
+<!-- ########################## KDE SPECIFIC ############################################### -->
+<category><pattern>CLIPBOARD</pattern><template>Starting Klipper. <system>popup Klipper</system></template></category> 
+<category><pattern>DEVICE MANAGER</pattern><template>Starting KDE Info Center. <system>popup kinfocenter</system></template></category> 
+<category><pattern>MIRC</pattern><template>Starting Ksirc. <system>popup ksirc</system></template></category> 
+<category><pattern>ICQ</pattern><template>Starting Licq. <system>popup licq</system></template></category> 
+<category><pattern>TASK MANAGER</pattern><template>Starting KDE System Guard. <system>popup ksysguard</system></template></category> 
+<category><pattern>SETTING</pattern><template>Starting KDE control Center. <system>popup kcontrol</system></template></category> 
+<category><pattern>SETTINGS</pattern><template>Starting KDE Control Center. <system>popup kcontrol</system></template></category> 
+<category><pattern>SYSTEM INFORMATION</pattern><template>Starting KDE Info Center. <system>popup kinfocenter</system></template></category> 
+<category><pattern>KOPETE</pattern><template>starting the instant messenger <set name="application">kopete</set> <system>kopete</system></template></category>  
+<category><pattern>KMAIL</pattern><template>Starting the email client <set name="application">kmail</set><system>kmail</system></template></category>  
+<category><pattern>KNOTES</pattern><template>starting the sticky note manager <set name="application">knote</set>.<system>knotes</system></template></category>  
+<category><pattern>KONSOLE</pattern><template>Starting the kde terminale <set name="application">konsole</set><system>popup konsole</system></template></category> 
+<category><pattern>KONQUEROR</pattern><template>Starting kde browser <set name="application">konqueror</set>.<system>popup konqueror</system></template></category>  
+
+<!-- ############################ GNOME / UNITY / NAUTILUS SPECIFIC ########################################## -->
+<category><pattern>NETTOOL</pattern><template>Starting gnome-nettool, Sir. <system>popup gnome-nettool</system></template></category> 
+<category><pattern>FONT VIEWER</pattern><template>Starting gnome-font-viewer, Sir. <system>popup gnome-font-viewer</system></template></category> 
+<category><pattern>GNOME SCREENSAVER</pattern><template>Starting gnome-screensaver, Sir. <system>popup gnome-screensaver</system></template></category> 
+<category><pattern>SCREENSHOT</pattern><template>Starting gnome-screenshot, Sir. <system>popup gnome-screenshot</system></template></category> 
+<category><pattern>SOUND RECORDER</pattern><template>Starting gnome-sound-recorder, Sir. <system>popup gnome-sound-recorder</system></template></category> 
+<category><pattern>GNOME SEARCH</pattern><template>Starting gnome-search-tool, Sir. <system>popup gnome-search-tool</system></template></category> 
+<category><pattern>DESKTOP SEARCH</pattern><template>Starting gnome-search-tool, Sir. <system>popup gnome-search-tool</system></template></category> 
+<category><pattern>SEARCH DESKTOP </pattern><template>Starting gnome-search-tool, Sir. <system>popup gnome-search-tool</system></template></category> 
+<category><pattern>HELP </pattern><template>Starting gnome-help, Sir. <system>popup gnome-help</system></template></category> 
+<category><pattern>DESKTOP HELP </pattern><template>Starting gnome-help, Sir. <system>popup gnome-help</system></template></category> 
+<category><pattern>GNOME HELP </pattern><template>Starting gnome-help, Sir. <system>popup gnome-help</system></template></category> 
+<category><pattern>TOPIC HELP </pattern><template>Starting gnome-help, Sir. <system>popup gnome-help</system></template></category> 
+<category><pattern>HELP ME * </pattern><template>Starting gnome-help, Sir. <system>popup gnome-help</system></template></category> 
+<category><pattern>SYSTEM MONITOR </pattern><template>Starting gnome-system-monitor, Sir. <system>popup gnome-system-monitor</system></template></category> 
+<category><pattern>SYSTEM STATUS </pattern><template>Starting gnome-system-monitor, Sir. <system>popup gnome-system-monitor</system></template></category> 
+<category><pattern>MEMORY USAGE </pattern><template>Starting gnome-system-monitor, Sir. <system>popup gnome-system-monitor</system></template></category> 
+<category><pattern>CPU USAGE </pattern><template>Starting gnome-system-monitor, Sir. <system>popup gnome-system-monitor</system></template></category> 
+<category><pattern>HDD USAGE </pattern><template>Starting gnome-system-monitor, Sir. <system>popup gnome-system-monitor</system></template></category> 
+<category><pattern>CONNECT TO FILESHARE </pattern><template>Starting nautilus-connect-server, Sir. <system>popup nautilus-connect-server</system></template></category> 
+<category><pattern>CONNECT TO NFS </pattern><template>Starting nautilus-connect-server, Sir. <system>popup nautilus-connect-server</system></template></category> 
+<category><pattern>OPEN DIRECTORY * </pattern><template>Starting gnome-open, Sir. <system>popup gnome-open</system></template></category> 
+<category><pattern>OPEN DIR * </pattern><template>Starting gnome-open, Sir. <system>popup gnome-open</system></template></category> 
+<category><pattern>OPEN FILE * </pattern><template>Starting gnome-open, Sir. <system>popup gnome-open</system></template></category> 
+<category><pattern>POWER USAGE * </pattern><template>Starting gnome-power-statistics, Sir. <system>popup gnome-power-statistics</system></template></category> 
+<category><pattern>GNOME SESSION </pattern><template>Starting gnome-session, Sir. <system>popup gnome-session</system></template></category> 
+<category><pattern>QUIT GNOME </pattern><template>Starting gnome-session-quit, Sir. <system>popup gnome-session-quit</system></template></category> 
+<category><pattern>SYSTEM LOGS </pattern><template>Starting gnome-system-log, Sir.<system>popup gnome-system-log</system></template></category> 
+<category><pattern>TERMINAL </pattern><template>Starting gnome-terminal, Sir. <system>popup gnome-terminal</system></template></category> 
+<category><pattern>COMMAND SHELL </pattern><template>Starting gnome-terminal, Sir.<system>popup gnome-terminal</system></template></category> 
+<category><pattern>CLI </pattern><template>Starting gnome-terminal, Sir.<system>popup gnome-terminal</system></template></category> 
+<category><pattern>BRASO</pattern><template>Starting braso, Sir.<system>popup braso</system></template></category> 
+<category><pattern>BURN A CD</pattern><template>Starting braso, Sir.<system>popup braso</system></template></category>
+<category><pattern>BURN A DVD</pattern><template>Starting braso, Sir.<system>popup braso</system></template></category>
+<category><pattern>MAKE A CD</pattern><template>Starting braso, Sir. <system>popup braso</system></template></category>
+<category><pattern>BURN A DVD</pattern><template>Starting braso, Sir. <system>popup braso</system></template></category>
+<category><pattern>FIREFOX</pattern><template>Starting firefox, Sir. <system>popup firefox</system></template></category>
+<category><pattern>OPEN SOFTWARE CENTER</pattern><template>Starting software-center, Sir. <system>popup software-center </system></template></category>
+<category><pattern>OPEN PASSWORD WALLET</pattern><template>Starting seahorse, Sir. <system>popup seahorse </system></template></category>
+<category><pattern>OPEN MUSIC PLAYER</pattern><template>Starting banshee, Sir. <system>popup banshee </system></template></category>
+<category><pattern>OPEN MPLAYER</pattern><template>Starting mplayer, Sir. <system>popup mplayer </system></template></category>
+
+ <!-- ####################### KDE AND GNOME GAMES ################################################# -->
+<category><pattern>ATLANTIK</pattern><template>Starting <set name="application">atlantik</set><system>popup atlantik</system></template></category> 
+<category><pattern>GNOBOTS2</pattern><template>Starting <set name="application">gnobots2</set><system>popup gnobots2</system></template></category> 
+<category><pattern>KASTEROIDS</pattern><template>Starting <set name="application">kasteroids</set><system>popup kasteroids</system></template></category> 
+<category><pattern>KGOLDRUNNER</pattern><template>Starting <set name="application">kgoldrunner</set><system>popup kgoldrunner</system></template></category> 
+<category><pattern>KPAT</pattern><template>Starting <set name="application">kpat</set><system>popup kpat</system></template></category> 
+<category><pattern>KSOKOBAN</pattern><template>Starting <set name="application">ksokoban</set><system>popup ksokoban</system></template></category> 
+<category><pattern>MAHJONGG</pattern><template>Starting <set name="application">mahjongg</set><system>popup mahjongg</system></template></category> 
+<category><pattern>BANNER</pattern><template>Please enter a banner message</template></category>
+<category><pattern>_</pattern><that>PLEASE ENTER A BANNER MESSAGE</that><template>displaying <set name="application">banner</set><system>banner -w 35 <star/></system></template></category> 
+<category><pattern>GNOME STONES</pattern><template>Starting <set name="application">gnome-stones</set><system>popup gnome-stones</system></template></category> 
+<category><pattern>KATOMIC</pattern><template>Starting <set name="application">katomic</set><system>popup katomic</system></template></category> 
+<category><pattern>KJUMPINGCUBE</pattern><template>Starting <set name="application">kjumpingcube</set><system>popup kjumpingcube</system></template></category> 
+<category><pattern>KPOKER</pattern><template>Starting <set name="application">kpoker</set><system>popup kpoker</system></template></category> 
+<category><pattern>KSPACEDUEL</pattern><template>Starting <set name="application">kspaceduel</set><system>popup kspaceduel</system></template></category> 
+<category><pattern>SAME GNOME</pattern><template>Starting <set name="application">same-gnome</set><system>popup same-gnome</system></template></category> 
+<category><pattern>BLACKJACK</pattern><template>Starting <set name="application">blackjack</set><system>popup blackjack</system></template></category> 
+<category><pattern>GNOMETRIS</pattern><template>Starting <set name="application">gnometris</set><system>popup gnometris</system></template></category> 
+<category><pattern>KBACKGAMMON</pattern><template>Starting <set name="application">kbackgammon</set><system>popup kbackgammon</system></template></category> 
+<category><pattern>KLICKETY</pattern><template>Starting <set name="application">klickety</set><system>popup klickety</system></template></category> 
+<category><pattern>KREVERSI</pattern><template>Starting <set name="application">kreversi</set><system>popup kreversi</system></template></category> 
+<category><pattern>KTRON</pattern><template>Starting <set name="application">ktron</set><system>popup ktron</system></template></category> 
+<category><pattern>SOL</pattern><template>Starting <set name="application">sol</set><system>popup sol</system></template></category> 
+<category><pattern>FORTUNE</pattern><template>Opening a fortune cookie  <set name="application">fortune</set><system>fortune</system></template></category> 
+<category><pattern>GNOMINE</pattern><template>Starting <set name="application">gnomine</set><system>popup gnomine</system></template></category> 
+<category><pattern>KBATTLESHIP</pattern><template>Starting <set name="application">kbattleship</set><system>popup kbattleship</system></template></category> 
+<category><pattern>KLINES</pattern><template>Starting <set name="application">klines</set><system>popup klines</system></template></category> 
+<category><pattern>KSAME</pattern><template>Starting <set name="application">ksame</set><system>popup ksame</system></template></category> 
+<category><pattern>KTUBERLING</pattern><template>Starting <set name="application">ktuberling</set><system>popup ktuberling</system></template></category> 
+<category><pattern>GATAXX</pattern><template>Starting <set name="application">gataxx</set><system>popup gataxx</system></template></category> 
+<category><pattern>GNOTRAVEX</pattern><template>Starting <set name="application">gnotravex</set><system>popup gnotravex</system></template></category> 
+<category><pattern>KBLACKBOX</pattern><template>Starting <set name="application">kblackbox</set><system>popup kblackbox</system></template></category> 
+<category><pattern>KMAHJONGG</pattern><template>Starting <set name="application">kmahjongg</set><system>popup kmahjongg</system></template></category> 
+<category><pattern>KSHISEN</pattern><template>Starting <set name="application">kshisen</set><system>popup kshisen</system></template></category> 
+<category><pattern>KWIN4</pattern><template>Starting <set name="application">kwin4</set><system>popup kwin4</system></template></category> 
+<category><pattern>GLINES</pattern><template>Starting <set name="application">glines</set><system>popup glines</system></template></category> 
+<category><pattern>GNOTSKI</pattern><template>Starting <set name="application">gnotski</set><system>popup gnotski</system></template></category> 
+<category><pattern>KBOUNCE</pattern><template>Starting <set name="application">kbounce</set><system>popup kbounce</system></template></category> 
+<category><pattern>KMINES</pattern><template>Starting <set name="application">kmines</set><system>popup kmines</system></template></category> 
+<category><pattern>KSIRTET</pattern><template>Starting <set name="application">ksirtet</set><system>popup ksirtet</system></template></category> 
+<category><pattern>KWIN4PROC</pattern><template>Starting <set name="application">kwin4proc</set><system>popup kwin4proc</system></template></category> 
+<category><pattern>GNECT</pattern><template>Starting <set name="application">gnect</set><system>popup gnect</system></template></category>  <category><pattern>GTALI</pattern><template>Starting <set name="application">gtali</set><system>popup gtali</system></template></category> 
+<category><pattern>KENOLABA</pattern><template>Starting <set name="application">kenolaba</set><system>popup kenolaba</system></template></category> <category><pattern>KOLF</pattern><template>Starting <set name="application">kolf</set><system>popup kolf</system></template></category> 
+<category><pattern>KSMILETRIS</pattern><template>Starting <set name="application">ksmiletris</set><system>popup ksmiletris</system></template></category> <category><pattern>LSKAT</pattern><template>Starting <set name="application">lskat</set><system>popup lskat</system></template></category> 
+<category><pattern>GNIBBLES</pattern><template>Starting <set name="application">gnibbles</set><system>popup gnibbles</system></template></category> <category><pattern>IAGNO</pattern><template>Starting <set name="application">iagno</set><system>popup iagno</system></template></category> 
+<category><pattern>KFOULEGGS</pattern><template>Starting <set name="application">kfouleggs</set><system>popup kfouleggs</system></template></category> 
+<category><pattern>KONQUEST</pattern><template>Starting <set name="application">konquest</set><system>popup konquest</system></template></category> 
+<category><pattern>KSNAKE</pattern><template>Starting <set name="application">ksnake</set><system>popup ksnake</system></template></category> 
+<category><pattern>LSKATPROC</pattern><template>Starting <set name="application">lskatproc</set><system>popup lskatproc</system></template></category> 
+
+ <!-- ########################### COMMON LINUX APPS ############################################## -->          
+<category><pattern>AMAROK</pattern><template>Starting <set name="application">amarok</set><system>popup amarok</system></template></category>
+<category><pattern>APACHE</pattern><template>Starting <set name="application">apache</set><system>popup apache</system></template></category>
+<category><pattern>APT-GET *</pattern><template>Starting <set name="application">apt</set><system>apt-get <star/></system></template></category>
+<category><pattern>AUDACITY</pattern><template>Starting <set name="application">audacity</set><system>popup audacity</system></template></category>
+<category><pattern>BIND</pattern><template>Starting <set name="application">bind</set><system>popup bind</system></template></category>
+<category><pattern>BINUTILS</pattern><template>Starting <set name="application">binutils</set><system>popup binutils</system></template></category>
+<category><pattern>BISON</pattern><template>Starting <set name="application">bison</set><system>popup bison</system></template></category>
+<category><pattern>BITTORRENT</pattern><template>Starting <set name="application">BitTorrent</set><system>popup kbittorrent</system></template></category>
+<category><pattern>BLACKBOX</pattern><template>Starting <set name="application">blackbox</set><system>popup blackbox</system></template></category>
+<category><pattern>BLENDER</pattern><template>Starting <set name="application">blender</set><system>popup blender</system></template></category>
+<category><pattern>BLUEFISH</pattern><template>Starting <set name="application">bluefish</set><system>popup bluefish</system></template></category>
+<category><pattern>BOCHS</pattern><template>Starting <set name="application">bochs</set><system>popup bochs</system></template></category>
+<category><pattern>BZIP</pattern><template>Starting <set name="application">bzip</set><system>popup bzip</system></template></category>
+<category><pattern>CINELERRA</pattern><template>Starting <set name="application">cinelerra</set><system>popup cinelerra</system></template></category>
+<category><pattern>CUPS</pattern><template>Starting <set name="application">cups</set><system>popup cups</system></template></category>
+<category><pattern>ECLIPSE</pattern><template>Starting <set name="application">eclipse</set><system>popup eclipse</system></template></category>
+<category><pattern>EMACS</pattern><template>Starting <set name="application">emacs</set><system>popup emacs</system></template></category>
+<category><pattern>EPIPHANY</pattern><template>Starting <set name="application">epiphany</set><system>popup epiphany</system></template></category>
+<category><pattern>ETHEREAL</pattern><template>Starting <set name="application">ethereal</set><system>popup ethereal</system></template></category>
+<category><pattern>EVOLUTION</pattern><template>Starting <set name="application">evolution</set><system>popup evolution</system></template></category>
+<category><pattern>EXIM</pattern><template>Starting <set name="application">exim</set><system>popup exim</system></template></category>
+<category><pattern>FIREFOX</pattern><template>Starting <set name="application">firefox</set><system>popup firefox</system></template></category>
+<category><pattern>FREETYPE</pattern><template>Starting <set name="application">freetype</set><system>popup freetype</system></template></category>
+<category><pattern>GALEON</pattern><template>Starting <set name="application">galeon</set><system>popup galeon</system></template></category>
+<category><pattern>GHOSTSCRIPT</pattern><template>Starting <set name="application">ghostscript</set><system>popup ghostscript</system></template></category>
+<category><pattern>GIMP</pattern><template>Starting <set name="application">gimp</set><system>popup gimp</system></template></category>
+<category><pattern>GKRELLM</pattern><template>Starting <set name="application">gkrellm</set><system>popup gkrellm</system></template></category>
+<category><pattern>GLADE</pattern><template>Starting <set name="application">glade</set><system>popup glade</system></template></category>
+<category><pattern>GLIBC</pattern><template>Starting <set name="application">glibc</set><system>popup glibc</system></template></category>
+<category><pattern>GNUCASH</pattern><template>Starting <set name="application">gnucash</set><system>popup gnucash</system></template></category>
+<category><pattern>GNUMERIC</pattern><template>Starting <set name="application">gnumeric</set><system>popup gnumeric</system></template></category>
+<category><pattern>GNUPG</pattern><template>Starting <set name="application">gnupg</set><system>popup gnupg</system></template></category>
+<category><pattern>GQVIEW</pattern><template>Starting <set name="application">gqview</set><system>popup gqview</system></template></category>
+<category><pattern>GREP *</pattern><template><system>grep <star/></system></template></category>
+<category><pattern>AGROFF</pattern><template>Starting <set name="application">agroff</set><system>popup agroff</system></template></category>
+<category><pattern>GZIP *</pattern><template>Starting <set name="application">gzip</set><system>gzip <star/></system></template></category>
+<category><pattern>ICEWM</pattern><template>Starting <set name="application">icewm</set><system>popup icewm</system></template></category> <category><pattern>IMAGEMAGICK</pattern><template>Starting <set name="application">ImageMagick</set><system>popup ImageMagick</system></template></category>
+<category><pattern>INKSCAPE</pattern><template>Starting <set name="application">inkscape</set><system>popup inkscape</system></template></category>
+<category><pattern>IPTABLES</pattern><template>Starting <set name="application">iptables</set><system>popup iptables</system></template></category>
+<category><pattern>IPVSADM</pattern><template>Starting <set name="application">ipvsadm</set><system>popup ipvsadm</system></template></category>
+<category><pattern>JAKARTATOMCAT</pattern><template>Starting <set name="application">jakartatomcat</set><system>popup jakartatomcat</system></template></category>
+<category><pattern>KB</pattern><template>Starting <set name="application">kb</set><system>popup kb</system></template></category>
+<category><pattern>KDEVELOP</pattern><template>Starting <set name="application">kdevelop</set><system>popup kdevelop</system></template></category>
+<category><pattern>KDEWEBDEV</pattern><template>Starting <set name="application">kdewebdev</set><system>popup kdewebdev</system></template></category>
+<category><pattern>KOFFICE</pattern><template>Starting <set name="application">koffice</set><system>popup koffice</system></template></category>
+<category><pattern>KRUSADER</pattern><template>Starting <set name="application">krusader</set><system>popup krusader</system></template></category>
+<category><pattern>KWRITE</pattern><template>Starting <set name="application">krusader</set><system>popup krusader</system></template></category>
+<category><pattern>LIBREOFFICE *</pattern><template>Starting <set name="application">Libraoffice</set><system>soffice <star/></system></template></category>
+<category><pattern>LYNX *</pattern><template>Starting <set name="application">lynx</set><system>lynx <star/></system></template></category>
+<category><pattern>LYX</pattern><template>Starting <set name="application">lyx</set><system>popup lyx</system></template></category>
+<category><pattern>MAILSCANNER</pattern><template>Starting <set name="application">MailScanner</set><system>popup MailScanner</system></template></category>
+<category><pattern>MAKE</pattern><template>Starting <set name="application">make</set><system>make</system></template></category>
+<category><pattern>MAN *</pattern><template>Starting <set name="application">man</set><system>man <star/> </system></template></category>
+<category><pattern>MOD_PERL</pattern><template>Starting <set name="application">mod_perl</set><system>popup mod_perl</system></template></category>
+<category><pattern>MOD_SSL</pattern><template>Starting <set name="application">mod_ssl</set><system>popup mod_ssl</system></template></category>
+<category><pattern>MODUTILS</pattern><template>Starting <set name="application">modutils</set><system>popup modutils</system></template></category>
+<category><pattern>MOZILLA</pattern><template>Starting <set name="application">mozilla</set><system>popup mozilla</system></template></category>
+<category><pattern>MPLAYER</pattern><template>Starting <set name="application">MPlayer</set><system>popup mplayer</system></template></category>
+<category><pattern>KMPLAYER</pattern><template>Starting <set name="application">kmplayer</set><system>popup kmpayer</system></template></category>
+<category><pattern>NAUTILUS</pattern><template>Starting <set name="application">nautilus</set><system>popup nautilus</system></template></category>
+<category><pattern>NCURSES</pattern><template>Starting <set name="application">ncurses</set><system>popup ncurses</system></template></category>
+<category><pattern>NEDIT</pattern><template>Starting <set name="application">nedit</set><system>popup nedit</system></template></category>
+<category><pattern>NESSUS</pattern><template>Starting <set name="application">nessus</set><system>popup nessus</system></template></category>
+<category><pattern>NETATALK</pattern><template>Starting <set name="application">netatalk</set><system>popup netatalk</system></template></category>
+<category><pattern>NETBEANS</pattern><template>Starting <set name="application">NetBeans</set><system>popup NetBeans</system></template></category>
+<category><pattern>NETQMAIL</pattern><template>Starting <set name="application">netqmail</set><system>popup netqmail</system></template></category>
+<category><pattern>NMAP</pattern><template>Starting <set name="application">nmap</set><system>popup nmap</system></template></category>
+<category><pattern>OPENLDAP</pattern><template>Starting <set name="application">openldap</set><system>popup openldap</system></template></category>
+<category><pattern>OPENOFFICE</pattern><template>Starting <set name="application">OpenOffice</set><system>popup soffice</system></template></category>
+<category><pattern>OPENSSH</pattern><template>Starting <set name="application">openssh</set><system>popup openssh</system></template></category>
+<category><pattern>POPENSSL</pattern><template>Starting <set name="application">popenssl</set><system>popup popenssl</system></template></category>
+<category><pattern>OPERA</pattern><template>Starting <set name="application">opera</set><system>popup opera</system></template></category>
+<category><pattern>PAN</pattern><template>Starting <set name="application">pan</set><system>popup pan</system></template></category>
+<category><pattern>PARTED</pattern><template>Starting <set name="application">parted</set><system>popup parted</system></template></category>
+<category><pattern>PATCH</pattern><template>Starting <set name="application">patch</set><system>popup patch</system></template></category>
+<category><pattern>PERL *</pattern><template>Starting <set name="application">perl program</set><system>popup perl <star/></system></template></category>
+<category><pattern>PHPMYADMIN</pattern><template>Starting <set name="application">phpMyAdmin</set><system>popup phpMyAdmin</system></template></category>
+<category><pattern>PINE</pattern><template>Starting <set name="application">pine</set><system>popup pine</system></template></category>
+<category><pattern>POSTFIX</pattern><template>Starting <set name="application">postfix</set><system>popup postfix</system></template></category>
+<category><pattern>POSTGRESQL</pattern><template>Starting <set name="application">postgresql</set><system>popup postgresql</system></template></category>
+<category><pattern>PPP</pattern><template>Starting <set name="application">ppp</set><system>popup ppp</system></template></category>
+<category><pattern>PROCMAIL</pattern><template>Starting <set name="application">procmail</set><system>popup procmail</system></template></category>
+<category><pattern>PROFTPD</pattern><template>Starting <set name="application">proftpd</set><system>popup proftpd</system></template></category>
+<category><pattern>PYTHON *</pattern><template>Starting <set name="application">Python</set><system>popup python <star/></system></template></category>
+<category><pattern>QPOPPER</pattern><template>Starting <set name="application">qpopper</set><system>popup qpopper</system></template></category>
+<category><pattern>QTPARTED</pattern><template>Starting <set name="application">qtparted</set><system>popup qtparted</system></template></category>
+<category><pattern>QTX</pattern><template>Starting <set name="application">qtx</set><system>popup qtx</system></template></category>
+<category><pattern>REISERFSPROGS</pattern><template>Starting <set name="application">reiserfsprogs</set><system>popup reiserfsprogs</system></template></category>
+<category><pattern>RPPPPOE</pattern><template>Starting <set name="application">rppppoe</set><system>popup rppppoe</system></template></category>
+<category><pattern>RSYNC</pattern><template>Starting <set name="application">rsync</set><system>popup rsync</system></template></category>
+<category><pattern>SAMBA</pattern><template>Starting <set name="application">samba</set><system>popup samba</system></template></category>
+<category><pattern>CSANEBACKENDS</pattern><template>Starting <set name="application">csanebackends</set><system>popup csanebackends</system></template></category>
+<category><pattern>SCREEN</pattern><template>Starting <set name="application">screen</set><system>popup screen</system></template></category>
+<category><pattern>SCRIBUS</pattern><template>Starting <set name="application">scribus</set><system>popup scribus</system></template></category>
+<category><pattern>SENDMAIL</pattern><template>Starting <set name="application">sendmail</set><system>popup sendmail</system></template></category>
+<category><pattern>SNORT</pattern><template>Starting <set name="application">snort</set><system>popup snort</system></template></category>
+<category><pattern>SQLITE</pattern><template>Starting <set name="application">sqlite</set><system>popup sqlite</system></template></category>
+<category><pattern>SQUID</pattern><template>Starting <set name="application">squid</set><system>popup squid</system></template></category>
+<category><pattern>SQUIRRELMAIL</pattern><template>Starting <set name="application">squirrelmail</set><system>popup squirrelmail</system></template></category>
+<category><pattern>SUBVERSION</pattern><template>Starting <set name="application">subversion</set><system>popup subversion</system></template></category>
+<category><pattern>SYLPHEED</pattern><template>Starting <set name="application">sylpheed</set><system>popup sylpheed</system></template></category>
+<category><pattern>SYNAPTIC</pattern><template>Starting <set name="application">synaptic</set><system>popup synaptic</system></template></category>
+<category><pattern>SYSVINIT</pattern><template>Starting <set name="application">sysvinit</set><system>popup sysvinit</system></template></category>
+<category><pattern>TAR *</pattern><template>Starting <set name="application">tar</set><system>popup tar <star/></system></template></category>
+<category><pattern>TCL</pattern><template>Starting <set name="application">tcl</set><system>popup tcl</system></template></category>
+<category><pattern>TCPDUMP</pattern><template>Starting <set name="application">tcpdump</set><system>popup tcpdump</system></template></category>
+<category><pattern>TETEX</pattern><template>Starting <set name="application">tetex</set><system>popup tetex</system></template></category>
+<category><pattern>TEXINFO</pattern><template>Starting <set name="application">texinfo</set><system>popup texinfo</system></template></category>
+<category><pattern>THUNDERBIRD</pattern><template>Starting <set name="application">thunderbird</set><system>popup thunderbird</system></template></category>
+<category><pattern>MOZILLA THUNDERBIRD</pattern><template>Starting <set name="application">thunderbird</set><system>popup thunderbird</system></template></category>
+<category><pattern>TIGHTVNC</pattern><template>Starting <set name="application">tightvnc</set><system>popup tightvnc</system></template></category>
+<category><pattern>VLC</pattern><template>Starting <set name="application">vlc</set><system>popup vlc</system></template></category>
+<category><pattern>AVNC</pattern><template>Starting <set name="application">avnc</set><system>popup avnc</system></template></category>
+<category><pattern>VSFTPD</pattern><template>Starting <set name="application">vsftpd</set><system>popup vsftpd</system></template></category>
+<category><pattern>WEBALIZER</pattern><template>Starting <set name="application">webalizer</set><system>popup webalizer</system></template></category>
+<category><pattern>WEBMIN</pattern><template>Starting <set name="application">webmin</set><system>popup webmin</system></template></category>
+<category><pattern>WGET</pattern><template>Starting <set name="application">wget</set><system>wget <star/></system></template></category>
+<category><pattern>WINDOWMAKER</pattern><template>Starting <set name="application">WindowMaker</set><system>popup WindowMaker</system></template></category>
+<category><pattern>WINE</pattern><template>Starting <set name="application">wine</set><system>popup wine</system></template></category>
+<category><pattern>XAWTV</pattern><template>Starting <set name="application">xawtv</set><system>popup xawtv</system></template></category>
+<category><pattern>XCDROAST</pattern><template>Starting <set name="application">xcdroast</set><system>popup xcdroast</system></template></category>
+<category><pattern>ALPHAXCHAT</pattern><template>Starting <set name="application">alphaxchat</set><system>popup alphaxchat</system></template></category>
+<category><pattern>XMMS</pattern><template>Starting <set name="application">xmms</set><system>popup xmms</system></template></category>
+<category><pattern>YUM *</pattern><template>Starting <set name="application">yum</set><system>yum <star/></system></template></category>
+<category><pattern>ZOPE</pattern><template>Starting <set name="application">Zope</set><system>popup Zope</system></template></category>
+
+<!-- ################################### Utilities ################################################# -->                   
+<category> <pattern>KARAMBA</pattern> <template><system>popup karamba</system></template></category>
+<category> <pattern>ARMOR</pattern> <template><srai>AMOR</srai></template></category>
+<category> <pattern>POPUP</pattern> <template><srai>WHAT IS POPUP</srai></template></category>
+<category> <pattern>KORGANIZER</pattern> <template><system>popup <get name="organizer"/></system></template></category>
+<category> <pattern>KWRITE</pattern> <template><system>popup <get name="texteditor"/></system></template></category>
+<category> <pattern>MOZILLA</pattern> <template><srai>internet</srai></template></category>
+<category> <pattern>WHERE IS MSN</pattern> <template><srai>MSN</srai></template></category>
+<category> <pattern>_ SSH</pattern> <template><srai>open a consol</srai></template></category>
+<category> <pattern>CONSOL</pattern> <template><srai>konsol</srai></template></category>
+<category> <pattern>KONSOL</pattern> <template><srai>konsole</srai></template></category>
+<category> <pattern>_ SSH *</pattern> <template><srai>konsole</srai></template></category>
+<category> <pattern>CALC</pattern> <template><srai>CALCULATOR</srai></template></category>
+<category> <pattern>VIAVOICE</pattern> <template>No voice recognition software has been integrated yet. <system>popup viavoice</system></template></category>
+<category> <pattern>BROWSER</pattern> <template><srai>INTERNET</srai> </template></category>
+
+<category> <pattern>_ FROM CONSOLE</pattern> <template><srai>KONSOLE</srai> </template></category>
+<category> <pattern>_ FROM KONSOLE</pattern> <template><srai>KONSOLE</srai> </template></category>
+<category> <pattern>KDETOYS</pattern> <template><system>popup kdetoys</system> </template></category>
+<category> <pattern>NEKORC</pattern> <template><system>popup nekorc</system> </template></category>
+</aiml>
+
+

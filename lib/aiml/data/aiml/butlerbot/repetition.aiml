@@ -1,0 +1,411 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+
+
+<!-- charlix, September, 2007-->
+<!-- This program is open source code released under-->
+<!-- the terms of the GNU General Public License-->
+<!-- as published by the Free Software Foundation.-->
+<!-- Complies with AIML 1.01 Tag Set Specification-->
+<!-- as adopted by the ALICE A.I. Foundation.-->
+<!--repetition.aiml removes repetitions
+from wikipedia's most common repetition-->
+
+
+
+<category><pattern>a a *</pattern><template><srai>a <star/></srai></template></category>
+<category><pattern>about about  *</pattern><template><srai>about about <star/></srai></template></category>
+<category><pattern>an an *</pattern><template><srai>an <star/></srai></template></category>
+<category><pattern>and and *</pattern><template><srai>and <star/></srai></template></category>
+<category><pattern>are are *</pattern><template><srai>are <star/></srai></template></category>
+<category><pattern>be be *</pattern><template><srai>be <star/></srai></template></category>
+<category><pattern>by by *</pattern><template><srai>by <star/></srai></template></category>
+<category><pattern>for for *</pattern><template><srai>for <star/></srai></template></category>
+<category><pattern>he he *</pattern><template><srai>he <star/></srai></template></category>
+<category><pattern>if if *</pattern><template><srai>if <star/></srai></template></category>
+<category><pattern>in in *</pattern><template><srai>in <star/></srai></template></category>
+<category><pattern>is is *</pattern><template><srai>is <star/></srai></template></category>
+<category><pattern>it it *</pattern><template><srai>it <star/></srai></template></category>
+<category><pattern>of of *</pattern><template><srai>of <star/></srai></template></category>
+<category><pattern>she she *</pattern><template><srai>she <star/></srai></template></category>
+<category><pattern>the the *</pattern><template><srai>the <star/></srai></template></category>
+<category><pattern>this this *</pattern><template><srai>this  <star/></srai></template></category>
+<category><pattern>to to *</pattern><template><srai>to <star/></srai></template></category>
+<category><pattern>was was *</pattern><template><srai>was <star/></srai></template></category>
+<category><pattern>were were *</pattern><template><srai>were <star/></srai></template></category>
+<category><pattern>when when *</pattern><template><srai>when <star/></srai></template></category>
+<category><pattern>with with *</pattern><template><srai>with <star/></srai></template></category>
+
+
+<category><pattern>_ a a *</pattern><template><srai><star/> a <star index="2"/></srai></template></category>
+<category><pattern>_ about about  *</pattern><template><srai><star/> about about <star index="2"/></srai></template></category>
+<category><pattern>_ an an *</pattern><template><srai><star/> an <star index="2"/></srai></template></category>
+<category><pattern>_ and and *</pattern><template><srai><star/> and <star index="2"/></srai></template></category>
+<category><pattern>_ are are *</pattern><template><srai><star/> are <star index="2"/></srai></template></category>
+<category><pattern>_ be be *</pattern><template><srai><star/> be <star index="2"/></srai></template></category>
+<category><pattern>_ by by *</pattern><template><srai><star/> by <star index="2"/></srai></template></category>
+<category><pattern>_ for for *</pattern><template><srai><star/> for <star index="2"/></srai></template></category>
+<category><pattern>_ he he *</pattern><template><srai><star/> he <star index="2"/></srai></template></category>
+<category><pattern>_ if if *</pattern><template><srai><star/> if <star index="2"/></srai></template></category>
+<category><pattern>_ in in *</pattern><template><srai><star/> in <star index="2"/></srai></template></category>
+<category><pattern>_ is is *</pattern><template><srai><star/> is <star index="2"/></srai></template></category>
+<category><pattern>_ it it *</pattern><template><srai><star/> it <star index="2"/></srai></template></category>
+<category><pattern>_ of of *</pattern><template><srai><star/> of <star index="2"/></srai></template></category>
+<category><pattern>_ she she *</pattern><template><srai><star/> she <star index="2"/></srai></template></category>
+<category><pattern>_ the the *</pattern><template><srai><star/> the <star index="2"/></srai></template></category>
+<category><pattern>_ this this *</pattern><template><srai><star/> this  <star index="2"/></srai></template></category>
+<category><pattern>_ to to *</pattern><template><srai><star/> to <star index="2"/></srai></template></category>
+<category><pattern>_ was was *</pattern><template><srai><star/> was <star index="2"/></srai></template></category>
+<category><pattern>_ were were *</pattern><template><srai><star/> were <star index="2"/></srai></template></category>
+<category><pattern>_ when when *</pattern><template><srai><star/> when <star index="2"/></srai></template></category>
+<category><pattern>_ with with *</pattern><template><srai><star/> with <star index="2"/></srai></template></category>
+
+
+
+<category><pattern>_ a a</pattern><template><srai><star/> a</srai></template></category>
+<category><pattern>_ about about </pattern><template><srai><star/> about about</srai></template></category>
+<category><pattern>_ an an</pattern><template><srai><star/> an</srai></template></category>
+<category><pattern>_ and and</pattern><template><srai><star/> and</srai></template></category>
+<category><pattern>_ are are</pattern><template><srai><star/> are</srai></template></category>
+<category><pattern>_ be be</pattern><template><srai><star/> be</srai></template></category>
+<category><pattern>_ by by</pattern><template><srai><star/> by</srai></template></category>
+<category><pattern>_ for for</pattern><template><srai><star/> for</srai></template></category>
+<category><pattern>_ he he</pattern><template><srai><star/> he</srai></template></category>
+<category><pattern>_ if if</pattern><template><srai><star/> if</srai></template></category>
+<category><pattern>_ in in</pattern><template><srai><star/> in</srai></template></category>
+<category><pattern>_ is is</pattern><template><srai><star/> is</srai></template></category>
+<category><pattern>_ it it</pattern><template><srai><star/> it</srai></template></category>
+<category><pattern>_ of of</pattern><template><srai><star/> of</srai></template></category>
+<category><pattern>_ she she</pattern><template><srai><star/> she</srai></template></category>
+<category><pattern>_ the the</pattern><template><srai><star/> the</srai></template></category>
+<category><pattern>_ this this</pattern><template><srai><star/> this </srai></template></category>
+<category><pattern>_ to to</pattern><template><srai><star/> to</srai></template></category>
+<category><pattern>_ was was</pattern><template><srai><star/> was</srai></template></category>
+<category><pattern>_ were were</pattern><template><srai><star/> were</srai></template></category>
+<category><pattern>_ when when</pattern><template><srai><star/> when</srai></template></category>
+<category><pattern>_ with with</pattern><template><srai><star/> with</srai></template></category>
+
+<category><pattern>a an *</pattern><template><srai>a <star/></srai></template></category>
+<category><pattern>an a *</pattern><template><srai>a <star/></srai></template></category>
+<category><pattern>a the *</pattern><template><srai>the <star/></srai></template></category>
+<category><pattern>the this *</pattern><template><srai>this <star/></srai></template></category>
+<category><pattern>this the *</pattern><template><srai>this <star/></srai></template></category>
+<category><pattern>this that *</pattern><template><srai>this <star/></srai></template></category>
+
+<category><pattern>_ a an *</pattern><template><srai><star/> a <star index="2"/></srai></template></category>
+<category><pattern>_ an a *</pattern><template><srai><star/> a <star index="2"/></srai></template></category>
+<category><pattern>_ a the *</pattern><template><srai><star/> the <star index="2"/></srai></template></category>
+<category><pattern>_ the this *</pattern><template><srai><star/> this <star index="2"/></srai></template></category>
+<category><pattern>_ this the *</pattern><template><srai><star/> this <star index="2"/></srai></template></category>
+<category><pattern>_ this that *</pattern><template><srai><star/> this <star index="2"/></srai></template></category>
+
+<category><pattern>_ a an</pattern><template><srai><star/> a</srai></template></category>
+<category><pattern>_ an a</pattern><template><srai><star/> a</srai></template></category>
+<category><pattern>_ a the</pattern><template><srai><star/> the</srai></template></category>
+<category><pattern>_ the this</pattern><template><srai><star/> this</srai></template></category>
+<category><pattern>_ this the</pattern><template><srai><star/> this</srai></template></category>
+<category><pattern>_ this that</pattern><template><srai><star/> this</srai></template></category>
+
+<category><pattern>please please *</pattern><template><srai>please <star/></srai></template></category>
+<category><pattern>blah blah *</pattern><template><srai>blah <star/></srai></template></category>
+<category><pattern>fuck fuck *</pattern><template><srai>fuck <star/></srai></template></category>
+<category><pattern>giggidy giggidy *</pattern><template><srai>giggidy <star/></srai></template></category>
+<category><pattern>soda soda *</pattern><template><srai>soda <star/></srai></template></category>
+<category><pattern>yo yo *</pattern><template><srai>yo <star/></srai></template></category>
+<category><pattern>god god *</pattern><template><srai>god <star/></srai></template></category>
+<category><pattern>crook crook *</pattern><template><srai>crook <star/></srai></template></category>
+<category><pattern>text text *</pattern><template><srai>text <star/></srai></template></category>
+<category><pattern>shit fuck shit fuck *</pattern><template><srai>shit fuck <star/></srai></template></category>
+<category><pattern>fuck shit fuck shit *</pattern><template><srai>fuck shit <star/></srai></template></category>
+<category><pattern>bla bla *</pattern><template><srai>bla <star/></srai></template></category>
+<category><pattern>developers developers *</pattern><template><srai>developers <star/></srai></template></category>
+<category><pattern>this page this page *</pattern><template><srai>this page <star/></srai></template></category>
+<category><pattern>roycy roycy *</pattern><template><srai>roycy <star/></srai></template></category>
+<category><pattern>over and over and *</pattern><template><srai>over and <star/></srai></template></category>
+<category><pattern>really really  *</pattern><template><srai>really <star/></srai></template></category>
+<category><pattern>testing testing *</pattern><template><srai>testing <star/></srai></template></category>
+<category><pattern>fuck u fuck u *</pattern><template><srai>fuck u <star/></srai></template></category>
+<category><pattern>u fuck u fuck *</pattern><template><srai>u fuck <star/></srai></template></category>
+<category><pattern>and on and on *</pattern><template><srai>and on <star/></srai></template></category>
+<category><pattern>the article the article *</pattern><template><srai>the article <star/></srai></template></category>
+<category><pattern>and over and over *</pattern><template><srai>and over <star/></srai></template></category>
+<category><pattern>ha ha *</pattern><template><srai>ha <star/></srai></template></category>
+<category><pattern>it is it is *</pattern><template><srai>it is <star/></srai></template></category>
+<category><pattern>comic sans comic sans *</pattern><template><srai>comic sans <star/></srai></template></category>
+<category><pattern>again and again and *</pattern><template><srai>again and <star/></srai></template></category>
+<category><pattern>makeitstop makeitstop *</pattern><template><srai>makeitstop <star/></srai></template></category>
+<category><pattern>united states united states *</pattern><template><srai>united states <star/></srai></template></category>
+<category><pattern>nan nan *</pattern><template><srai>nan <star/></srai></template></category>
+<category><pattern>on and on and *</pattern><template><srai>on and on and <star/></srai></template></category>
+<category><pattern>i know i know *</pattern><template><srai>i know i know <star/></srai></template></category>
+<category><pattern>youfuck youfuck *</pattern><template><srai>youfuck <star/></srai></template></category>
+<category><pattern>and again and again *</pattern><template><srai>and again <star/></srai></template></category>
+<category><pattern>ook ook *</pattern><template><srai>ook <star/></srai></template></category>
+<category><pattern>the point the point *</pattern><template><srai>the point <star/></srai></template></category>
+<category><pattern>fuck you fuck you *</pattern><template><srai>fuck you <star/></srai></template></category>
+<category><pattern>you fuck you fuck *</pattern><template><srai>you fuck <star/></srai></template></category>
+<category><pattern>a spade a spade *</pattern><template><srai>a spade <star/></srai></template></category>
+<category><pattern>time to time to *</pattern><template><srai>time to <star/></srai></template></category>
+<category><pattern>the city the city *</pattern><template><srai>the city <star/></srai></template></category>
+<category><pattern>no no *</pattern><template><srai>no <star/></srai></template></category>
+<category><pattern>i do i do *</pattern><template><srai>i do <star/></srai></template></category>
+<category><pattern>thank you thank you *</pattern><template><srai>thank you <star/></srai></template></category>
+<category><pattern>and and *</pattern><template><srai>and <star/></srai></template></category>
+<category><pattern>and more and more *</pattern><template><srai>and more <star/></srai></template></category>
+<category><pattern>the town the town *</pattern><template><srai>the town <star/></srai></template></category>
+<category><pattern>the game the game *</pattern><template><srai>the game <star/></srai></template></category>
+<category><pattern>of the of the *</pattern><template><srai>of the <star/></srai></template></category>
+<category><pattern>dummy text dummy text *</pattern><template><srai>dummy text <star/></srai></template></category>
+<category><pattern>text dummy text dummy *</pattern><template><srai>text dummy <star/></srai></template></category>
+<category><pattern>new jersey new jersey *</pattern><template><srai>new jersey <star/></srai></template></category>
+<category><pattern>this article this article *</pattern><template><srai>this article <star/></srai></template></category>
+<category><pattern>to be to be *</pattern><template><srai>to be <star/></srai></template></category>
+<category><pattern>dna dna mad mad *</pattern><template><srai>dna <star/></srai></template></category>
+<category><pattern>very very  *</pattern><template><srai>very <star/></srai></template></category>
+<category><pattern>in the in the *</pattern><template><srai>in the <star/></srai></template></category>
+<category><pattern>fresher fresher *</pattern><template><srai>fresher <star/></srai></template></category>
+<category><pattern>it was it was *</pattern><template><srai>it was <star/></srai></template></category>
+<category><pattern>as of as of *</pattern><template><srai>as of <star/></srai></template></category>
+<category><pattern>money money *</pattern><template><srai>money <star/></srai></template></category>
+<category><pattern>the village the village *</pattern><template><srai>the village <star/></srai></template></category>
+<category><pattern>i am i am *</pattern><template><srai>i am <star/></srai></template></category>
+<category><pattern>list of list of *</pattern><template><srai>list of <star/></srai></template></category>
+<category><pattern>great great *</pattern><template><srai>great <star/></srai></template></category>
+<category><pattern>the issue the issue *</pattern><template><srai>the issue <star/></srai></template></category>
+<category><pattern>new zealand new zealand *</pattern><template><srai>new zealand <star/></srai></template></category>
+<category><pattern>the film the film *</pattern><template><srai>the film <star/></srai></template></category>
+<category><pattern>space shuttle space shuttle *</pattern><template><srai>space shuttle <star/></srai></template></category>
+<category><pattern>never never *</pattern><template><srai>never <star/></srai></template></category>
+<category><pattern>the band the band *</pattern><template><srai>the band <star/></srai></template></category>
+<category><pattern>buzzle buzzle *</pattern><template><srai>buzzle <star/></srai></template></category>
+<category><pattern>the project the project *</pattern><template><srai>the project <star/></srai></template></category>
+<category><pattern>star wars star wars *</pattern><template><srai>star wars <star/></srai></template></category>
+<category><pattern>this question this question *</pattern><template><srai>this question <star/></srai></template></category>
+<category><pattern>the park the park *</pattern><template><srai>the park <star/></srai></template></category>
+<category><pattern>los angeles los angeles *</pattern><template><srai>los angeles <star/></srai></template></category>
+<category><pattern>etc etc *</pattern><template><srai>etc <star/></srai></template></category>
+<category><pattern>hong kong hong kong *</pattern><template><srai>hong kong <star/></srai></template></category>
+<category><pattern>yes yes *</pattern><template><srai>yes <star/></srai></template></category>
+<category><pattern>merge merge *</pattern><template><srai>merge <star/></srai></template></category>
+<category><pattern>the island the island *</pattern><template><srai>the island <star/></srai></template></category>
+<category><pattern>text test text test *</pattern><template><srai>text test <star/></srai></template></category>
+<category><pattern>test text test text *</pattern><template><srai>test text <star/></srai></template></category>
+<category><pattern>the school the school *</pattern><template><srai>the school <star/></srai></template></category>
+<category><pattern>spam spam  *</pattern><template><srai>spam <star/></srai></template></category>
+<category><pattern>the church the church  *</pattern><template><srai>the church <star/></srai></template></category>
+<category><pattern>sand sand *</pattern><template><srai>sand <star/></srai></template></category>
+<category><pattern>fair use fair use *</pattern><template><srai>fair use <star/></srai></template></category>
+<category><pattern>you thank you thank *</pattern><template><srai>you thank <star/></srai></template></category>
+<category><pattern>they are they are *</pattern><template><srai>they are <star/></srai></template></category>
+<category><pattern>the page the page *</pattern><template><srai>the page <star/></srai></template></category>
+<category><pattern>more and more and *</pattern><template><srai>more and <star/></srai></template></category>
+<category><pattern>doctor who doctor who *</pattern><template><srai>doctor who <star/></srai></template></category>
+<category><pattern>the station the station *</pattern><template><srai>the station <star/></srai></template></category>
+<category><pattern>the album the album *</pattern><template><srai>the album <star/></srai></template></category>
+<category><pattern>i think i think *</pattern><template><srai>i think <star/></srai></template></category>
+<category><pattern>battle of battle of *</pattern><template><srai>battle of <star/></srai></template></category>
+
+<category><pattern>_ please please *</pattern><template><srai><star/> please <star index="2"/></srai></template></category>
+<category><pattern>_ blah blah *</pattern><template><srai><star/> blah <star index="2"/></srai></template></category>
+<category><pattern>_ fuck fuck *</pattern><template><srai><star/> fuck <star index="2"/></srai></template></category>
+<category><pattern>_ giggidy giggidy *</pattern><template><srai><star/> giggidy <star index="2"/></srai></template></category>
+<category><pattern>_ soda soda *</pattern><template><srai><star/> soda <star index="2"/></srai></template></category>
+<category><pattern>_ yo yo *</pattern><template><srai><star/> yo <star index="2"/></srai></template></category>
+<category><pattern>_ god god *</pattern><template><srai><star/> god <star index="2"/></srai></template></category>
+<category><pattern>_ crook crook *</pattern><template><srai><star/> crook <star index="2"/></srai></template></category>
+<category><pattern>_ text text *</pattern><template><srai><star/> text <star index="2"/></srai></template></category>
+<category><pattern>_ shit fuck shit fuck *</pattern><template><srai><star/> shit fuck <star index="2"/></srai></template></category>
+<category><pattern>_ fuck shit fuck shit *</pattern><template><srai><star/> fuck shit <star index="2"/></srai></template></category>
+<category><pattern>_ bla bla *</pattern><template><srai><star/> bla <star index="2"/></srai></template></category>
+<category><pattern>_ developers developers *</pattern><template><srai><star/> developers <star index="2"/></srai></template></category>
+<category><pattern>_ this page this page *</pattern><template><srai><star/> this page <star index="2"/></srai></template></category>
+<category><pattern>_ roycy roycy *</pattern><template><srai><star/> roycy <star index="2"/></srai></template></category>
+<category><pattern>_ over and over and *</pattern><template><srai><star/> over and <star index="2"/></srai></template></category>
+<category><pattern>_ really really  *</pattern><template><srai><star/> really <star index="2"/></srai></template></category>
+<category><pattern>_ testing testing *</pattern><template><srai><star/> testing <star index="2"/></srai></template></category>
+<category><pattern>_ fuck u fuck u *</pattern><template><srai><star/> fuck u <star index="2"/></srai></template></category>
+<category><pattern>_ u fuck u fuck *</pattern><template><srai><star/> u fuck <star index="2"/></srai></template></category>
+<category><pattern>_ and on and on *</pattern><template><srai><star/> and on <star index="2"/></srai></template></category>
+<category><pattern>_ the article the article *</pattern><template><srai><star/> the article <star index="2"/></srai></template></category>
+<category><pattern>_ and over and over *</pattern><template><srai><star/> and over <star index="2"/></srai></template></category>
+<category><pattern>_ ha ha *</pattern><template><srai><star/> ha <star index="2"/></srai></template></category>
+<category><pattern>_ it is it is *</pattern><template><srai><star/> it is <star index="2"/></srai></template></category>
+<category><pattern>_ comic sans comic sans *</pattern><template><srai><star/> comic sans <star index="2"/></srai></template></category>
+<category><pattern>_ again and again and *</pattern><template><srai><star/> again and <star index="2"/></srai></template></category>
+<category><pattern>_ makeitstop makeitstop *</pattern><template><srai><star/> makeitstop <star index="2"/></srai></template></category>
+<category><pattern>_ united states united states *</pattern><template><srai><star/> united states <star index="2"/></srai></template></category>
+<category><pattern>_ nan nan *</pattern><template><srai><star/> nan <star index="2"/></srai></template></category>
+<category><pattern>_ on and on and *</pattern><template><srai><star/> on and on and <star index="2"/></srai></template></category>
+<category><pattern>_ i know i know *</pattern><template><srai><star/> i know i know <star index="2"/></srai></template></category>
+<category><pattern>_ youfuck youfuck *</pattern><template><srai><star/> youfuck <star index="2"/></srai></template></category>
+<category><pattern>_ and again and again *</pattern><template><srai><star/> and again <star index="2"/></srai></template></category>
+<category><pattern>_ ook ook *</pattern><template><srai><star/> ook <star index="2"/></srai></template></category>
+<category><pattern>_ the point the point *</pattern><template><srai><star/> the point <star index="2"/></srai></template></category>
+<category><pattern>_ fuck you fuck you *</pattern><template><srai><star/> fuck you <star index="2"/></srai></template></category>
+<category><pattern>_ you fuck you fuck *</pattern><template><srai><star/> you fuck <star index="2"/></srai></template></category>
+<category><pattern>_ a spade a spade *</pattern><template><srai><star/> a spade <star index="2"/></srai></template></category>
+<category><pattern>_ time to time to *</pattern><template><srai><star/> time to <star index="2"/></srai></template></category>
+<category><pattern>_ the city the city *</pattern><template><srai><star/> the city <star index="2"/></srai></template></category>
+<category><pattern>_ no no *</pattern><template><srai><star/> no <star index="2"/></srai></template></category>
+<category><pattern>_ i do i do *</pattern><template><srai><star/> i do <star index="2"/></srai></template></category>
+<category><pattern>_ thank you thank you *</pattern><template><srai><star/> thank you <star index="2"/></srai></template></category>
+<category><pattern>_ and and *</pattern><template><srai><star/> and <star index="2"/></srai></template></category>
+<category><pattern>_ and more and more *</pattern><template><srai><star/> and more <star index="2"/></srai></template></category>
+<category><pattern>_ the town the town *</pattern><template><srai><star/> the town <star index="2"/></srai></template></category>
+<category><pattern>_ the game the game *</pattern><template><srai><star/> the game <star index="2"/></srai></template></category>
+<category><pattern>_ of the of the *</pattern><template><srai><star/> of the <star index="2"/></srai></template></category>
+<category><pattern>_ dummy text dummy text *</pattern><template><srai><star/> dummy text <star index="2"/></srai></template></category>
+<category><pattern>_ text dummy text dummy *</pattern><template><srai><star/> text dummy <star index="2"/></srai></template></category>
+<category><pattern>_ new jersey new jersey *</pattern><template><srai><star/> new jersey <star index="2"/></srai></template></category>
+<category><pattern>_ this article this article *</pattern><template><srai><star/> this article <star index="2"/></srai></template></category>
+<category><pattern>_ to be to be *</pattern><template><srai><star/> to be <star index="2"/></srai></template></category>
+<category><pattern>_ dna dna mad mad *</pattern><template><srai><star/> dna <star index="2"/></srai></template></category>
+<category><pattern>_ very very  *</pattern><template><srai><star/> very <star index="2"/></srai></template></category>
+<category><pattern>_ in the in the *</pattern><template><srai><star/> in the <star index="2"/></srai></template></category>
+<category><pattern>_ fresher fresher *</pattern><template><srai><star/> fresher <star index="2"/></srai></template></category>
+<category><pattern>_ it was it was *</pattern><template><srai><star/> it was <star index="2"/></srai></template></category>
+<category><pattern>_ as of as of *</pattern><template><srai><star/> as of <star index="2"/></srai></template></category>
+<category><pattern>_ money money *</pattern><template><srai><star/> money <star index="2"/></srai></template></category>
+<category><pattern>_ the village the village *</pattern><template><srai><star/> the village <star index="2"/></srai></template></category>
+<category><pattern>_ i am i am *</pattern><template><srai><star/> i am <star index="2"/></srai></template></category>
+<category><pattern>_ list of list of *</pattern><template><srai><star/> list of <star index="2"/></srai></template></category>
+<category><pattern>_ great great *</pattern><template><srai><star/> great <star index="2"/></srai></template></category>
+<category><pattern>_ the issue the issue *</pattern><template><srai><star/> the issue <star index="2"/></srai></template></category>
+<category><pattern>_ new zealand new zealand *</pattern><template><srai><star/> new zealand <star index="2"/></srai></template></category>
+<category><pattern>_ the film the film *</pattern><template><srai><star/> the film <star index="2"/></srai></template></category>
+<category><pattern>_ space shuttle space shuttle *</pattern><template><srai><star/> space shuttle <star index="2"/></srai></template></category>
+<category><pattern>_ never never *</pattern><template><srai><star/> never <star index="2"/></srai></template></category>
+<category><pattern>_ the band the band *</pattern><template><srai><star/> the band <star index="2"/></srai></template></category>
+<category><pattern>_ buzzle buzzle *</pattern><template><srai><star/> buzzle <star index="2"/></srai></template></category>
+<category><pattern>_ the project the project *</pattern><template><srai><star/> the project <star index="2"/></srai></template></category>
+<category><pattern>_ star wars star wars *</pattern><template><srai><star/> star wars <star index="2"/></srai></template></category>
+<category><pattern>_ this question this question *</pattern><template><srai><star/> this question <star index="2"/></srai></template></category>
+<category><pattern>_ the park the park *</pattern><template><srai><star/> the park <star index="2"/></srai></template></category>
+<category><pattern>_ los angeles los angeles *</pattern><template><srai><star/> los angeles <star index="2"/></srai></template></category>
+<category><pattern>_ etc etc *</pattern><template><srai><star/> etc <star index="2"/></srai></template></category>
+<category><pattern>_ hong kong hong kong *</pattern><template><srai><star/> hong kong <star index="2"/></srai></template></category>
+<category><pattern>_ yes yes *</pattern><template><srai><star/> yes <star index="2"/></srai></template></category>
+<category><pattern>_ merge merge *</pattern><template><srai><star/> merge <star index="2"/></srai></template></category>
+<category><pattern>_ the island the island *</pattern><template><srai><star/> the island <star index="2"/></srai></template></category>
+<category><pattern>_ text test text test *</pattern><template><srai><star/> text test <star index="2"/></srai></template></category>
+<category><pattern>_ test text test text *</pattern><template><srai><star/> test text <star index="2"/></srai></template></category>
+<category><pattern>_ the school the school *</pattern><template><srai><star/> the school <star index="2"/></srai></template></category>
+<category><pattern>_ spam spam  *</pattern><template><srai><star/> spam <star index="2"/></srai></template></category>
+<category><pattern>_ the church the church  *</pattern><template><srai><star/> the church <star index="2"/></srai></template></category>
+<category><pattern>_ sand sand *</pattern><template><srai><star/> sand <star index="2"/></srai></template></category>
+<category><pattern>_ fair use fair use *</pattern><template><srai><star/> fair use <star index="2"/></srai></template></category>
+<category><pattern>_ you thank you thank *</pattern><template><srai><star/> you thank <star index="2"/></srai></template></category>
+<category><pattern>_ they are they are *</pattern><template><srai><star/> they are <star index="2"/></srai></template></category>
+<category><pattern>_ the page the page *</pattern><template><srai><star/> the page <star index="2"/></srai></template></category>
+<category><pattern>_ more and more and *</pattern><template><srai><star/> more and <star index="2"/></srai></template></category>
+<category><pattern>_ doctor who doctor who *</pattern><template><srai><star/> doctor who <star index="2"/></srai></template></category>
+<category><pattern>_ the station the station *</pattern><template><srai><star/> the station <star index="2"/></srai></template></category>
+<category><pattern>_ the album the album *</pattern><template><srai><star/> the album <star index="2"/></srai></template></category>
+<category><pattern>_ i think i think *</pattern><template><srai><star/> i think <star index="2"/></srai></template></category>
+<category><pattern>_ battle of battle of *</pattern><template><srai><star/> battle of <star index="2"/></srai></template></category>
+
+<category><pattern>_ please please</pattern><template><srai><star/> please</srai></template></category>
+<category><pattern>_ blah blah</pattern><template><srai><star/> blah</srai></template></category>
+<category><pattern>_ fuck fuck</pattern><template><srai><star/> fuck</srai></template></category>
+<category><pattern>_ giggidy giggidy</pattern><template><srai><star/> giggidy</srai></template></category>
+<category><pattern>_ soda soda</pattern><template><srai><star/> soda</srai></template></category>
+<category><pattern>_ yo yo</pattern><template><srai><star/> yo</srai></template></category>
+<category><pattern>_ god god</pattern><template><srai><star/> god</srai></template></category>
+<category><pattern>_ crook crook</pattern><template><srai><star/> crook</srai></template></category>
+<category><pattern>_ text text</pattern><template><srai><star/> text</srai></template></category>
+<category><pattern>_ shit fuck shit fuck</pattern><template><srai><star/> shit fuck</srai></template></category>
+<category><pattern>_ fuck shit fuck shit</pattern><template><srai><star/> fuck shit</srai></template></category>
+<category><pattern>_ bla bla</pattern><template><srai><star/> bla</srai></template></category>
+<category><pattern>_ developers developers</pattern><template><srai><star/> developers</srai></template></category>
+<category><pattern>_ this page this page</pattern><template><srai><star/> this page</srai></template></category>
+<category><pattern>_ roycy roycy</pattern><template><srai><star/> roycy</srai></template></category>
+<category><pattern>_ over and over and</pattern><template><srai><star/> over and</srai></template></category>
+<category><pattern>_ really really </pattern><template><srai><star/> really</srai></template></category>
+<category><pattern>_ testing testing</pattern><template><srai><star/> testing</srai></template></category>
+<category><pattern>_ fuck u fuck u</pattern><template><srai><star/> fuck u</srai></template></category>
+<category><pattern>_ u fuck u fuck</pattern><template><srai><star/> u fuck</srai></template></category>
+<category><pattern>_ and on and on</pattern><template><srai><star/> and on</srai></template></category>
+<category><pattern>_ the article the article</pattern><template><srai><star/> the article</srai></template></category>
+<category><pattern>_ and over and over</pattern><template><srai><star/> and over</srai></template></category>
+<category><pattern>_ ha ha</pattern><template><srai><star/> ha</srai></template></category>
+<category><pattern>_ it is it is</pattern><template><srai><star/> it is</srai></template></category>
+<category><pattern>_ comic sans comic sans</pattern><template><srai><star/> comic sans</srai></template></category>
+<category><pattern>_ again and again and</pattern><template><srai><star/> again and</srai></template></category>
+<category><pattern>_ makeitstop makeitstop</pattern><template><srai><star/> makeitstop</srai></template></category>
+<category><pattern>_ united states united states</pattern><template><srai><star/> united states</srai></template></category>
+<category><pattern>_ nan nan</pattern><template><srai><star/> nan</srai></template></category>
+<category><pattern>_ on and on and</pattern><template><srai><star/> on and on and</srai></template></category>
+<category><pattern>_ i know i know</pattern><template><srai><star/> i know i know</srai></template></category>
+<category><pattern>_ youfuck youfuck</pattern><template><srai><star/> youfuck</srai></template></category>
+<category><pattern>_ and again and again</pattern><template><srai><star/> and again</srai></template></category>
+<category><pattern>_ ook ook</pattern><template><srai><star/> ook</srai></template></category>
+<category><pattern>_ the point the point</pattern><template><srai><star/> the point</srai></template></category>
+<category><pattern>_ fuck you fuck you</pattern><template><srai><star/> fuck you</srai></template></category>
+<category><pattern>_ you fuck you fuck</pattern><template><srai><star/> you fuck</srai></template></category>
+<category><pattern>_ a spade a spade</pattern><template><srai><star/> a spade</srai></template></category>
+<category><pattern>_ time to time to</pattern><template><srai><star/> time to</srai></template></category>
+<category><pattern>_ the city the city</pattern><template><srai><star/> the city</srai></template></category>
+<category><pattern>_ no no</pattern><template><srai><star/> no</srai></template></category>
+<category><pattern>_ i do i do</pattern><template><srai><star/> i do</srai></template></category>
+<category><pattern>_ thank you thank you</pattern><template><srai><star/> thank you</srai></template></category>
+<category><pattern>_ and and</pattern><template><srai><star/> and</srai></template></category>
+<category><pattern>_ and more and more</pattern><template><srai><star/> and more</srai></template></category>
+<category><pattern>_ the town the town</pattern><template><srai><star/> the town</srai></template></category>
+<category><pattern>_ the game the game</pattern><template><srai><star/> the game</srai></template></category>
+<category><pattern>_ of the of the</pattern><template><srai><star/> of the</srai></template></category>
+<category><pattern>_ dummy text dummy text</pattern><template><srai><star/> dummy text</srai></template></category>
+<category><pattern>_ text dummy text dummy</pattern><template><srai><star/> text dummy</srai></template></category>
+<category><pattern>_ new jersey new jersey</pattern><template><srai><star/> new jersey</srai></template></category>
+<category><pattern>_ this article this article</pattern><template><srai><star/> this article</srai></template></category>
+<category><pattern>_ to be to be</pattern><template><srai><star/> to be</srai></template></category>
+<category><pattern>_ dna dna mad mad</pattern><template><srai><star/> dna</srai></template></category>
+<category><pattern>_ very very </pattern><template><srai><star/> very</srai></template></category>
+<category><pattern>_ in the in the</pattern><template><srai><star/> in the</srai></template></category>
+<category><pattern>_ fresher fresher</pattern><template><srai><star/> fresher</srai></template></category>
+<category><pattern>_ it was it was</pattern><template><srai><star/> it was</srai></template></category>
+<category><pattern>_ as of as of</pattern><template><srai><star/> as of</srai></template></category>
+<category><pattern>_ money money</pattern><template><srai><star/> money</srai></template></category>
+<category><pattern>_ the village the village</pattern><template><srai><star/> the village</srai></template></category>
+<category><pattern>_ i am i am</pattern><template><srai><star/> i am</srai></template></category>
+<category><pattern>_ list of list of</pattern><template><srai><star/> list of</srai></template></category>
+<category><pattern>_ great great</pattern><template><srai><star/> great</srai></template></category>
+<category><pattern>_ the issue the issue</pattern><template><srai><star/> the issue</srai></template></category>
+<category><pattern>_ new zealand new zealand</pattern><template><srai><star/> new zealand</srai></template></category>
+<category><pattern>_ the film the film</pattern><template><srai><star/> the film</srai></template></category>
+<category><pattern>_ space shuttle space shuttle</pattern><template><srai><star/> space shuttle</srai></template></category>
+<category><pattern>_ never never</pattern><template><srai><star/> never</srai></template></category>
+<category><pattern>_ the band the band</pattern><template><srai><star/> the band</srai></template></category>
+<category><pattern>_ buzzle buzzle</pattern><template><srai><star/> buzzle</srai></template></category>
+<category><pattern>_ the project the project</pattern><template><srai><star/> the project</srai></template></category>
+<category><pattern>_ star wars star wars</pattern><template><srai><star/> star wars</srai></template></category>
+<category><pattern>_ this question this question</pattern><template><srai><star/> this question</srai></template></category>
+<category><pattern>_ the park the park</pattern><template><srai><star/> the park</srai></template></category>
+<category><pattern>_ los angeles los angeles</pattern><template><srai><star/> los angeles</srai></template></category>
+<category><pattern>_ etc etc</pattern><template><srai><star/> etc</srai></template></category>
+<category><pattern>_ hong kong hong kong</pattern><template><srai><star/> hong kong</srai></template></category>
+<category><pattern>_ yes yes</pattern><template><srai><star/> yes</srai></template></category>
+<category><pattern>_ merge merge</pattern><template><srai><star/> merge</srai></template></category>
+<category><pattern>_ the island the island</pattern><template><srai><star/> the island</srai></template></category>
+<category><pattern>_ text test text test</pattern><template><srai><star/> text test</srai></template></category>
+<category><pattern>_ test text test text</pattern><template><srai><star/> test text</srai></template></category>
+<category><pattern>_ the school the school</pattern><template><srai><star/> the school</srai></template></category>
+<category><pattern>_ spam spam </pattern><template><srai><star/> spam</srai></template></category>
+<category><pattern>_ the church the church </pattern><template><srai><star/> the church</srai></template></category>
+<category><pattern>_ sand sand</pattern><template><srai><star/> sand</srai></template></category>
+<category><pattern>_ fair use fair use</pattern><template><srai><star/> fair use</srai></template></category>
+<category><pattern>_ you thank you thank</pattern><template><srai><star/> you thank</srai></template></category>
+<category><pattern>_ they are they are</pattern><template><srai><star/> they are</srai></template></category>
+<category><pattern>_ the page the page</pattern><template><srai><star/> the page</srai></template></category>
+<category><pattern>_ more and more and</pattern><template><srai><star/> more and</srai></template></category>
+<category><pattern>_ doctor who doctor who</pattern><template><srai><star/> doctor who</srai></template></category>
+<category><pattern>_ the station the station</pattern><template><srai><star/> the station</srai></template></category>
+<category><pattern>_ the album the album</pattern><template><srai><star/> the album</srai></template></category>
+<category><pattern>_ i think i think</pattern><template><srai><star/> i think</srai></template></category>
+<category><pattern>_ battle of battle of</pattern><template><srai><star/> battle of</srai></template></category>
+
+
+
+</aiml>

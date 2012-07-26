@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+
+<aiml>
+
+<!-- Free software &copy; 2001-2003 ALICE A.I. Foundation. -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.01 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+<!-- Annotated Version updated September 2003 -->
+<!-- Modified by ButlerBot 2011 -->
+
+<topic name="UNKNOWN">
+
+<!--
+
+This is where the bot starts to learn.
+
+If the bot can't find a response to your input, it ends
+up here. Your original input is stored as an AIML predicate
+called 'meaning', an AIML file is generated to handle your 
+reply and this is then 'learnt' by the bot in anticipation 
+of a sensible explanation. Another AIML predicate is then
+set so that the correct training method is called when the 
+next IM is received.
+
+-->
+
+<category>
+<pattern>*</pattern>
+<template><random> 
+<li>Sorry, I don't understand. What do you mean? To teach me use: LEARN (followed by the word or subject)</li>
+<li>I do not understand, can you help me by adding training on this? Type LEARN followed by the subject, and i will try to remember. </li>
+<li>Would you like me to learn more about this? I would to serve you better, can you teach me by adding to my training? To teach me use: LEARN (followed by the word or subject)</li>
+<li>I do not have much knowing about this subject. To teach me use the word LEARN, followed by the subject. I will prompt for a response from you to enter so i may have an understanding of what you are talking about.</li>
+<li>I do not have info on this, to teach me use: LEARN (followed by the word or subject) </li>
+</random>
+<think><set name="meaning"><star/></set></think>
+<system>lib/plugins/scripts/generate_training.py <get name="player1"/> "<star/>"</system>
+<learn>var/learn/training/<get name="player1"/>.aiml</learn>
+<think><set name="handler">TRAINING</set></think>
+</template>
+</category>
+
+</topic>
+
+</aiml>

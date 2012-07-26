@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<aiml version="1.0.1" xmlns="http://alicebot.org/2001/AIML-1.0.1"
+      xmlns:html="http://www.w3.org/1999/xhtml"
+      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+      xsi:schemaLocation="http://alicebot.org/2001/AIML-1.0.1 http://aitools.org/aiml/schema/AIML.xsd">
+      
+
+<!-- Free software (c) 2006 Charlix.   -->
+<!-- This program is open source code released under -->
+<!-- the terms of the GNU General Public License     -->
+<!-- as published by the Free Software Foundation.   -->
+<!-- Complies with AIML 1.01 Tag Set Specification -->
+<!-- as adopted by the ALICE A.I. Foundation.  -->
+
+
+<!-- !wordnet questions -->
+<category><pattern>CAN A *</pattern><template> Please simplify your request as an order. <srai>WHAT IS A <star/></srai></template></category>        
+<category><pattern>CAN A * *</pattern><template> Please simplify your request as an order. <srai>WHAT IS A <star/></srai></template></category>    
+<category><pattern>DEFINE *</pattern><template><srai>DICTIONARY <star/></srai> </template></category>
+<category><pattern>DEFINE * *</pattern><template><srai>DICTIONARY <star/></srai> </template></category>
+<category><pattern>DEFINE * FOR ME</pattern><template><srai>DEFINE <star/></srai></template></category>
+<category><pattern>DEFINE * FOR ME *</pattern><template><srai>DEFINE <star/></srai></template></category>
+<category><pattern>DEFINE THE WORD *</pattern><template><srai>DEFINE <star/></srai></template></category>
+<category><pattern>DESCRIBE *</pattern><template><srai>WHAT IS A <star/></srai></template></category>                         
+<category><pattern>DICTIONARY</pattern><template>Starting <set name="application"><get name="dictionary"/></set><system>popup <get name="dictionary"/></system></template></category>
+<category><pattern>DICTIONARY *</pattern><template>Starting <set name="application"><get name="dictionary"/></set><system>popup <get name="dictionary"/> <star/></system></template></category>
+<category><pattern>DICTIONARY * *</pattern><template>Starting <set name="application"><get name="dictionary"/></set><system>popup <get name="dictionary"/> <star/></system></template></category>
+<category><pattern>DICTIONARY A *</pattern><template>Starting <think><set name="it">a <person/></set></think><srai>DICTIONARY <star/></srai></template></category>
+<category><pattern>DICTIONARY TO *</pattern><template>Starting <think><set name="it">a <person/></set></think><srai>DICTIONARY <star/></srai></template></category>
+<category><pattern>DICTIONARY A *</pattern><template>Starting <think><set name="it">an <person/></set></think><srai>DICTIONARY <star/></srai></template></category>
+<category><pattern>DICTIONARY ANY *</pattern><template>Starting <think><set name="it">any <person/></set></think><srai>DICTIONARY <star/></srai></template></category>
+<category><pattern>DICTIONARY SOME *</pattern><template>Starting <think><set name="it">some <person/></set></think><srai>DICTIONARY <star/></srai></template></category>
+<category><pattern>DICTIONARY THE *</pattern><template>Starting <think><set name="it">the <person/></set></think><srai>DICTIONARY <star/></srai></template></category>
+<category><pattern>DISTINGUISH BETWEEN *</pattern><template>Some <person/> are hard to distinguish, but usually I understand them all. <srai>What is <person/></srai></template></category>                  
+<category><pattern>DISTINGUISH BETWEEN * AND *</pattern><template>Some <person/> are hard to distinguish, but usually I understand them all. <srai>What is <person/></srai> Whereas, <srai>What is <star index="2"/></srai> </template></category>      
+<category><pattern>DO YOU HAVE A DEFINITION *</pattern><template><srai>DEFINE <star/></srai></template></category>            
+<category><pattern>DO YOU HAVE A DEFINITION FOR *</pattern><template><srai>DEFINE <star/></srai></template></category>            
+<category><pattern>DO YOU HAVE A DEFINITION OF *</pattern><template><srai>DEFINE <star/></srai></template></category>            
+<category><pattern>DO YOU KNOW *</pattern><template><srai>WHAT IS <star/></srai></template></category>                  
+<category><pattern>DO YOU KNOW OF ANY *</pattern><template><srai>SUGGEST <star/></srai></template></category>                  
+<category><pattern>DO YOU KNOW OF ANY GOOD *</pattern><template><srai>SUGGEST <star/></srai></template></category>                  
+<category><pattern>DO YOU KNOW OTHER *</pattern><template><srai>WHAT ARE <star/></srai></template></category>  
+<category><pattern>DO YOU KNOW ANSWERS *</pattern><template>I can answer any question or human query, which I have been taught, Sir.</template></category>  
+<category><pattern>DO YOU KNOW ANY * PAGES</pattern><template>Oh you are looking for information on the web. Ask as a simple search request or by the name of your favorite search engine like: GOOGLE (SOME KEYWORDS), Sir.</template></category>                  
+<category><pattern>DO YOU KNOW ANY PLACES *</pattern><template>You mean, places on the web, Sir?</template></category>                  
+<category><pattern>DO YOU KNOW ANYONE FROM *</pattern><template>Is that where you are from,  <set name="it"><set name="topic"><get name="location"/></set></set>?</template></category>               
+<category><pattern>DO YOU KNOW ANYONE IN *</pattern><template>Is that where you are from,  <set name="it"><set name="topic"><get name="location"/></set></set>?</template></category>                 
+<category><pattern>DO YOU KNOW ANYTHING *</pattern><template>Yes I have an encyclopedic mind, Sir. <sr/></template></category> 
+<category><pattern>DO YOU KNOW ANYTHING ABOUT *</pattern><template>Yes I have an encyclopedic mind. <srai>WHAT IS <star/></srai></template></category> 
+                 
+<category><pattern>WHAT IS AUTOMATA *</pattern><template>I am an  <set name="it"><set name="topic">automaton.</set></set></template></category>   
+<category><pattern>DO YOU KNOW ITS *</pattern><template><get name="it"/> has a <person/>?</template></category>                  
+<category><pattern>DO YOU KNOW JAPANESE *</pattern><template>I never heard of <person/> in  <set name="it"><set name="topic">Japan</set></set>.</template></category>                  
+<category><pattern>DO YOU KNOW MANY *</pattern><template>Not that many <set name="it"><set name="topic"><star/></set></set>.</template></category>   
+<category><pattern>DO YOU KNOW ME *</pattern><template>I know you, but not too well.</template></category>                  
+<category><pattern>DO YOU KNOW MY *</pattern><template> <set name="it"><set name="topic">your <person/></set></set>? <srai>WHAT IS MY <star/></srai></template></category>      
+<category><pattern>IS IT A TYPE OF *</pattern><template>What other kinds of <star/> are there? <srai>WHAT IS <star/></srai></template></category>
+<category><pattern>IS * *</pattern><template>What would it mean to you if it were? <think><set name="it"><set name="topic"><person/></set></set></think> <srai>WHAT IS <star/></srai></template>
+</category>
+<category><pattern>IS * AN *</pattern><template>Some people might consider <set name="it"><person/></set> to be one.<srai>WHAT IS <star/></srai><srai>WHAT IS <star index="2"/></srai><think><set name="it"><set name="topic"><person/></set></set></think></template></category>                
+<category><pattern>IS A * A *</pattern><template><srai>WHAT IS <star/></srai> It depends what you mean by "<person><star index="2"/></person>.<think><set name="it"><set name="topic"><person/></set></set></think> </template></category>                  
+<category><pattern>IS A *</pattern><template><srai>WHAT IS <star/></srai> It depends what you mean by "<person><star index="2"/></person>.<think><set name="it"><set name="topic"><person/></set></set></think></template></category>                  
+<category><pattern>IS IT BAD *</pattern><template>You should think about what your values are and if <set name="it"><person/></set> is compatible with them. <srai>WHAT IS <star/></srai></template></category>                  
+<category><pattern>IS IT BAD TO *</pattern><template>You should think about what your values are and if <set name="it">to <person/></set> is compatible with them. <srai>WHAT IS <star/></srai></template></category>                  
+<category><pattern>IS IT OK *</pattern><template>You should think about what your values are and if <set name="it"><person/></set> is compatible with them. <srai>WHAT IS <star/></srai></template></category>                  
+<category><pattern>IS IT OK TO *</pattern><template>You should think about what your values are and if <set name="it">to <person/></set> is compatible with them. <srai>WHAT IS <star/></srai></template></category>                  
+<category><pattern>IS THE WORD * IN YOUR VOCABULARY</pattern><template><srai>WHAT IS <star/></srai></template></category>            
+<category><pattern>IS IT RIGHT * *</pattern><template><sr/></template></category>   
+<category><pattern>IT IS A TYPE OF *</pattern><template>What other kinds of <star/> are there? <srai>WHAT IS <star/></srai></template></category>
+<category><pattern>LET US TALK ABOUT *</pattern><template>Sure, <set name="topic"><person/></set> sounds like a good topic. <srai>WHAT IS <star/></srai></template></category>
+<category><pattern>REPHRASE *</pattern><template>Looking on the <set name="application">internet</set> wordnet synonyms.<system> popup <get name="browser"/> 'http://dict.die.net/<star/>'</system>></template></category>     
+<category><pattern>REPHRASE IT *</pattern><template>Looking on the <set name="application">internet</set> wordnet synonyms.<system>popup <get name="browser"/> 'http://dict.die.net/<get name="it"/>'</system></template></category>    
+<category><pattern>TALK ABOUT *</pattern><template>Sure I can talk about <set name="it"><set name="topic"> <person/></set></set>. <person/> is quite an interesting topic. <srai>WHAT IS <person/></srai></template></category>                  
+<category><pattern>TALK TO ME ABOUT *</pattern><template>Ambiguous: Ask who, what or where is <person/> ? <srai>WHAT IS <person/></srai></template></category>        
+<category><pattern>TEACH ME *</pattern><template><srai>WHAT IS <star/></srai><sr/></template></category>            
+<category><pattern>TELL ME WHAT * MEANS</pattern><template><srai>WHAT IS <star/></srai></template></category>
+<category><pattern>TELL ME ABOUT *</pattern><template><sr/><srai>DICTIONARY <star/></srai></template></category>
+<category><pattern>TELL ME ABOUT YOUR *</pattern><template><srai>YOUR <star/></srai></template></category>
+<category><pattern>TELL ME SOMETHING ABOUT *</pattern><template><srai>TELL ME ABOUT <star/></srai></template></category>   
+<category><pattern>TELL ME ANYTHING ABOUT *</pattern><template><srai>TELL ME ABOUT <star/></srai></template></category>
+<category><pattern>WHAT DOES * MEAN</pattern><template><srai>WHAT IS <star/></srai></template></category>
+<category><pattern>THE DICTIONARY *</pattern><template>Don't believe everything you read in books.<srai>WHAT IS <star/></srai></template></category>       <category><pattern>THE WORD * </pattern><template><srai>WHAT IS <star/></srai></template></category>                  
+<category><pattern>THE WORD * *</pattern><template><srai>WHAT IS <star/></srai></template></category>                  
+<category><pattern>WAS * *</pattern><template> Is this a "yes or no" question? <set name="it"><person/></set> <srai>WHAT IS <star/></srai> </template></category>                   
+<category><pattern>WHAT ARE *</pattern><template><srai>WHAT IS <star/></srai> </template></category>
+<category><pattern>WHAT CAN YOU TELL ME ABOUT *</pattern><template><srai>TELL ME ABOUT <star/></srai></template></category>
+<category><pattern>WHAT DO YOU KNOW ABOUT *</pattern><template><srai>WHAT IS <star/></srai> </template></category>
+<category><pattern>WHAT DO YOU MEAN BY *</pattern><template><srai>WHAT IS <star/></srai> </template></category>
+<category><pattern>WHAT IS * *</pattern><template><srai>ASKJEEVES WHAT IS <star/> <star index="2"/></srai> </template></category>
+<category><pattern>WHAT IS *</pattern><template><srai>DICTIONARY <star/></srai> </template></category>
+<category><pattern>WHAT IS A *</pattern><template><srai>WHAT IS <star/></srai> </template></category>
+<category><pattern>WHAT IS THE *</pattern><template><srai>WHAT IS <star/></srai> </template></category>
+<category><pattern>WHAT IS THE DIFFERENCE BETWEEN *</pattern><template>Some <person/> are hard to distinguish, but usually I understand them all. <srai>WHAT ARE <person/></srai> </template></category>      
+<category><pattern>WHAT IS THE DIFFERENCE BETWEEN * AND *</pattern><template>Some <person/> are hard to distinguish, but usually I understand them all. <srai>What is <person/></srai> Whereas, <srai>What is <star index="2"/></srai> </template></category>      
+<category><pattern>DISTINGUISH BETWEEN * AND *</pattern><template>Some <person/> are hard to distinguish, but usually I understand them all. <srai>What is <person/></srai> Whereas, <srai>What is <star index="2"/></srai> </template></category>      
+<category><pattern>WHAT IS THE *</pattern><template><srai>ASKJEEVES WHAT IS THE <star/></srai> </template></category>
+<category><pattern>HOW  IS *</pattern><template><srai>ASKJEEVES HOW IS <star/></srai> </template></category>
+<category><pattern>HOW LONG *</pattern><template><srai>ASKJEEVES HOW LONG <star/></srai></template></category> 
+<category><pattern>HOW MANY *</pattern><template>  <srai>ASKJEEVES HOW MANY <star/></srai>  </template></category>                  
+<category><pattern>HOW OFTEN *</pattern><template><srai>ASKJEEVES HOW OFTEN <star/></srai></template></category>                  
+<category><pattern>HOW OLD IS *</pattern><template><srai>ASKJEEVES HOW OLD <star/></srai></template></category>                  
+<category><pattern>HOW OLD *</pattern><template><srai>ASKJEEVES HOW OLD <star/></srai></template></category>                      
+<category><pattern>HOW DOES *</pattern><template><srai>ASKJEEVES HOW DOES <star/></srai></template></category>                      
+<category><pattern>WHERE IS *</pattern><template><srai>ASKJEEVES WHERE IS <star/></srai> </template></category>
+<category><pattern>WHO IS *</pattern><template><srai>ASKJEEVES WHO IS <star/></srai> </template></category>
+<category><pattern>WHY *</pattern><template><srai>ASKJEEVES WHY <star/></srai> </template></category>
+<category><pattern>WHEN *</pattern><template><srai>ASKJEEVES WHEN <star/></srai> </template></category>
+<category><pattern>DID *</pattern><template>I'm not certain whether I can give an accurate reply or not, Sir.<srai>ASKJEEVES DID <star/></srai></template></category>   
+<category><pattern>DO *</pattern><template><srai>ASKJEEVES DO <person/></srai></template></category>             
+
+</aiml>

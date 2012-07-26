@@ -1,0 +1,24 @@
+#!/bin/bash
+# DebCentral Config is copyright / trademarked by Speedy
+# DebCentral Config is released under the General Public license (Please refer to GPL.txt)
+# Written By Speedy
+# Credit goes to arnieboy for Automatix
+# Modified By Charlix to fit in Charlix
+# Install FrostWire a Limewire clone
+
+Xdialog --title "FrostWire" \
+	--icon ./scripts/charlix.xpm \
+        --msgbox "Starting FrostWire installation. This can take a while." 0 0
+
+	
+	rm -rf ~/.frostwire /opt/FrostWire ~/FrostWire
+	rm -f /usr/share/applications/FrostWire.desktop
+	rm -f /usr/bin/runfrost.sh
+	xterm -e "wget -c http://easynews.dl.sourceforge.net/sourceforge/frostwire/FrostWire-4.10.3-0-i586.deb";
+	xterm -e "dpkg -i FrostWire-4.10.3-0-i586.deb"; 
+	rm -f ~/FrostWire-4.10.3-0-i586.deb 
+	
+	
+Xdialog --title "IT'S DONE " \
+	--icon ./scripts/charlix.xpm \
+        --msgbox "All selected installation and configuration completed" 0 0

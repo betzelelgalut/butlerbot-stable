@@ -1,0 +1,62 @@
+#!/bin/bash
+# DebCentral Config is copyright / trademarked by Speedy
+# DebCentral Config is released under the General Public license (Please refer to GPL.txt)
+# Written By Speedy
+# Credit goes to arnieboy for Automatix
+# Modified By Charlix to fit in Charlix
+# Make a new sources.list the default list
+
+
+
+if ! cat /etc/apt/sources.list | grep "non-free-rep" >/dev/null;
+	then
+
+DIALOG=Xdialog
+
+$DIALOG --title "DISTRO SETTING" \
+        --menu "Please select your linux distribution" 0 0 0 \
+        "stable"  "Debian stable i386" \
+        "testing" "Debian testing i386" \
+        "unstable" "Debian unstable i386" \
+        "other"  "An other distro or you don't know" 2> /tmp/menu.tmp.$$
+
+retval=$?
+
+choice=`cat /tmp/menu.tmp.$$`
+rm -f /tmp/menu.tmp.$$
+
+case $retval in
+  0)
+  
+	if ! echo "$choice" | grep "other" >/dev/null ;
+	then
+	#gpg --keyserver subkeys.pgp.net --recv-keys 1F41B907
+	#gpg --export --armor 1F41B907 | apt-key add -
+		DIALOG=Xdialog
+
+		$DIALOG --wrap --title "SOURCE LIST MODIFICATION" --help "Your source list is the list of server which you download new software from."\
+			--yesno "To install these software, your source list will be changed. A back up of your current source list will be saved with the date. A new line with the non-free and contrib repository will be appended. Do you want to continue?" 0 0
+		
+		case $? in
+		0)
+		cp /etc/apt/sources.list /etc/apt/sources.list_backup_`date +%Y%m%d%H%M`
+		echo "# non-free-rep" >> /etc/apt/sources.list
+		echo "deb http://ftp.debian.org/debian/ $choice main contrib non-free" >> /etc/apt/sources.list;;
+		1)
+		echo "You're right Free Software is better.";;
+		255)
+		echo "Box closed.";;
+		esac
+	
+	else
+	echo "Sorry, but your distro is not supported yet"
+	fi ;;
+  1)
+    echo "Cancel pressed.";;
+  255)
+    echo "Box closed.";;
+esac
+ 
+fi
+
+	
